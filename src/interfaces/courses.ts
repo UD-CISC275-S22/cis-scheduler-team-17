@@ -5,6 +5,7 @@
  * - taken, boolean
  * - description, string
  * - preReqs, list of strings
+ * - semester available, list of strings
  */
 
 export interface Courses {
@@ -13,4 +14,5 @@ export interface Courses {
     course_taken: boolean;
     course_description: string;
     course_prereqs: string[];
+    course_semesterAvailable: string[];
 }
