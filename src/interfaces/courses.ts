@@ -9,4 +9,8 @@
 
 export interface Courses {
     course_name: string;
+    course_credits: number;
+    course_taken: boolean;
+    course_description: string;
+    course_prereqs: string[];
 }
