@@ -1,5 +1,5 @@
 /** QuestionType influences how a question is asked and what kinds of answers are possible */
-export type Semester = "Spring" | "Summer" | "Fall" | "Winter";
+export type Session = "Spring" | "Summer" | "Fall" | "Winter";
 
 /** A representation of a Question in a quizzing application */
 export interface Course {
@@ -8,7 +8,7 @@ export interface Course {
     /** The instructions and content of the Question */
     description: string;
     /** The semesters when the class is offered */
-    SemesterAvailable: Semester[];
+    SemesterAvailable: Session[];
     /** The courses that need to be taken before you can take this course */
     prerecs: Course[];
     /** The number of credits the course is worth */
@@ -34,7 +34,7 @@ export interface SemesterPlanner {
     /** the year the semester occurs*/
     year: number;
     /** season the class is taking place during */
-    SemesterSeason: Semester;
+    SemesterSeason: Session;
     /** Credits the user is taking */
     TotalCredits: number;
 }
