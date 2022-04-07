@@ -16,7 +16,10 @@
 .App-header {
     width: 100%;
     background-color: #1d785d;
-    min-height: 20vh;
+    background-image: url("CSS-Images/header.jpg");
+    background-size: 100% 144.4px;
+    background-repeat: no-repeat;
+    min-height: 144.4px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +49,7 @@
 .footer{
     margin-top: 1rem;
     background-color: #1d785d;
+    background-image: url("CSS-Images/footer.jpg");
     position: fixed;
     bottom: 0;
     left: 0;
