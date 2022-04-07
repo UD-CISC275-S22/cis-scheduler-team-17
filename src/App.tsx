@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -8,6 +9,21 @@ function App(): JSX.Element {
             <div>
                 Welcome to Schedule Planner! Click a current plan or create a
                 new plan to get started.
+            </div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <span>Degree</span>
+                        </Col>
+                        <Col>
+                            <span>Taken Courses</span>
+                        </Col>
+                        <Col>
+                            <Button>Make Scheduler</Button>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div>
                 <p>Rosemarie Filano, Zoe Valladares, Sydney Hester</p>
