@@ -14,19 +14,6 @@ function App(): JSX.Element {
                 please click your desired degree.
             </div>
             <UnderConstruction></UnderConstruction>
-            <div>
-                <Row className="buttons">
-                    <Col>
-                        <Button className="BA">Computer Science BA</Button>
-                    </Col>
-                    <Col>
-                        <Button className="BS">Computer Science BS</Button>
-                    </Col>
-                    <Col>
-                        <Button className="IS">Information Systems BS</Button>
-                    </Col>
-                </Row>
-            </div>
             <footer className="footer">
                 Constributers: Team 17
                 <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
