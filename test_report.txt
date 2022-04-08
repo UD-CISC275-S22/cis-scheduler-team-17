@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (42 ms)
+  ✕ renders the course name somewhere (39 ms)
 
   ● renders the course name somewhere
 
@@ -18,19 +18,28 @@ FAIL src/App.test.tsx
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [0mSchedule Planner[0m
+            [0mComputer & Information Sciences Schedule Planner[0m
           [36m</header>[39m
-          [36m<div>[39m
-            [0mWelcome to Schedule Planner! Click a current plan or create a new plan to get started.[0m
+          [36m<div[39m
+            [33mclass[39m=[32m"Welcome-Message"[39m
+          [36m>[39m
+            [0mWelcome to CISC Schedule Planner. [0m
+            [36m<br />[39m
+            [0mTo get started, please click your desired degree.[0m
           [36m</div>[39m
           [36m<div>[39m
-            [36m<p>[39m
-              [0mRosemarie Filano, Zoe Valladares, Sydney Hester[0m
-            [36m</p>[39m
-            [36m<p>[39m
-              [0mTeam 17 Final Project[0m
-            [36m</p>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Website is under construction!"[39m
+              [33msrc[39m=[32m"https://ps.w.org/easy-under-construction/assets/icon-256x256.png?rev=2417171"[39m
+            [36m/>[39m
           [36m</div>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"footer"[39m
+          [36m>[39m
+            [0mConstributers: Team 17[0m
+            [36m<br />[39m
+            [0mRosemarie Filano, Sydney Hester, Zoe Valladares[0m
+          [36m</footer>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -53,14 +62,17 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-----------|---------|----------|---------|---------|-------------------
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------|---------|----------|---------|---------|-------------------
-All files |     100 |      100 |     100 |     100 |                   
- App.tsx  |     100 |      100 |     100 |     100 |                   
-----------|---------|----------|---------|---------|-------------------
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |     100 |      100 |     100 |     100 |                   
+ src                    |     100 |      100 |     100 |     100 |                   
+  App.tsx               |     100 |      100 |     100 |     100 |                   
+ src/components         |     100 |      100 |     100 |     100 |                   
+  Underconstruction.tsx |     100 |      100 |     100 |     100 |                   
+------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.701 s
+Time:        1.475 s
 Ran all test suites.
