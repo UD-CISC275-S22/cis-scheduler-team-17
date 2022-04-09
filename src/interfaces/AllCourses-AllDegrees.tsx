@@ -11,6 +11,7 @@ console.log(AllDegrees);
 // the hard coded degrees will go here
 
 //These are all of the hard coded courses
+// Year 1 BS plan
 const EGGG101 = makeCourse(
     "EGGG101: Introduction to Engineering",
     "Introduction to profession, including disciplines of chemical, civil, computer, electrical, environmental, and mechanical engineering. Prepares students for success through integration of: technical problem solving and engineering design, ethical decision-making, teamwork, and communicating to diverse audiences.",
@@ -88,3 +89,61 @@ const MATH242 = makeCourse(
     [MATH241],
     4
 );
+// year 2 BS plan
+const CISC220 = makeCourse(
+    "CISC220: Data Structures",
+    "Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching.",
+    ["Fall", "Spring"],
+    [CISC210, MATH241],
+    3
+);
+const CISC260 = makeCourse(
+    "CISC260: Machine Organization and Assembly Language",
+    "ntroduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques.",
+    ["Fall", "Spring"],
+    [CISC210],
+    3
+);
+const MATH210 = makeCourse(
+    "MATH210: Discrete Mathematics I",
+    "Elements of sets and logic. Relations, functions. Integers. Induction and recursion. Principles and techniques of counting. Graphs. Paths and circuits",
+    ["Fall", "Winter", "Spring"],
+    [MATH241, MATH242],
+    3
+);
+const ScienceRequirement1 = makeCourse(
+    "1/2 Lab Science",
+    "The first lab science you need to take",
+    ["Fall"],
+    [],
+    4
+);
+const ScienceRequirement2 = makeCourse(
+    "2/2 Lab Science",
+    "The first lab science you need to take",
+    ["Fall"],
+    [],
+    4
+);
+const CISC355 = makeCourse(
+    "CISC355: Computers, Ethics and Society",
+    "Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.",
+    ["Spring"],
+    [],
+    3
+);
+const CISC275 = makeCourse(
+    "CISC275: Introduction to Software Engineering",
+    "Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing).",
+    ["Fall", "Spring"],
+    [CISC181, CISC220],
+    3
+);
+const MATH205_MATH350 = makeCourse(
+    "MATH205: Statistical Methods/MATH350: Probability Theory and Simulation Methods",
+    "205 Descriptive statistics (3 credits), graphical displays, sampling, variation, normal distribution, estimation, hypothesis testing, one-way analysis of variance, simple linear regression and goodness of fit. Laboratory covers use of statistical packages on mainframe and microcomputers : 350 (4 credits) Introduces the basic theory of discrete and continuous aspects of probability theory. Topics include bivariate distributions, sums of independent random variables, moment generating functions, laws of large numbers and central limit theorem.",
+    ["Fall", "Spring"],
+    [MATH210],
+    3
+);
+
