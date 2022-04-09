@@ -74,4 +74,17 @@ const CISC181 = makeCourse(
     [CISC108, MATH241],
     3
 );
-const CISC210 = makeCourse("CISC210: Introduction to Systems Programming", );
+const CISC210 = makeCourse(
+    "CISC210: Introduction to Systems Programming",
+    "Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects.",
+    ["Fall", "Spring"],
+    [CISC108, MATH241],
+    3
+);
+const MATH242 = makeCourse(
+    "MATH242: Analytic Geometry and Calculus B",
+    "Brief review of MATH 241; evaluation of limits by L’Hospital’s rule; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [MATH241],
+    4
+);
