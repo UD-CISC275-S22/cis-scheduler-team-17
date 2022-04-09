@@ -1,5 +1,4 @@
 import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
-import { Season } from "./course-Degree-Semester";
 
 //These are all of the hard coded courses
 // Year 1 BS plan
@@ -116,6 +115,13 @@ const ScienceRequirement2 = makeCourse(
     [],
     4
 );
+const Free_Elective = makeCourse(
+    "Free Elective",
+    "Take a Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
 const CISC355 = makeCourse(
     "CISC355: Computers, Ethics and Society",
     "Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.",
@@ -137,12 +143,69 @@ const MATH205_MATH350 = makeCourse(
     [MATH210],
     3
 );
-// Specialized CISC
+// Specialized CISC Courses
+const CISC304 = makeCourse(
+    "CISC304: Logic for Programming",
+    "Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.",
+    ["Fall", "Spring"],
+    [CISC220, MATH210],
+    3
+);
+const CISC320 = makeCourse(
+    "CISC320: Introduction to Algorithms",
+    "Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness.",
+    ["Fall", "Spring"],
+    [MATH210, CISC220],
+    3
+);
+const CISC361 = makeCourse(
+    "CISC361: Operating Systems",
+    "Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices.",
+    ["Fall", "Spring"],
+    [CISC220, CISC260],
+    3
+);
+const CISC_Elective = makeCourse(
+    "CISC Elective",
+    "Take a Cisc Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Restricted_CISC_Elective = makeCourse(
+    "Restricted CISC Elective",
+    "you need to take a Restricted CISC Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const CISC303 = makeCourse(
+    "CISC303: Automata Theory",
+    "Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.",
+    ["Fall", "Spring"],
+    [MATH210, CISC220],
+    3
+);
+const CISC442 = makeCourse(
+    "CISC442: Introduction to Computer Vision",
+    "Analysis of images and video to recognize, reconstruct, model, and otherwise infer static and dynamic properties of objects in the three-dimensional world. Geometry of image formation; image processing such as smoothing, edge and feature detection, color, and texture; segmentation; shape representation including deformable templates; stereo vision; motion estimation and tracking; techniques for 3-D reconstruction; image registration methods.",
+    ["Fall", "Spring"],
+    [CISC220],
+    3
+);
+const ENGL312_ENGL410 = makeCourse(
+    "ENGL312/ENGL410",
+    "English COurse",
+    [],
+    [],
+    3
+);
+
 const CISC481 = makeCourse(
     "CISC481: Artificial Intelligence",
     "Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.",
     ["Fall", "Spring"],
-    [CISC220 /**ADD CISC304*/],
+    [CISC220, CISC304],
     3
 );
 
@@ -153,26 +216,27 @@ const two_year_plan_BS = [
     CISC108,
     MATH241,
     ENGL110,
-    BreadthRequirementCAAH,
     BreadthRequirementGen,
-    BreadthRequirementHACC,
-    BreadthRequirementSABS,
     CISC181,
     CISC210,
     MATH242,
+    BreadthRequirementGen,
+    BreadthRequirementGen,
     CISC220,
     CISC260,
     MATH210,
     ScienceRequirement1,
-    ScienceRequirement2,
+    Free_Elective,
     CISC275,
     CISC355,
-    MATH205_MATH350
+    MATH205_MATH350,
+    ScienceRequirement2,
+    BreadthRequirementGen
 ];
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
     "Artificial Intelligence and Robotics Concentration",
     "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
-    two_year_plan_BS.concat([CISC481]),
+    two_year_plan_BS.concat([CISC481, BreadthRequirementCAAH]),
     124
 );
 const Bioinformatics_Concentration = makeDegree(
@@ -208,6 +272,7 @@ const allCourses = [
     ScienceRequirement2,
     CISC275,
     CISC355,
-    MATH205_MATH350
+    MATH205_MATH350,
+    CISC481
 ];
 console.log(allCourses);
