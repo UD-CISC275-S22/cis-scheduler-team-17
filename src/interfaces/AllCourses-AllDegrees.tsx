@@ -1,15 +1,6 @@
 import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
 import { Season } from "./course-Degree-Semester";
 
-const allCourses = [
-    makeCourse("name", "description", ["Spring", "Fall"], [], 0)
-];
-console.log(allCourses);
-
-const AllDegrees = [makeDegree("null", "null", [], 0)];
-console.log(AllDegrees);
-// the hard coded degrees will go here
-
 //These are all of the hard coded courses
 // Year 1 BS plan
 const EGGG101 = makeCourse(
@@ -146,4 +137,77 @@ const MATH205_MATH350 = makeCourse(
     [MATH210],
     3
 );
+// Specialized CISC
+const CISC481 = makeCourse(
+    "CISC481: Artificial Intelligence",
+    "Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.",
+    ["Fall", "Spring"],
+    [CISC220 /**ADD CISC304*/],
+    3
+);
 
+// Hard coded versions of the Degrees
+// BS Concentrations
+const two_year_plan_BS = [
+    EGGG101,
+    CISC108,
+    MATH241,
+    ENGL110,
+    BreadthRequirementCAAH,
+    BreadthRequirementGen,
+    BreadthRequirementHACC,
+    BreadthRequirementSABS,
+    CISC181,
+    CISC210,
+    MATH242,
+    CISC220,
+    CISC260,
+    MATH210,
+    ScienceRequirement1,
+    ScienceRequirement2,
+    CISC275,
+    CISC355,
+    MATH205_MATH350
+];
+const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
+    "Artificial Intelligence and Robotics Concentration",
+    "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
+    two_year_plan_BS.concat([CISC481]),
+    124
+);
+const Bioinformatics_Concentration = makeDegree(
+    "Bioinformatics Concentration",
+    "Bioinformatics lies at the intersection of computational science and biology. The field is gaining impact in recent years as biology becomes increasingly data-centric and quantitative. There is a growing need for individuals with training in biology, chemistry, and computer science. This concentration combines background in life sciences with expertise in computational methods to fill this need. Students successfully completing this concentration will be well-prepared for graduate studies in computer science or bioinformatics and for a variety of interdisciplinary careers in industry and in health and research institutes.",
+    two_year_plan_BS.concat([CISC481]),
+    124
+);
+
+// lists of all courses and degrees
+const AllDegrees = [
+    Artificial_Intelligence_and_Robotics_Concentration,
+    Bioinformatics_Concentration
+];
+console.log(AllDegrees);
+// the hard coded degrees will go here
+const allCourses = [
+    EGGG101,
+    CISC108,
+    MATH241,
+    ENGL110,
+    BreadthRequirementCAAH,
+    BreadthRequirementGen,
+    BreadthRequirementHACC,
+    BreadthRequirementSABS,
+    CISC181,
+    CISC210,
+    MATH242,
+    CISC220,
+    CISC260,
+    MATH210,
+    ScienceRequirement1,
+    ScienceRequirement2,
+    CISC275,
+    CISC355,
+    MATH205_MATH350
+];
+console.log(allCourses);
