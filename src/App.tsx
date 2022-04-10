@@ -1,39 +1,18 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import SchedulerPage from "./components/pages/SchedulerPage";
+import Homepage from "./components/pages/Homepage";
 //import { UnderConstruction } from "./components/Underconstruction";
 
 function App(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Computer & Information Sciences Schedule Planner
-            </header>
-            <div>
-                Welcome to Schedule Planner! Click a current plan or create a
-                new plan to get started.
-            </div>
-            <div>
-                <Container>
-                    <Row>
-                        <Col>
-                            <span>Degree</span>
-                        </Col>
-                        <Col>
-                            <span>Taken Courses</span>
-                        </Col>
-                        <Col>
-                            <Button>Make Scheduler</Button>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-            {/* <UnderConstruction></UnderConstruction> */}
-            <footer className="footer">
-                Constributers: Team 17
-                <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
-            </footer>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/homepage" element={<Homepage />} />
+                <Route path="/make-schedule" element={<SchedulerPage />} />
+            </Routes>
+        </Router>
     );
 }
 
