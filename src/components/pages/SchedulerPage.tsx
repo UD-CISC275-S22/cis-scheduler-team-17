@@ -4,9 +4,13 @@ import "../../App.css";
 
 export function SchedulerPage(): JSX.Element {
     return (
-        <div>
-            <h3>Make a Schedule</h3>
-            <div></div>
+        <div className="App">
+            <header className="App-header">
+                Computer & Information Sciences Schedule Planner
+            </header>
+            <div>
+                <h3>You are planning a [] degree</h3>
+            </div>
         </div>
     );
 }
