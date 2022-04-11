@@ -295,7 +295,7 @@ const Bioinformatics_Concentration = makeDegree(
 );
 
 // lists of all courses and degrees
-const AllDegrees = [
+export const AllDegrees = [
     Artificial_Intelligence_and_Robotics_Concentration,
     Bioinformatics_Concentration
 ];

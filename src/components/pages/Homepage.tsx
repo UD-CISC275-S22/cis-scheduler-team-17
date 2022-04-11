@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../../App.css";
+import { DropdownDegrees } from "../DropdownDegrees";
 
 function Homepage(): JSX.Element {
     const nav = useNavigate();
@@ -13,7 +14,7 @@ function Homepage(): JSX.Element {
             <header className="App-header">
                 Computer & Information Sciences Schedule Planner
             </header>
-            <div>
+            <div className="Welcome-Message">
                 Welcome to Schedule Planner! Click a current plan or create a
                 new plan to get started.
             </div>
@@ -21,7 +22,7 @@ function Homepage(): JSX.Element {
                 <Container>
                     <Row>
                         <Col>
-                            <span>Degree</span>
+                            <DropdownDegrees></DropdownDegrees>
                         </Col>
                         <Col>
                             <span>Taken Courses</span>
@@ -34,7 +35,6 @@ function Homepage(): JSX.Element {
                     </Row>
                 </Container>
             </div>
-            {/* <UnderConstruction></UnderConstruction> */}
             <footer className="footer">
                 Constributers: Team 17
                 <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
