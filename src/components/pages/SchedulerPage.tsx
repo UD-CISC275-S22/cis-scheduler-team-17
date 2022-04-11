@@ -9,9 +9,8 @@ export function SchedulerPage(): JSX.Element {
         nav("/homepage");
     };
 
-    function deleteSemester(): JSX.Element {
-        
-    }
+    // function deleteSemester(): JSX.Element {
+    // }
 
     function showSemester(): JSX.Element {
         return (
@@ -23,9 +22,9 @@ export function SchedulerPage(): JSX.Element {
                         </tr>
                         <tr>
                             <th>
-                                <Button
+                                {/* <Button
                                     onClick={() => deleteSemester()}
-                                ></Button>
+                                ></Button> */}
                             </th>
                         </tr>
                     </thead>
