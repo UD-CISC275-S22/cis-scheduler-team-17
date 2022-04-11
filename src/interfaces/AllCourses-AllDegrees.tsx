@@ -143,7 +143,7 @@ const MATH205_MATH350 = makeCourse(
     [MATH210],
     3
 );
-// Specialized CISC Courses
+// Specialized CISC Courses for the BS Concentrations
 const CISC304 = makeCourse(
     "CISC304: Logic for Programming",
     "Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.",
@@ -200,12 +200,39 @@ const ENGL312_ENGL410 = makeCourse(
     [],
     3
 );
-
 const CISC481 = makeCourse(
     "CISC481: Artificial Intelligence",
     "Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.",
     ["Fall", "Spring"],
     [CISC220, CISC304],
+    3
+);
+const CISC483 = makeCourse(
+    "CISC483: Introduction to Data Mining",
+    "Concepts, techniques, and algorithms for mining large data sets to discover structural patterns that can be used to make subsequent predictions. Emphasis on practical approaches and empirical evaluation. Use of a workbench of data mining tools, such as the Weka toolkit.",
+    ["Varies By Department"],
+    [CISC220, MATH205_MATH350],
+    3
+);
+const CISC484 = makeCourse(
+    "CISC484: Introduction to Machine Learning",
+    "Development of methods to learn to solve a task using examples. Explore different machine learning algorithms/techniques and discuss their strengths and weaknesses and situations they are or are not suited for.",
+    ["Fall", "Spring"],
+    [CISC220, MATH205_MATH350],
+    3
+);
+const CISC498_Or_UNIV401 = makeCourse(
+    "CISC498: Computer Science Senior Design Project I",
+    "First semester of two-semester senior software design course.  Students work in teams to develop solutions to real-world problems for a client.  Application of a modern software engineering process; requirement solicitation, analysis, and specification; prototyping; design; incremental development; testing and verification; client interaction; and presentation. Offered in Fall only.",
+    ["Fall"],
+    [CISC275, CISC320],
+    3
+);
+const CISC499_Or_UNIV402 = makeCourse(
+    "CISC499: Computer Science Senior Design Project II",
+    "COMP SCI SENIOR DESIGN II Continuation of CISC 498.",
+    ["Spring"],
+    [CISC498_Or_UNIV401],
     3
 );
 
@@ -236,7 +263,28 @@ const two_year_plan_BS = [
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
     "Artificial Intelligence and Robotics Concentration",
     "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
-    two_year_plan_BS.concat([CISC481, BreadthRequirementCAAH]),
+    two_year_plan_BS.concat([
+        CISC304,
+        CISC320,
+        CISC361,
+        CISC_Elective,
+        Restricted_CISC_Elective,
+        CISC303,
+        CISC442,
+        CISC481,
+        ENGL312_ENGL410,
+        Restricted_CISC_Elective,
+        CISC483,
+        CISC498_Or_UNIV401,
+        Restricted_CISC_Elective,
+        Free_Elective,
+        Free_Elective,
+        CISC484,
+        CISC499_Or_UNIV402,
+        Restricted_CISC_Elective,
+        Free_Elective,
+        Free_Elective
+    ]),
     124
 );
 const Bioinformatics_Concentration = makeDegree(
@@ -273,6 +321,18 @@ const allCourses = [
     CISC275,
     CISC355,
     MATH205_MATH350,
-    CISC481
+    CISC304,
+    CISC320,
+    CISC361,
+    CISC_Elective,
+    Restricted_CISC_Elective,
+    CISC303,
+    CISC442,
+    ENGL312_ENGL410,
+    CISC481,
+    CISC483,
+    CISC484,
+    CISC498_Or_UNIV401,
+    CISC499_Or_UNIV402
 ];
 console.log(allCourses);

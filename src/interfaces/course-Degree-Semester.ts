@@ -1,5 +1,10 @@
 /** QuestionType influences how a question is asked and what kinds of answers are possible */
-export type Season = "Spring" | "Summer" | "Fall" | "Winter";
+export type Season =
+    | "Spring"
+    | "Summer"
+    | "Fall"
+    | "Winter"
+    | "Varies By Department";
 
 /** A representation of a Question in a quizzing application */
 export interface Course {
