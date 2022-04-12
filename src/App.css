@@ -48,6 +48,7 @@
 
 .footer{
     position: absolute;
+    text-align: center;
     font-size: 20px;
     background-color: #1d785d;
     background-image: url("CSS-Images/footer.jpg");

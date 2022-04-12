@@ -34,7 +34,6 @@ function Homepage(): JSX.Element {
                     </Row>
                 </Container>
             </div>
-            {/* <UnderConstruction></UnderConstruction> */}
             <footer className="footer">
                 Constributers: Team 17
                 <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
