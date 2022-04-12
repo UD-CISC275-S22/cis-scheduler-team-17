@@ -30,28 +30,21 @@ const ENGL110 = makeCourse(
     [],
     3
 );
-const BreadthRequirementCAAH = makeCourse(
-    "Breadth Requirement Creative Arts and Humanities",
-    "These courses provide students with an understanding and appreciation of the visual and performing arts, of aesthetic forms, designs, or craftsmanship, or of literary, philosophical, and intellectual traditions. Courses may focus on a single aesthetic form or intellectual tradition, or cross-cultural comparisons.",
-    ["Fall", "Winter", "Spring", "Summer"],
-    [],
-    3
-);
-const BreadthRequirementHACC = makeCourse(
+const BreadthRequirementForeignLanguage = makeCourse(
     "Breadth Requirement History and Cultural Change",
     "These courses provide students with an understanding of the sources and forces of historical changes in ideas, beliefs, institutions, and cultures. Courses may address social, cultural, intellectual, economic, technological, artistic, scientific, and political development, changes in a discipline, or globalization and its effects.",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
-const BreadthRequirementSABS = makeCourse(
+const BreadthRequirementMulticultural = makeCourse(
     "Breadth Requirement Social and Behavioral Sciences",
     "These courses provide students with an understanding of the behavior of individuals and social groups in the context of their human and natural environments. Courses emphasize the empirical findings, applications, and methods of the social and behavioral sciences.",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
-const BreadthRequirementGen = makeCourse(
+const BreadthRequirement = makeCourse(
     "Breadth Requirement General",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
@@ -235,20 +228,84 @@ const CISC499_Or_UNIV402 = makeCourse(
     [CISC498_Or_UNIV401],
     3
 );
-
+//BIO
+const CHEM111 = makeCourse(
+    "CHEM111: General Chemistry",
+    "Fundamental laws of chemical action with emphasis on atomic structure, chemical bonding, and important classes of substances.",
+    ["Fall"],
+    [],
+    3
+);
+const BISC207 = makeCourse(
+    "BISC207: Introductory Biology I",
+    "Molecular basis of life. Structure and function of cells, including signal transduction pathways. Energy transformations. Classical Mendelian genetics and the flow of information from DNA to RNA to proteins. Laboratory focuses on the testing of hypotheses, data analysis and scientific writing.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [CHEM111],
+    4
+);
+const MATH349 = makeCourse(
+    "MATH349: Elementary Linear Algebra",
+    "Systems of linear equations, linear combinations of vectors, and matrix algebra. Determinants, eigenvalues and eigenvectors, similarity and diagonalization of square matrices. Vector spaces, linear dependence and independence, basis and dimension, linear transformations. Inner product spaces, orthogonality, orthogonal projections, fundamental subspaces. A software package may be used for the analysis and solution of linear algebra problems.",
+    ["Fall", "Spring"],
+    [MATH242],
+    3
+);
+const CHEM213CHEM215_OR_CHEM321CHEM325 = makeCourse(
+    "CHEM213+CHEM215 or CHEM321+CHEM325",
+    "CHEM213+215: A survey of the fundamentals of organic chemistry. Topics include molecular structure, organic nomenclature, functional groups, isomerism and stereoisomerism, reaction mechanisms, and organic synthesis. Basic principles will be illustrated with examples of biological significance. : A survey of elementary laboratory techniques that are useful to organic chemists. Separation and purification techniques and examples of typical organic reactions will be included. ; CHEM321+215: The practice and application of volumetric and gravimetric analysis, as well as basic chromatographic  and spectrometric measurements. : Laboratory work that introduces the basic laboratory techniques of organic chemistry. ",
+    ["Varies By Department"],
+    [CHEM111],
+    3
+);
+const BISC208 = makeCourse(
+    "BISC208: Introductory Biology II",
+    "Mechanisms of evolution. Physiology of multicellular plants and animals. Principles of ecology with emphasis on the biology of populations. Laboratory focuses on testing of hypotheses, data analysis and scientific writing. Animal and plant anatomy also studied.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [BISC207],
+    4
+);
+const BISC401 = makeCourse(
+    "BISC401: Molecular Biology of the Cell",
+    "Introduction to the molecular biology of eucaryotes and procaryotes. Topics include structure and function of proteins and nucleic acids; replication and repair of DNA; biosynthesis of RNA and proteins; membranes, transport, composition and function of the eucaryotic cell, chromosomes, viruses, the immune system and recombinant DNA.",
+    ["Fall", "Spring"],
+    [BISC207],
+    3
+);
+const CISC436 = makeCourse(
+    "CISC436: Computational Biology and Bioinformatics",
+    "Concepts, methodologies, and tools in bioinformatics. Abstraction of biological problems for computational solutions. Genome sequencing and assembly, bio-sequence analysis and comparison and database search, dynamics programming, hidden Markov models, and phylogenetic trees.",
+    ["Varies By Department"],
+    [CISC220],
+    3
+);
+//cybersecurity
+const CISC450 = makeCourse(
+    "CISC450: Computer Networks I",
+    "Foundation principles, architectures and techniques employed in computer and communication networks. Focuses on mechanisms used in TCP/IP protocol suite. Topics include connection management, end-to-end reliable data transfer, sliding window protocols, quality of service, flow control, congestion control, routing, LANs, framing, error control, analog versus digital transmission, packet versus circuit switching, multiplexing.",
+    ["Fall", "Spring"],
+    [CISC260],
+    3
+);
+const CISC372 = makeCourse(
+    "CISC372: Parallel Computing",
+    "Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation.",
+    ["Fall", "Spring"],
+    [CISC220, CISC260],
+    3
+);
 // Hard coded versions of the Degrees
-// BS Concentrations
+// BS Concentrations, I clone the two year plan and concatenate the pther courses
 const two_year_plan_BS = [
     EGGG101,
     CISC108,
     MATH241,
     ENGL110,
-    BreadthRequirementGen,
+    BreadthRequirement,
     CISC181,
     CISC210,
     MATH242,
-    BreadthRequirementGen,
-    BreadthRequirementGen,
+    BreadthRequirement,
+    BreadthRequirement,
     CISC220,
     CISC260,
     MATH210,
@@ -258,46 +315,72 @@ const two_year_plan_BS = [
     CISC355,
     MATH205_MATH350,
     ScienceRequirement2,
-    BreadthRequirementGen
+    BreadthRequirementMulticultural
 ];
+const AI_Concentration_Courses = [...two_year_plan_BS].concat([
+    CISC304,
+    CISC320,
+    CISC361,
+    CISC_Elective,
+    Restricted_CISC_Elective,
+    CISC303,
+    CISC442,
+    CISC481,
+    ENGL312_ENGL410,
+    Restricted_CISC_Elective,
+    CISC483,
+    CISC498_Or_UNIV401,
+    Restricted_CISC_Elective,
+    Free_Elective,
+    Free_Elective,
+    CISC484,
+    CISC499_Or_UNIV402,
+    Restricted_CISC_Elective,
+    Free_Elective,
+    Free_Elective
+]);
+const Bioinformatics_Concentration_Courses = [...two_year_plan_BS].concat([
+    CISC320,
+    BISC207,
+    MATH349,
+    CHEM213CHEM215_OR_CHEM321CHEM325,
+    CISC303,
+    BISC208,
+    ENGL312_ENGL410,
+    CISC483,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    BISC401,
+    Restricted_CISC_Elective,
+    Free_Elective,
+    Free_Elective,
+    CISC499_Or_UNIV402,
+    CISC436,
+    Restricted_CISC_Elective,
+    Free_Elective,
+    Free_Elective
+]);
+
+// degree declarations
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
     "Artificial Intelligence and Robotics Concentration",
     "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
-    two_year_plan_BS.concat([
-        CISC304,
-        CISC320,
-        CISC361,
-        CISC_Elective,
-        Restricted_CISC_Elective,
-        CISC303,
-        CISC442,
-        CISC481,
-        ENGL312_ENGL410,
-        Restricted_CISC_Elective,
-        CISC483,
-        CISC498_Or_UNIV401,
-        Restricted_CISC_Elective,
-        Free_Elective,
-        Free_Elective,
-        CISC484,
-        CISC499_Or_UNIV402,
-        Restricted_CISC_Elective,
-        Free_Elective,
-        Free_Elective
-    ]),
+    AI_Concentration_Courses,
     124
 );
 const Bioinformatics_Concentration = makeDegree(
     "Bioinformatics Concentration",
     "Bioinformatics lies at the intersection of computational science and biology. The field is gaining impact in recent years as biology becomes increasingly data-centric and quantitative. There is a growing need for individuals with training in biology, chemistry, and computer science. This concentration combines background in life sciences with expertise in computational methods to fill this need. Students successfully completing this concentration will be well-prepared for graduate studies in computer science or bioinformatics and for a variety of interdisciplinary careers in industry and in health and research institutes.",
-    two_year_plan_BS.concat([CISC481]),
+    Bioinformatics_Concentration_Courses,
     124
 );
+const Cybersecurity_Concentration = makeDegree("", "", [], 0);
 
 // lists of all courses and degrees
 const AllDegrees = [
     Artificial_Intelligence_and_Robotics_Concentration,
-    Bioinformatics_Concentration
+    Bioinformatics_Concentration,
+    Cybersecurity_Concentration
 ];
 console.log(AllDegrees);
 // the hard coded degrees will go here
@@ -306,10 +389,9 @@ const allCourses = [
     CISC108,
     MATH241,
     ENGL110,
-    BreadthRequirementCAAH,
-    BreadthRequirementGen,
-    BreadthRequirementHACC,
-    BreadthRequirementSABS,
+    BreadthRequirementForeignLanguage,
+    BreadthRequirement,
+    BreadthRequirementMulticultural,
     CISC181,
     CISC210,
     MATH242,
@@ -333,6 +415,8 @@ const allCourses = [
     CISC483,
     CISC484,
     CISC498_Or_UNIV401,
-    CISC499_Or_UNIV402
+    CISC499_Or_UNIV402,
+    CISC450,
+    CISC372
 ];
 console.log(allCourses);
