@@ -1,5 +1,5 @@
 import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
-import { Season } from "./course-Degree-Semester";
+//import { Season } from "./course-Degree-Semester";
 
 //These are all of the hard coded courses
 // Year 1 BS plan
