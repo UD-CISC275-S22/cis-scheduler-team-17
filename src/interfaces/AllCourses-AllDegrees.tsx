@@ -394,6 +394,14 @@ const Security_Elective = makeCourse(
     [],
     3
 );
+//Theory and Computation Concentration
+const CISC401 = makeCourse(
+    "CISC401: Elements of the Theory of Computation",
+    "General models of computation, formal languages and automata theory and algorithmic unsolvability.",
+    ["Varies By Department"],
+    [CISC303],
+    3
+);
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
 const allCourses = [
@@ -451,7 +459,8 @@ const allCourses = [
     TRACK_Requirement,
     CISC471,
     Advanced_Systems_Requirment,
-    Security_Elective
+    Security_Elective,
+    CISC401
 ];
 const two_year_plan_BS = [
     EGGG101,
@@ -586,7 +595,8 @@ const High_Performance_Computing_Concentration_Courses = [
     TRACK_Requirement,
     Free_Elective
 ]);
-const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat([
+const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat(
+    [
     CISC320,
     CISC360,
     CISC361,
@@ -607,8 +617,32 @@ const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat(
     Advanced_Systems_Requirment,
     Security_Elective,
     Free_Elective
-]);
-
+    ]
+);
+const Theory_and_Computation_Computation_Courses = [...two_year_plan_BS].concat(
+    [
+    CISC304,
+    MATH349,
+    CISC320,
+    TRACK_Requirement,
+    Free_Elective,
+    CISC303,
+    ENGL312_ENGL410,
+    TRACK_Requirement,
+    Free_Elective,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    CISC401,
+    Restricted_Elective,
+    TRACK_Requirement,
+    Free_Elective,
+    CISC499_Or_UNIV402,
+    Restricted_Elective,
+    TRACK_Requirement,
+    CISC_Elective,
+    Free_Elective
+    ]
+);
 // degree declarations
 const NoDegree = makeDegree(
     "No Degree Has been selected",
@@ -652,7 +686,12 @@ const Systems_and_Networks_Concentration = makeDegree(
     Systems_and_Networks_Concentration_Courses,
     124
 );
-
+const Theory_and_Computation_Computation = makeDegree(
+    "Theory and Computation Concentration",
+    "The Theory and Computation concentration bridges the mathematics-computer science interface. Applications flow in both directions: mathematical concepts, such as formal logic, automata, and models of computation, form the theoretical foundation of computer science, while computational methods are widely used in many areas of mathematics, including linear algebra, graph theory, differential equations, algebra, theorem proving, and algorithmic analysis. The concentration offers a broad spectrum of courses in these and other subjects in mathematics and computer science. Students in the concentration have a choice between a â€œdiscreteâ€ and a continuous track.",
+    Theory_and_Computation_Computation_Courses,
+    124
+);
 // lists of all courses and degrees
 const AllDegrees = [
     NoDegree,
@@ -661,6 +700,7 @@ const AllDegrees = [
     Cybersecurity_Concentration,
     Data_Science_Concentration,
     High_Performance_Computing_Concentration,
-    Systems_and_Networks_Concentration
+    Systems_and_Networks_Concentration,
+    Theory_and_Computation_Computation
 ];
 console.log(AllDegrees);
