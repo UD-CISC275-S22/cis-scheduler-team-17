@@ -3,24 +3,27 @@ import { Button } from "react-bootstrap";
 import "./App.css";
 import { UnderConstruction } from "./components/Underconstruction";
 import SchedulerPage from "./components/SchedulerPage";
+import Homepage from "./components/Homepage";
 
 function App(): JSX.Element {
-    const [page, setPage] = useState<boolean>(false);
-    const changePage = () => {
-        setPage(!page);
+    const [homepage, setHomepage] = useState<boolean>(true);
+    const changeHomepage = () => {
+        setHomepage(!homepage);
     };
     return (
         <div className="App">
-            <header className="App-header">
-                Computer & Information Sciences Schedule Planner
-            </header>
-            <Button onClick={changePage}>Make Schedule</Button>
-            {page && <SchedulerPage changePage={changePage}></SchedulerPage>}
-            <UnderConstruction></UnderConstruction>
-            <footer className="footer">
-                Constributers: Team 17
-                <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
-            </footer>
+            <div>
+                {homepage && (
+                    <Homepage changeHomepage={changeHomepage}></Homepage>
+                )}
+                <div style={{ display: !homepage ? "block" : "none" }}>
+                    <SchedulerPage
+                        changeHomepage={changeHomepage}
+                    ></SchedulerPage>
+                    {console.log(homepage)}
+                </div>
+            </div>
+            {/* <UnderConstruction></UnderConstruction> */}
         </div>
     );
 }

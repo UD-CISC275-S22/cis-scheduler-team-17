@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../App.css";
+import Homepage from "./Homepage";
 
 export function SchedulerPage({
-    changePage
+    changeHomepage
 }: {
-    changePage: () => void;
+    changeHomepage: () => void;
 }): JSX.Element {
     return (
         <div className="App">
@@ -16,7 +17,7 @@ export function SchedulerPage({
                 <h3>You are planning a [] degree</h3>
             </div>
             <footer className="footer">
-                <Button> Back </Button>
+                <Button onClick={changeHomepage}>Back</Button>
             </footer>
         </div>
     );
