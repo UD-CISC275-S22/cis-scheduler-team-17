@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../App.css";
-import Homepage from "./Homepage";
+//import Homepage from "./Homepage";
 
 export function SchedulerPage({
     changeHomepage

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import "./App.css";
-import { UnderConstruction } from "./components/Underconstruction";
+//import { UnderConstruction } from "./components/Underconstruction";
 import SchedulerPage from "./components/SchedulerPage";
 import Homepage from "./components/Homepage";
 

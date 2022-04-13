@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
-import { UnderConstruction } from "./Underconstruction";
-import SchedulerPage from "./SchedulerPage";
+//import { UnderConstruction } from "./Underconstruction";
+//import SchedulerPage from "./SchedulerPage";
 
 function Homepage({
     changeHomepage
