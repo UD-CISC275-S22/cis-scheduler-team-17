@@ -2,8 +2,13 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
+  console.log
+    true
+
+      at App (src/App.tsx:22:30)
+
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (36 ms)
+  ✕ renders the course name somewhere (76 ms)
 
   ● renders the course name somewhere
 
@@ -12,25 +17,89 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mComputer & Information Sciences Schedule Planner[0m
-          [36m</header>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
           [36m<div>[39m
-            [36m<img[39m
-              [33malt[39m=[32m"Website is under construction!"[39m
-              [33msrc[39m=[32m"https://ps.w.org/easy-under-construction/assets/icon-256x256.png?rev=2417171"[39m
-            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"App"[39m
+            [36m>[39m
+              [36m<header[39m
+                [33mclass[39m=[32m"App-header"[39m
+              [36m>[39m
+                [0mComputer & Information Sciences Schedule Planner[0m
+              [36m</header>[39m
+              [36m<div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"container"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"col"[39m
+                    [36m>[39m
+                      [36m<span>[39m
+                        [0mDegree[0m
+                      [36m</span>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"col"[39m
+                    [36m>[39m
+                      [36m<span>[39m
+                        [0mTaken Courses[0m
+                      [36m</span>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"col"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33mclass[39m=[32m"btn btn-primary"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mMake Schedule[0m
+                      [36m</button>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<footer[39m
+                [33mclass[39m=[32m"footer"[39m
+              [36m>[39m
+                [0mConstributers: Team 17[0m
+                [36m<br />[39m
+                [0mRosemarie Filano, Sydney Hester, Zoe Valladares[0m
+              [36m</footer>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: none;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"App"[39m
+              [36m>[39m
+                [36m<header[39m
+                  [33mclass[39m=[32m"App-header"[39m
+                [36m>[39m
+                  [0mComputer & Information Sciences Schedule Planner[0m
+                [36m</header>[39m
+                [36m<div>[39m
+                  [36m<h3>[39m
+                    [0mYou are planning a [] degree[0m
+                  [36m</h3>[39m
+                [36m</div>[39m
+                [36m<footer[39m
+                  [33mclass[39m=[32m"footer"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBack[0m
+                  [36m</button>[39m
+                [36m</footer>[39m
+              [36m</div>[39m
+            [36m</div>[39m
           [36m</div>[39m
-          [36m<footer[39m
-            [33mclass[39m=[32m"footer"[39m
-          [36m>[39m
-            [0mConstributers: Team 17[0m
-            [36m<br />[39m
-            [0mRosemarie Filano, Sydney Hester, Zoe Valladares[0m
-          [36m</footer>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -56,11 +125,13 @@ FAIL src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    5.12 |      100 |      25 |    5.12 |                   
- src                         |     100 |      100 |     100 |     100 |                   
-  App.tsx                    |     100 |      100 |     100 |     100 |                   
- src/components              |     100 |      100 |     100 |     100 |                   
-  Underconstruction.tsx      |     100 |      100 |     100 |     100 |                   
+All files                    |   11.36 |       75 |   27.27 |   11.36 |                   
+ src                         |      75 |       75 |      50 |      75 |                   
+  App.tsx                    |      75 |       75 |      50 |      75 | 10                
+ src/components              |   66.66 |      100 |   66.66 |   66.66 |                   
+  Homepage.tsx               |     100 |      100 |     100 |     100 |                   
+  SchedulerPage.tsx          |     100 |      100 |     100 |     100 |                   
+  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                 
  src/components/pages        |       0 |      100 |       0 |       0 |                   
   Homepage.tsx               |       0 |      100 |       0 |       0 | 7-11              
   SchedulerPage.tsx          |       0 |      100 |       0 |       0 | 7-11              
@@ -72,5 +143,5 @@ All files                    |    5.12 |      100 |      25 |    5.12 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.704 s
+Time:        2.157 s
 Ran all test suites.
