@@ -293,8 +293,166 @@ const CISC372 = makeCourse(
     [CISC220, CISC260],
     3
 );
+const CISC464 = makeCourse(
+    "CISC464: Introduction to Network Security",
+    "Practical introduction to network security field. Covers material on cryptography, intrusions, denial-of-service attacks, worms, honeynets and other hot topics in network security.",
+    ["Varies By Department"],
+    [CISC450],
+    3
+);
+const Restricted_Elective = makeCourse(
+    "Restricted Elective",
+    "This is a restrictive elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Advanced_Cybersecurity_Requirment = makeCourse(
+    "Advanced Cybersecurity Requirement",
+    "You need to take an advanced cybersecurity requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const CISC465 = makeCourse(
+    "CISC465: Introduction to Cybersecurity",
+    "This cybersecurity course is an introduction to computer and network security and covers the foundation security policies and methods to provide confidentiality, integrity, and availability, as well as cryptography, auditing, and user security. Topics are reinforced with hands-on exercises run in a virtual machine environment.",
+    ["Varies By Department"],
+    [],
+    3
+);
+const CPEG494 = makeCourse(
+    "CPEG494: System Hardening and Protection",
+    "Practical treatment of the defensive techniques used to harden computer systems to make them less vulnerable to cyber-attacks. Defect management, configuration/hardening, account control, logs/auditing, and risk assessment are covered and reinforced with hands-on exercises run in a virtual machine environment.",
+    ["Fall"],
+    [],
+    3
+);
+// data science
+const Advanced_Math_Requirement = makeCourse(
+    "Advanced Math Requirement",
+    "This is an advanced Math Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const CISC437 = makeCourse(
+    "CISC437: Database Systems",
+    "Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases.",
+    ["Fall", "Spring"],
+    [CISC220],
+    3
+);
+const Advanced_Data_Science_Requirement = makeCourse(
+    "Advanced Data Science Requirement",
+    "Advanced Data Science Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+// high performace computing concentration
+const CISC360 = makeCourse(
+    "CISC360: Computer Architecture",
+    "Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches.",
+    ["Fall", "Spring"],
+    [CISC220, CISC260],
+    3
+);
+const TRACK_Elective = makeCourse(
+    "TRACK Elective",
+    "Track Elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const TRACK_Requirement = makeCourse(
+    "TRACK Requirment",
+    "TRACK Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const CISC471 = makeCourse(
+    "CISC471: Compiler Design",
+    "Introduction to the design and implementation of compilers, with a focus on lexical analysis, parsing and syntax directed translation.",
+    ["Varies By Department"],
+    [CISC260, CISC303],
+    3
+);
+//Systems and networks concentration
+const Advanced_Systems_Requirment = makeCourse(
+    "Advanced System Requirement",
+    "Advanced System Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Security_Elective = makeCourse(
+    "Security Elective",
+    "Security Elective",
+    ["Varies By Department"],
+    [],
+    3
+);
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
+const allCourses = [
+    EGGG101,
+    CISC108,
+    MATH241,
+    ENGL110,
+    BreadthRequirementForeignLanguage,
+    BreadthRequirementMulticultural,
+    BreadthRequirement,
+    CISC181,
+    CISC210,
+    MATH242,
+    CISC220,
+    CISC260,
+    MATH210,
+    ScienceRequirement1,
+    ScienceRequirement2,
+    Free_Elective,
+    CISC355,
+    CISC275,
+    MATH205_MATH350,
+    CISC304,
+    CISC320,
+    CISC361,
+    CISC_Elective,
+    Restricted_CISC_Elective,
+    CISC303,
+    CISC442,
+    ENGL312_ENGL410,
+    CISC481,
+    CISC483,
+    CISC484,
+    CISC498_Or_UNIV401,
+    CISC499_Or_UNIV402,
+    CHEM111,
+    BISC207,
+    MATH349,
+    CHEM213CHEM215_OR_CHEM321CHEM325,
+    BISC208,
+    BISC401,
+    CISC436,
+    CISC450,
+    CISC372,
+    CISC464,
+    Restricted_Elective,
+    Advanced_Cybersecurity_Requirment,
+    CISC465,
+    CPEG494,
+    Advanced_Math_Requirement,
+    CISC437,
+    Advanced_Data_Science_Requirement,
+    CISC360,
+    TRACK_Elective,
+    TRACK_Requirement,
+    CISC471,
+    Advanced_Systems_Requirment,
+    Security_Elective
+];
 const two_year_plan_BS = [
     EGGG101,
     CISC108,
@@ -360,8 +518,104 @@ const Bioinformatics_Concentration_Courses = [...two_year_plan_BS].concat([
     Free_Elective,
     Free_Elective
 ]);
+const Cybersecurity_Concentration_Courses = [...two_year_plan_BS].concat([
+    CISC320,
+    CISC361,
+    CISC450,
+    CISC_Elective,
+    Free_Elective,
+    CISC303,
+    CISC372,
+    ENGL312_ENGL410,
+    Restricted_Elective,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    CISC464,
+    Advanced_Cybersecurity_Requirment,
+    Free_Elective,
+    Restricted_Elective,
+    CISC499_Or_UNIV402,
+    CISC465,
+    CPEG494,
+    Advanced_Cybersecurity_Requirment,
+    Free_Elective
+]);
+const Data_Science_Concentration_Courses = [...two_year_plan_BS].concat([
+    CISC304,
+    MATH349,
+    CISC320,
+    Advanced_Math_Requirement,
+    Free_Elective,
+    CISC303,
+    CISC372,
+    ENGL312_ENGL410,
+    CISC437,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    CISC481,
+    Restricted_Elective,
+    Free_Elective,
+    Free_Elective,
+    CISC499_Or_UNIV402,
+    Advanced_Data_Science_Requirement,
+    CISC_Elective,
+    Free_Elective,
+    Free_Elective
+]);
+const High_Performance_Computing_Concentration_Courses = [
+    ...two_year_plan_BS
+].concat([
+    CISC320,
+    CISC360,
+    CISC361,
+    TRACK_Elective,
+    TRACK_Requirement,
+    CISC303,
+    CISC372,
+    ENGL312_ENGL410,
+    Free_Elective,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    TRACK_Elective,
+    TRACK_Requirement,
+    Free_Elective,
+    Free_Elective,
+    CISC499_Or_UNIV402,
+    CISC450,
+    CISC471,
+    TRACK_Requirement,
+    Free_Elective
+]);
+const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat([
+    CISC320,
+    CISC360,
+    CISC361,
+    Restricted_Elective,
+    CISC_Elective,
+    CISC303,
+    CISC372,
+    ENGL312_ENGL410,
+    Restricted_Elective,
+    Free_Elective,
+    CISC498_Or_UNIV401,
+    CISC450,
+    Advanced_Systems_Requirment,
+    Free_Elective,
+    Free_Elective,
+    CISC499_Or_UNIV402,
+    CISC471,
+    Advanced_Systems_Requirment,
+    Security_Elective,
+    Free_Elective
+]);
 
 // degree declarations
+const NoDegree = makeDegree(
+    "No Degree Has been selected",
+    "There has not been a course Selected",
+    allCourses,
+    0
+);
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
     "Artificial Intelligence and Robotics Concentration",
     "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
@@ -374,49 +628,39 @@ const Bioinformatics_Concentration = makeDegree(
     Bioinformatics_Concentration_Courses,
     124
 );
-const Cybersecurity_Concentration = makeDegree("", "", [], 0);
+const Cybersecurity_Concentration = makeDegree(
+    "Cybersecurity Concentration",
+    "Backdoor vulnerabilities. Denial of service attacks. Viruses, worms, and cyberintrusions. Massive security breaches at major corporations, government facilities, and other institutions are announced on a regular basis. Is it any surprise that cybersecurity experts are among the most in-demand computer science professionals? Students in this concentration study the whole spectrum of vulnerabilities as well as countermeasures to defend against them. Learn how to design secure software/hardware systems and networks; explore intrusion detection, cryptographic protocols, firewalls, and access control, among other topics.",
+    Cybersecurity_Concentration_Courses,
+    124
+);
+const Data_Science_Concentration = makeDegree(
+    "Data Science Concentration",
+    "Data is everywhere. Large and diverse datasets representing every aspect of modern life are now available. These data come in a variety of forms that can be either structured or unstructured. Data science is concerned with translating these disparate data sources into useful knowledge, through application of techniques drawn from computer science, mathematics, and statistics. The data science concentration provides the core background necessary for representing, analyzing, managing and putting these datasets to use in real-world applications. This concentration combines courses in advanced mathematics, statistics, artificial intelligence, machine learning, and data mining, preparing students to make contributions in this highly interdisciplinary field.",
+    Data_Science_Concentration_Courses,
+    124
+);
+const High_Performance_Computing_Concentration = makeDegree(
+    "Hight Performace Computing Concentration",
+    "High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena.",
+    High_Performance_Computing_Concentration_Courses,
+    124
+);
+const Systems_and_Networks_Concentration = makeDegree(
+    "Systems and Networks Concentration",
+    "Are you interested in implementing a new programming language or a virtual machine for a new computer or network architecture? Contributing to the next operating system or Internet of everything? Improving the security of software and networks? Then the Systems and Networks concentration is for you. Through a range of courses covering operating systems, compilers, architecture, networks, and cybersecurity, students learn how modern computational systems function from the application layer all the way down to the hardware-software interface.",
+    Systems_and_Networks_Concentration_Courses,
+    124
+);
 
 // lists of all courses and degrees
 const AllDegrees = [
+    NoDegree,
     Artificial_Intelligence_and_Robotics_Concentration,
     Bioinformatics_Concentration,
-    Cybersecurity_Concentration
+    Cybersecurity_Concentration,
+    Data_Science_Concentration,
+    High_Performance_Computing_Concentration,
+    Systems_and_Networks_Concentration
 ];
 console.log(AllDegrees);
-// the hard coded degrees will go here
-const allCourses = [
-    EGGG101,
-    CISC108,
-    MATH241,
-    ENGL110,
-    BreadthRequirementForeignLanguage,
-    BreadthRequirement,
-    BreadthRequirementMulticultural,
-    CISC181,
-    CISC210,
-    MATH242,
-    CISC220,
-    CISC260,
-    MATH210,
-    ScienceRequirement1,
-    ScienceRequirement2,
-    CISC275,
-    CISC355,
-    MATH205_MATH350,
-    CISC304,
-    CISC320,
-    CISC361,
-    CISC_Elective,
-    Restricted_CISC_Elective,
-    CISC303,
-    CISC442,
-    ENGL312_ENGL410,
-    CISC481,
-    CISC483,
-    CISC484,
-    CISC498_Or_UNIV401,
-    CISC499_Or_UNIV402,
-    CISC450,
-    CISC372
-];
-console.log(allCourses);
