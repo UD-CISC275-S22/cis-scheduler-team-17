@@ -1,6 +1,133 @@
 import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
 
 //These are all of the hard coded courses
+// Free Credits
+const Free_Elective1 = makeCourse(
+    "Free Elective",
+    "Take a Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective2 = makeCourse(
+    "Free Elective #2",
+    "Take a SecondFree Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective3 = makeCourse(
+    "Free Elective #3",
+    "Take a third Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective4 = makeCourse(
+    "Free Elective #4",
+    "Take a fourth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective5 = makeCourse(
+    "Free Elective #5",
+    "Take a Fifth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective6 = makeCourse(
+    "Free Elective #6",
+    "Take a Sixth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective7 = makeCourse(
+    "Free Elective #7",
+    "Take a seventh Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective8 = makeCourse(
+    "Free Elective #8",
+    "Take an eigth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective9 = makeCourse(
+    "Free Elective #9",
+    "Take a ninth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective10 = makeCourse(
+    "Free Elective #10",
+    "Take a tenth Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const Free_Elective11 = makeCourse(
+    "Free Elective #11",
+    "Take a eleventh Free Elective",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirementForeignLanguage = makeCourse(
+    "Breadth Requirement History and Cultural Change",
+    "These courses provide students with an understanding of the sources and forces of historical changes in ideas, beliefs, institutions, and cultures. Courses may address social, cultural, intellectual, economic, technological, artistic, scientific, and political development, changes in a discipline, or globalization and its effects.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirementMulticultural = makeCourse(
+    "Breadth Requirement Social and Behavioral Sciences",
+    "These courses provide students with an understanding of the behavior of individuals and social groups in the context of their human and natural environments. Courses emphasize the empirical findings, applications, and methods of the social and behavioral sciences.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirement1 = makeCourse(
+    "Breadth Requirement General",
+    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirement2 = makeCourse(
+    "Breadth Requirement General",
+    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirement3 = makeCourse(
+    "Breadth Requirement General",
+    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirement4 = makeCourse(
+    "Breadth Requirement General",
+    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BreadthRequirement5 = makeCourse(
+    "Breadth Requirement General",
+    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
 // Year 1 BS plan
 const EGGG101 = makeCourse(
     "EGGG101: Introduction to Engineering",
@@ -26,27 +153,6 @@ const MATH241 = makeCourse(
 const ENGL110 = makeCourse(
     "ENGL110: Seminar in Composition",
     "Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.",
-    ["Fall", "Winter", "Spring", "Summer"],
-    [],
-    3
-);
-const BreadthRequirementForeignLanguage = makeCourse(
-    "Breadth Requirement History and Cultural Change",
-    "These courses provide students with an understanding of the sources and forces of historical changes in ideas, beliefs, institutions, and cultures. Courses may address social, cultural, intellectual, economic, technological, artistic, scientific, and political development, changes in a discipline, or globalization and its effects.",
-    ["Fall", "Winter", "Spring", "Summer"],
-    [],
-    3
-);
-const BreadthRequirementMulticultural = makeCourse(
-    "Breadth Requirement Social and Behavioral Sciences",
-    "These courses provide students with an understanding of the behavior of individuals and social groups in the context of their human and natural environments. Courses emphasize the empirical findings, applications, and methods of the social and behavioral sciences.",
-    ["Fall", "Winter", "Spring", "Summer"],
-    [],
-    3
-);
-const BreadthRequirement = makeCourse(
-    "Breadth Requirement General",
-    "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
@@ -107,13 +213,6 @@ const ScienceRequirement2 = makeCourse(
     ["Fall"],
     [],
     4
-);
-const Free_Elective = makeCourse(
-    "Free Elective",
-    "Take a Free Elective",
-    ["Fall", "Winter", "Spring", "Summer"],
-    [],
-    3
 );
 const CISC355 = makeCourse(
     "CISC355: Computers, Ethics and Society",
@@ -358,14 +457,42 @@ const CISC360 = makeCourse(
     [CISC220, CISC260],
     3
 );
-const TRACK_Elective = makeCourse(
+const TRACK_Elective1 = makeCourse(
     "TRACK Elective",
     "Track Elective",
     ["Varies By Department"],
     [],
     3
 );
-const TRACK_Requirement = makeCourse(
+const TRACK_Elective2 = makeCourse(
+    "TRACK Elective",
+    "Track Elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const TRACK_Requirement1 = makeCourse(
+    "TRACK Requirment",
+    "TRACK Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const TRACK_Requirement2 = makeCourse(
+    "TRACK Requirment",
+    "TRACK Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const TRACK_Requirement3 = makeCourse(
+    "TRACK Requirment",
+    "TRACK Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const TRACK_Requirement4 = makeCourse(
     "TRACK Requirment",
     "TRACK Requirement",
     ["Varies By Department"],
@@ -405,13 +532,28 @@ const CISC401 = makeCourse(
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
 const allCourses = [
+    Free_Elective1,
+    Free_Elective2,
+    Free_Elective3,
+    Free_Elective4,
+    Free_Elective5,
+    Free_Elective6,
+    Free_Elective7,
+    Free_Elective8,
+    Free_Elective9,
+    Free_Elective10,
+    Free_Elective11,
     EGGG101,
     CISC108,
     MATH241,
     ENGL110,
     BreadthRequirementForeignLanguage,
     BreadthRequirementMulticultural,
-    BreadthRequirement,
+    BreadthRequirement1,
+    BreadthRequirement2,
+    BreadthRequirement3,
+    BreadthRequirement4,
+    BreadthRequirement5,
     CISC181,
     CISC210,
     MATH242,
@@ -420,7 +562,6 @@ const allCourses = [
     MATH210,
     ScienceRequirement1,
     ScienceRequirement2,
-    Free_Elective,
     CISC355,
     CISC275,
     MATH205_MATH350,
@@ -455,8 +596,12 @@ const allCourses = [
     CISC437,
     Advanced_Data_Science_Requirement,
     CISC360,
-    TRACK_Elective,
-    TRACK_Requirement,
+    TRACK_Elective1,
+    TRACK_Elective2,
+    TRACK_Requirement1,
+    TRACK_Requirement2,
+    TRACK_Requirement3,
+    TRACK_Requirement4,
     CISC471,
     Advanced_Systems_Requirment,
     Security_Elective,
@@ -467,22 +612,22 @@ const two_year_plan_BS = [
     CISC108,
     MATH241,
     ENGL110,
-    BreadthRequirement,
+    BreadthRequirement1,
     CISC181,
     CISC210,
     MATH242,
-    BreadthRequirement,
-    BreadthRequirement,
+    BreadthRequirement2,
+    BreadthRequirement3,
     CISC220,
     CISC260,
     MATH210,
     ScienceRequirement1,
-    Free_Elective,
+    Free_Elective2,
     CISC275,
     CISC355,
     MATH205_MATH350,
     ScienceRequirement2,
-    BreadthRequirementMulticultural
+    BreadthRequirement4
 ];
 const AI_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC304,
@@ -498,13 +643,13 @@ const AI_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC483,
     CISC498_Or_UNIV401,
     Restricted_CISC_Elective,
-    Free_Elective,
-    Free_Elective,
+    Free_Elective3,
+    Free_Elective4,
     CISC484,
     CISC499_Or_UNIV402,
     Restricted_CISC_Elective,
-    Free_Elective,
-    Free_Elective
+    Free_Elective5,
+    Free_Elective6
 ]);
 const Bioinformatics_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC320,
@@ -515,61 +660,61 @@ const Bioinformatics_Concentration_Courses = [...two_year_plan_BS].concat([
     BISC208,
     ENGL312_ENGL410,
     CISC483,
-    Free_Elective,
+    Free_Elective2,
     CISC498_Or_UNIV401,
     BISC401,
     Restricted_CISC_Elective,
-    Free_Elective,
-    Free_Elective,
+    Free_Elective3,
+    Free_Elective4,
     CISC499_Or_UNIV402,
     CISC436,
     Restricted_CISC_Elective,
-    Free_Elective,
-    Free_Elective
+    Free_Elective5,
+    Free_Elective6
 ]);
 const Cybersecurity_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC320,
     CISC361,
     CISC450,
     CISC_Elective,
-    Free_Elective,
+    Free_Elective3,
     CISC303,
     CISC372,
     ENGL312_ENGL410,
     Restricted_Elective,
-    Free_Elective,
+    Free_Elective4,
     CISC498_Or_UNIV401,
     CISC464,
     Advanced_Cybersecurity_Requirment,
-    Free_Elective,
+    Free_Elective5,
     Restricted_Elective,
     CISC499_Or_UNIV402,
     CISC465,
     CPEG494,
     Advanced_Cybersecurity_Requirment,
-    Free_Elective
+    Free_Elective6
 ]);
 const Data_Science_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC304,
     MATH349,
     CISC320,
     Advanced_Math_Requirement,
-    Free_Elective,
+    Free_Elective1,
     CISC303,
     CISC372,
     ENGL312_ENGL410,
     CISC437,
-    Free_Elective,
+    Free_Elective2,
     CISC498_Or_UNIV401,
     CISC481,
     Restricted_Elective,
-    Free_Elective,
-    Free_Elective,
+    Free_Elective3,
+    Free_Elective4,
     CISC499_Or_UNIV402,
     Advanced_Data_Science_Requirement,
     CISC_Elective,
-    Free_Elective,
-    Free_Elective
+    Free_Elective5,
+    Free_Elective6
 ]);
 const High_Performance_Computing_Concentration_Courses = [
     ...two_year_plan_BS
@@ -577,23 +722,23 @@ const High_Performance_Computing_Concentration_Courses = [
     CISC320,
     CISC360,
     CISC361,
-    TRACK_Elective,
-    TRACK_Requirement,
+    TRACK_Elective1,
+    TRACK_Requirement1,
     CISC303,
     CISC372,
     ENGL312_ENGL410,
-    Free_Elective,
-    Free_Elective,
+    Free_Elective1,
+    Free_Elective2,
     CISC498_Or_UNIV401,
-    TRACK_Elective,
-    TRACK_Requirement,
-    Free_Elective,
-    Free_Elective,
+    TRACK_Elective2,
+    TRACK_Requirement2,
+    Free_Elective3,
+    Free_Elective4,
     CISC499_Or_UNIV402,
     CISC450,
     CISC471,
-    TRACK_Requirement,
-    Free_Elective
+    TRACK_Requirement3,
+    Free_Elective5
 ]);
 const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat(
     [
@@ -606,17 +751,17 @@ const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat(
         CISC372,
         ENGL312_ENGL410,
         Restricted_Elective,
-        Free_Elective,
+        Free_Elective3,
         CISC498_Or_UNIV401,
         CISC450,
         Advanced_Systems_Requirment,
-        Free_Elective,
-        Free_Elective,
+        Free_Elective4,
+        Free_Elective5,
         CISC499_Or_UNIV402,
         CISC471,
         Advanced_Systems_Requirment,
         Security_Elective,
-        Free_Elective
+        Free_Elective6
     ]
 );
 const Theory_and_Computation_Computation_Courses = [...two_year_plan_BS].concat(
@@ -624,23 +769,23 @@ const Theory_and_Computation_Computation_Courses = [...two_year_plan_BS].concat(
         CISC304,
         MATH349,
         CISC320,
-        TRACK_Requirement,
-        Free_Elective,
+        TRACK_Requirement1,
+        Free_Elective2,
         CISC303,
         ENGL312_ENGL410,
-        TRACK_Requirement,
-        Free_Elective,
-        Free_Elective,
+        TRACK_Requirement2,
+        Free_Elective3,
+        Free_Elective4,
         CISC498_Or_UNIV401,
         CISC401,
         Restricted_Elective,
-        TRACK_Requirement,
-        Free_Elective,
+        TRACK_Requirement3,
+        Free_Elective5,
         CISC499_Or_UNIV402,
         Restricted_Elective,
-        TRACK_Requirement,
+        TRACK_Requirement4,
         CISC_Elective,
-        Free_Elective
+        Free_Elective6
     ]
 );
 // degree declarations
