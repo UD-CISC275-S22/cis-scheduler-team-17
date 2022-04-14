@@ -635,6 +635,106 @@ const DLE_Capstone = makeCourse(
     [],
     3
 );
+// BS Information Systems
+const ACCT207 = makeCourse(
+    "ACCT207: Accounting I",
+    "An introduction to financial accounting. Topics: the accounting cycle, merchandise accounting, accounting procedures for cash, receivables, payables, inventories, plant and equipment, stocks and bonds.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const CISC250 = makeCourse(
+    "CISC250: Business Telecommunication Networks",
+    "Examines technologies of information transmission currently utilized in the business environments and the implications of these technologies upon the development and implementation of information systems. Provides a basic background in the convergence of voice, data and video services into common digital networks. Security issues also considered.",
+    ["Spring"],
+    [CISC181],
+    3
+);
+const ACCT208 = makeCourse(
+    "ACCT208: Accounting II",
+    "Introduction to managerial accounting. Topics: manufacturing accounting, cost-volume-profit analysis, job-order accounting, budgeting, standard costs and variance analysis, contribution approach to decision analysis, absorption and variable costing.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [ACCT207],
+    3
+);
+const STAT200 = makeCourse(
+    "STAT200: Basic Statistical Practice",
+    "Uses data from a variety of disciplines to explore topics in statistical data analysis, estimation, and inference. The following topics will be covered: graphical displays; measures of position, central tendency, and variability; basic probability rules; discrete probability distributions; binomial distribution; normal and standard normal probability distributions; sampling distributions; the t distribution; confidence intervals and hypothesis tests for one mean or proportion; confidence intervals and hypothesis tests for two means or proportions; correlation and simple linear regression. ",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BUAD306 = makeCourse(
+    "BUAD306: Introduction to Service and Operations Management",
+    "Analysis of major problems faced by operations managers at different levels of management. Topics include scheduling, forecasting, process design, inventory management and quality management.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [STAT200],
+    3
+);
+const IS_Elective1 = makeCourse(
+    "IS Elective",
+    "This is an IS Elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const IS_Elective2 = makeCourse(
+    "IS Elective",
+    "This is an IS Elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const BUAD301 = makeCourse(
+    "BUAD301: Introduction to Marketing",
+    "Management of the marketing functions, marketing research, product planning, distribution channels, pricing, personal selling, and advertising. Emphasis on consumer and industrial markets.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const BUAD309 = makeCourse(
+    "BUAD309: Organizational Behavior",
+    "Examines individual, group, and organizational determinants of work behavior in organizations. Theory and concepts relevant to individual differences, attitudes, motivation, teams, leadership, power, and organizational culture and change are discussed with an emphasis on applying this knowledge to the challenges of management in a variety of organizations.",
+    ["Fall", "Winter", "Spring", "Summer"],
+    [],
+    3
+);
+const COMM212 = makeCourse(
+    "COMM212: Public Speaking & Professional Presentation",
+    "Includes an analysis of the types and principles of the communication inherent in the business and professional setting; a concentration upon the development of presentational skills: analyzing audiences, questioning, interviewing, researching, supporting, organizing and delivering information; an opportunity to develop and present materials within dyads, small groups and public contexts.",
+    ["Fall", "Spring"],
+    [],
+    3
+);
+const MISY430 = makeCourse(
+    "MISY430: Systems Analysis and Implementation",
+    "Covers the challenges of developing and managing systems analysis and design projects. Students learn to determine systems requirements, analyze systems problems, model potential solutions and design and implement these solutions. Other current topics will be included to reflect the changing information systems environment.",
+    ["Fall"],
+    [CISC437],
+    3
+);
+const CISC475 = makeCourse(
+    "CISC475: Advanced Software Engineering",
+    "Understand and apply a complete modern software engineering process. Topics include requirements analysis, specification, design, implementation, verification, and project management. Real-life team projects cover all aspects of the software development lifecycle, from the requirements to acceptance testing.",
+    ["Varies By Department"],
+    [CISC275, CISC361],
+    3
+);
+const MISY431 = makeCourse(
+    "MISY431: MIS Project Management",
+    "MISY431 and MISY 432 serve as the MIS program capstone. Students learn project management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various enterprises.",
+    ["Spring"],
+    [MISY430],
+    3
+);
+const MISY432 = makeCourse(
+    "MISY432: MIS Projects",
+    "MISY 431 and MISY 432 serve as the MIS program capstone. Students learn design, implementation and client management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various regional enterprises.",
+    ["Spring"],
+    [MISY430],
+    3
+);
+
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
 const allCourses = [
@@ -726,7 +826,21 @@ const allCourses = [
     CISC_300_Technical_Elective4,
     CISC_300_Technical_Elective5,
     Second_Writing_Requirement,
-    DLE_Capstone
+    DLE_Capstone,
+    ACCT207,
+    CISC250,
+    ACCT208,
+    STAT200,
+    BUAD306,
+    IS_Elective1,
+    IS_Elective2,
+    BUAD301,
+    BUAD309,
+    COMM212,
+    MISY430,
+    CISC475,
+    MISY431,
+    MISY432
 ];
 const two_year_plan_BS = [
     EGGG101,
@@ -909,7 +1023,7 @@ const Theory_and_Computation_Computation_Courses = [...two_year_plan_BS].concat(
         Free_Elective6
     ]
 );
-const CISC_BA_Courses = [...two_year_plan_BS].concat([
+const CISC_BA_Courses = [
     CISC108,
     EGGG101,
     ENGL110,
@@ -950,7 +1064,49 @@ const CISC_BA_Courses = [...two_year_plan_BS].concat([
     Free_Elective9,
     Free_Elective10,
     Free_Elective11
-]);
+];
+const Information_Systems_Courses = [
+    CISC108,
+    EGGG101,
+    ENGL110,
+    MATH241,
+    BreadthRequirement1,
+    CISC181,
+    CISC210,
+    MATH210,
+    BreadthRequirement2,
+    BreadthRequirement3,
+    ACCT207,
+    CISC220,
+    CISC250,
+    MATH205_MATH350,
+    ScienceRequirement1,
+    ACCT208,
+    CISC275,
+    ScienceRequirement2,
+    BreadthRequirement4,
+    Free_Elective1,
+    BUAD306,
+    ENGL312_ENGL410,
+    IS_Elective1,
+    Free_Elective2,
+    Free_Elective3,
+    BUAD301,
+    BUAD309,
+    CISC437,
+    IS_Elective2,
+    Free_Elective4,
+    CISC355,
+    COMM212,
+    MISY430,
+    Free_Elective5,
+    Free_Elective6,
+    CISC475,
+    MISY431,
+    MISY432,
+    Free_Elective7,
+    Free_Elective8
+];
 // degree declarations
 const NoDegree = makeDegree(
     "No Degree Has been selected",
@@ -1006,6 +1162,12 @@ const CISC_BA = makeDegree(
     CISC_BA_Courses,
     124
 );
+const Information_Systems = makeDegree(
+    "BS in Information Systems",
+    "A combination of business and information technology subjects oriented toward students interested in the design of new software systems for business and consumer needs.",
+    Information_Systems_Courses,
+    124
+);
 // lists of all courses and degrees
 const AllDegrees = [
     NoDegree,
@@ -1016,6 +1178,7 @@ const AllDegrees = [
     High_Performance_Computing_Concentration,
     Systems_and_Networks_Concentration,
     Theory_and_Computation_Computation,
-    CISC_BA
+    CISC_BA,
+    Information_Systems
 ];
 console.log(AllDegrees);
