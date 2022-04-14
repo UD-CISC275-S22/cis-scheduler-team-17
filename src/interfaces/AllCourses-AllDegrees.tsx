@@ -327,6 +327,34 @@ const Restricted_CISC_Elective = makeCourse(
     [],
     3
 );
+const Restricted_Elective1 = makeCourse(
+    "Restricted Elective",
+    "This is a restrictive elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Restricted_Elective2 = makeCourse(
+    "Restricted Elective",
+    "This is a restrictive elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Restricted_Elective3 = makeCourse(
+    "Restricted Elective",
+    "This is a restrictive elective",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Restricted_Elective4 = makeCourse(
+    "Restricted Elective",
+    "This is a restrictive elective",
+    ["Varies By Department"],
+    [],
+    3
+);
 const CISC303 = makeCourse(
     "CISC303: Automata Theory",
     "Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.",
@@ -455,14 +483,14 @@ const CISC464 = makeCourse(
     [CISC450],
     3
 );
-const Restricted_Elective = makeCourse(
-    "Restricted Elective",
-    "This is a restrictive elective",
+const Advanced_Cybersecurity_Requirment1 = makeCourse(
+    "Advanced Cybersecurity Requirement",
+    "You need to take an advanced cybersecurity requirement",
     ["Varies By Department"],
     [],
     3
 );
-const Advanced_Cybersecurity_Requirment = makeCourse(
+const Advanced_Cybersecurity_Requirment2 = makeCourse(
     "Advanced Cybersecurity Requirement",
     "You need to take an advanced cybersecurity requirement",
     ["Varies By Department"],
@@ -563,7 +591,14 @@ const CISC471 = makeCourse(
     3
 );
 //Systems and networks concentration
-const Advanced_Systems_Requirment = makeCourse(
+const Advanced_Systems_Requirment1 = makeCourse(
+    "Advanced System Requirement",
+    "Advanced System Requirement",
+    ["Varies By Department"],
+    [],
+    3
+);
+const Advanced_Systems_Requirment2 = makeCourse(
     "Advanced System Requirement",
     "Advanced System Requirement",
     ["Varies By Department"],
@@ -802,8 +837,12 @@ const allCourses = [
     CISC450,
     CISC372,
     CISC464,
-    Restricted_Elective,
-    Advanced_Cybersecurity_Requirment,
+    Restricted_Elective1,
+    Restricted_Elective2,
+    Restricted_Elective3,
+    Restricted_Elective4,
+    Advanced_Cybersecurity_Requirment1,
+    Advanced_Cybersecurity_Requirment2,
     CISC465,
     CPEG494,
     Advanced_Math_Requirement,
@@ -817,7 +856,8 @@ const allCourses = [
     TRACK_Requirement3,
     TRACK_Requirement4,
     CISC471,
-    Advanced_Systems_Requirment,
+    Advanced_Systems_Requirment1,
+    Advanced_Systems_Requirment2,
     Security_Elective,
     CISC401,
     CISC_300_Technical_Elective1,
@@ -869,20 +909,20 @@ const AI_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC320,
     CISC361,
     CISC_Elective,
-    Restricted_CISC_Elective,
+    Restricted_Elective1,
     CISC303,
     CISC442,
     CISC481,
     ENGL312_ENGL410,
-    Restricted_CISC_Elective,
+    Restricted_Elective2,
     CISC483,
     CISC498_Or_UNIV401,
-    Restricted_CISC_Elective,
+    Restricted_Elective3,
     Free_Elective3,
     Free_Elective4,
     CISC484,
     CISC499_Or_UNIV402,
-    Restricted_CISC_Elective,
+    Restricted_Elective4,
     Free_Elective5,
     Free_Elective6
 ]);
@@ -898,12 +938,12 @@ const Bioinformatics_Concentration_Courses = [...two_year_plan_BS].concat([
     Free_Elective2,
     CISC498_Or_UNIV401,
     BISC401,
-    Restricted_CISC_Elective,
+    Restricted_Elective1,
     Free_Elective3,
     Free_Elective4,
     CISC499_Or_UNIV402,
     CISC436,
-    Restricted_CISC_Elective,
+    Restricted_Elective2,
     Free_Elective5,
     Free_Elective6
 ]);
@@ -916,17 +956,17 @@ const Cybersecurity_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC303,
     CISC372,
     ENGL312_ENGL410,
-    Restricted_Elective,
+    Restricted_Elective1,
     Free_Elective4,
     CISC498_Or_UNIV401,
     CISC464,
-    Advanced_Cybersecurity_Requirment,
+    Advanced_Cybersecurity_Requirment1,
     Free_Elective5,
-    Restricted_Elective,
+    Restricted_Elective2,
     CISC499_Or_UNIV402,
     CISC465,
     CPEG494,
-    Advanced_Cybersecurity_Requirment,
+    Advanced_Cybersecurity_Requirment2,
     Free_Elective6
 ]);
 const Data_Science_Concentration_Courses = [...two_year_plan_BS].concat([
@@ -942,7 +982,7 @@ const Data_Science_Concentration_Courses = [...two_year_plan_BS].concat([
     Free_Elective2,
     CISC498_Or_UNIV401,
     CISC481,
-    Restricted_Elective,
+    Restricted_Elective1,
     Free_Elective3,
     Free_Elective4,
     CISC499_Or_UNIV402,
@@ -980,21 +1020,21 @@ const Systems_and_Networks_Concentration_Courses = [...two_year_plan_BS].concat(
         CISC320,
         CISC360,
         CISC361,
-        Restricted_Elective,
+        Restricted_Elective1,
         CISC_Elective,
         CISC303,
         CISC372,
         ENGL312_ENGL410,
-        Restricted_Elective,
+        Restricted_Elective2,
         Free_Elective3,
         CISC498_Or_UNIV401,
         CISC450,
-        Advanced_Systems_Requirment,
+        Advanced_Systems_Requirment1,
         Free_Elective4,
         Free_Elective5,
         CISC499_Or_UNIV402,
         CISC471,
-        Advanced_Systems_Requirment,
+        Advanced_Systems_Requirment2,
         Security_Elective,
         Free_Elective6
     ]
@@ -1013,11 +1053,11 @@ const Theory_and_Computation_Computation_Courses = [...two_year_plan_BS].concat(
         Free_Elective4,
         CISC498_Or_UNIV401,
         CISC401,
-        Restricted_Elective,
+        Restricted_Elective1,
         TRACK_Requirement3,
         Free_Elective5,
         CISC499_Or_UNIV402,
-        Restricted_Elective,
+        Restricted_Elective2,
         TRACK_Requirement4,
         CISC_Elective,
         Free_Elective6
