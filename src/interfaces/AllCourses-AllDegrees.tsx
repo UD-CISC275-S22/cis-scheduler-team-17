@@ -371,7 +371,7 @@ const CISC442 = makeCourse(
 );
 const ENGL312_ENGL410 = makeCourse(
     "ENGL312/ENGL410",
-    "English COurse",
+    "English Course",
     [],
     [],
     3
@@ -1192,7 +1192,7 @@ const Systems_and_Networks_Concentration = makeDegree(
 );
 const Theory_and_Computation_Computation = makeDegree(
     "Theory and Computation Concentration",
-    "The Theory and Computation concentration bridges the mathematics-computer science interface. Applications flow in both directions: mathematical concepts, such as formal logic, automata, and models of computation, form the theoretical foundation of computer science, while computational methods are widely used in many areas of mathematics, including linear algebra, graph theory, differential equations, algebra, theorem proving, and algorithmic analysis. The concentration offers a broad spectrum of courses in these and other subjects in mathematics and computer science. Students in the concentration have a choice between a â€œdiscreteâ€ and a continuous track.",
+    "The Theory and Computation concentration bridges the mathematics-computer science interface. Applications flow in both directions: mathematical concepts, such as formal logic, automata, and models of computation, form the theoretical foundation of computer science, while computational methods are widely used in many areas of mathematics, including linear algebra, graph theory, differential equations, algebra, theorem proving, and algorithmic analysis. The concentration offers a broad spectrum of courses in these and other subjects in mathematics and computer science. Students in the concentration have a choice between a discrete and a continuous track.",
     Theory_and_Computation_Computation_Courses,
     124
 );
@@ -1209,7 +1209,7 @@ const Information_Systems = makeDegree(
     124
 );
 // lists of all courses and degrees
-const AllDegrees = [
+export const AllDegrees = [
     NoDegree,
     Artificial_Intelligence_and_Robotics_Concentration,
     Bioinformatics_Concentration,

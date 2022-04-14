@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import "../App.css";
 //import Homepage from "./Homepage";
 
@@ -8,6 +8,27 @@ export function SchedulerPage({
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
+    function showSemester(): JSX.Element {
+        return (
+            <div>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th> Semester + Year </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                {/* <Button onClick={() => deleteSemester()}></Button> */}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr> Course ID </tr>
+                    <tr> Number of Credits </tr>
+                    <tbody>All of the data</tbody>
+                </Table>
+            </div>
+        );
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -16,8 +37,11 @@ export function SchedulerPage({
             <div>
                 <h3>You are planning a [] degree</h3>
             </div>
-            <footer className="footer">
-                <Button onClick={changeHomepage}>Back</Button>
+            <div>{showSemester()}</div>
+            <footer className="back">
+                <Button className="backButton" onClick={changeHomepage}>
+                    Back
+                </Button>
             </footer>
         </div>
     );
