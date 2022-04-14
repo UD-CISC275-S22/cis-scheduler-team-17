@@ -8,7 +8,7 @@
       at App (src/App.tsx:22:30)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (76 ms)
+  ✕ renders the course name somewhere (71 ms)
 
   ● renders the course name somewhere
 
@@ -125,23 +125,20 @@ FAIL src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   11.36 |       75 |   27.27 |   11.36 |                   
+All files                    |    3.57 |       75 |   42.85 |    3.57 |                   
  src                         |      75 |       75 |      50 |      75 |                   
   App.tsx                    |      75 |       75 |      50 |      75 | 10                
  src/components              |   66.66 |      100 |   66.66 |   66.66 |                   
   Homepage.tsx               |     100 |      100 |     100 |     100 |                   
   SchedulerPage.tsx          |     100 |      100 |     100 |     100 |                   
   Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                 
- src/components/pages        |       0 |      100 |       0 |       0 |                   
-  Homepage.tsx               |       0 |      100 |       0 |       0 | 7-11              
-  SchedulerPage.tsx          |       0 |      100 |       0 |       0 | 7-11              
  src/interfaces              |       0 |      100 |       0 |       0 |                   
-  AllCourses-AllDegrees.tsx  |       0 |      100 |     100 |       0 | 6-213             
+  AllCourses-AllDegrees.tsx  |       0 |      100 |     100 |       0 | 5-1224            
   course-Degree-Semester.ts  |       0 |        0 |       0 |       0 |                   
   makeDegree-Makecourses.tsx |       0 |      100 |       0 |       0 | 10-26             
 -----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.157 s
+Time:        2.2 s
 Ran all test suites.
