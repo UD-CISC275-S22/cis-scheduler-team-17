@@ -13,15 +13,18 @@ export function SelectCoursesTaken(): JSX.Element {
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         AllCourses[0].name
     );
+    const [currentTaken, setCurrentTaken] = useState<boolean>();
 
-    function updateCourseTaken(event: ChangeEvent) {
+    function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
         setCurrentCourseName(event.target.value);
-        const selectedCourse = currentDegree.CoursesRequired.filter(
-            (courses: Course): boolean => courses.name === currentCourseName
+        const currentCourse = currentDegree.CoursesRequired.filter(
+            (currentCourse: Course): boolean =>
+                event.target.value === currentCourse.name
         );
-        const coursetoUpdate = selectedCourse[0];
-        coursetoUpdate.taken = !coursetoUpdate.taken;
+        const ourCourse = currentCourse[0];
+        ourCourse.taken = !ourCourse.taken;
+        setCurrentTaken(ourCourse.taken);
     }
     return (
         <div>
@@ -30,17 +33,17 @@ export function SelectCoursesTaken(): JSX.Element {
             {currentDegree.CoursesRequired.map((currentCourse: Course) => (
                 <div key={currentCourse.name}>
                     <Form.Check
-                        value={"course"}
-                        id="CourseTaken"
                         type="checkbox"
+                        id={currentCourse.name}
                         onChange={updateCourseTaken}
-                        checked={currentCourse.taken}
-                        style={{ color: "midnightblue" }}
+                        name="courses"
+                        checked={currentCourse.taken === true}
+                        value={currentCourse.name}
                         key={currentCourse.name}
                         label={
                             "Course Name: " +
                             currentCourse.name +
-                            " ..... Course Description: " +
+                            " /n Course Description: " +
                             currentCourse.description +
                             " ..... Course Credits: " +
                             currentCourse.credits +

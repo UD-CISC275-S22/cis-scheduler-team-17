@@ -3,7 +3,7 @@ import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
 //These are all of the hard coded courses
 // Free Credits
 const Free_Elective1 = makeCourse(
-    "Free Elective",
+    "Free Elective #1",
     "Take a Free Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
