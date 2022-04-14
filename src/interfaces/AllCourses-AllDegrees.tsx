@@ -1209,7 +1209,7 @@ const Information_Systems = makeDegree(
     124
 );
 // lists of all courses and degrees
-const AllDegrees = [
+export const AllDegrees = [
     NoDegree,
     Artificial_Intelligence_and_Robotics_Concentration,
     Bioinformatics_Concentration,
