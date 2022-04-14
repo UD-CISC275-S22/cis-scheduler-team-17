@@ -47,12 +47,10 @@
 }
 
 .footer{
-    position: absolute;
+    position: bottom;
     font-size: 20px;
     background-color: #1d785d;
     background-image: url("CSS-Images/footer.jpg");
-    bottom: 0;
-    left: 0;
     width: 100%;
     color: white;
 }
@@ -60,8 +58,8 @@
 button{
     background-image: url("CSS-Images/footer.jpg");
     color: white;
-    height: 50%;
-    width: 50%;
+    height: 100px;
+    width: 200px;
     margin: 10%;
 }
 
