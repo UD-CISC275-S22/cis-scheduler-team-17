@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Degree } from "../interfaces/course-Degree-Semester";
 import "../App.css";
-import { Form, Tooltip } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement

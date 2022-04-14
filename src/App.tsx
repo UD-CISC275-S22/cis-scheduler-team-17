@@ -4,6 +4,10 @@ import "./App.css";
 import SchedulerPage from "./components/SchedulerPage";
 import Homepage from "./components/Homepage";
 
+//interfaces
+import { AllDegrees } from "./interfaces/AllCourses-AllDegrees";
+import { allCourses } from "./interfaces/AllCourses-AllDegrees";
+
 function App(): JSX.Element {
     const [homepage, setHomepage] = useState<boolean>(true);
     const changeHomepage = () => {
