@@ -10,8 +10,6 @@ type ChangeEvent = React.ChangeEvent<
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
     const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
-    const [courseTaken, setCourseTaken] = useState<boolean>(false);
-    const [currentCourse1, setCurrentCourse] = useState<Course>(AllCourses[0]);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         AllCourses[0].name
     );
@@ -28,51 +26,46 @@ export function SelectCoursesTaken(): JSX.Element {
     return (
         <div>
             <div>Please Select The Courses You Have Already Taken</div>
-            <Form.Group controlId="coursesNeeded">
-                {currentDegree.CoursesRequired.map((currentCourse: Course) => (
-                    <div key={currentCourse.name}>
-                        <Form.Check
-                            value={"course"}
-                            id="CourseTaken"
-                            type="checkbox"
-                            onChange={updateCourseTaken}
-                            checked={currentCourse.taken}
-                            style={{ color: "midnightblue" }}
-                            key={currentCourse.name}
-                        >
-                            <input
-                                type="checkbox"
-                                value={"course"}
-                                onChange={updateCourseTaken}
-                                checked={currentCourse.taken}
-                            />
-                            Course Name: {currentCourse.name} {" ...... "}
-                            Question Type: {currentCourse.description}{" "}
-                            {" ...... "}
-                            Course Credits: {currentCourse.credits} {" ...... "}
-                            Time Available:{" "}
-                            {currentCourse.SemesterAvailable.map(
+
+            {currentDegree.CoursesRequired.map((currentCourse: Course) => (
+                <div key={currentCourse.name}>
+                    <Form.Check
+                        value={"course"}
+                        id="CourseTaken"
+                        type="checkbox"
+                        onChange={updateCourseTaken}
+                        checked={currentCourse.taken}
+                        style={{ color: "midnightblue" }}
+                        key={currentCourse.name}
+                        label={
+                            "Course Name: " +
+                            currentCourse.name +
+                            " ..... Course Description: " +
+                            currentCourse.description +
+                            " ..... Course Credits: " +
+                            currentCourse.credits +
+                            " ...... Semesters Available" +
+                            currentCourse.SemesterAvailable.map(
                                 (currentSeason: Season) => (
                                     <span key={currentSeason}>
                                         {currentSeason},{" "}
                                     </span>
                                 )
-                            )}
-                            Pre Requisites:{" "}
-                            {currentCourse.prerecs.map(
+                            ) +
+                            currentCourse.prerecs.map(
                                 (currentPreRec: Course) => (
                                     <div key={currentPreRec.name}>
                                         {currentPreRec.name} Taken:{" "}
                                         {currentPreRec.taken ? "✔️" : "❌"}
                                     </div>
                                 )
-                            )}{" "}
-                            {" ...... "}
-                            {currentCourse.taken ? "✔️" : "❌"}
-                        </Form.Check>
-                    </div>
-                ))}
-            </Form.Group>
+                            ) +
+                            " ...... " +
+                            <div>{currentCourse.taken ? "✔️" : "❌"}</div>
+                        }
+                    />
+                </div>
+            ))}
         </div>
     );
 }
