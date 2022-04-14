@@ -38,8 +38,10 @@ export function SchedulerPage({
                 <h3>You are planning a [] degree</h3>
             </div>
             <div>{showSemester()}</div>
-            <footer className="footer">
-                <Button onClick={changeHomepage}>Back</Button>
+            <footer className="back">
+                <Button className="backButton" onClick={changeHomepage}>
+                    Back
+                </Button>
             </footer>
         </div>
     );

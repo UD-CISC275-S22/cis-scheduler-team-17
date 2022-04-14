@@ -15,7 +15,7 @@ function Homepage({
             <header className="App-header">
                 Computer & Information Sciences Schedule Planner
             </header>
-            <div>
+            <div className="body">
                 <Container>
                     <Row>
                         <Col>
@@ -25,7 +25,10 @@ function Homepage({
                             <span>Taken Courses</span>
                         </Col>
                         <Col>
-                            <Button onClick={changeHomepage}>
+                            <Button
+                                className="makeButton"
+                                onClick={changeHomepage}
+                            >
                                 Make Schedule
                             </Button>
                         </Col>
