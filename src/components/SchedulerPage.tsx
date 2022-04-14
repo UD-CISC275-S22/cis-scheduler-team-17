@@ -2,9 +2,14 @@ import React from "react";
 import { Button, Table } from "react-bootstrap";
 import "../App.css";
 //import Homepage from "./Homepage";
+//interfaces
+import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
+import { allCourses } from "../interfaces/AllCourses-AllDegrees";
 
 export function SchedulerPage({
-    changeHomepage
+    changeHomepage,
+    degrees,
+    courses
 }: {
     changeHomepage: () => void;
 }): JSX.Element {

@@ -22,6 +22,8 @@ function App(): JSX.Element {
                 <div style={{ display: !homepage ? "block" : "none" }}>
                     <SchedulerPage
                         changeHomepage={changeHomepage}
+                        degrees={AllDegrees}
+                        courses={allCourses}
                     ></SchedulerPage>
                     {console.log(homepage)}
                 </div>
