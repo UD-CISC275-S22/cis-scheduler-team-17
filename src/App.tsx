@@ -1,18 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import "./App.css";
-import SchedulerPage from "./components/pages/SchedulerPage";
-import Homepage from "./components/pages/Homepage";
 //import { UnderConstruction } from "./components/Underconstruction";
+import SchedulerPage from "./components/SchedulerPage";
+import Homepage from "./components/Homepage";
 
 function App(): JSX.Element {
+    const [homepage, setHomepage] = useState<boolean>(true);
+    const changeHomepage = () => {
+        setHomepage(!homepage);
+    };
     return (
-        <Router>
-            <Routes>
-                <Route path="/homepage" element={<Homepage />} />
-                <Route path="/make-schedule" element={<SchedulerPage />} />
-            </Routes>
-        </Router>
+        <div className="App">
+            <div>
+                {homepage && (
+                    <Homepage changeHomepage={changeHomepage}></Homepage>
+                )}
+                <div style={{ display: !homepage ? "block" : "none" }}>
+                    <SchedulerPage
+                        changeHomepage={changeHomepage}
+                    ></SchedulerPage>
+                    {console.log(homepage)}
+                </div>
+            </div>
+            {/* <UnderConstruction></UnderConstruction> */}
+        </div>
     );
 }
 

@@ -1,34 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import "../../App.css";
-import { DropdownDegrees } from "../DropdownDegrees";
+import "../App.css";
+//import { UnderConstruction } from "./Underconstruction";
+//import SchedulerPage from "./SchedulerPage";
 
-function Homepage(): JSX.Element {
-    const nav = useNavigate();
-    const goToScheduler = () => {
-        nav("/make-schedule");
-    };
+function Homepage({
+    changeHomepage
+}: {
+    changeHomepage: () => void;
+}): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
                 Computer & Information Sciences Schedule Planner
             </header>
-            <div className="Welcome-Message">
-                Welcome to Schedule Planner! Click a current plan or create a
-                new plan to get started.
-            </div>
             <div>
                 <Container>
                     <Row>
                         <Col>
-                            <DropdownDegrees></DropdownDegrees>
+                            <span>Degree</span>
                         </Col>
                         <Col>
                             <span>Taken Courses</span>
                         </Col>
                         <Col>
-                            <Button onClick={goToScheduler}>
+                            <Button onClick={changeHomepage}>
                                 Make Schedule
                             </Button>
                         </Col>
