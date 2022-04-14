@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { UnderConstruction } from "./components/Underconstruction";
+//import { UnderConstruction } from "./components/Underconstruction";
+import SchedulerPage from "./components/SchedulerPage";
+import Homepage from "./components/Homepage";
 
 function App(): JSX.Element {
+    const [homepage, setHomepage] = useState<boolean>(true);
+    const changeHomepage = () => {
+        setHomepage(!homepage);
+    };
     return (
         <div className="App">
-            <header className="App-header">
-                Computer & Information Sciences Schedule Planner
-            </header>
-            <div className="Welcome-Message">
-                Welcome to CISC Schedule Planner. <br></br>To get started,
-                please click your desired degree.
+            <div>
+                {homepage && (
+                    <Homepage changeHomepage={changeHomepage}></Homepage>
+                )}
+                <div style={{ display: !homepage ? "block" : "none" }}>
+                    <SchedulerPage
+                        changeHomepage={changeHomepage}
+                    ></SchedulerPage>
+                    {console.log(homepage)}
+                </div>
             </div>
-            <UnderConstruction></UnderConstruction>
-            <footer className="footer">
-                Constributers: Team 17
-                <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
-            </footer>
+            {/* <UnderConstruction></UnderConstruction> */}
         </div>
     );
 }
