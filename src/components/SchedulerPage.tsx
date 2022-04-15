@@ -7,9 +7,7 @@ import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { allCourses } from "../interfaces/AllCourses-AllDegrees";
 
 export function SchedulerPage({
-    changeHomepage,
-    degrees,
-    courses
+    changeHomepage
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
