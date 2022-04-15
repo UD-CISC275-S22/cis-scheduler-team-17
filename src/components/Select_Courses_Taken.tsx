@@ -50,13 +50,11 @@ export function SelectCoursesTaken(): JSX.Element {
                             currentCourse.credits +
                             " ...... Semesters Available: " +
                             currentCourse.SemestersAvailableString +
+                            " ...... Pre Requisite: " +
                             currentCourse.prerecs.map(
-                                (currentPreRec: Course) => (
-                                    <div key={currentPreRec.name}>
-                                        {currentPreRec.name} Taken:{" "}
-                                        {currentPreRec.taken ? "✔️" : "❌"}
-                                    </div>
-                                )
+                                (currentPreRec: Course) =>
+                                    currentPreRec.name +
+                                    currentPreRec.taken_String
                             ) +
                             " ...... Taken: " +
                             currentCourse.taken_String
