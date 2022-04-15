@@ -14,12 +14,16 @@ export interface Course {
     description: string;
     /** The semesters when the class is offered */
     SemesterAvailable: Season[];
+    // the string that prints the seeasons available
+    SemestersAvailableString: string;
     /** The courses that need to be taken before you can take this course */
     prerecs: Course[];
     /** The number of credits the course is worth */
     credits: number;
     /** Whether or not the user has taken the course */
     taken: boolean;
+    /**taken String */
+    taken_String: string;
 }
 
 export interface Degree {

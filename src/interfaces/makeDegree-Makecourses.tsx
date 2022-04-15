@@ -11,9 +11,11 @@ export function makeCourse(
         name: name,
         description: description,
         SemesterAvailable: SemesterAvailable,
+        SemestersAvailableString: SemesterAvailable.join(", "),
         prerecs: prerecs,
         credits: credits,
-        taken: false
+        taken: false,
+        taken_String: "❌"
     };
 }
 

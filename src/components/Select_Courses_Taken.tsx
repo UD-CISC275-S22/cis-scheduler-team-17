@@ -25,6 +25,7 @@ export function SelectCoursesTaken(): JSX.Element {
         const ourCourse = currentCourse[0];
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
+        ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
     }
     return (
         <div>
@@ -43,18 +44,12 @@ export function SelectCoursesTaken(): JSX.Element {
                         label={
                             "Course Name: " +
                             currentCourse.name +
-                            " /n Course Description: " +
+                            " \n Course Description: " +
                             currentCourse.description +
-                            " ..... Course Credits: " +
+                            " \n Course Credits: " +
                             currentCourse.credits +
-                            " ...... Semesters Available" +
-                            currentCourse.SemesterAvailable.map(
-                                (currentSeason: Season) => (
-                                    <span key={currentSeason}>
-                                        {currentSeason},{" "}
-                                    </span>
-                                )
-                            ) +
+                            " ...... Semesters Available: " +
+                            currentCourse.SemestersAvailableString +
                             currentCourse.prerecs.map(
                                 (currentPreRec: Course) => (
                                     <div key={currentPreRec.name}>
@@ -63,8 +58,8 @@ export function SelectCoursesTaken(): JSX.Element {
                                     </div>
                                 )
                             ) +
-                            " ...... " +
-                            <div>{currentCourse.taken ? "✔️" : "❌"}</div>
+                            " ...... Taken: " +
+                            currentCourse.taken_String
                         }
                     />
                 </div>
