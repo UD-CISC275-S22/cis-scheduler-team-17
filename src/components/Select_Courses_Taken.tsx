@@ -10,6 +10,7 @@ type ChangeEvent = React.ChangeEvent<
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
     const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
+    const [progress, setProgress] = useState(0);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         AllCourses[0].name
     );
@@ -27,41 +28,95 @@ export function SelectCoursesTaken(): JSX.Element {
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
     }
+    const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
+        // this handles the scrolling of the box
+        const containerHeight = event.currentTarget.clientHeight;
+        const scrollHeight = event.currentTarget.scrollHeight;
+
+        const scrollTop = event.currentTarget.scrollTop;
+        setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
+    };
+
     return (
         <div>
             <div>Please Select The Courses You Have Already Taken</div>
-
-            {currentDegree.CoursesRequired.map((currentCourse: Course) => (
-                <div key={currentCourse.name}>
-                    <Form.Check
-                        type="checkbox"
-                        id={currentCourse.name}
-                        onChange={updateCourseTaken}
-                        name="courses"
-                        checked={currentCourse.taken === true}
-                        value={currentCourse.name}
-                        key={currentCourse.name}
-                        label={
-                            "Course Name: " +
-                            currentCourse.name +
-                            " \n Course Description: " +
-                            currentCourse.description +
-                            " \n Course Credits: " +
-                            currentCourse.credits +
-                            " ...... Semesters Available: " +
-                            currentCourse.SemestersAvailableString +
-                            " ...... Pre Requisite: " +
-                            currentCourse.prerecs.map(
-                                (currentPreRec: Course) =>
-                                    currentPreRec.name +
-                                    currentPreRec.taken_String
-                            ) +
-                            " ...... Taken: " +
-                            currentCourse.taken_String
-                        }
-                    />
-                </div>
-            ))}
+            <div style={styles.container} onScroll={scrollHandler}>
+                {currentDegree.CoursesRequired.map((currentCourse: Course) => (
+                    <div key={currentCourse.name}>
+                        <Form.Check
+                            type="checkbox"
+                            id={currentCourse.name}
+                            onChange={updateCourseTaken}
+                            name="courses"
+                            checked={currentCourse.taken === true}
+                            value={currentCourse.name}
+                            key={currentCourse.name}
+                            label={
+                                "Course Name: " +
+                                currentCourse.name +
+                                " \n Course Description: " +
+                                currentCourse.description +
+                                " \n Course Credits: " +
+                                currentCourse.credits +
+                                " ...... Semesters Available: " +
+                                currentCourse.SemestersAvailableString +
+                                " ...... Pre Requisite: " +
+                                currentCourse.prerecs.map(
+                                    (currentPreRec: Course) =>
+                                        currentPreRec.name +
+                                        currentPreRec.taken_String
+                                ) +
+                                " ...... Taken: " +
+                                currentCourse.taken_String
+                            }
+                        />
+                    </div>
+                ))}
+            </div>
+            {/**progress Bar */}
+            <div style={styles.progressBar}>
+                <div
+                    style={{ ...styles.progressValue, width: `${progress}%` }}
+                ></div>
+            </div>
+            <p style={styles.text}>{progress.toFixed(2)}%</p>
         </div>
     );
 }
+
+// Styling
+const styles = {
+    container: {
+        width: 500,
+        height: 400,
+        margin: "30px auto",
+        overflowY: "auto",
+        overflowX: "hidden",
+        background: "orange"
+    },
+    list: {
+        width: "100%"
+    },
+    item: {
+        margin: "20px 25px",
+        padding: "30px 20px",
+        boxShadow: "0 2px 4px #999",
+        background: "purple",
+        fontSize: "18px",
+        textAlign: "center",
+        color: "#fff"
+    },
+    progressBar: {
+        width: 600,
+        height: 20,
+        margin: "auto",
+        backgroundColor: "#bbb"
+    },
+    progressValue: {
+        height: "100%",
+        backgroundColor: "blue"
+    },
+    text: {
+        textAlign: "center"
+    }
+} as const;
