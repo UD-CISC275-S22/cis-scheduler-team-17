@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
 import { Season } from "../interfaces/course-Degree-Semester";
@@ -18,9 +18,7 @@ export function SchedulerPage({
 }): JSX.Element {
     const seasons: Season[] = ["Fall"];
     const [season, setSeason] = useState<string>(seasons[0]);
-    function updateSeason(event: ChangeEvent) {
-        setSeason(event.target.value);
-    }
+
     function addSemester(): JSX.Element {
         return (
             <div>
@@ -29,10 +27,14 @@ export function SchedulerPage({
                     <Form.Select
                         className="dropdownForm"
                         value={season}
-                        onChange={updateSeason}
+                        onChange={(event: ChangeEvent) =>
+                            setSeason(event.target.value)
+                        }
                     >
-                        {seasons.map((season: Season) => (
-                            <option key={season}>{season}</option>
+                        {seasons.map((s: string) => (
+                            <option key={s} value={s}>
+                                {s}
+                            </option>
                         ))}
                     </Form.Select>
                 </Form.Group>
