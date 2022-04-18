@@ -1,23 +1,39 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
+import { Season } from "../interfaces/course-Degree-Semester";
 //import Homepage from "./Homepage";
 //interfaces
 import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { allCourses } from "../interfaces/AllCourses-AllDegrees";
+
+type ChangeEvent = React.ChangeEvent<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+>;
 
 export function SchedulerPage({
     changeHomepage
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
+    const seasons: Season[] = ["Fall"];
+    const [season, setSeason] = useState<string>(seasons[0]);
+    function updateSeason(event: ChangeEvent) {
+        setSeason(event.target.value);
+    }
     function addSemester(): JSX.Element {
         return (
             <div>
-                <Form.Group>
+                <Form.Group controlId="Seasons">
                     <Form.Label> Season: </Form.Label>
-                    <Form.Select>
-                        <option>Fall</option>
+                    <Form.Select
+                        className="dropdownForm"
+                        value={season}
+                        onChange={updateSeason}
+                    >
+                        {seasons.map((season: Season) => (
+                            <option key={season}>{season}</option>
+                        ))}
                     </Form.Select>
                 </Form.Group>
                 <Form.Group>
@@ -76,7 +92,9 @@ export function SchedulerPage({
                 </Container>
             </div>
             <footer className="footer">
-                <Button onClick={changeHomepage}>Back</Button>
+                <div>
+                    <Button onClick={changeHomepage}>Back</Button>
+                </div>
             </footer>
         </div>
     );
