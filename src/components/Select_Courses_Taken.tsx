@@ -127,3 +127,6 @@ const styles = {
         textAlign: "center"
     }
 } as const;
+{
+    /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
+}
