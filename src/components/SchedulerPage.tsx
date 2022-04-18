@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
 //import Homepage from "./Homepage";
 //interfaces
@@ -11,6 +11,23 @@ export function SchedulerPage({
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
+    function addSemester(): JSX.Element {
+        return (
+            <div>
+                <Form.Group>
+                    <Form.Label> Season: </Form.Label>
+                    <Form.Select>
+                        <option>Fall</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label> Year: </Form.Label>
+                    <Form.Control type="number" />
+                </Form.Group>
+                <Button onClick={() => showSemester}> Add Semester</Button>
+            </div>
+        );
+    }
     function showSemester(): JSX.Element {
         return (
             <div>
@@ -40,7 +57,24 @@ export function SchedulerPage({
             <div>
                 <h3>You are planning a [] degree</h3>
             </div>
-            <div>{showSemester()}</div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <span>
+                                Plan name [take in Degree plan selection]
+                            </span>
+                            <div> {addSemester()} </div>
+                        </Col>
+                        <Col>
+                            <span> Courses </span>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <span> Number of credits needed: </span>
+                    </Row>
+                </Container>
+            </div>
             <footer className="footer">
                 <Button onClick={changeHomepage}>Back</Button>
             </footer>
