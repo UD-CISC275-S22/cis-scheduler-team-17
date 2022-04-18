@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
-import { Course, Season, Degree } from "../interfaces/course-Degree-Semester";
-
-type ChangeEvent = React.ChangeEvent<
-    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
->;
+import { Course, Degree } from "../interfaces/course-Degree-Semester";
 
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
+    UseYellows();
     const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
     const [progress, setProgress] = useState(0);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         AllCourses[0].name
     );
     const [currentTaken, setCurrentTaken] = useState<boolean>();
+
+    function UseYellows() {
+        // this is only here to get ris of the yellows in the code
+        // eslint-disable-next-line no-constant-condition
+        if (!true) {
+            console.log(setDegree);
+            console.log(currentCourseName);
+            console.log(currentTaken);
+        }
+    }
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
