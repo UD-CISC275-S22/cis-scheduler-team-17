@@ -88,11 +88,11 @@ export function SelectCoursesTaken(): JSX.Element {
 const styles = {
     container: {
         width: 500,
-        height: 400,
+        height: 600,
         margin: "30px auto",
         overflowY: "auto",
         overflowX: "hidden",
-        background: "orange"
+        background: "darkseagreen"
     },
     list: {
         width: "100%"
@@ -114,7 +114,7 @@ const styles = {
     },
     progressValue: {
         height: "100%",
-        backgroundColor: "blue"
+        backgroundColor: "steelblue"
     },
     text: {
         textAlign: "center"
