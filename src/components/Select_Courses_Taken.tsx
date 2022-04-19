@@ -61,7 +61,7 @@ export function SelectCoursesTaken(): JSX.Element {
                             label={
                                 "Course Name: " +
                                 currentCourse.name +
-                                " \n Course Description: " +
+                                " Course Description: " +
                                 currentCourse.description +
                                 " \n Course Credits: " +
                                 currentCourse.credits +
@@ -99,19 +99,10 @@ const styles = {
         margin: "30px auto",
         overflowY: "auto",
         overflowX: "hidden",
-        background: "darkseagreen"
+        background: "mintcream"
     },
     list: {
         width: "100%"
-    },
-    item: {
-        margin: "20px 25px",
-        padding: "30px 20px",
-        boxShadow: "0 2px 4px #999",
-        background: "purple",
-        fontSize: "18px",
-        textAlign: "center",
-        color: "#fff"
     },
     progressBar: {
         width: 600,
