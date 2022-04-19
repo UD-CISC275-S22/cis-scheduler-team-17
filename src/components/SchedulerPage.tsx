@@ -4,8 +4,8 @@ import "../App.css";
 import { Season } from "../interfaces/course-Degree-Semester";
 //import Homepage from "./Homepage";
 //interfaces
-import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
-import { allCourses } from "../interfaces/AllCourses-AllDegrees";
+//import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
+//import { allCourses } from "../interfaces/AllCourses-AllDegrees";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -93,10 +93,11 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            <footer className="footer">
-                <div>
-                    <Button onClick={changeHomepage}>Back</Button>
-                </div>
+            <div>{showSemester()}</div>
+            <footer className="back">
+                <Button className="backButton" onClick={changeHomepage}>
+                    Back
+                </Button>
             </footer>
         </div>
     );

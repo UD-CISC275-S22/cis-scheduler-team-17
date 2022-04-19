@@ -10,9 +10,15 @@ type ChangeEvent = React.ChangeEvent<
 
 export function DropdownDegrees(): JSX.Element {
     const degrees = [...AllDegrees];
-    const [degree, setDegree] = useState<string>(degrees[0].name);
+    const [degree, setDegree] = useState<Degree>(degrees[0]);
     function updateDegree(event: ChangeEvent) {
-        setDegree(event.target.value);
+        const newDegreeName = event.target.value;
+        const newDegree = degrees.find(
+            (degree: Degree): boolean => degree.name === newDegreeName
+        );
+        if (newDegree !== undefined) {
+            setDegree(newDegree);
+        }
     }
     return (
         <div>
@@ -20,7 +26,7 @@ export function DropdownDegrees(): JSX.Element {
                 <Form.Label>Degrees</Form.Label>
                 <Form.Select
                     className="dropdownForm"
-                    value={degree}
+                    value={degree.name}
                     onChange={updateDegree}
                 >
                     {degrees.map((degree: Degree) => (
@@ -34,6 +40,7 @@ export function DropdownDegrees(): JSX.Element {
                     ))}
                 </Form.Select>
             </Form.Group>
+            <span>{degree.description}</span>
         </div>
     );
 }
