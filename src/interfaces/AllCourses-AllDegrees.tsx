@@ -1,5 +1,8 @@
 import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
 
+//Zoe addition for season
+export const SeasonsList = ["Fall", "Winter", "Spring", "Summer"];
+
 //These are all of the hard coded courses
 // Free Credits
 const Free_Elective1 = makeCourse(
