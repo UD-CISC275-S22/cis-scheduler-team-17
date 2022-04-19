@@ -3,7 +3,7 @@ import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
 //These are all of the hard coded courses
 // Free Credits
 const Free_Elective1 = makeCourse(
-    "Free Elective",
+    "Free Elective #1",
     "Take a Free Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -101,84 +101,84 @@ const BreadthRequirementScienceTechnology = makeCourse(
     3
 );
 const BreadthRequirement1 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #1",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement2 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #2",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement3 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #3",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement4 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #4",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement5 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #5",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement6 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #6",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement7 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #7",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement8 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #8",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement9 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #9",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement10 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #10",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement11 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #11",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
     3
 );
 const BreadthRequirement12 = makeCourse(
-    "Breadth Requirement General",
+    "Breadth Requirement General #12",
     "A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -328,28 +328,28 @@ const Restricted_CISC_Elective = makeCourse(
     3
 );
 const Restricted_Elective1 = makeCourse(
-    "Restricted Elective",
+    "Restricted Elective #1",
     "This is a restrictive elective",
     ["Varies By Department"],
     [],
     3
 );
 const Restricted_Elective2 = makeCourse(
-    "Restricted Elective",
+    "Restricted Elective #2",
     "This is a restrictive elective",
     ["Varies By Department"],
     [],
     3
 );
 const Restricted_Elective3 = makeCourse(
-    "Restricted Elective",
+    "Restricted Elective #3",
     "This is a restrictive elective",
     ["Varies By Department"],
     [],
     3
 );
 const Restricted_Elective4 = makeCourse(
-    "Restricted Elective",
+    "Restricted Elective #4",
     "This is a restrictive elective",
     ["Varies By Department"],
     [],
@@ -484,14 +484,14 @@ const CISC464 = makeCourse(
     3
 );
 const Advanced_Cybersecurity_Requirment1 = makeCourse(
-    "Advanced Cybersecurity Requirement",
+    "Advanced Cybersecurity Requirement #1",
     "You need to take an advanced cybersecurity requirement",
     ["Varies By Department"],
     [],
     3
 );
 const Advanced_Cybersecurity_Requirment2 = makeCourse(
-    "Advanced Cybersecurity Requirement",
+    "Advanced Cybersecurity Requirement #2",
     "You need to take an advanced cybersecurity requirement",
     ["Varies By Department"],
     [],
@@ -542,42 +542,42 @@ const CISC360 = makeCourse(
     3
 );
 const TRACK_Elective1 = makeCourse(
-    "TRACK Elective",
+    "TRACK Elective #1",
     "Track Elective",
     ["Varies By Department"],
     [],
     3
 );
 const TRACK_Elective2 = makeCourse(
-    "TRACK Elective",
+    "TRACK Elective #2",
     "Track Elective",
     ["Varies By Department"],
     [],
     3
 );
 const TRACK_Requirement1 = makeCourse(
-    "TRACK Requirment",
+    "TRACK Requirment #1",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
     3
 );
 const TRACK_Requirement2 = makeCourse(
-    "TRACK Requirment",
+    "TRACK Requirment #2",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
     3
 );
 const TRACK_Requirement3 = makeCourse(
-    "TRACK Requirment",
+    "TRACK Requirment #3",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
     3
 );
 const TRACK_Requirement4 = makeCourse(
-    "TRACK Requirment",
+    "TRACK Requirment #4",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
@@ -592,14 +592,14 @@ const CISC471 = makeCourse(
 );
 //Systems and networks concentration
 const Advanced_Systems_Requirment1 = makeCourse(
-    "Advanced System Requirement",
+    "Advanced System Requirement #1",
     "Advanced System Requirement",
     ["Varies By Department"],
     [],
     3
 );
 const Advanced_Systems_Requirment2 = makeCourse(
-    "Advanced System Requirement",
+    "Advanced System Requirement #2",
     "Advanced System Requirement",
     ["Varies By Department"],
     [],
@@ -622,35 +622,35 @@ const CISC401 = makeCourse(
 );
 // CISC BS
 const CISC_300_Technical_Elective1 = makeCourse(
-    "Cisc 300 Technical Elective",
+    "Cisc 300 Technical Elective #1",
     "THis is a CISC 300 level elective",
     ["Varies By Department"],
     [],
     3
 );
 const CISC_300_Technical_Elective2 = makeCourse(
-    "Cisc 300 Technical Elective",
+    "Cisc 300 Technical Elective #2",
     "THis is a CISC 300 level elective",
     ["Varies By Department"],
     [],
     3
 );
 const CISC_300_Technical_Elective3 = makeCourse(
-    "Cisc 300 Technical Elective",
+    "Cisc 300 Technical Elective #3",
     "THis is a CISC 300 level elective",
     ["Varies By Department"],
     [],
     3
 );
 const CISC_300_Technical_Elective4 = makeCourse(
-    "Cisc 300 Technical Elective",
+    "Cisc 300 Technical Elective #4",
     "THis is a CISC 300 level elective",
     ["Varies By Department"],
     [],
     3
 );
 const CISC_300_Technical_Elective5 = makeCourse(
-    "Cisc 300 Technical Elective",
+    "Cisc 300 Technical Elective #5",
     "THis is a CISC 300 level elective",
     ["Varies By Department"],
     [],
@@ -707,14 +707,14 @@ const BUAD306 = makeCourse(
     3
 );
 const IS_Elective1 = makeCourse(
-    "IS Elective",
+    "IS Elective #1",
     "This is an IS Elective",
     ["Varies By Department"],
     [],
     3
 );
 const IS_Elective2 = makeCourse(
-    "IS Elective",
+    "IS Elective #2",
     "This is an IS Elective",
     ["Varies By Department"],
     [],
@@ -772,37 +772,11 @@ const MISY432 = makeCourse(
 
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
-const allCourses = [
-    Free_Elective1,
-    Free_Elective2,
-    Free_Elective3,
-    Free_Elective4,
-    Free_Elective5,
-    Free_Elective6,
-    Free_Elective7,
-    Free_Elective8,
-    Free_Elective9,
-    Free_Elective10,
-    Free_Elective11,
+export const AllCourses = [
     EGGG101,
     CISC108,
     MATH241,
     ENGL110,
-    BreadthRequirementForeignLanguage,
-    BreadthRequirementMulticultural,
-    BreadthRequirementScienceTechnology,
-    BreadthRequirement1,
-    BreadthRequirement2,
-    BreadthRequirement3,
-    BreadthRequirement4,
-    BreadthRequirement5,
-    BreadthRequirement6,
-    BreadthRequirement7,
-    BreadthRequirement8,
-    BreadthRequirement9,
-    BreadthRequirement10,
-    BreadthRequirement11,
-    BreadthRequirement12,
     CISC181,
     CISC210,
     MATH242,
@@ -880,7 +854,33 @@ const allCourses = [
     MISY430,
     CISC475,
     MISY431,
-    MISY432
+    MISY432,
+    Free_Elective1,
+    Free_Elective2,
+    Free_Elective3,
+    Free_Elective4,
+    Free_Elective5,
+    Free_Elective6,
+    Free_Elective7,
+    Free_Elective8,
+    Free_Elective9,
+    Free_Elective10,
+    Free_Elective11,
+    BreadthRequirementForeignLanguage,
+    BreadthRequirementMulticultural,
+    BreadthRequirementScienceTechnology,
+    BreadthRequirement1,
+    BreadthRequirement2,
+    BreadthRequirement3,
+    BreadthRequirement4,
+    BreadthRequirement5,
+    BreadthRequirement6,
+    BreadthRequirement7,
+    BreadthRequirement8,
+    BreadthRequirement9,
+    BreadthRequirement10,
+    BreadthRequirement11,
+    BreadthRequirement12
 ];
 const two_year_plan_BS = [
     EGGG101,
@@ -1151,7 +1151,7 @@ const Information_Systems_Courses = [
 const NoDegree = makeDegree(
     "No Degree Has been selected",
     "There has not been a course Selected",
-    allCourses,
+    AllCourses,
     0
 );
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
