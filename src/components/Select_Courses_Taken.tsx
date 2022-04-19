@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
 
@@ -74,6 +74,7 @@ export function SelectCoursesTaken(): JSX.Element {
                                 currentCourse.taken_String
                             }
                         />
+                        <Information></Information>
                     </div>
                 ))}
             </div>
@@ -84,6 +85,18 @@ export function SelectCoursesTaken(): JSX.Element {
                 ></div>
             </div>
             <p style={styles.text}>{progress.toFixed(2)}%</p>
+        </div>
+    );
+}
+
+function Information(): JSX.Element {
+    const [courseInfo, SetCourseInfo] = useState<boolean>(false);
+    return (
+        <div>
+            <Button onClick={() => SetCourseInfo(!courseInfo)}>
+                More Information
+            </Button>
+            {courseInfo ? "" : "Course Name: "}
         </div>
     );
 }

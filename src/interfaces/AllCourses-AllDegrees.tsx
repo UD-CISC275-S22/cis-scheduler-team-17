@@ -6,7 +6,7 @@ export const seasonsList = ["Fall", "Winter", "Spring", "Summer"];
 // Free Credits
 const Free_Elective1 = makeCourse(
     "Free Elective",
-    " #1",
+    " #1.",
     "Take a Free Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -14,7 +14,7 @@ const Free_Elective1 = makeCourse(
 );
 const Free_Elective2 = makeCourse(
     "Free Elective",
-    " #2",
+    " #2.",
     "Take a SecondFree Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -22,7 +22,7 @@ const Free_Elective2 = makeCourse(
 );
 const Free_Elective3 = makeCourse(
     "Free Elective",
-    "#3",
+    "#3.",
     "Take a third Free Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -30,7 +30,7 @@ const Free_Elective3 = makeCourse(
 );
 const Free_Elective4 = makeCourse(
     "Free Elective",
-    " #4",
+    " #4.",
     "Take a fourth Free Elective",
     ["Fall", "Winter", "Spring", "Summer"],
     [],
@@ -637,7 +637,7 @@ const TRACK_Elective2 = makeCourse(
 );
 const TRACK_Requirement1 = makeCourse(
     "TRACK Requirment",
-    "#1",
+    "#1  ",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
@@ -645,7 +645,7 @@ const TRACK_Requirement1 = makeCourse(
 );
 const TRACK_Requirement2 = makeCourse(
     "TRACK Requirment",
-    "#2",
+    "#2  ",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
@@ -653,7 +653,7 @@ const TRACK_Requirement2 = makeCourse(
 );
 const TRACK_Requirement3 = makeCourse(
     "TRACK Requirment",
-    "#3",
+    "#3  ",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
@@ -661,7 +661,7 @@ const TRACK_Requirement3 = makeCourse(
 );
 const TRACK_Requirement4 = makeCourse(
     "TRACK Requirment",
-    "#4",
+    "#4  ",
     "TRACK Requirement",
     ["Varies By Department"],
     [],
