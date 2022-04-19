@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
 import { SelectCoursesTaken } from "./Select_Courses_Taken";
+import { DropdownDegrees } from "./DropdownDegrees";
 //import { UnderConstruction } from "./Underconstruction";
 //import SchedulerPage from "./SchedulerPage";
 
@@ -15,17 +16,20 @@ function Homepage({
             <header className="App-header">
                 Computer & Information Sciences Schedule Planner
             </header>
-            <div>
+            <div className="body">
                 <Container>
                     <Row>
                         <Col>
-                            <span>Degree</span>
+                            <DropdownDegrees></DropdownDegrees>
                         </Col>
                         <Col>
                             <SelectCoursesTaken></SelectCoursesTaken>
                         </Col>
                         <Col>
-                            <Button onClick={changeHomepage}>
+                            <Button
+                                className="makeButton"
+                                onClick={changeHomepage}
+                            >
                                 Make Schedule
                             </Button>
                         </Col>
