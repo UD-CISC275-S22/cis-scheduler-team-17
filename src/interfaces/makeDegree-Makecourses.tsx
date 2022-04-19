@@ -1,6 +1,7 @@
 import { Season, Course, Degree } from "./course-Degree-Semester";
 
 export function makeCourse(
+    courseID: string,
     name: string,
     description: string,
     SemesterAvailable: Season[],
@@ -8,6 +9,7 @@ export function makeCourse(
     credits: number
 ): Course {
     return {
+        courseID: courseID,
         name: name,
         description: description,
         SemesterAvailable: SemesterAvailable,

@@ -59,14 +59,11 @@ export function SelectCoursesTaken(): JSX.Element {
                             value={currentCourse.name}
                             key={currentCourse.name}
                             label={
+                                // need to add buttons to get the extra information
                                 "Course Name: " +
+                                currentCourse.courseID +
+                                " : " +
                                 currentCourse.name +
-                                " Course Description: " +
-                                currentCourse.description +
-                                " \n Course Credits: " +
-                                currentCourse.credits +
-                                " ...... Semesters Available: " +
-                                currentCourse.SemestersAvailableString +
                                 " ...... Pre Requisite: " +
                                 currentCourse.prerecs.map(
                                     (currentPreRec: Course) =>
