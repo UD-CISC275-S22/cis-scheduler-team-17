@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
+
+// This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
     const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
-    const [progress, setProgress] = useState(0);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         AllCourses[0].name
     );
+    const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
 
     function UseYellows() {
@@ -73,6 +75,10 @@ export function SelectCoursesTaken(): JSX.Element {
                                 currentCourse.taken_String
                             }
                         />
+                        <Information
+                            currentDegree={currentDegree}
+                            currentCourseName={currentCourseName}
+                        ></Information>
                     </div>
                 ))}
             </div>
@@ -116,4 +122,46 @@ const styles = {
 } as const;
 {
     /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
+}
+
+function Information({
+    currentDegree,
+    currentCourseName
+}: {
+    currentDegree: Degree;
+    currentCourseName: string;
+}): JSX.Element {
+    const [showInfo, setShowInfo] = useState<boolean>(false);
+    const findCourse = currentDegree.CoursesRequired.filter(
+        (myCourse: Course): boolean => myCourse.name === currentCourseName
+    );
+    const currentCourse = findCourse[0];
+    return (
+        <div>
+            <Button onClick={() => setShowInfo(!showInfo)}>
+                More Information
+            </Button>
+            <div style={{ textAlign: "left" }}>
+                {!showInfo ? (
+                    <></>
+                ) : (
+                    <>
+                        Course Name: {currentCourse.name} <br></br>
+                        Course Description: {currentCourse.description}{" "}
+                        <br></br>
+                        Course Credits: {currentCourse.credits} <br></br>
+                        Semesters Available:{" "}
+                        {currentCourse.SemestersAvailableString} <br></br>
+                        Pre-Requisite:
+                        {currentCourse.prerecs.map(
+                            (currentPreRec: Course) =>
+                                currentPreRec.name + currentPreRec.taken_String
+                        )}{" "}
+                        <br></br>
+                        Taken: {currentCourse.taken_String}
+                    </>
+                )}
+            </div>
+        </div>
+    );
 }
