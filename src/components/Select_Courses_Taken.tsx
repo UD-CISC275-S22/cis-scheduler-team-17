@@ -77,7 +77,7 @@ export function SelectCoursesTaken(): JSX.Element {
                         />
                         <Information
                             currentDegree={currentDegree}
-                            currentCourseName={currentCourseName}
+                            currentCourseName={currentCourse.name}
                         ></Information>
                     </div>
                 ))}
@@ -138,10 +138,13 @@ function Information({
     const currentCourse = findCourse[0];
     return (
         <div>
-            <Button onClick={() => setShowInfo(!showInfo)}>
+            <Button
+                onClick={() => setShowInfo(!showInfo)}
+                className="makeInformationButton"
+            >
                 More Information
             </Button>
-            <div style={{ textAlign: "left" }}>
+            <div className="extraInfoLook" style={{ textAlign: "left" }}>
                 {!showInfo ? (
                     <></>
                 ) : (
