@@ -1,10 +1,19 @@
 /** QuestionType influences how a question is asked and what kinds of answers are possible */
+
+//Zoe addition for season
+export const SeasonsList = [
+    "Spring",
+    "Summer",
+    "Fall",
+    "Winter",
+    "Varies By Department"
+];
 export type Season =
-    | "Spring"
-    | "Summer"
-    | "Fall"
-    | "Winter"
-    | "Varies By Department";
+    | typeof SeasonsList[0]
+    | typeof SeasonsList[1]
+    | typeof SeasonsList[2]
+    | typeof SeasonsList[3]
+    | typeof SeasonsList[4];
 
 /** A representation of a Question in a quizzing application */
 export interface Course {

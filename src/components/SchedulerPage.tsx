@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
-import { SeasonsList } from "../interfaces/AllCourses-AllDegrees";
+import { SeasonsList } from "../interfaces/course-Degree-Semester";
+import { Season } from "../interfaces/course-Degree-Semester";
 //import Homepage from "./Homepage";
 //interfaces
 //import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
@@ -16,34 +17,26 @@ export function SchedulerPage({
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
-    //const seasons = { ...SeasonsList };
-    const [season, setSeason] = useState<string>(SeasonsList[0]);
+    //seasons dropdown state
+    const seasons = [...SeasonsList];
+    const [season, setSeason] = useState<Season>(seasons[0]);
+    //year state
+    const [year, setYear] = useState<number>(2022);
+    //semester state
+    //const [semester, setSemester] = useState<boolean>(false);
 
     function addSemester(): JSX.Element {
         return (
             <div>
                 <Form.Group controlId="Seasons">
                     <Form.Label> Season: </Form.Label>
-                    {/* <Form.Select
-                        className="dropdownForm"
-                        value={season}
-                        onChange={(event: ChangeEvent) =>
-                            setSeason(event.target.value)
-                        }
-                    >
-                        {seasons.map((s: string) => (
-                            <option key={s} value={s}>
-                                {s}
-                            </option>
-                        ))}
-                    </Form.Select> */}
                     <Form.Select
                         value={season}
                         onChange={(event: ChangeEvent) =>
                             setSeason(event.target.value)
                         }
                     >
-                        {SeasonsList.map((s: string) => (
+                        {SeasonsList.map((s: Season) => (
                             <option key={s} value={s}>
                                 {s}
                             </option>
@@ -52,7 +45,13 @@ export function SchedulerPage({
                 </Form.Group>
                 <Form.Group>
                     <Form.Label> Year: </Form.Label>
-                    <Form.Control type="number" />
+                    <Form.Control
+                        type="number"
+                        value={year}
+                        onChange={(event: ChangeEvent) =>
+                            setYear(parseInt(event.target.value))
+                        }
+                    />
                 </Form.Group>
                 <Button onClick={() => showSemester}> Add Semester</Button>
             </div>
@@ -64,7 +63,10 @@ export function SchedulerPage({
                 <Table>
                     <thead>
                         <tr>
-                            <th> Semester + Year </th>
+                            <th>
+                                {" "}
+                                {year} {season}
+                            </th>
                         </tr>
                         <tr>
                             <th>
@@ -105,7 +107,7 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            <div>{showSemester()}</div>
+            {/* <div>{showSemester()}</div> */}
             <footer className="back">
                 <Button className="backButton" onClick={changeHomepage}>
                     Back

@@ -5,8 +5,8 @@ import SchedulerPage from "./components/SchedulerPage";
 import Homepage from "./components/Homepage";
 
 //interfaces
-// import { AllDegrees } from "./interfaces/AllCourses-AllDegrees";
-// import { Degree } from "./interfaces/course-Degree-Semester";
+//import { AllDegrees } from "./interfaces/AllCourses-AllDegrees";
+//import { Degree } from "./interfaces/course-Degree-Semester";
 // import { allCourses } from "./interfaces/AllCourses-AllDegrees";
 // import { Course } from "./interfaces/course-Degree-Semester";
 
