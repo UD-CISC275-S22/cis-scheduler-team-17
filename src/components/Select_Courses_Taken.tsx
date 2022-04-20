@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
 
@@ -59,11 +59,10 @@ export function SelectCoursesTaken(): JSX.Element {
                             value={currentCourse.name}
                             key={currentCourse.name}
                             label={
-                                // need to add buttons to get the extra information
                                 "Course Name: " +
-                                currentCourse.courseID +
-                                " : " +
                                 currentCourse.name +
+                                " \n Course Credits: " +
+                                currentCourse.credits +
                                 " ...... Pre Requisite: " +
                                 currentCourse.prerecs.map(
                                     (currentPreRec: Course) =>
@@ -74,7 +73,6 @@ export function SelectCoursesTaken(): JSX.Element {
                                 currentCourse.taken_String
                             }
                         />
-                        <Information></Information>
                     </div>
                 ))}
             </div>
@@ -85,18 +83,6 @@ export function SelectCoursesTaken(): JSX.Element {
                 ></div>
             </div>
             <p style={styles.text}>{progress.toFixed(2)}%</p>
-        </div>
-    );
-}
-
-function Information(): JSX.Element {
-    const [courseInfo, SetCourseInfo] = useState<boolean>(false);
-    return (
-        <div>
-            <Button onClick={() => SetCourseInfo(!courseInfo)}>
-                More Information
-            </Button>
-            {courseInfo ? "" : "Course Name: "}
         </div>
     );
 }
