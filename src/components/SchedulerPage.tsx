@@ -23,8 +23,8 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    const [semester, setSemester] = useState<string>("");
-    const [semesterList, setSemesterList] = useState<string[]>([]);
+    //const [semester, setSemester] = useState<string>("");
+    //const [semesterList, setSemesterList] = useState<string[]>([]);
 
     function getSeason(): JSX.Element {
         return (
@@ -59,12 +59,12 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function addSemester() {
-        if (!semesterList.includes(semester) && semester != "") {
-            setSemesterList([...semesterList, semester]);
-        }
-        setSemester("");
-    }
+    // function addSemester() {
+    //     if (!semesterList.includes(semester) && semester != "") {
+    //         setSemesterList([...semesterList, semester]);
+    //     }
+    //     setSemester("");
+    // }
     // function showSemester(): JSX.Element {
     //     return (
     //         <div>
