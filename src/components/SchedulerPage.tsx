@@ -23,64 +23,72 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    //const [semester, setSemester] = useState<boolean>(false);
+    const [semester, setSemester] = useState<string>("");
+    const [semesterList, setSemesterList] = useState<string[]>([]);
 
-    function addSemester(): JSX.Element {
+    function getSeason(): JSX.Element {
         return (
-            <div>
-                <Form.Group controlId="Seasons">
-                    <Form.Label> Season: </Form.Label>
-                    <Form.Select
-                        value={season}
-                        onChange={(event: ChangeEvent) =>
-                            setSeason(event.target.value)
-                        }
-                    >
-                        {SeasonsList.map((s: Season) => (
-                            <option key={s} value={s}>
-                                {s}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label> Year: </Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={year}
-                        onChange={(event: ChangeEvent) =>
-                            setYear(parseInt(event.target.value))
-                        }
-                    />
-                </Form.Group>
-                <Button onClick={() => showSemester}> Add Semester</Button>
-            </div>
+            <Form.Group controlId="Seasons">
+                <Form.Label> Season: </Form.Label>
+                <Form.Select
+                    value={season}
+                    onChange={(event: ChangeEvent) =>
+                        setSeason(event.target.value)
+                    }
+                >
+                    {SeasonsList.map((s: Season) => (
+                        <option key={s} value={s}>
+                            {s}
+                        </option>
+                    ))}
+                </Form.Select>
+            </Form.Group>
         );
     }
-    function showSemester(): JSX.Element {
+    function getYear(): JSX.Element {
         return (
-            <div>
-                <Table>
-                    <thead>
-                        <tr>
-                            <th>
-                                {" "}
-                                {year} {season}
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                {/* <Button onClick={() => deleteSemester()}></Button> */}
-                            </th>
-                        </tr>
-                    </thead>
-                    <tr> Course ID </tr>
-                    <tr> Number of Credits </tr>
-                    <tbody>All of the data</tbody>
-                </Table>
-            </div>
+            <Form.Group controlId="Years">
+                <Form.Label> Year: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={year}
+                    onChange={(event: ChangeEvent) =>
+                        setYear(parseInt(event.target.value))
+                    }
+                />
+            </Form.Group>
         );
     }
+    function addSemester() {
+        if (!semesterList.includes(semester) && semester != "") {
+            setSemesterList([...semesterList, semester]);
+        }
+        setSemester("");
+    }
+    // function showSemester(): JSX.Element {
+    //     return (
+    //         <div>
+    //             <Table>
+    //                 <thead>
+    //                     <tr>
+    //                         <th>
+    //                             {" "}
+    //                             {year} {season}
+    //                         </th>
+    //                     </tr>
+    //                     <tr>
+    //                         <th>
+    //                             {/* <Button onClick={() => deleteSemester()}></Button> */}
+    //                         </th>
+    //                     </tr>
+    //                 </thead>
+    //                 <tr> Course ID </tr>
+    //                 <tr> Number of Credits </tr>
+    //                 <tbody>All of the data</tbody>
+    //             </Table>
+    //         </div>
+    //     );
+    // }
     return (
         <div className="App">
             <header className="App-header">
@@ -96,7 +104,11 @@ export function SchedulerPage({
                             <span>
                                 Plan name [take in Degree plan selection]
                             </span>
-                            <div> {addSemester()} </div>
+                            <div>
+                                {getSeason()}
+                                {getYear()}
+                                {}
+                            </div>
                         </Col>
                         <Col>
                             <span> Courses </span>
