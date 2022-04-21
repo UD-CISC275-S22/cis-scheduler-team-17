@@ -20,8 +20,7 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    //const [semester, setSemester] = useState<string>("");
-    //const [semesterList, setSemesterList] = useState<string[]>([]);
+    const [semester, setSemester] = useState<boolean>(false);
 
     function getSeason(): JSX.Element {
         return (
@@ -56,6 +55,9 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
+    function addSemester() {
+        setSemester(!semester);
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -72,14 +74,21 @@ export function SchedulerPage({
                                 Plan name [take in Degree plan selection]
                             </span>
                             <div>
-                                <MakeSemester
-                                    currentList={[]}
-                                    year={year}
-                                    season={season}
-                                ></MakeSemester>
                                 {getSeason()}
                                 {getYear()}
+                                <Button onClick={addSemester}>
+                                    Add Semester
+                                </Button>
                             </div>
+                            {semester && (
+                                <div>
+                                    <MakeSemester
+                                        currentList={[]}
+                                        year={year}
+                                        season={season}
+                                    ></MakeSemester>
+                                </div>
+                            )}
                         </Col>
                         <Col>
                             <span> Courses </span>
