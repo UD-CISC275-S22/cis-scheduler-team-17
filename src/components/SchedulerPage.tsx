@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Row, Col, Table } from "react-bootstrap";
 import "../App.css";
 import { Course } from "../interfaces/course-Degree-Semester";
-import { PoolCourses } from "./PoolCourses";
+import { MakeSemester } from "./MakeSemester";
 //import Homepage from "./Homepage";
 
 export function SchedulerPage({
@@ -31,7 +31,6 @@ export function SchedulerPage({
             </div>
         );
     }*/
-    const currentCourses: Course[] = [];
     return (
         <div className="App">
             <header className="App-header">
@@ -44,7 +43,7 @@ export function SchedulerPage({
                 <Row>
                     {/*<Col>{showSemester()}</Col>*/}
                     <Col>
-                        <PoolCourses currentList={currentCourses} />
+                        <MakeSemester currentList={[]} />
                     </Col>
                     <Col>Place Holder</Col>
                 </Row>
