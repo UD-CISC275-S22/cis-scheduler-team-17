@@ -76,6 +76,7 @@ export function MakeSemester({
                         onChange={(event: ChangeEvent) =>
                             setName(event.target.value)
                         }
+                        placeholder={"Enter Course Name"}
                     />
                     <Form.Control
                         type="string"
@@ -83,7 +84,9 @@ export function MakeSemester({
                         onChange={(event: ChangeEvent) =>
                             setDescription(event.target.value)
                         }
+                        placeholder={"Enter Course Description"}
                     />
+                    <span>Number of Credits:</span>
                     <Form.Control
                         type="number"
                         value={credits}
