@@ -1,6 +1,8 @@
 import React from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Row, Col, Table } from "react-bootstrap";
 import "../App.css";
+import { Course } from "../interfaces/course-Degree-Semester";
+import { PoolCourses } from "./PoolCourses";
 //import Homepage from "./Homepage";
 
 export function SchedulerPage({
@@ -8,7 +10,7 @@ export function SchedulerPage({
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
-    function showSemester(): JSX.Element {
+    /*function showSemester(): JSX.Element {
         return (
             <div>
                 <Table>
@@ -18,7 +20,7 @@ export function SchedulerPage({
                         </tr>
                         <tr>
                             <th>
-                                {/* <Button onClick={() => deleteSemester()}></Button> */}
+                                {<Button onClick={() => deleteSemester()}></Button>}
                             </th>
                         </tr>
                     </thead>
@@ -28,7 +30,8 @@ export function SchedulerPage({
                 </Table>
             </div>
         );
-    }
+    }*/
+    const currentCourses: Course[] = [];
     return (
         <div className="App">
             <header className="App-header">
@@ -37,7 +40,15 @@ export function SchedulerPage({
             <div>
                 <h3>You are planning a [] degree</h3>
             </div>
-            <div>{showSemester()}</div>
+            <div>
+                <Row>
+                    {/*<Col>{showSemester()}</Col>*/}
+                    <Col>
+                        <PoolCourses currentList={currentCourses} />
+                    </Col>
+                    <Col>Place Holder</Col>
+                </Row>
+            </div>
             <footer className="back">
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
