@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../App.css";
 import { SeasonsList } from "../interfaces/course-Degree-Semester";
 import { Season } from "../interfaces/course-Degree-Semester";
-//import Homepage from "./Homepage";
-//interfaces
-//import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
-//import { allCourses } from "../interfaces/AllCourses-AllDegrees";
+import { MakeSemester } from "./MakeSemester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -59,36 +56,6 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    // function addSemester() {
-    //     if (!semesterList.includes(semester) && semester != "") {
-    //         setSemesterList([...semesterList, semester]);
-    //     }
-    //     setSemester("");
-    // }
-    // function showSemester(): JSX.Element {
-    //     return (
-    //         <div>
-    //             <Table>
-    //                 <thead>
-    //                     <tr>
-    //                         <th>
-    //                             {" "}
-    //                             {year} {season}
-    //                         </th>
-    //                     </tr>
-    //                     <tr>
-    //                         <th>
-    //                             {/* <Button onClick={() => deleteSemester()}></Button> */}
-    //                         </th>
-    //                     </tr>
-    //                 </thead>
-    //                 <tr> Course ID </tr>
-    //                 <tr> Number of Credits </tr>
-    //                 <tbody>All of the data</tbody>
-    //             </Table>
-    //         </div>
-    //     );
-    // }
     return (
         <div className="App">
             <header className="App-header">
@@ -105,9 +72,13 @@ export function SchedulerPage({
                                 Plan name [take in Degree plan selection]
                             </span>
                             <div>
+                                <MakeSemester
+                                    currentList={[]}
+                                    year={year}
+                                    season={season}
+                                ></MakeSemester>
                                 {getSeason()}
                                 {getYear()}
-                                {}
                             </div>
                         </Col>
                         <Col>
