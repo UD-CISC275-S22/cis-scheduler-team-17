@@ -4,15 +4,19 @@ import "../App.css";
 import { SeasonsList } from "../interfaces/course-Degree-Semester";
 import { Season } from "../interfaces/course-Degree-Semester";
 import { MakeSemester } from "./MakeSemester";
+//interfaces
+import { Degree } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
 export function SchedulerPage({
-    changeHomepage
+    changeHomepage,
+    degree
 }: {
     changeHomepage: () => void;
+    degree: Degree;
 }): JSX.Element {
     //seasons dropdown state
     const seasons = [...SeasonsList];
@@ -65,7 +69,7 @@ export function SchedulerPage({
                 Computer & Information Sciences Schedule Planner
             </header>
             <div>
-                <h3>You are planning a [] degree</h3>
+                <h3>You are planning a {degree.name} degree</h3>
             </div>
             <div>
                 <Container>

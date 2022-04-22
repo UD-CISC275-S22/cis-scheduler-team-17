@@ -3,13 +3,23 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
 import { SelectCoursesTaken } from "./Select_Courses_Taken";
 import { DropdownDegrees } from "./DropdownDegrees";
-//import { UnderConstruction } from "./Underconstruction";
-//import SchedulerPage from "./SchedulerPage";
+//interfaces
+import { Degree } from "../interfaces/course-Degree-Semester";
+
+type ChangeEvent = React.ChangeEvent<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+>;
 
 function Homepage({
-    changeHomepage
+    changeHomepage,
+    degrees,
+    degree,
+    updateDegree
 }: {
     changeHomepage: () => void;
+    degrees: Degree[];
+    degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     return (
         <div className="App">
@@ -20,7 +30,11 @@ function Homepage({
                 <Container>
                     <Row>
                         <Col>
-                            <DropdownDegrees></DropdownDegrees>
+                            <DropdownDegrees
+                                degrees={degrees}
+                                degree={degree}
+                                updateDegree={updateDegree}
+                            ></DropdownDegrees>
                         </Col>
                         <Col>
                             <SelectCoursesTaken></SelectCoursesTaken>
