@@ -21,6 +21,7 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [semester, setSemester] = useState<boolean>(false);
+    //const [semesterList, setSemesterList] = useState<MakeSemester>(MakeSemester);
 
     function getSeason(): JSX.Element {
         return (
