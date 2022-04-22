@@ -69,7 +69,9 @@ export function SchedulerPage({
                 Computer & Information Sciences Schedule Planner
             </header>
             <div>
-                <h3>You are planning a {degree.name} degree</h3>
+                <h3>
+                    You are planning <strong>{degree.name}</strong> degree
+                </h3>
             </div>
             <div>
                 <Container>

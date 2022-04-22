@@ -46,7 +46,13 @@ export function SelectCoursesTaken(): JSX.Element {
 
     return (
         <div>
-            <div>Please Select The Courses You Have Already Taken</div>
+            <div>
+                <Form.Label>
+                    <strong>
+                        Please Select The Courses You Have Already Taken
+                    </strong>
+                </Form.Label>
+            </div>
             <div style={styles.container} onScroll={scrollHandler}>
                 {currentDegree.CoursesRequired.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>

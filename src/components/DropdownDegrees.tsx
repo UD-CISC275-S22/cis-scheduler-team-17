@@ -30,7 +30,9 @@ export function DropdownDegrees({
     return (
         <div>
             <Form.Group controlId="Degrees">
-                <Form.Label>Degrees</Form.Label>
+                <Form.Label>
+                    <strong>Degrees</strong>
+                </Form.Label>
                 <Form.Select
                     className="dropdownForm"
                     value={degree.name}
