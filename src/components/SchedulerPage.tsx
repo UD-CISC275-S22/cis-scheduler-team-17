@@ -6,6 +6,8 @@ import { Season } from "../interfaces/course-Degree-Semester";
 import { MakeSemester } from "./MakeSemester";
 //interfaces
 import { Degree } from "../interfaces/course-Degree-Semester";
+//import SemesterPlanner from "../interfaces/course-Degree-Semester";
+//import SemesterList from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -24,6 +26,7 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
+    //const semesterList = [...SemesterList];
     const [semester, setSemester] = useState<boolean>(false);
     //const [semesterList, setSemesterList] = useState<MakeSemester>(MakeSemester);
 
