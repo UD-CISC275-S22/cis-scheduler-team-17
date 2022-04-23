@@ -1,4 +1,9 @@
-import { Season, Course, Degree } from "./course-Degree-Semester";
+import {
+    Season,
+    Course,
+    Degree,
+    SemesterPlanner
+} from "./course-Degree-Semester";
 
 export function makeCourse(
     name: string,
@@ -23,12 +28,14 @@ export function makeDegree(
     name: string,
     description: string,
     CoursesRequired: Course[],
-    CreditsRequired: number
+    CreditsRequired: number,
+    SemesterList: SemesterPlanner[]
 ): Degree {
     return {
         name: name,
         description: description,
         CoursesRequired: CoursesRequired,
-        CreditsRequired: CreditsRequired
+        CreditsRequired: CreditsRequired,
+        SemesterList: SemesterList
     };
 }

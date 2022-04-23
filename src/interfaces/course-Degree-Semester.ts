@@ -44,6 +44,8 @@ export interface Degree {
     CoursesRequired: Course[];
     /** Credits Needed */
     CreditsRequired: number;
+    /**Semesters */
+    SemesterList: SemesterPlanner[];
 }
 
 export interface SemesterPlanner {

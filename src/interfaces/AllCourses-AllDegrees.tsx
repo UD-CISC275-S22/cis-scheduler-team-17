@@ -1155,61 +1155,71 @@ const NoDegree = makeDegree(
     "No Degree Has been selected",
     "There has not been a course Selected",
     AllCourses,
-    0
+    0,
+    []
 );
 const Artificial_Intelligence_and_Robotics_Concentration = makeDegree(
     "Artificial Intelligence and Robotics Concentration",
     "How do automatic translation apps work? How do driverless cars “see” the road? What has been behind the recent streak of computer programs beating human world champions at all kinds of games? The AI and Robotics concentration is concerned with understanding the building blocks of cognition, as well as applying them to the development of systems that are able to perform tasks traditionally associated with human brainpower, dexterity, and/or mobility. Courses in this concentration will cover abstract notions of intelligence, including logical reasoning, knowledge representation, language, and planning; a spectrum of methods for pattern analysis and learning-by-example, including deep learning and neural networks; and skills for embodied agents, such as perception (via visual and other sensors), navigation, and interaction.",
     AI_Concentration_Courses,
-    124
+    124,
+    []
 );
 const Bioinformatics_Concentration = makeDegree(
     "Bioinformatics Concentration",
     "Bioinformatics lies at the intersection of computational science and biology. The field is gaining impact in recent years as biology becomes increasingly data-centric and quantitative. There is a growing need for individuals with training in biology, chemistry, and computer science. This concentration combines background in life sciences with expertise in computational methods to fill this need. Students successfully completing this concentration will be well-prepared for graduate studies in computer science or bioinformatics and for a variety of interdisciplinary careers in industry and in health and research institutes.",
     Bioinformatics_Concentration_Courses,
-    124
+    124,
+    []
 );
 const Cybersecurity_Concentration = makeDegree(
     "Cybersecurity Concentration",
     "Backdoor vulnerabilities. Denial of service attacks. Viruses, worms, and cyberintrusions. Massive security breaches at major corporations, government facilities, and other institutions are announced on a regular basis. Is it any surprise that cybersecurity experts are among the most in-demand computer science professionals? Students in this concentration study the whole spectrum of vulnerabilities as well as countermeasures to defend against them. Learn how to design secure software/hardware systems and networks; explore intrusion detection, cryptographic protocols, firewalls, and access control, among other topics.",
     Cybersecurity_Concentration_Courses,
-    124
+    124,
+    []
 );
 const Data_Science_Concentration = makeDegree(
     "Data Science Concentration",
     "Data is everywhere. Large and diverse datasets representing every aspect of modern life are now available. These data come in a variety of forms that can be either structured or unstructured. Data science is concerned with translating these disparate data sources into useful knowledge, through application of techniques drawn from computer science, mathematics, and statistics. The data science concentration provides the core background necessary for representing, analyzing, managing and putting these datasets to use in real-world applications. This concentration combines courses in advanced mathematics, statistics, artificial intelligence, machine learning, and data mining, preparing students to make contributions in this highly interdisciplinary field.",
     Data_Science_Concentration_Courses,
-    124
+    124,
+    []
 );
 const High_Performance_Computing_Concentration = makeDegree(
     "Hight Performace Computing Concentration",
     "High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena.",
     High_Performance_Computing_Concentration_Courses,
-    124
+    124,
+    []
 );
 const Systems_and_Networks_Concentration = makeDegree(
     "Systems and Networks Concentration",
     "Are you interested in implementing a new programming language or a virtual machine for a new computer or network architecture? Contributing to the next operating system or Internet of everything? Improving the security of software and networks? Then the Systems and Networks concentration is for you. Through a range of courses covering operating systems, compilers, architecture, networks, and cybersecurity, students learn how modern computational systems function from the application layer all the way down to the hardware-software interface.",
     Systems_and_Networks_Concentration_Courses,
-    124
+    124,
+    []
 );
 const Theory_and_Computation_Computation = makeDegree(
     "Theory and Computation Concentration",
     "The Theory and Computation concentration bridges the mathematics-computer science interface. Applications flow in both directions: mathematical concepts, such as formal logic, automata, and models of computation, form the theoretical foundation of computer science, while computational methods are widely used in many areas of mathematics, including linear algebra, graph theory, differential equations, algebra, theorem proving, and algorithmic analysis. The concentration offers a broad spectrum of courses in these and other subjects in mathematics and computer science. Students in the concentration have a choice between a discrete and a continuous track.",
     Theory_and_Computation_Computation_Courses,
-    124
+    124,
+    []
 );
 const CISC_BA = makeDegree(
     "BA in Computer Science",
     "A more flexible liberal arts program, especially good for students double- or triple- majoring, or students who desire a technical undergraduate degree before attempting a professional degree (law, medical, business).",
     CISC_BA_Courses,
-    124
+    124,
+    []
 );
 const Information_Systems = makeDegree(
     "BS in Information Systems",
     "A combination of business and information technology subjects oriented toward students interested in the design of new software systems for business and consumer needs.",
     Information_Systems_Courses,
-    124
+    124,
+    []
 );
 // lists of all courses and degrees
 export const AllDegrees = [
