@@ -3,10 +3,6 @@ import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
 import { Course, Degree, Season } from "../interfaces/course-Degree-Semester";
 import { currentSelectedDegree } from "./DropdownDegrees";
-//import Homepage from "./Homepage";
-//interfaces
-//import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
-//import { allCourses } from "../interfaces/AllCourses-AllDegrees";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -145,6 +141,9 @@ function PrintDegreesLists({ taken }: { taken: boolean }): JSX.Element {
         if (!true) {
             console.log(currentCourseName);
             console.log(currentTaken);
+            console.log(progress);
+            setCurrentCourseName("HOW");
+            setCurrentTaken(false);
         }
     }
 
