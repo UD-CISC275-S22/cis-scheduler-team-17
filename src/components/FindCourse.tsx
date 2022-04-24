@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
@@ -58,9 +59,11 @@ export function FindCourse(): JSX.Element {
             </Form.Group>
             <div>
                 Found ID:
-                {list_Of_Possible_Answers[0].courseID === userAnswer
+                {list_Of_Possible_Answers.length === 0
+                    ? " ❌ There are no courses matching your input"
+                    : list_Of_Possible_Answers[0].courseID === userAnswer
                     ? "✔️"
-                    : "❌"}
+                    : "Searching"}
             </div>
             <Button onClick={RefreshOptions}>Refresh Options</Button>
             <div style={styles.container} onScroll={scrollHandler}>
