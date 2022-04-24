@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
 import { SelectCoursesTaken } from "./Select_Courses_Taken";
-import { DropdownDegrees } from "./DropdownDegrees";
+import { CurrentDegreeSelected, DropdownDegrees } from "./DropdownDegrees";
 //import { UnderConstruction } from "./Underconstruction";
 //import SchedulerPage from "./SchedulerPage";
 

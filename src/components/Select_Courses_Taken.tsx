@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
+//import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
+import { currentSelectedDegree } from "./DropdownDegrees";
 
 // This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
-    const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
+    const [currentDegree, setDegree] = useState<Degree>(currentSelectedDegree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
-        AllCourses[0].name
+        currentSelectedDegree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
@@ -19,7 +20,6 @@ export function SelectCoursesTaken(): JSX.Element {
         // this is only here to get ris of the yellows in the code
         // eslint-disable-next-line no-constant-condition
         if (!true) {
-            console.log(setDegree);
             console.log(currentCourseName);
             console.log(currentTaken);
         }
@@ -44,6 +44,8 @@ export function SelectCoursesTaken(): JSX.Element {
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
+        setDegree(currentSelectedDegree);
+        console.log(currentDegree.name);
     };
 
     return (
@@ -135,6 +137,7 @@ function Information({
     const findCourse = currentDegree.CoursesRequired.filter(
         (myCourse: Course): boolean => myCourse.name === currentCourseName
     );
+    console.log(currentDegree.name);
     const currentCourse = findCourse[0];
     return (
         <div>

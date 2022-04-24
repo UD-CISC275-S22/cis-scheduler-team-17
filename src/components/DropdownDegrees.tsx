@@ -7,8 +7,12 @@ import { Form } from "react-bootstrap";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
-export let SelectedDegree = AllDegrees[0];
+export let currentSelectedDegree = AllDegrees[0];
 
+export function CurrentDegreeSelected(): Degree {
+    console.log(currentSelectedDegree.name);
+    return currentSelectedDegree;
+}
 export function DropdownDegrees(): JSX.Element {
     const degrees = [...AllDegrees];
     const [degree, setDegree] = useState<Degree>(degrees[0]);
@@ -19,7 +23,8 @@ export function DropdownDegrees(): JSX.Element {
         );
         if (newDegree !== undefined) {
             setDegree(newDegree);
-            SelectedDegree = newDegree;
+            currentSelectedDegree = newDegree;
+            console.log(currentSelectedDegree.name);
         }
     }
     return (
