@@ -1,13 +1,51 @@
-import React from "react";
-import { Button, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import "../App.css";
+import { Season } from "../interfaces/course-Degree-Semester";
 //import Homepage from "./Homepage";
+//interfaces
+//import { AllDegrees } from "../interfaces/AllCourses-AllDegrees";
+//import { allCourses } from "../interfaces/AllCourses-AllDegrees";
+
+type ChangeEvent = React.ChangeEvent<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+>;
 
 export function SchedulerPage({
     changeHomepage
 }: {
     changeHomepage: () => void;
 }): JSX.Element {
+    const seasons: Season[] = ["Fall"];
+    const [season, setSeason] = useState<string>(seasons[0]);
+
+    function addSemester(): JSX.Element {
+        return (
+            <div>
+                <Form.Group controlId="Seasons">
+                    <Form.Label> Season: </Form.Label>
+                    <Form.Select
+                        className="dropdownForm"
+                        value={season}
+                        onChange={(event: ChangeEvent) =>
+                            setSeason(event.target.value)
+                        }
+                    >
+                        {seasons.map((s: string) => (
+                            <option key={s} value={s}>
+                                {s}
+                            </option>
+                        ))}
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label> Year: </Form.Label>
+                    <Form.Control type="number" />
+                </Form.Group>
+                <Button onClick={() => showSemester}> Add Semester</Button>
+            </div>
+        );
+    }
     function showSemester(): JSX.Element {
         return (
             <div>
@@ -36,6 +74,24 @@ export function SchedulerPage({
             </header>
             <div>
                 <h3>You are planning a [] degree</h3>
+            </div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <span>
+                                Plan name [take in Degree plan selection]
+                            </span>
+                            <div> {addSemester()} </div>
+                        </Col>
+                        <Col>
+                            <span> Courses </span>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <span> Number of credits needed: </span>
+                    </Row>
+                </Container>
             </div>
             <div>{showSemester()}</div>
             <footer className="back">
