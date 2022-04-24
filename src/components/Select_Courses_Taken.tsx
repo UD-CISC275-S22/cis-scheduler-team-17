@@ -36,6 +36,9 @@ export function SelectCoursesTaken(): JSX.Element {
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
+        // this line will update the courses that are shown to the user, there is another in scroll
+        setDegree(currentSelectedDegree);
+        console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box

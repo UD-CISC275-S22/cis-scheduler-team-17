@@ -9,10 +9,6 @@ type ChangeEvent = React.ChangeEvent<
 >;
 export let currentSelectedDegree = AllDegrees[0];
 
-export function CurrentDegreeSelected(): Degree {
-    console.log(currentSelectedDegree.name);
-    return currentSelectedDegree;
-}
 export function DropdownDegrees(): JSX.Element {
     const degrees = [...AllDegrees];
     const [degree, setDegree] = useState<Degree>(degrees[0]);
