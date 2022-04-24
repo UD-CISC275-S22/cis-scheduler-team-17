@@ -18,6 +18,9 @@ export function FindCourse(): JSX.Element {
     >([...AllCourses]);
     const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
+    const [selectedCourseName, setSelectedCourseName] = useState<string>();
+    const [showSearch, updateShowSearch] = useState<boolean>(true);
+    const [SelectedCourse, updateSelectedCourse] = useState<Course>();
 
     function updateShortAnswer(event: ChangeEvent) {
         setUserAnswer(event.target.value);
@@ -30,13 +33,13 @@ export function FindCourse(): JSX.Element {
         );
     }
 
-    function RefreshOptions() {
-        setListOfPossibleAnswers(
-            AllCoursesCopy.filter(
-                (currentCourse: Course): boolean =>
-                    currentCourse.courseID.search(userAnswer) !== -1
-            )
+    function SelectCourse(SelectedCourseID: string) {
+        setSelectedCourseName(SelectedCourseID);
+        const ID = AllCoursesCopy.filter(
+            (course: Course): boolean => course.courseID === SelectedCourseID
         );
+        updateSelectedCourse(ID[0]);
+        updateShowSearch(!showSearch);
     }
 
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
@@ -65,12 +68,29 @@ export function FindCourse(): JSX.Element {
                     ? "✔️"
                     : "Searching"}
             </div>
-            <Button onClick={RefreshOptions}>Refresh Options</Button>
-            <div style={styles.container} onScroll={scrollHandler}>
-                {list_Of_Possible_Answers.map((currentCourse: Course) => (
-                    <div key={currentCourse.name}>{currentCourse.courseID}</div>
-                ))}
-            </div>
+            {showSearch ? (
+                <div style={styles.container} onScroll={scrollHandler}>
+                    {list_Of_Possible_Answers.map((currentCourse: Course) => (
+                        <div key={currentCourse.name}>
+                            {currentCourse.courseID}
+                            <Button
+                                onClick={() =>
+                                    SelectCourse(currentCourse.courseID)
+                                }
+                            >
+                                Select Course
+                            </Button>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div>
+                    <Button onClick={() => SelectCourse("")}>
+                        Search For Course
+                    </Button>
+                    <div>This is where the editing of courses will go</div>
+                </div>
+            )}
         </div>
     );
 }

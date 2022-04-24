@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import React from "react";
 import "../App.css";
-import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
 import { FindCourse } from "./FindCourse";
 
 export function EditCourse(): JSX.Element {
