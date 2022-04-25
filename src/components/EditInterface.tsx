@@ -80,11 +80,12 @@ export function EditInterface({
 }
 
 function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputID, setInputID] = useState<string>("");
+    const [inputID, setInputID] = useState<string>(Course2Edit.courseID);
 
     function updateID(event: ChangeEvent) {
         setInputID(event.target.value);
-        Course2Edit.courseID = inputID;
+        Course2Edit.courseID = event.target.value;
+        console.log(inputID);
     }
 
     return (
@@ -96,28 +97,33 @@ function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     onChange={updateID}
                 ></Form.Control>
             </Form.Group>
-            <div>Current Course ID: {Course2Edit.courseID}</div>
+            <div>Current Course ID: {inputID}</div>
         </div>
     );
 }
 
 function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputName, setInputName] = useState<string>("");
+    const [inputName, setInputName] = useState<string>(Course2Edit.name);
 
     function updateName(event: ChangeEvent) {
         setInputName(event.target.value);
         Course2Edit.name = inputName;
     }
 
+    function printName(): string {
+        Course2Edit.name = inputName;
+        return Course2Edit.name;
+    }
+
     return (
         <div>
-            <Form.Group controlId="InputNewID">
+            <Form.Group controlId="InputNewName">
                 <Form.Label>Insert The New Course Name Here:</Form.Label>
                 <Form.Control
                     value={inputName}
                     onChange={updateName}
                 ></Form.Control>
-                <div>Current Course Name: {Course2Edit.courseID}</div>
+                <div>Current Course Name: {printName}</div>
             </Form.Group>
         </div>
     );
@@ -133,7 +139,7 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 
     return (
         <div>
-            <Form.Group controlId="InputNewID">
+            <Form.Group controlId="InputNewDesc">
                 <Form.Label>Insert The New Course Description Here:</Form.Label>
                 <Form.Control
                     value={inputDesc}
@@ -323,7 +329,7 @@ function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
     }
     return (
         <div>
-            <Form.Group controlId="InputNewID">
+            <Form.Group controlId="InputNewCredits">
                 <Form.Label>Insert The New Course Credits Here:</Form.Label>
                 <Form.Control
                     type="number"
