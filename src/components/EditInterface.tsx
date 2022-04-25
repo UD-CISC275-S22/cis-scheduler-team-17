@@ -146,6 +146,8 @@ function EditSemestersUI({
 }: {
     Course2Edit: Course;
 }): JSX.Element {
+    const [eventYellow, noEventYellow] = useState<string>("");
+    console.log(eventYellow);
     const [fall, fallChecked] = useState<boolean>(
         Course2Edit.SemesterAvailable.includes("Fall")
     );
@@ -163,6 +165,7 @@ function EditSemestersUI({
     );
 
     function Fall(event: ChangeEvent) {
+        noEventYellow(event.target.value);
         fallChecked(!fall);
         if (!fall) {
             Course2Edit.SemesterAvailable = [
@@ -179,6 +182,7 @@ function EditSemestersUI({
             Course2Edit.SemesterAvailable.join(", ");
     }
     function Spring(event: ChangeEvent) {
+        noEventYellow(event.target.value);
         springChecked(!spring);
         if (!spring) {
             Course2Edit.SemesterAvailable = [
@@ -196,6 +200,7 @@ function EditSemestersUI({
             Course2Edit.SemesterAvailable.join(", ");
     }
     function Winter(event: ChangeEvent) {
+        noEventYellow(event.target.value);
         winterChecked(!winter);
         if (!winter) {
             Course2Edit.SemesterAvailable = [
@@ -213,6 +218,7 @@ function EditSemestersUI({
             Course2Edit.SemesterAvailable.join(", ");
     }
     function Summer(event: ChangeEvent) {
+        noEventYellow(event.target.value);
         summerChecked(!summer);
         if (!summer) {
             Course2Edit.SemesterAvailable = [
@@ -230,6 +236,7 @@ function EditSemestersUI({
             Course2Edit.SemesterAvailable.join(", ");
     }
     function Varies(event: ChangeEvent) {
+        noEventYellow(event.target.value);
         variesChecked(!varies);
         if (!varies) {
             Course2Edit.SemesterAvailable = [
@@ -295,6 +302,7 @@ function EditSemestersUI({
 }
 
 function EditPreRecsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
+    console.log(Course2Edit.name);
     return <div></div>;
 }
 
