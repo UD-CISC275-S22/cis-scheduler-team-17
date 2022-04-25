@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
 import { Course } from "../interfaces/course-Degree-Semester";
+import { EditInterface } from "./EditInterface";
 
 // simplifing the type definition of the change event
 type ChangeEvent = React.ChangeEvent<
@@ -20,14 +21,15 @@ export function FindCourse(): JSX.Element {
     const [progress, setProgress] = useState(0);
     const [selectedCourseName, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
-    const [SelectedCourse, updateSelectedCourse] = useState<Course>();
+    const [SelectedCourse, updateSelectedCourse] = useState<Course>(
+        AllCourses[0]
+    );
 
     function fixYellow() {
         // eslint-disable-next-line no-constant-condition
         if (!true) {
             progress;
             selectedCourseName;
-            SelectedCourse;
         }
     }
 
@@ -99,7 +101,7 @@ export function FindCourse(): JSX.Element {
                         You Have Selected the Course {selectedCourseName} to
                         Edit
                     </div>
-                    <div>This is where the editing of courses will go</div>
+                    <EditInterface Course2Edit={SelectedCourse}></EditInterface>
                 </div>
             )}
         </div>
