@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Course, Season } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
@@ -15,7 +15,7 @@ export function EditInterface({
     const [EditName, SetEditName] = useState<boolean>(false);
     const [EditDesc, SetEditDesc] = useState<boolean>(false);
     const [EditSemesters, setEditSemesters] = useState<boolean>(false);
-    const [EditPreRecs, setEditPreRecs] = useState<boolean>(false);
+    //const [EditPreRecs, setEditPreRecs] = useState<boolean>(false);
     const [EditCredits, setEditCredits] = useState<boolean>(false);
 
     return (
@@ -56,7 +56,7 @@ export function EditInterface({
                 value="semesters"
             />
             {EditSemesters ? <EditSemestersUI Course2Edit={Course2Edit} /> : ""}
-            <Form.Check
+            {/*<Form.Check
                 type="checkbox"
                 name="EditOptions"
                 onChange={() => setEditPreRecs(!EditPreRecs)}
@@ -64,7 +64,7 @@ export function EditInterface({
                 label="PreRecs"
                 value="PreRecs"
             />
-            {EditPreRecs ? <EditPreRecsUI Course2Edit={Course2Edit} /> : ""}
+    {EditPreRecs ? <EditPreRecsUI Course2Edit={Course2Edit} /> : ""}*/}
             <Form.Check
                 type="checkbox"
                 name="EditOptions"
@@ -74,6 +74,7 @@ export function EditInterface({
                 value="Credits"
             />
             {EditCredits ? <EditCreditsUI Course2Edit={Course2Edit} /> : ""}
+            <Button>Revert To Original IN PROGRESS</Button>
         </div>
     );
 }
@@ -95,6 +96,7 @@ function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     onChange={updateID}
                 ></Form.Control>
             </Form.Group>
+            <div>Current Course ID: {Course2Edit.courseID}</div>
         </div>
     );
 }
@@ -115,6 +117,7 @@ function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     value={inputName}
                     onChange={updateName}
                 ></Form.Control>
+                <div>Current Course Name: {Course2Edit.courseID}</div>
             </Form.Group>
         </div>
     );
@@ -137,6 +140,7 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     onChange={updateDesc}
                 ></Form.Control>
             </Form.Group>
+            <div>Current Course Description: {Course2Edit.description}</div>
         </div>
     );
 }
@@ -301,29 +305,33 @@ function EditSemestersUI({
     );
 }
 
-function EditPreRecsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    console.log(Course2Edit.name);
-    return <div></div>;
-}
+// function EditPreRecsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
+//     console.log(Course2Edit.name);
+//     return <div></div>;
+// }
 
 function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputCredits, setInputCredits] = useState<string>("");
+    const [inputCredits, setInputCredits] = useState<number>(0);
 
-    function updateCredits(event: ChangeEvent) {
-        setInputCredits(event.target.value);
-        Course2Edit.courseID = inputCredits;
+    function changeCredits(event: ChangeEvent) {
+        if (!isNaN(parseInt(event.target.value))) {
+            console.log(event.target.value);
+            setInputCredits(parseInt(event.target.value));
+            console.log(inputCredits);
+            Course2Edit.credits = inputCredits;
+        }
     }
-
     return (
         <div>
             <Form.Group controlId="InputNewID">
                 <Form.Label>Insert The New Course Credits Here:</Form.Label>
                 <Form.Control
+                    type="number"
                     value={inputCredits}
-                    type="numbers"
-                    onChange={updateCredits}
-                ></Form.Control>
+                    onChange={changeCredits}
+                />
             </Form.Group>
+            <div>Current Credits Worth: {Course2Edit.credits}</div>
         </div>
     );
 }

@@ -43,6 +43,7 @@ export function SchedulerPage({
             </div>
         );
     }
+
     function showSemester(): JSX.Element {
         return (
             <div>
