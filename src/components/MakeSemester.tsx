@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { Course, Season } from "../interfaces/course-Degree-Semester";
+import {
+    Course,
+    Season,
+    Degree,
+    SemesterPlanner
+} from "../interfaces/course-Degree-Semester";
 import { makeCourse } from "../interfaces/makeDegree-Makecourses";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -9,11 +14,13 @@ type ChangeEvent = React.ChangeEvent<
 export function MakeSemester({
     currentList,
     year,
-    season
+    season,
+    degree
 }: {
     currentList: Course[];
     year: number;
     season: Season;
+    degree: Degree;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -52,26 +59,34 @@ export function MakeSemester({
     }
     return (
         <div>
-            <Table bordered className="pageLayout">
-                <label>
-                    {" "}
-                    {season} {year}
-                </label>
-                <tr className="key">
-                    <th>Course Name</th>
-                    <th>Description</th>
-                    <th>Number of Credits</th>
-                    <th>Move Course</th>
-                </tr>
-                {courseList.map((course: Course) => (
-                    <tr key={course.name}>
-                        <th>{course.name}</th>
-                        <th>{course.description}</th>
-                        <th>{course.credits}</th>
-                        <th>{"UC"}</th>
-                    </tr>
-                ))}
-            </Table>
+            <div>
+                {degree.SemesterList.map(
+                    (semester: SemesterPlanner): JSX.Element => (
+                        <div key={semester.SemesterSeason + semester.year}>
+                            <Table bordered className="pageLayout">
+                                <label>
+                                    {" "}
+                                    {season} {year}
+                                </label>
+                                <tr className="key">
+                                    <th>Course Name</th>
+                                    <th>Description</th>
+                                    <th>Number of Credits</th>
+                                    <th>Move Course</th>
+                                </tr>
+                                {courseList.map((course: Course) => (
+                                    <tr key={course.name}>
+                                        <th>{course.name}</th>
+                                        <th>{course.description}</th>
+                                        <th>{course.credits}</th>
+                                        <th>{"UC"}</th>
+                                    </tr>
+                                ))}
+                            </Table>
+                        </div>
+                    )
+                )}
+            </div>
             <Button onClick={changeVisibility}>
                 {visible ? "Hide Form" : "Create Course"}
             </Button>
