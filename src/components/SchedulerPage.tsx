@@ -6,6 +6,7 @@ import { Season } from "../interfaces/course-Degree-Semester";
 import { MakeSemester } from "./MakeSemester";
 //interfaces
 import { Degree, SemesterPlanner } from "../interfaces/course-Degree-Semester";
+import { check } from "prettier";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -62,6 +63,31 @@ export function SchedulerPage({
     function addSemester() {
         setSemester(!semester);
     }
+    function addSemHelper(
+        degree: Degree,
+        season: Season,
+        year: number
+    ): Degree {
+        // const contains = degree.SemesterList.find(
+        //     (c: SemesterPlanner): boolean =>
+        //         c.SemesterSeason === season && c.year === year
+        // );
+        // if (contains) {
+        //     return ();
+        // }
+        return {
+            ...degree.SemesterList,
+            SemesterList: [
+                ...degree.SemesterList,
+                {
+                    ClassesTaking: degree.CoursesRequired,
+                    year: year,
+                    SemeserSeason: season,
+                    TotalCredits: degree.CreditsRequired
+                }
+            ]
+        };
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -82,7 +108,12 @@ export function SchedulerPage({
                             <div>
                                 {getSeason()}
                                 {getYear()}
-                                <Button onClick={addSemester}>
+                                <Button
+                                    onClick={() => {
+                                        addSemester();
+                                        addSemHelper(degree, season, year);
+                                    }}
+                                >
                                     Add Semester
                                 </Button>
                             </div>
