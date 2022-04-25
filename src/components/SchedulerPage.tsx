@@ -26,7 +26,7 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    //const semesterList = [...SemesterList];
+    //const semesterList = [];
     const [semester, setSemester] = useState<boolean>(false);
     //const [semesterList, setSemesterList] = useState<MakeSemester>(MakeSemester);
 
