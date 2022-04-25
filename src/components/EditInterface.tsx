@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import { Course } from "../interfaces/course-Degree-Semester";
+import { Form } from "react-bootstrap";
+import { Course, Season } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -131,7 +131,7 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
     return (
         <div>
             <Form.Group controlId="InputNewID">
-                <Form.Label>Insert The New Course ID Here:</Form.Label>
+                <Form.Label>Insert The New Course Description Here:</Form.Label>
                 <Form.Control
                     value={inputDesc}
                     onChange={updateDesc}
@@ -146,7 +146,152 @@ function EditSemestersUI({
 }: {
     Course2Edit: Course;
 }): JSX.Element {
-    return <div></div>;
+    const [fall, fallChecked] = useState<boolean>(
+        Course2Edit.SemesterAvailable.includes("Fall")
+    );
+    const [spring, springChecked] = useState<boolean>(
+        Course2Edit.SemesterAvailable.includes("Spring")
+    );
+    const [winter, winterChecked] = useState<boolean>(
+        Course2Edit.SemesterAvailable.includes("Winter")
+    );
+    const [summer, summerChecked] = useState<boolean>(
+        Course2Edit.SemesterAvailable.includes("Summer")
+    );
+    const [varies, variesChecked] = useState<boolean>(
+        Course2Edit.SemesterAvailable.includes("Varies By Department")
+    );
+
+    function Fall(event: ChangeEvent) {
+        fallChecked(!fall);
+        if (!fall) {
+            Course2Edit.SemesterAvailable = [
+                ...Course2Edit.SemesterAvailable,
+                "Fall"
+            ];
+        } else {
+            Course2Edit.SemesterAvailable =
+                Course2Edit.SemesterAvailable.filter(
+                    (currentSeason: Season): boolean => currentSeason !== "Fall"
+                );
+        }
+        Course2Edit.SemestersAvailableString =
+            Course2Edit.SemesterAvailable.join(", ");
+    }
+    function Spring(event: ChangeEvent) {
+        springChecked(!spring);
+        if (!spring) {
+            Course2Edit.SemesterAvailable = [
+                ...Course2Edit.SemesterAvailable,
+                "Spring"
+            ];
+        } else {
+            Course2Edit.SemesterAvailable =
+                Course2Edit.SemesterAvailable.filter(
+                    (currentSeason: Season): boolean =>
+                        currentSeason !== "Spring"
+                );
+        }
+        Course2Edit.SemestersAvailableString =
+            Course2Edit.SemesterAvailable.join(", ");
+    }
+    function Winter(event: ChangeEvent) {
+        winterChecked(!winter);
+        if (!winter) {
+            Course2Edit.SemesterAvailable = [
+                ...Course2Edit.SemesterAvailable,
+                "Winter"
+            ];
+        } else {
+            Course2Edit.SemesterAvailable =
+                Course2Edit.SemesterAvailable.filter(
+                    (currentSeason: Season): boolean =>
+                        currentSeason !== "Winter"
+                );
+        }
+        Course2Edit.SemestersAvailableString =
+            Course2Edit.SemesterAvailable.join(", ");
+    }
+    function Summer(event: ChangeEvent) {
+        summerChecked(!summer);
+        if (!summer) {
+            Course2Edit.SemesterAvailable = [
+                ...Course2Edit.SemesterAvailable,
+                "Summer"
+            ];
+        } else {
+            Course2Edit.SemesterAvailable =
+                Course2Edit.SemesterAvailable.filter(
+                    (currentSeason: Season): boolean =>
+                        currentSeason !== "Summer"
+                );
+        }
+        Course2Edit.SemestersAvailableString =
+            Course2Edit.SemesterAvailable.join(", ");
+    }
+    function Varies(event: ChangeEvent) {
+        variesChecked(!varies);
+        if (!varies) {
+            Course2Edit.SemesterAvailable = [
+                ...Course2Edit.SemesterAvailable,
+                "Varies By Department"
+            ];
+        } else {
+            Course2Edit.SemesterAvailable =
+                Course2Edit.SemesterAvailable.filter(
+                    (currentSeason: Season): boolean =>
+                        currentSeason !== "Varies By Department"
+                );
+        }
+        Course2Edit.SemestersAvailableString =
+            Course2Edit.SemesterAvailable.join(", ");
+    }
+
+    return (
+        <div>
+            <Form.Group controlId="InputNewSemesters">
+                <Form.Check
+                    type="checkbox"
+                    id="fall"
+                    label="Fall"
+                    checked={fall}
+                    onChange={Fall}
+                />
+                <Form.Check
+                    type="checkbox"
+                    id="Spring"
+                    label="Spring"
+                    checked={spring}
+                    onChange={Spring}
+                />
+                <Form.Check
+                    type="checkbox"
+                    id="winter"
+                    label="Winter"
+                    checked={winter}
+                    onChange={Winter}
+                />
+                <Form.Check
+                    type="checkbox"
+                    id="summer"
+                    label="Summer"
+                    checked={summer}
+                    onChange={Summer}
+                />
+                <Form.Check
+                    type="checkbox"
+                    id="Varies By Department"
+                    label="Varies By Department"
+                    checked={varies}
+                    onChange={Varies}
+                />
+            </Form.Group>
+            <div>
+                The Seasons our course holds include{" "}
+                {Course2Edit.SemestersAvailableString}
+            </div>
+        </div>
+    );
 }
 
 function EditPreRecsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
@@ -164,7 +309,7 @@ function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
     return (
         <div>
             <Form.Group controlId="InputNewID">
-                <Form.Label>Insert The New Course ID Here:</Form.Label>
+                <Form.Label>Insert The New Course Credits Here:</Form.Label>
                 <Form.Control
                     value={inputCredits}
                     type="numbers"
