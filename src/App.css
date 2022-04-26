@@ -63,22 +63,18 @@
     font-family: monospace;
 }
 
+button{
+    background-image: url("CSS-Images/footer.jpg");
+    color: white;
+}
 
 .makeButton{
     background-image: url("CSS-Images/footer.jpg");
     color: white;
     font-size: 25px;
-    height: 100px;
-    width: 200px;
+    height: 80px;
+    width: 180px;
     margin: 20%;
-}
-
-.back{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1d785d;
-    background-image: url("CSS-Images/footer.jpg");
 }
 
 .backButton{
@@ -98,6 +94,7 @@ label{
 }
 
 
+<<<<<<< HEAD
 .dropdownForm{
     width: 100%;
     font-size: 98%;
@@ -106,3 +103,9 @@ label{
 label{
     font-size: 20px;
 }
+=======
+.key{
+    background-color: lightgray;
+    font-weight: bold;
+}
+>>>>>>> 79d5ec4b0d84878f28a7e27efaa9eaae553a9bf1

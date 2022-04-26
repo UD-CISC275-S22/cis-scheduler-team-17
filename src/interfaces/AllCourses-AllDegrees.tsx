@@ -775,7 +775,22 @@ const MISY432 = makeCourse(
 
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
+<<<<<<< HEAD
 export const AllCourses = [
+=======
+export const allCourses = [
+    Free_Elective1,
+    Free_Elective2,
+    Free_Elective3,
+    Free_Elective4,
+    Free_Elective5,
+    Free_Elective6,
+    Free_Elective7,
+    Free_Elective8,
+    Free_Elective9,
+    Free_Elective10,
+    Free_Elective11,
+>>>>>>> 79d5ec4b0d84878f28a7e27efaa9eaae553a9bf1
     EGGG101,
     CISC108,
     MATH241,
