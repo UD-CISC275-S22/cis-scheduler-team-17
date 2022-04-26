@@ -66,6 +66,7 @@ export function SchedulerPage({
         setNewSem(!newSem);
     }
     function addSemester() {
+        updateSemester();
         const newSemester = {
             ClassesTaking: [],
             year: year,
@@ -93,14 +94,11 @@ export function SchedulerPage({
                                 Plan name [take in Degree plan selection]
                             </span>
                             <div>
+                                {console.log(degree.SemesterList)}
+                                {console.log(degree)}
                                 {getSeason()}
                                 {getYear()}
-                                <Button
-                                    onClick={() => {
-                                        updateSemester();
-                                        addSemester();
-                                    }}
-                                >
+                                <Button onClick={() => addSemester()}>
                                     Add Semester
                                 </Button>
                             </div>
