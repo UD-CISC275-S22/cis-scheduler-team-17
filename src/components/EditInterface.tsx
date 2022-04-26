@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Course, Season } from "../interfaces/course-Degree-Semester";
+import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
+import { Course /*, Season*/ } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -14,9 +15,22 @@ export function EditInterface({
     const [EditID, SetEditID] = useState<boolean>(false);
     const [EditName, SetEditName] = useState<boolean>(false);
     const [EditDesc, SetEditDesc] = useState<boolean>(false);
-    const [EditSemesters, setEditSemesters] = useState<boolean>(false);
+    //const [EditSemesters, setEditSemesters] = useState<boolean>(false);
     //const [EditPreRecs, setEditPreRecs] = useState<boolean>(false);
     const [EditCredits, setEditCredits] = useState<boolean>(false);
+
+    function revert() {
+        const matching = AllCourses.filter(
+            (currentCourse: Course): boolean =>
+                Course2Edit.ogID === currentCourse.ogID
+        );
+        const original = matching[0];
+        console.log(original.courseID);
+        Course2Edit.courseID = original.courseID;
+        Course2Edit.name = original.name;
+        Course2Edit.description = original.description;
+        Course2Edit.credits = original.credits;
+    }
 
     return (
         <div>
@@ -47,7 +61,7 @@ export function EditInterface({
                 value="Description"
             />
             {EditDesc ? <EditDescUI Course2Edit={Course2Edit} /> : ""}
-            <Form.Check
+            {/* <Form.Check
                 type="checkbox"
                 name="EditOptions"
                 onChange={() => setEditSemesters(!EditSemesters)}
@@ -55,7 +69,7 @@ export function EditInterface({
                 label="semeseters"
                 value="semesters"
             />
-            {EditSemesters ? <EditSemestersUI Course2Edit={Course2Edit} /> : ""}
+            {EditSemesters ? <EditSemestersUI Course2Edit={Course2Edit} /> : ""} */}
             {/*<Form.Check
                 type="checkbox"
                 name="EditOptions"
@@ -74,7 +88,7 @@ export function EditInterface({
                 value="Credits"
             />
             {EditCredits ? <EditCreditsUI Course2Edit={Course2Edit} /> : ""}
-            <Button>Revert To Original IN PROGRESS</Button>
+            <Button onClick={revert}>Revert To Original IN PROGRESS</Button>
         </div>
     );
 }
@@ -84,8 +98,9 @@ function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 
     function updateID(event: ChangeEvent) {
         setInputID(event.target.value);
-        Course2Edit.courseID = event.target.value;
-        console.log(inputID);
+    }
+    function saveChange() {
+        Course2Edit.courseID = inputID;
     }
 
     return (
@@ -98,6 +113,7 @@ function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                 ></Form.Control>
             </Form.Group>
             <div>Current Course ID: {inputID}</div>
+            <Button onClick={saveChange}>Save Changes</Button>
         </div>
     );
 }
@@ -107,12 +123,10 @@ function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 
     function updateName(event: ChangeEvent) {
         setInputName(event.target.value);
-        Course2Edit.name = inputName;
     }
 
-    function printName(): string {
+    function saveChange() {
         Course2Edit.name = inputName;
-        return Course2Edit.name;
     }
 
     return (
@@ -123,7 +137,8 @@ function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     value={inputName}
                     onChange={updateName}
                 ></Form.Control>
-                <div>Current Course Name: {printName}</div>
+                <div>Current Course Name: {inputName}</div>
+                <Button onClick={saveChange}>Save</Button>
             </Form.Group>
         </div>
     );
@@ -146,12 +161,13 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     onChange={updateDesc}
                 ></Form.Control>
             </Form.Group>
-            <div>Current Course Description: {Course2Edit.description}</div>
+            <div>Current Course Description: {inputDesc}</div>
         </div>
     );
 }
 
-function EditSemestersUI({
+// Decided to delete the edit semester thing bc we dont need it
+/* function EditSemestersUI({
     Course2Edit
 }: {
     Course2Edit: Course;
@@ -309,7 +325,7 @@ function EditSemestersUI({
             </div>
         </div>
     );
-}
+} */
 
 // function EditPreRecsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 //     console.log(Course2Edit.name);
@@ -337,7 +353,7 @@ function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                     onChange={changeCredits}
                 />
             </Form.Group>
-            <div>Current Credits Worth: {Course2Edit.credits}</div>
+            <div>Current Credits Worth: {inputCredits}</div>
         </div>
     );
 }

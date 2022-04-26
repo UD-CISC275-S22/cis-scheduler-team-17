@@ -9,6 +9,7 @@ export function makeCourse(
     credits: number
 ): Course {
     return {
+        ogID: courseID,
         courseID: courseID,
         name: name,
         description: description,
