@@ -18,10 +18,12 @@ type ChangeEvent = React.ChangeEvent<
 
 export function SchedulerPage({
     changeHomepage,
-    degree
+    degree,
+    updateDegree
 }: {
     changeHomepage: () => void;
     degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     //seasons dropdown state
     const seasons = [...SeasonsList];
@@ -77,6 +79,14 @@ export function SchedulerPage({
             TotalCredits: 0
         };
         degree.SemesterList = [...degree.SemesterList, newSemester];
+        updateDegree;
+    }
+    function removeSemester(currYear: number, currSeason: Season) {
+        const newSemester = degree.SemesterList.filter(
+            (sem: SemesterPlanner): boolean =>
+                sem.SemesterSeason != currSeason && sem.year != currYear
+        );
+        degree.SemesterList = [...newSemester];
     }
     return (
         <div className="App">
@@ -114,6 +124,7 @@ export function SchedulerPage({
                                 <MakeSemester
                                     currentList={[]}
                                     semesterList={degree.SemesterList}
+                                    removeSemester={removeSemester}
                                 ></MakeSemester>
                             </div>
                         </Col>
