@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../App.css";
-import { SeasonsList } from "../interfaces/course-Degree-Semester";
+import {
+    SeasonsList,
+    SemesterPlanner
+} from "../interfaces/course-Degree-Semester";
 import { Season } from "../interfaces/course-Degree-Semester";
 import { MakeSemester } from "./MakeSemester";
 //interfaces
-import { Degree, SemesterPlanner } from "../interfaces/course-Degree-Semester";
-import { check } from "prettier";
+import { Degree } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -25,7 +27,7 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    const [semester, setSemester] = useState<boolean>(false);
+    const [newSem, setNewSem] = useState<boolean>(false);
 
     function getSeason(): JSX.Element {
         return (
@@ -60,33 +62,18 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function addSemester() {
-        setSemester(!semester);
+    function updateSemester() {
+        setNewSem(!newSem);
     }
-    function addSemHelper(
-        degree: Degree,
-        season: Season,
-        year: number
-    ): Degree {
-        // const contains = degree.SemesterList.find(
-        //     (c: SemesterPlanner): boolean =>
-        //         c.SemesterSeason === season && c.year === year
-        // );
-        // if (contains) {
-        //     return ();
-        // }
-        return {
-            ...degree.SemesterList,
-            SemesterList: [
-                ...degree.SemesterList,
-                {
-                    ClassesTaking: degree.CoursesRequired,
-                    year: year,
-                    SemeserSeason: season,
-                    TotalCredits: degree.CreditsRequired
-                }
-            ]
+    function addSemester() {
+        const newSemester = {
+            ClassesTaking: [],
+            year: year,
+            SemesterSeason: season,
+            TotalCredits: 0
         };
+        //const newSemList = [...degree.SemesterList, newSemester];
+        degree.SemesterList = [...degree.SemesterList, newSemester];
     }
     return (
         <div className="App">
@@ -110,20 +97,21 @@ export function SchedulerPage({
                                 {getYear()}
                                 <Button
                                     onClick={() => {
+                                        updateSemester();
                                         addSemester();
-                                        addSemHelper(degree, season, year);
                                     }}
                                 >
                                     Add Semester
                                 </Button>
                             </div>
-                            {semester && (
+                            {newSem && (
                                 <div>
                                     <MakeSemester
                                         currentList={[]}
                                         year={year}
                                         season={season}
                                         degree={degree}
+                                        semesterList={degree.SemesterList}
                                     ></MakeSemester>
                                 </div>
                             )}

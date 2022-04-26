@@ -15,12 +15,14 @@ export function MakeSemester({
     currentList,
     year,
     season,
-    degree
+    degree,
+    semesterList
 }: {
     currentList: Course[];
     year: number;
     season: Season;
     degree: Degree;
+    semesterList: SemesterPlanner[];
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -60,7 +62,7 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                {degree.SemesterList.map(
+                {semesterList.map(
                     (semester: SemesterPlanner): JSX.Element => (
                         <div key={semester.SemesterSeason + semester.year}>
                             <Table bordered className="pageLayout">
