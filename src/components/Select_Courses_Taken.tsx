@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 //import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
-import { currentSelectedDegree } from "./DropdownDegrees";
+//import { currentSelectedDegree } from "./DropdownDegrees";
 
 // This holds the course we are on and the degree we have
 
-export function SelectCoursesTaken(): JSX.Element {
+export function SelectCoursesTaken({
+    degree
+}: {
+    degree: Degree;
+}): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
-    const [currentDegree, setDegree] = useState<Degree>(currentSelectedDegree);
+    const [currentDegree, setDegree] = useState<Degree>(degree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
-        currentSelectedDegree.CoursesRequired[0].name
+        degree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
@@ -37,7 +41,7 @@ export function SelectCoursesTaken(): JSX.Element {
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
         // this line will update the courses that are shown to the user, there is another in scroll
-        setDegree(currentSelectedDegree);
+        setDegree(degree);
         console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
@@ -47,7 +51,7 @@ export function SelectCoursesTaken(): JSX.Element {
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
-        setDegree(currentSelectedDegree);
+        setDegree(degree);
         console.log(currentDegree.name);
     };
 

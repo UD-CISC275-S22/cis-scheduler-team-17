@@ -885,7 +885,7 @@ const MISY432 = makeCourse(
 
 // Hard coded versions of the Degrees
 // BS Concentrations, I clone the two year plan and concatenate the pther courses
-export const allCourses = [
+export const AllCourses = [
     Free_Elective1,
     Free_Elective2,
     Free_Elective3,
@@ -1275,7 +1275,7 @@ const Information_Systems_Courses = [
 const NoDegree = makeDegree(
     "No Degree Has been selected",
     "There has not been a course Selected",
-    allCourses,
+    AllCourses,
     0,
     []
 );

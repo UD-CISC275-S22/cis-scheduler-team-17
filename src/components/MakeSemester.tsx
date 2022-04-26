@@ -21,11 +21,13 @@ export function MakeSemester({
     //Semester Availability
     const [courseList, changeList] = useState<Course[]>(currentList);
     //Create course information
+    const [courseID, setID] = useState<string>("");
     const [courseName, setName] = useState<string>("");
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
     //Reset State - Removes all courses
     const resetState = () => {
+        setID("");
         setName("");
         setDescription("");
         setCredits(0);
@@ -39,6 +41,7 @@ export function MakeSemester({
     }
     function addCourse() {
         const newCourse = makeCourse(
+            courseID,
             courseName,
             courseDescription,
             [],
@@ -59,6 +62,7 @@ export function MakeSemester({
                                     {semester.SemesterSeason} {semester.year}
                                 </label>
                                 <tr className="key">
+                                    <th>Course ID</th>
                                     <th>Course Name</th>
                                     <th>Description</th>
                                     <th>Number of Credits</th>
@@ -66,6 +70,7 @@ export function MakeSemester({
                                 </tr>
                                 {courseList.map((course: Course) => (
                                     <tr key={course.name}>
+                                        <th>{course.courseID}</th>
                                         <th>{course.name}</th>
                                         <th>{course.description}</th>
                                         <th>{course.credits}</th>
@@ -82,6 +87,13 @@ export function MakeSemester({
             </Button>
             {visible && (
                 <div>
+                    <Form.Control
+                        type="string"
+                        value={courseID}
+                        onChange={(event: ChangeEvent) =>
+                            setID(event.target.value)
+                        }
+                    />
                     <Form.Control
                         type="string"
                         value={courseName}

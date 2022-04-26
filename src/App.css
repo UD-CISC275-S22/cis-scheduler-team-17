@@ -77,8 +77,6 @@ button{
     margin: 20%;
 }
 
-<<<<<<< HEAD
-=======
 .makeInformationButton{
     background-image: url("CSS-Images/footer.jpg");
     color: white;
@@ -97,7 +95,6 @@ button{
     background-image: url("CSS-Images/footer.jpg");
 }
 
->>>>>>> 84e83b7366baff8aaaa5312b54183172bb1c999b
 .backButton{
     font-size: 20px;
     background-image: url("CSS-Images/footer.jpg");
@@ -115,7 +112,6 @@ label{
 }
 
 
-<<<<<<< HEAD
 .dropdownForm{
     width: 100%;
     font-size: 98%;
@@ -124,9 +120,7 @@ label{
 label{
     font-size: 20px;
 }
-=======
 .key{
     background-color: lightgray;
     font-weight: bold;
 }
->>>>>>> 79d5ec4b0d84878f28a7e27efaa9eaae553a9bf1

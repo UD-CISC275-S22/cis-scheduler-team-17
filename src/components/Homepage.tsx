@@ -41,7 +41,9 @@ function Homepage({
                             ></DropdownDegrees>
                         </Col>
                         <Col>
-                            <SelectCoursesTaken></SelectCoursesTaken>
+                            <SelectCoursesTaken
+                                degree={degree}
+                            ></SelectCoursesTaken>
                         </Col>
                         <Col>
                             <Button
