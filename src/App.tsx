@@ -45,6 +45,7 @@ function App(): JSX.Element {
                     <SchedulerPage
                         changeHomepage={changeHomepage}
                         degree={degree}
+                        updateDegree={updateDegree}
                     ></SchedulerPage>
                     {console.log(homepage)}
                 </div>

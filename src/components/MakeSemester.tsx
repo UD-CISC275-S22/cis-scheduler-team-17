@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
+import {
+    Course,
+    Season,
+    SemesterPlanner
+} from "../interfaces/course-Degree-Semester";
 import { makeCourse } from "../interfaces/makeDegree-Makecourses";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -8,10 +12,12 @@ type ChangeEvent = React.ChangeEvent<
 
 export function MakeSemester({
     currentList,
-    semesterList
+    semesterList,
+    removeSemester
 }: {
     currentList: Course[];
     semesterList: SemesterPlanner[];
+    removeSemester: (year: number, season: Season) => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -60,6 +66,16 @@ export function MakeSemester({
                                 <label>
                                     {" "}
                                     {semester.SemesterSeason} {semester.year}
+                                    <Button
+                                        onClick={() =>
+                                            removeSemester(
+                                                semester.year,
+                                                semester.SemesterSeason
+                                            )
+                                        }
+                                    >
+                                        Remove
+                                    </Button>
                                 </label>
                                 <tr className="key">
                                     <th>Course ID</th>
@@ -78,10 +94,59 @@ export function MakeSemester({
                                     </tr>
                                 ))}
                             </Table>
+                            <div>
+                                <CreateCourse
+                                    visible={visible}
+                                    changeVisibility={changeVisibility}
+                                    courseID={courseID}
+                                    setID={setID}
+                                    courseName={courseName}
+                                    setName={setName}
+                                    courseDescription={courseDescription}
+                                    setDescription={setDescription}
+                                    credits={credits}
+                                    changeCredits={changeCredits}
+                                    addCourse={addCourse}
+                                    resetState={resetState}
+                                ></CreateCourse>
+                            </div>
                         </div>
                     )
                 )}
             </div>
+        </div>
+    );
+}
+
+function CreateCourse({
+    visible,
+    changeVisibility,
+    courseID,
+    setID,
+    courseName,
+    setName,
+    courseDescription,
+    setDescription,
+    credits,
+    changeCredits,
+    addCourse,
+    resetState
+}: {
+    visible: boolean;
+    changeVisibility: () => void;
+    courseID: string;
+    setID: (value: string) => void;
+    courseName: string;
+    setName: (value: string) => void;
+    courseDescription: string;
+    setDescription: (value: string) => void;
+    credits: number;
+    changeCredits: (value: string) => void;
+    addCourse: () => void;
+    resetState: () => void;
+}): JSX.Element {
+    return (
+        <div>
             <Button onClick={changeVisibility}>
                 {visible ? "Hide Form" : "Create Course"}
             </Button>
