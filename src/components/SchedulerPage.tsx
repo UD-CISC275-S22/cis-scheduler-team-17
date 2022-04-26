@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../App.css";
+import { MakeSemester } from "./MakeSemester";
+//interfaces
 import {
+    Degree,
+    Season,
     SeasonsList,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
-import { Season } from "../interfaces/course-Degree-Semester";
-import { MakeSemester } from "./MakeSemester";
-//interfaces
-import { Degree } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -27,7 +27,7 @@ export function SchedulerPage({
     //year state
     const [year, setYear] = useState<number>(2022);
     //semester state
-    const [newSem, setNewSem] = useState<boolean>(false);
+    const [showSemForm, setSemesterForm] = useState<boolean>(false);
 
     function getSeason(): JSX.Element {
         return (
@@ -63,17 +63,17 @@ export function SchedulerPage({
         );
     }
     function updateSemester() {
-        setNewSem(!newSem);
+        setSemesterForm(!showSemForm);
     }
     function addSemester() {
-        updateSemester();
-        const newSemester = {
+        const currYear = year;
+        const currSeason = season;
+        const newSemester: SemesterPlanner = {
             ClassesTaking: [],
-            year: year,
-            SemesterSeason: season,
+            year: currYear,
+            SemesterSeason: currSeason,
             TotalCredits: 0
         };
-        //const newSemList = [...degree.SemesterList, newSemester];
         degree.SemesterList = [...degree.SemesterList, newSemester];
     }
     return (
@@ -94,25 +94,26 @@ export function SchedulerPage({
                                 Plan name [take in Degree plan selection]
                             </span>
                             <div>
-                                {console.log(degree.SemesterList)}
-                                {console.log(degree)}
-                                {getSeason()}
-                                {getYear()}
-                                <Button onClick={() => addSemester()}>
-                                    Add Semester
+                                <Button onClick={() => updateSemester()}>
+                                    {" "}
+                                    Show Add Semester Form
                                 </Button>
+                                {showSemForm && (
+                                    <div>
+                                        {getSeason()}
+                                        {getYear()}
+                                        <Button onClick={() => addSemester()}>
+                                            Add Semester
+                                        </Button>
+                                    </div>
+                                )}
                             </div>
-                            {newSem && (
-                                <div>
-                                    <MakeSemester
-                                        currentList={[]}
-                                        year={year}
-                                        season={season}
-                                        degree={degree}
-                                        semesterList={degree.SemesterList}
-                                    ></MakeSemester>
-                                </div>
-                            )}
+                            <div>
+                                <MakeSemester
+                                    currentList={[]}
+                                    semesterList={degree.SemesterList}
+                                ></MakeSemester>
+                            </div>
                         </Col>
                         <Col>
                             <span> Courses </span>

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import {
-    Course,
-    Season,
-    Degree,
-    SemesterPlanner
-} from "../interfaces/course-Degree-Semester";
+import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
 import { makeCourse } from "../interfaces/makeDegree-Makecourses";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -13,15 +8,9 @@ type ChangeEvent = React.ChangeEvent<
 
 export function MakeSemester({
     currentList,
-    year,
-    season,
-    degree,
     semesterList
 }: {
     currentList: Course[];
-    year: number;
-    season: Season;
-    degree: Degree;
     semesterList: SemesterPlanner[];
 }): JSX.Element {
     //Visiblity of form
@@ -30,7 +19,6 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    //Course list to be shown in table
     const [courseList, changeList] = useState<Course[]>(currentList);
     //Create course information
     const [courseName, setName] = useState<string>("");
@@ -68,7 +56,7 @@ export function MakeSemester({
                             <Table bordered className="pageLayout">
                                 <label>
                                     {" "}
-                                    {season} {year}
+                                    {semester.SemesterSeason} {semester.year}
                                 </label>
                                 <tr className="key">
                                     <th>Course Name</th>
