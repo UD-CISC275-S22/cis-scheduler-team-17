@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
+//export let currentSelectedDegree = AllDegrees[0];
 
 export function DropdownDegrees({
     degrees,

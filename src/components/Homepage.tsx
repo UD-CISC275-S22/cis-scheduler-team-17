@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
-import { SelectCoursesTaken } from "./Select_Courses_Taken";
 import { DropdownDegrees } from "./DropdownDegrees";
 //interfaces
 import { Degree } from "../interfaces/course-Degree-Semester";
@@ -9,6 +8,11 @@ import { Degree } from "../interfaces/course-Degree-Semester";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
+import { EditCourse } from "./EditCourse";
+import { SelectCoursesTaken } from "./Select_Courses_Taken";
+
+//import { UnderConstruction } from "./Underconstruction";
+//import SchedulerPage from "./SchedulerPage";
 
 function Homepage({
     changeHomepage,
@@ -46,6 +50,7 @@ function Homepage({
                             >
                                 Make Schedule
                             </Button>
+                            <EditCourse></EditCourse>
                         </Col>
                     </Row>
                 </Container>
