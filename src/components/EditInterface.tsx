@@ -145,10 +145,12 @@ function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 }
 
 function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputDesc, setInputDesc] = useState<string>("");
+    const [inputDesc, setInputDesc] = useState<string>(Course2Edit.description);
 
     function updateDesc(event: ChangeEvent) {
         setInputDesc(event.target.value);
+    }
+    function saveChange() {
         Course2Edit.description = inputDesc;
     }
 
@@ -162,6 +164,7 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                 ></Form.Control>
             </Form.Group>
             <div>Current Course Description: {inputDesc}</div>
+            <Button onClick={saveChange}>Save</Button>
         </div>
     );
 }
@@ -333,16 +336,22 @@ function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
 // }
 
 function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputCredits, setInputCredits] = useState<number>(0);
+    const [inputCredits, setInputCredits] = useState<number>(
+        Course2Edit.credits
+    );
 
     function changeCredits(event: ChangeEvent) {
         if (!isNaN(parseInt(event.target.value))) {
-            console.log(event.target.value);
             setInputCredits(parseInt(event.target.value));
             console.log(inputCredits);
-            Course2Edit.credits = inputCredits;
         }
     }
+
+    function saveChange() {
+        console.log(inputCredits);
+        Course2Edit.credits = inputCredits;
+    }
+
     return (
         <div>
             <Form.Group controlId="InputNewCredits">
@@ -354,6 +363,7 @@ function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                 />
             </Form.Group>
             <div>Current Credits Worth: {inputCredits}</div>
+            <Button onClick={saveChange}>Save</Button>
         </div>
     );
 }

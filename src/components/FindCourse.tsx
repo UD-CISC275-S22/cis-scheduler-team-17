@@ -24,7 +24,6 @@ export function FindCourse(): JSX.Element {
     const [SelectedCourse, updateSelectedCourse] = useState<Course>(
         AllCourses[0]
     );
-    const [infoVisible, courseInfoVisible] = useState<boolean>(false);
 
     function fixYellow() {
         // eslint-disable-next-line no-constant-condition
@@ -98,30 +97,6 @@ export function FindCourse(): JSX.Element {
                     <Button onClick={() => SelectCourse("")}>
                         Search For Course
                     </Button>
-                    <Button onClick={() => courseInfoVisible(!infoVisible)}>
-                        View Course Details
-                    </Button>
-                    {infoVisible ? (
-                        <div>
-                            <br></br>
-                            You Have Selected the Course {selectedCourseName} to
-                            Edit
-                            <br></br>
-                            The Current Course ID:{" "}
-                            {SelectedCourse.courseID + "\n"}
-                            <br></br>
-                            The Current Course Name:{" "}
-                            {SelectedCourse.name + "\n"}
-                            <br></br>
-                            The Current Course Description:
-                            {SelectedCourse.description + "\n"}
-                            <br></br>
-                            The Current Course Credits: {SelectedCourse.credits}
-                            <br></br>
-                        </div>
-                    ) : (
-                        <div>Edit Your Course!!!</div>
-                    )}
                     <EditInterface Course2Edit={SelectedCourse}></EditInterface>
                 </div>
             )}
