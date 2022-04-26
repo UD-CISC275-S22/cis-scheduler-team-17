@@ -199,7 +199,7 @@
   console.log
     true
 
-      at App (src/App.tsx:49:30)
+      at App (src/App.tsx:50:30)
 
   console.error
     Warning: Encountered two children with the same key, `Free Elective #1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
@@ -1394,7 +1394,7 @@
     Warning: Encountered two children with the same key, `Free Elective #1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1402,7 +1402,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1430,7 +1430,7 @@
     Warning: Encountered two children with the same key, `Free Elective #2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1438,7 +1438,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1466,7 +1466,7 @@
     Warning: Encountered two children with the same key, `Free Elective #3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1474,7 +1474,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1502,7 +1502,7 @@
     Warning: Encountered two children with the same key, `Free Elective #4`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1510,7 +1510,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1538,7 +1538,7 @@
     Warning: Encountered two children with the same key, `Free Elective #5`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1546,7 +1546,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1574,7 +1574,7 @@
     Warning: Encountered two children with the same key, `Free Elective #6`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1582,7 +1582,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1610,7 +1610,7 @@
     Warning: Encountered two children with the same key, `Free Elective #7`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1618,7 +1618,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1646,7 +1646,7 @@
     Warning: Encountered two children with the same key, `Free Elective #8`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1654,7 +1654,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1682,7 +1682,7 @@
     Warning: Encountered two children with the same key, `Free Elective #9`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1690,7 +1690,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1718,7 +1718,7 @@
     Warning: Encountered two children with the same key, `Free Elective #10`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1726,7 +1726,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1754,7 +1754,7 @@
     Warning: Encountered two children with the same key, `Free Elective #11`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
         at div
         at div
-        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:166:5)
+        at PrintDegreesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:177:5)
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -1762,7 +1762,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:141:25)
+        at CoursesLists (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/SchedulerPage.tsx:152:25)
         at span
         at div
         at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1787,7 +1787,7 @@
       at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (776 ms)
+  ✕ renders the course name somewhere (962 ms)
 
   ● renders the course name somewhere
 
@@ -1977,30 +1977,30 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------------|---------|----------|---------|---------|------------------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
------------------------------|---------|----------|---------|---------|------------------------------
-All files                    |   62.03 |     32.5 |   29.26 |   62.03 |                              
- src                         |   45.45 |       50 |      25 |   45.45 |                              
-  App.tsx                    |   45.45 |       50 |      25 |   45.45 | 18,25-30                     
- src/components              |   34.26 |    29.41 |   27.63 |   34.26 |                              
-  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                              
-  EditCourse.tsx             |     100 |      100 |     100 |     100 |                              
-  EditInterface.tsx          |       0 |        0 |       0 |       0 | 15-355                       
-  FindCourse.tsx             |   44.82 |       50 |      30 |   44.82 | 31-53,58-62,87-97            
-  Homepage.tsx               |     100 |      100 |     100 |     100 |                              
-  MakeSemester.tsx           |   33.33 |    33.33 |    9.09 |   33.33 | 19,30-51,58-115              
-  MoveOption.tsx             |       0 |      100 |     100 |       0 | 3-4                          
-  SchedulerPage.tsx          |    41.3 |       50 |      35 |    41.3 | 35-79,99-107,190-203,210-219 
-  Select_Courses_Taken.tsx   |   47.22 |    33.33 |   54.54 |   47.22 | 27-45,49-55,158-177          
-  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                            
- src/interfaces              |     100 |      100 |     100 |     100 |                              
-  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                              
-  course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                              
-  makeDegree-Makecourses.tsx |     100 |      100 |     100 |     100 |                              
------------------------------|---------|----------|---------|---------|------------------------------
+-----------------------------|---------|----------|---------|---------|-------------------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
+-----------------------------|---------|----------|---------|---------|-------------------------------
+All files                    |    60.9 |    26.19 |    27.9 |    60.9 |                               
+ src                         |   45.45 |       50 |      25 |   45.45 |                               
+  App.tsx                    |   45.45 |       50 |      25 |   45.45 | 18,25-30                      
+ src/components              |   33.15 |    22.22 |   26.25 |   33.15 |                               
+  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                               
+  EditCourse.tsx             |     100 |      100 |     100 |     100 |                               
+  EditInterface.tsx          |       0 |        0 |       0 |       0 | 15-355                        
+  FindCourse.tsx             |   44.82 |       50 |      30 |   44.82 | 31-53,58-62,87-97             
+  Homepage.tsx               |     100 |      100 |     100 |     100 |                               
+  MakeSemester.tsx           |   30.76 |        0 |    7.69 |   30.76 | 25,36-57,64-180               
+  MoveOption.tsx             |       0 |      100 |     100 |       0 | 3-4                           
+  SchedulerPage.tsx          |      38 |    33.33 |   31.81 |      38 | 37-89,109-117,201-214,221-230 
+  Select_Courses_Taken.tsx   |   47.22 |    33.33 |   54.54 |   47.22 | 27-45,49-55,158-177           
+  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                             
+ src/interfaces              |     100 |      100 |     100 |     100 |                               
+  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                               
+  course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                               
+  makeDegree-Makecourses.tsx |     100 |      100 |     100 |     100 |                               
+-----------------------------|---------|----------|---------|---------|-------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.379 s
+Time:        4.102 s
 Ran all test suites.
