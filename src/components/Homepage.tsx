@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../App.css";
-import { SelectCoursesTaken } from "./Select_Courses_Taken";
 import { DropdownDegrees } from "./DropdownDegrees";
+import { EditCourse } from "./EditCourse";
+import { SelectCoursesTaken } from "./Select_Courses_Taken";
+
 //import { UnderConstruction } from "./Underconstruction";
 //import SchedulerPage from "./SchedulerPage";
 
@@ -32,6 +34,7 @@ function Homepage({
                             >
                                 Make Schedule
                             </Button>
+                            <EditCourse></EditCourse>
                         </Col>
                     </Row>
                 </Container>

@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
-import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
+import { Button, Form } from "react-bootstrap";
+//import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
+import { currentSelectedDegree } from "./DropdownDegrees";
+
+// This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken(): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
-    const [currentDegree, setDegree] = useState<Degree>(AllDegrees[0]);
-    const [progress, setProgress] = useState(0);
+    const [currentDegree, setDegree] = useState<Degree>(currentSelectedDegree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
-        AllCourses[0].name
+        currentSelectedDegree.CoursesRequired[0].name
     );
+    const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
 
     function UseYellows() {
         // this is only here to get ris of the yellows in the code
         // eslint-disable-next-line no-constant-condition
         if (!true) {
-            console.log(setDegree);
             console.log(currentCourseName);
             console.log(currentTaken);
         }
@@ -34,6 +36,9 @@ export function SelectCoursesTaken(): JSX.Element {
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
+        // this line will update the courses that are shown to the user, there is another in scroll
+        setDegree(currentSelectedDegree);
+        console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -42,6 +47,8 @@ export function SelectCoursesTaken(): JSX.Element {
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
+        setDegree(currentSelectedDegree);
+        console.log(currentDegree.name);
     };
 
     return (
@@ -61,12 +68,8 @@ export function SelectCoursesTaken(): JSX.Element {
                             label={
                                 "Course Name: " +
                                 currentCourse.name +
-                                " Course Description: " +
-                                currentCourse.description +
                                 " \n Course Credits: " +
                                 currentCourse.credits +
-                                " ...... Semesters Available: " +
-                                currentCourse.SemestersAvailableString +
                                 " ...... Pre Requisite: " +
                                 currentCourse.prerecs.map(
                                     (currentPreRec: Course) =>
@@ -77,6 +80,10 @@ export function SelectCoursesTaken(): JSX.Element {
                                 currentCourse.taken_String
                             }
                         />
+                        <Information
+                            currentDegree={currentDegree}
+                            currentCourseName={currentCourse.name}
+                        ></Information>
                     </div>
                 ))}
             </div>
@@ -120,4 +127,50 @@ const styles = {
 } as const;
 {
     /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
+}
+
+function Information({
+    currentDegree,
+    currentCourseName
+}: {
+    currentDegree: Degree;
+    currentCourseName: string;
+}): JSX.Element {
+    const [showInfo, setShowInfo] = useState<boolean>(false);
+    const findCourse = currentDegree.CoursesRequired.filter(
+        (myCourse: Course): boolean => myCourse.name === currentCourseName
+    );
+    console.log(currentDegree.name);
+    const currentCourse = findCourse[0];
+    return (
+        <div>
+            <Button
+                onClick={() => setShowInfo(!showInfo)}
+                className="makeInformationButton"
+            >
+                More Information
+            </Button>
+            <div className="extraInfoLook" style={{ textAlign: "left" }}>
+                {!showInfo ? (
+                    <></>
+                ) : (
+                    <>
+                        Course Name: {currentCourse.name} <br></br>
+                        Course Description: {currentCourse.description}{" "}
+                        <br></br>
+                        Course Credits: {currentCourse.credits} <br></br>
+                        Semesters Available:{" "}
+                        {currentCourse.SemestersAvailableString} <br></br>
+                        Pre-Requisite:
+                        {currentCourse.prerecs.map(
+                            (currentPreRec: Course) =>
+                                currentPreRec.name + currentPreRec.taken_String
+                        )}{" "}
+                        <br></br>
+                        Taken: {currentCourse.taken_String}
+                    </>
+                )}
+            </div>
+        </div>
+    );
 }

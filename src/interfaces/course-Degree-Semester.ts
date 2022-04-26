@@ -9,6 +9,9 @@ export type Season =
 /** A representation of a Question in a quizzing application */
 export interface Course {
     /** The name of the course */
+    ogID: string;
+    /**This course name can be edited, the OG will always remain the same */
+    courseID: string;
     name: string;
     /** The instructions and content of the Question */
     description: string;
