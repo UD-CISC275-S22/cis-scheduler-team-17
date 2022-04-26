@@ -1,69 +1,82 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../App.css";
-import { Course, Degree, Season } from "../interfaces/course-Degree-Semester";
-import { currentSelectedDegree } from "./DropdownDegrees";
+import { MakeSemester } from "./MakeSemester";
+//interfaces
+import {
+    Course,
+    Degree,
+    Season,
+    SeasonsList,
+    SemesterPlanner
+} from "../interfaces/course-Degree-Semester";
+//import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
 export function SchedulerPage({
-    changeHomepage
+    changeHomepage,
+    degree
 }: {
     changeHomepage: () => void;
+    degree: Degree;
 }): JSX.Element {
-    const seasons: Season[] = ["Fall"];
-    const [season, setSeason] = useState<string>(seasons[0]);
+    //seasons dropdown state
+    const seasons = [...SeasonsList];
+    const [season, setSeason] = useState<Season>(seasons[0]);
+    //year state
+    const [year, setYear] = useState<number>(2022);
+    //semester state
+    const [showSemForm, setSemesterForm] = useState<boolean>(false);
 
-    function addSemester(): JSX.Element {
+    function getSeason(): JSX.Element {
         return (
-            <div>
-                <Form.Group controlId="Seasons">
-                    <Form.Label> Season: </Form.Label>
-                    <Form.Select
-                        className="dropdownForm"
-                        value={season}
-                        onChange={(event: ChangeEvent) =>
-                            setSeason(event.target.value)
-                        }
-                    >
-                        {seasons.map((s: string) => (
-                            <option key={s} value={s}>
-                                {s}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label> Year: </Form.Label>
-                    <Form.Control type="number" />
-                </Form.Group>
-                <Button onClick={() => showSemester}> Add Semester</Button>
-            </div>
+            <Form.Group controlId="Seasons">
+                <Form.Label> Season: </Form.Label>
+                <Form.Select
+                    value={season}
+                    onChange={(event: ChangeEvent) =>
+                        setSeason(event.target.value)
+                    }
+                >
+                    {SeasonsList.map((s: Season) => (
+                        <option key={s} value={s}>
+                            {s}
+                        </option>
+                    ))}
+                </Form.Select>
+            </Form.Group>
         );
     }
-
-    function showSemester(): JSX.Element {
+    function getYear(): JSX.Element {
         return (
-            <div>
-                <Table>
-                    <thead>
-                        <tr>
-                            <th> Semester + Year </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                {/* <Button onClick={() => deleteSemester()}></Button> */}
-                            </th>
-                        </tr>
-                    </thead>
-                    <tr> Course ID </tr>
-                    <tr> Number of Credits </tr>
-                    <tbody>All of the data</tbody>
-                </Table>
-            </div>
+            <Form.Group controlId="Years">
+                <Form.Label> Year: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={year}
+                    onChange={(event: ChangeEvent) =>
+                        setYear(parseInt(event.target.value))
+                    }
+                />
+            </Form.Group>
         );
+    }
+    function updateSemester() {
+        setSemesterForm(!showSemForm);
+    }
+    function addSemester() {
+        const currYear = year;
+        const currSeason = season;
+        const newSemester: SemesterPlanner = {
+            ClassesTaking: [],
+            year: currYear,
+            SemesterSeason: currSeason,
+            TotalCredits: 0
+        };
+        degree.SemesterList = [...degree.SemesterList, newSemester];
     }
     return (
         <div className="App">
@@ -71,7 +84,9 @@ export function SchedulerPage({
                 Computer & Information Sciences Schedule Planner
             </header>
             <div>
-                <h3>You are planning a [] degree</h3>
+                <h3>
+                    You are planning <strong>{degree.name}</strong> degree
+                </h3>
             </div>
             <div>
                 <Container>
@@ -80,11 +95,31 @@ export function SchedulerPage({
                             <span>
                                 Plan name [take in Degree plan selection]
                             </span>
-                            <div> {addSemester()} </div>
+                            <div>
+                                <Button onClick={() => updateSemester()}>
+                                    {" "}
+                                    Show Add Semester Form
+                                </Button>
+                                {showSemForm && (
+                                    <div>
+                                        {getSeason()}
+                                        {getYear()}
+                                        <Button onClick={() => addSemester()}>
+                                            Add Semester
+                                        </Button>
+                                    </div>
+                                )}
+                            </div>
+                            <div>
+                                <MakeSemester
+                                    currentList={[]}
+                                    semesterList={degree.SemesterList}
+                                ></MakeSemester>
+                            </div>
                         </Col>
                         <Col>
                             <span>
-                                <CoursesLists></CoursesLists>
+                                <CoursesLists degree={degree}></CoursesLists>
                             </span>
                         </Col>
                     </Row>
@@ -93,7 +128,7 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            <div>{showSemester()}</div>
+            {/* <div>{showSemester()}</div> */}
             <footer className="back">
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
@@ -103,30 +138,42 @@ export function SchedulerPage({
     );
 }
 
-function CoursesLists(): JSX.Element {
+function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
     return (
         <div>
             <Container>
                 <Row>
                     <Col>
                         <div>Courses You Have Taken</div>
-                        <PrintDegreesLists taken={true}></PrintDegreesLists>
+                        <PrintDegreesLists
+                            taken={true}
+                            degree={degree}
+                        ></PrintDegreesLists>
                     </Col>
                     <Col>
                         <div>Courses You Have Not Taken</div>
-                        <PrintDegreesLists taken={false}></PrintDegreesLists>
+                        <PrintDegreesLists
+                            taken={false}
+                            degree={degree}
+                        ></PrintDegreesLists>
                     </Col>
                 </Row>
             </Container>
         </div>
     );
 }
-function PrintDegreesLists({ taken }: { taken: boolean }): JSX.Element {
+function PrintDegreesLists({
+    taken,
+    degree
+}: {
+    taken: boolean;
+    degree: Degree;
+}): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
-    const [currentDegree, setDegree] = useState<Degree>(currentSelectedDegree);
+    const [currentDegree, setDegree] = useState<Degree>(degree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
-        currentSelectedDegree.CoursesRequired[0].name
+        degree.CoursesRequired[0].name
     );
     const [printCourses, setPrintTakenOrNot] = useState<Course[]>(
         currentDegree.CoursesRequired.filter(
@@ -149,7 +196,7 @@ function PrintDegreesLists({ taken }: { taken: boolean }): JSX.Element {
     }
 
     function updateList() {
-        setDegree(currentSelectedDegree);
+        setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
             currentDegree.CoursesRequired.filter(
@@ -165,7 +212,7 @@ function PrintDegreesLists({ taken }: { taken: boolean }): JSX.Element {
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
-        setDegree(currentSelectedDegree);
+        setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
             currentDegree.CoursesRequired.filter(

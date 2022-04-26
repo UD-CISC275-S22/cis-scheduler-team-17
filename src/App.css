@@ -63,13 +63,17 @@
     font-family: monospace;
 }
 
+button{
+    background-image: url("CSS-Images/footer.jpg");
+    color: white;
+}
 
 .makeButton{
     background-image: url("CSS-Images/footer.jpg");
     color: white;
     font-size: 25px;
-    height: 100px;
-    width: 200px;
+    height: 80px;
+    width: 180px;
     margin: 20%;
 }
 
@@ -115,4 +119,8 @@ label{
 
 label{
     font-size: 20px;
+}
+.key{
+    background-color: lightgray;
+    font-weight: bold;
 }
