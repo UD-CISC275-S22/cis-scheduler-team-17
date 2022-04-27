@@ -158,6 +158,7 @@ function CreateCourse({
                         onChange={(event: ChangeEvent) =>
                             setID(event.target.value)
                         }
+                        placeholder={"Enter Course ID"}
                     />
                     <Form.Control
                         type="string"
@@ -165,6 +166,7 @@ function CreateCourse({
                         onChange={(event: ChangeEvent) =>
                             setName(event.target.value)
                         }
+                        placeholder={"Enter Course Name"}
                     />
                     <Form.Control
                         type="string"
@@ -172,7 +174,9 @@ function CreateCourse({
                         onChange={(event: ChangeEvent) =>
                             setDescription(event.target.value)
                         }
+                        placeholder={"Enter Course Description"}
                     />
+                    <label>Enter Number of Credits</label>
                     <Form.Control
                         type="number"
                         value={credits}
