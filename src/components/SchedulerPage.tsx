@@ -10,6 +10,7 @@ import {
     SeasonsList,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
+import { ExportCSV } from "./ExportCSV";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
@@ -139,8 +140,8 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            {/* <div>{showSemester()}</div> */}
-            <footer className="back">
+            <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+            <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
                 </Button>
