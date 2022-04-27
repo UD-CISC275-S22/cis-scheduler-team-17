@@ -88,6 +88,7 @@ export function SchedulerPage({
                 sem.SemesterSeason != currSeason && sem.year != currYear
         );
         degree.SemesterList = [...newSemester];
+        updateDegree;
     }
     return (
         <div className="App">
@@ -103,9 +104,9 @@ export function SchedulerPage({
                 <Container>
                     <Row>
                         <Col>
-                            <span>
-                                Plan name [take in Degree plan selection]
-                            </span>
+                            <label>
+                                Plan Name: <strong>{degree.name}</strong>
+                            </label>
                             <div>
                                 <Button onClick={() => updateSemester()}>
                                     {" "}
@@ -122,11 +123,29 @@ export function SchedulerPage({
                                 )}
                             </div>
                             <div>
-                                <MakeSemester
-                                    currentList={[]}
-                                    semesterList={degree.SemesterList}
-                                    removeSemester={removeSemester}
-                                ></MakeSemester>
+                                {degree.SemesterList.map(
+                                    (semester: SemesterPlanner) => (
+                                        <>
+                                            <MakeSemester
+                                                key={
+                                                    semester.SemesterSeason +
+                                                    semester.year
+                                                }
+                                                semester={semester}
+                                            ></MakeSemester>
+                                            <Button
+                                                onClick={() =>
+                                                    removeSemester(
+                                                        semester.year,
+                                                        semester.SemesterSeason
+                                                    )
+                                                }
+                                            >
+                                                Remove Semester
+                                            </Button>
+                                        </>
+                                    )
+                                )}
                             </div>
                         </Col>
                         <Col>
@@ -156,14 +175,14 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        <div>Courses You Have Taken</div>
+                        <label>Courses You Have Taken</label>
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
-                        <div>Courses You Have Not Taken</div>
+                        <label>Courses You Have Not Taken</label>
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}

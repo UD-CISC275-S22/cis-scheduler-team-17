@@ -1,23 +1,15 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import {
-    Course,
-    Season,
-    SemesterPlanner
-} from "../interfaces/course-Degree-Semester";
+import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
 import { makeCourse } from "../interfaces/makeDegree-Makecourses";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
 export function MakeSemester({
-    currentList,
-    semesterList,
-    removeSemester
+    semester
 }: {
-    currentList: Course[];
-    semesterList: SemesterPlanner[];
-    removeSemester: (year: number, season: Season) => void;
+    semester: SemesterPlanner;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -25,12 +17,12 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    const [courseList, changeList] = useState<Course[]>(currentList);
+    const [courseList, changeList] = useState<Course[]>(semester.ClassesTaking);
     //Create course information
     const [courseID, setID] = useState<string>("");
     const [courseName, setName] = useState<string>("");
     const [courseDescription, setDescription] = useState<string>("");
-    const [credits, setCredits] = useState<number>(0);
+    const [credits, setCredits] = useState<number>(semester.TotalCredits);
     //Reset State - Removes all courses
     const resetState = () => {
         setID("");
@@ -59,60 +51,43 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                {semesterList.map(
-                    (semester: SemesterPlanner): JSX.Element => (
-                        <div key={semester.SemesterSeason + semester.year}>
-                            <Table bordered className="pageLayout">
-                                <label>
-                                    {" "}
-                                    {semester.SemesterSeason} {semester.year}
-                                    <Button
-                                        onClick={() =>
-                                            removeSemester(
-                                                semester.year,
-                                                semester.SemesterSeason
-                                            )
-                                        }
-                                    >
-                                        Remove
-                                    </Button>
-                                </label>
-                                <tr className="key">
-                                    <th>Course ID</th>
-                                    <th>Course Name</th>
-                                    <th>Description</th>
-                                    <th>Number of Credits</th>
-                                    <th>Move Course</th>
-                                </tr>
-                                {courseList.map((course: Course) => (
-                                    <tr key={course.name}>
-                                        <th>{course.courseID}</th>
-                                        <th>{course.name}</th>
-                                        <th>{course.description}</th>
-                                        <th>{course.credits}</th>
-                                        <th>{"UC"}</th>
-                                    </tr>
-                                ))}
-                            </Table>
-                            <div>
-                                <CreateCourse
-                                    visible={visible}
-                                    changeVisibility={changeVisibility}
-                                    courseID={courseID}
-                                    setID={setID}
-                                    courseName={courseName}
-                                    setName={setName}
-                                    courseDescription={courseDescription}
-                                    setDescription={setDescription}
-                                    credits={credits}
-                                    changeCredits={changeCredits}
-                                    addCourse={addCourse}
-                                    resetState={resetState}
-                                ></CreateCourse>
-                            </div>
-                        </div>
-                    )
-                )}
+                <Table>
+                    <label>
+                        {semester.SemesterSeason + " " + semester.year}
+                    </label>
+                    <tr className="key">
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Description</th>
+                        <th>Number of Credits</th>
+                        <th>Move Course</th>
+                    </tr>
+                    {courseList.map((course: Course) => (
+                        <tr key={course.name}>
+                            <th>{course.courseID}</th>
+                            <th>{course.name}</th>
+                            <th>{course.description}</th>
+                            <th>{course.credits}</th>
+                            <th>{"UC"}</th>
+                        </tr>
+                    ))}
+                </Table>
+                <div>
+                    <CreateCourse
+                        visible={visible}
+                        changeVisibility={changeVisibility}
+                        courseID={courseID}
+                        setID={setID}
+                        courseName={courseName}
+                        setName={setName}
+                        courseDescription={courseDescription}
+                        setDescription={setDescription}
+                        credits={credits}
+                        changeCredits={changeCredits}
+                        addCourse={addCourse}
+                        resetState={resetState}
+                    ></CreateCourse>
+                </div>
             </div>
         </div>
     );
