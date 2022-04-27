@@ -11,6 +11,8 @@ type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
+document.title = "CISC Degree Planner";
+
 function App(): JSX.Element {
     //page states
     const [homepage, setHomepage] = useState<boolean>(true);
