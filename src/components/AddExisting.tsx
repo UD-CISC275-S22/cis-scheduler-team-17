@@ -6,5 +6,5 @@ export function AddExisting({
 }: {
     semesterList: SemesterPlanner[];
 }): JSX.Element {
-    return <div>Under Construction</div>;
+    return <div>{semesterList[0].year} Under Construction</div>;
 }
