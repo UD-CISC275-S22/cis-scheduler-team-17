@@ -33,7 +33,7 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-    const [updateSemesterList, setSemesterList] = useState<Degree.SemesterList>(
+    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
 
@@ -82,16 +82,16 @@ export function SchedulerPage({
             SemesterSeason: currSeason,
             TotalCredits: 0
         };
-        degree.SemesterList = [...degree.SemesterList, newSemester];
+        setSemesterList([...updateSemesterList, newSemester]);
+        //degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
     }
     function removeSemester(currYear: number, currSeason: Season) {
-        const newSemester = degree.SemesterList.filter(
+        const removedSem = [...updateSemesterList].filter(
             (sem: SemesterPlanner): boolean =>
                 sem.SemesterSeason != currSeason && sem.year != currYear
         );
-        degree.SemesterList = [...newSemester];
-        updateDegree;
+        setSemesterList(removedSem);
     }
     return (
         <div className="App">
@@ -103,6 +103,7 @@ export function SchedulerPage({
                     You are planning <strong>{degree.name}</strong> degree
                 </h3>
             </div>
+            {console.log(updateSemesterList)}
             <div>
                 <Container>
                     <Row>
@@ -131,7 +132,7 @@ export function SchedulerPage({
                                 )}
                             </div>
                             <div>
-                                {degree.SemesterList.map(
+                                {updateSemesterList.map(
                                     (semester: SemesterPlanner) => (
                                         <>
                                             <MakeSemester
@@ -140,8 +141,9 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
+                                                removeSemester={removeSemester}
                                             ></MakeSemester>
-                                            <Button
+                                            {/* <Button
                                                 onClick={() => {
                                                     removeSemester(
                                                         semester.year,
@@ -151,7 +153,7 @@ export function SchedulerPage({
                                                 }}
                                             >
                                                 Remove Semester
-                                            </Button>
+                                            </Button> */}
                                         </>
                                     )
                                 )}
