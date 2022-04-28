@@ -33,8 +33,8 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner>(
-        degree.SemesterList[0]
+    const [updateSemesterList, setSemesterList] = useState<Degree.SemesterList>(
+        degree.SemesterList
     );
 
     function getSeason(): JSX.Element {
