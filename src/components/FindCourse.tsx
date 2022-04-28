@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
-import { Course } from "../interfaces/course-Degree-Semester";
+import { Course, Degree } from "../interfaces/course-Degree-Semester";
 import { EditInterface } from "./EditInterface";
 
 // simplifing the type definition of the change event
@@ -10,14 +10,13 @@ type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
-export function FindCourse(): JSX.Element {
+export function FindCourse({ degree }: { degree: Degree }): JSX.Element {
     // state used to handle the users inputted answer
     fixYellow();
-    const AllCoursesCopy = [...AllCourses];
     const [userAnswer, setUserAnswer] = useState<string>("");
     const [list_Of_Possible_Answers, setListOfPossibleAnswers] = useState<
         Course[]
-    >([...AllCourses]);
+    >(degree.CoursesRequired);
     const [progress, setProgress] = useState(0);
     const [selectedCourseName, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
@@ -37,7 +36,7 @@ export function FindCourse(): JSX.Element {
         setUserAnswer(event.target.value);
         // allows us to update our list based on what is getting entered
         setListOfPossibleAnswers(
-            AllCoursesCopy.filter(
+            degree.CoursesRequired.filter(
                 (currentCourse: Course): boolean =>
                     currentCourse.courseID.search(userAnswer) !== -1
             )
@@ -46,7 +45,7 @@ export function FindCourse(): JSX.Element {
 
     function SelectCourse(SelectedCourseID: string) {
         setSelectedCourseName(SelectedCourseID);
-        const ID = AllCoursesCopy.filter(
+        const ID = degree.CoursesRequired.filter(
             (course: Course): boolean => course.courseID === SelectedCourseID
         );
         updateSelectedCourse(ID[0]);
@@ -64,33 +63,41 @@ export function FindCourse(): JSX.Element {
 
     return (
         <div>
-            <Form.Group controlId="CheckAnswer">
-                <Form.Control
-                    value={userAnswer}
-                    onChange={updateShortAnswer}
-                ></Form.Control>
-            </Form.Group>
-            <div>
-                {list_Of_Possible_Answers.length === 0
-                    ? " ❌ There are no courses matching your input"
-                    : list_Of_Possible_Answers[0].courseID === userAnswer
-                    ? "✔️"
-                    : "Searching"}
-            </div>
             {showSearch ? (
-                <div style={styles.container} onScroll={scrollHandler}>
-                    {list_Of_Possible_Answers.map((currentCourse: Course) => (
-                        <div key={currentCourse.name}>
-                            {currentCourse.courseID}
-                            <Button
-                                onClick={() =>
-                                    SelectCourse(currentCourse.courseID)
-                                }
-                            >
-                                Select Course
-                            </Button>
-                        </div>
-                    ))}
+                <div>
+                    <div>Please Input the Course ID you want to find</div>
+                    {/**This is the searchbar */}
+                    <Form.Group controlId="CheckAnswer">
+                        <Form.Control
+                            value={userAnswer}
+                            onChange={updateShortAnswer}
+                        ></Form.Control>
+                    </Form.Group>
+                    <div>
+                        {list_Of_Possible_Answers.length === 0
+                            ? " ❌ There are no courses matching your input"
+                            : list_Of_Possible_Answers[0].courseID ===
+                              userAnswer
+                            ? "✔️"
+                            : "Searching"}
+                    </div>
+                    {/**This is where the scrolly box with the selectors are held*/}
+                    <div style={styles.container} onScroll={scrollHandler}>
+                        {list_Of_Possible_Answers.map(
+                            (currentCourse: Course) => (
+                                <div key={currentCourse.name}>
+                                    {currentCourse.courseID}
+                                    <Button
+                                        onClick={() =>
+                                            SelectCourse(currentCourse.courseID)
+                                        }
+                                    >
+                                        Select Course
+                                    </Button>
+                                </div>
+                            )
+                        )}
+                    </div>
                 </div>
             ) : (
                 <div>

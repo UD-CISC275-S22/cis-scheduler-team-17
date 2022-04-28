@@ -10,6 +10,7 @@ import {
     SeasonsList,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
+import { EditCourse } from "./EditCourse";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
@@ -120,6 +121,10 @@ export function SchedulerPage({
                         <Col>
                             <span>
                                 <CoursesLists degree={degree}></CoursesLists>
+                                <div style={{ fontSize: 25 }}>
+                                    Search For and Edit Courses Below
+                                </div>
+                                <EditCourse degree={degree}></EditCourse>
                             </span>
                         </Col>
                     </Row>

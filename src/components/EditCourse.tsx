@@ -1,12 +1,12 @@
 import React from "react";
 import "../App.css";
+import { Degree } from "../interfaces/course-Degree-Semester";
 import { FindCourse } from "./FindCourse";
 
-export function EditCourse(): JSX.Element {
+export function EditCourse({ degree }: { degree: Degree }): JSX.Element {
     return (
         <div>
-            <div>Please Input the Course ID you want to find</div>
-            <FindCourse></FindCourse>
+            <FindCourse degree={degree}></FindCourse>
         </div>
     );
 }
