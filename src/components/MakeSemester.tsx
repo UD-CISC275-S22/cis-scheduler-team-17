@@ -15,7 +15,7 @@ export function MakeSemester({
     removeSemester
 }: {
     semester: SemesterPlanner;
-    removeSemester(currYear: number, currSeason: Season): () => void;
+    removeSemester: (currYear: number, currSeason: Season) => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -80,7 +80,9 @@ export function MakeSemester({
                             <th>{"UC"}</th>
                         </tr>
                     ))}
-                    <Button onClick={deleteSemester(semester)}>Remove</Button>
+                    <Button onClick={() => deleteSemester(semester)}>
+                        Remove
+                    </Button>
                 </Table>
                 <div>
                     <CreateCourse
