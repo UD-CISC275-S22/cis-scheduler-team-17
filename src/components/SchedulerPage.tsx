@@ -116,7 +116,12 @@ export function SchedulerPage({
                                     <div>
                                         {getSeason()}
                                         {getYear()}
-                                        <Button onClick={() => addSemester()}>
+                                        <Button
+                                            onClick={() => {
+                                                addSemester();
+                                                updateSemester();
+                                            }}
+                                        >
                                             Add Semester
                                         </Button>
                                     </div>
@@ -134,12 +139,13 @@ export function SchedulerPage({
                                                 semester={semester}
                                             ></MakeSemester>
                                             <Button
-                                                onClick={() =>
+                                                onClick={() => {
                                                     removeSemester(
                                                         semester.year,
                                                         semester.SemesterSeason
-                                                    )
-                                                }
+                                                    );
+                                                    updateSemester();
+                                                }}
                                             >
                                                 Remove Semester
                                             </Button>
@@ -159,7 +165,9 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+            <div>
+                <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+            </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
