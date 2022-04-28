@@ -993,18 +993,7 @@ export const AllCourses = [
     BreadthRequirement9,
     BreadthRequirement10,
     BreadthRequirement11,
-    BreadthRequirement12,
-    Free_Elective1,
-    Free_Elective2,
-    Free_Elective3,
-    Free_Elective4,
-    Free_Elective5,
-    Free_Elective6,
-    Free_Elective7,
-    Free_Elective8,
-    Free_Elective9,
-    Free_Elective10,
-    Free_Elective11
+    BreadthRequirement12
 ];
 const two_year_plan_BS = [
     EGGG101,
@@ -1272,7 +1261,7 @@ const Information_Systems_Courses = [
     Free_Elective8
 ];
 // degree declarations
-const NoDegree = makeDegree(
+export const NoDegree = makeDegree(
     "No Degree Has been selected",
     "There has not been a course Selected",
     AllCourses,
@@ -1355,4 +1344,4 @@ export const AllDegrees = [
     CISC_BA,
     Information_Systems
 ];
-console.log(AllDegrees);
+//console.log(AllDegrees);

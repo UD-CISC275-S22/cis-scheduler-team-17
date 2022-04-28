@@ -42,7 +42,6 @@ export function SelectCoursesTaken({
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
         // this line will update the courses that are shown to the user, there is another in scroll
         setDegree(degree);
-        console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -52,7 +51,6 @@ export function SelectCoursesTaken({
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
         setDegree(degree);
-        console.log(currentDegree.name);
     };
 
     return (
@@ -150,7 +148,6 @@ function Information({
     const findCourse = currentDegree.CoursesRequired.filter(
         (myCourse: Course): boolean => myCourse.name === currentCourseName
     );
-    console.log(currentDegree.name);
     const currentCourse = findCourse[0];
     return (
         <div>

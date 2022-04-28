@@ -46,7 +46,6 @@ function App(): JSX.Element {
                         changeHomepage={changeHomepage}
                         degree={degree}
                     ></SchedulerPage>
-                    {console.log(homepage)}
                 </div>
             </div>
             {/* <UnderConstruction></UnderConstruction> */}
