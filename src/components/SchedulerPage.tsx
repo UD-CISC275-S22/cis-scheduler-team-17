@@ -33,6 +33,9 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
+    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner>(
+        degree.SemesterList[0]
+    );
 
     function getSeason(): JSX.Element {
         return (
@@ -67,7 +70,7 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function updateSemester() {
+    function updateSemesterForm() {
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
@@ -108,7 +111,7 @@ export function SchedulerPage({
                                 Plan Name: <strong>{degree.name}</strong>
                             </label>
                             <div>
-                                <Button onClick={() => updateSemester()}>
+                                <Button onClick={() => updateSemesterForm()}>
                                     {" "}
                                     Show Add Semester Form
                                 </Button>
@@ -119,7 +122,7 @@ export function SchedulerPage({
                                         <Button
                                             onClick={() => {
                                                 addSemester();
-                                                updateSemester();
+                                                updateSemesterForm();
                                             }}
                                         >
                                             Add Semester
@@ -144,7 +147,7 @@ export function SchedulerPage({
                                                         semester.year,
                                                         semester.SemesterSeason
                                                     );
-                                                    updateSemester();
+                                                    updateSemesterForm();
                                                 }}
                                             >
                                                 Remove Semester
