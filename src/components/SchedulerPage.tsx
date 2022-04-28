@@ -11,6 +11,7 @@ import {
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
 import { ExportCSV } from "./ExportCSV";
+import { MoveOption } from "./MoveOption";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
@@ -269,6 +270,7 @@ function PrintDegreesLists({
                                 currentPreRec.taken_String +
                                 "\n"
                         )}
+                        <MoveOption semesterList={degree.SemesterList} />
                         <br></br>
                         ____________
                     </div>

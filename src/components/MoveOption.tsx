@@ -1,4 +1,11 @@
-//import React from "react";
+import React from "react";
+import { Button } from "react-bootstrap";
+import { SemesterPlanner } from "../interfaces/course-Degree-Semester";
 
-export const noYello = "no yellow";
-console.log(noYello);
+export function MoveOption({
+    semesterList
+}: {
+    semesterList: SemesterPlanner[];
+}): JSX.Element {
+    return <Button>Move Course + {semesterList.length}</Button>;
+}
