@@ -48,6 +48,13 @@ export function MakeSemester({
         );
         changeList([...courseList, newCourse]);
     }
+    function removeCourse(courseID: string) {
+        changeList(
+            courseList.filter(
+                (course: Course): boolean => course.courseID !== courseID
+            )
+        );
+    }
     return (
         <div>
             <div>
@@ -60,7 +67,7 @@ export function MakeSemester({
                         <th>Course Name</th>
                         <th>Description</th>
                         <th>Number of Credits</th>
-                        <th>Move Course</th>
+                        <th>Remove Course</th>
                     </tr>
                     {courseList.map((course: Course) => (
                         <tr key={course.name}>
@@ -68,7 +75,15 @@ export function MakeSemester({
                             <th>{course.name}</th>
                             <th>{course.description}</th>
                             <th>{course.credits}</th>
-                            <th>{"UC"}</th>
+                            <th>
+                                <Button
+                                    onClick={() =>
+                                        removeCourse(course.courseID)
+                                    }
+                                >
+                                    Remove
+                                </Button>
+                            </th>
                         </tr>
                     ))}
                 </Table>
@@ -87,6 +102,7 @@ export function MakeSemester({
                         addCourse={addCourse}
                         resetState={resetState}
                     ></CreateCourse>
+                    <Button>Add Existing Course</Button>
                 </div>
             </div>
         </div>
