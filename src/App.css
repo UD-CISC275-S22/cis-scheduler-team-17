@@ -72,9 +72,9 @@ button{
     background-image: url("CSS-Images/footer.jpg");
     color: white;
     font-size: 25px;
-    height: 80px;
+    height: 60px;
     width: 180px;
-    margin: 20%;
+    margin: 10px;
 }
 
 .makeInformationButton{
@@ -123,4 +123,24 @@ label{
 .key{
     background-color: lightgray;
     font-weight: bold;
+}
+
+.makeInformationButton{
+    background: none;
+    border: none;
+    height: auto;
+    width: auto;
+    color: blue;
+    text-decoration: underline;
+}
+
+.makeInformationButton:focus{
+    border: none;
+    background: none;
+    color: blue;
+}
+
+.makeInformationButton:hover{
+    background: none;
+    color: blue;
 }

@@ -5,7 +5,9 @@ import { FindCourse } from "./FindCourse";
 export function EditCourse(): JSX.Element {
     return (
         <div>
-            <div>Please Input the Course ID you want to find</div>
+            <label>
+                <strong>Search by Course ID</strong>
+            </label>
             <FindCourse></FindCourse>
         </div>
     );

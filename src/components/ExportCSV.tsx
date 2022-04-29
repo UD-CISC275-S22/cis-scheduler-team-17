@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { CSVLink } from "react-csv";
 import { SemesterPlanner } from "../interfaces/course-Degree-Semester";
+import "../App.css";
 
 export function ExportCSV({
     semesterList
@@ -19,7 +20,9 @@ export function ExportCSV({
     return (
         <div>
             <CSVLink data={csvData} headers={csvHeaders} filename="DegreePlan">
-                <Button> Export to CSV</Button>
+                <Button className={"makeInformationButton"}>
+                    Export to CSV
+                </Button>
             </CSVLink>
         </div>
     );

@@ -33,7 +33,6 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-
     function getSeason(): JSX.Element {
         return (
             <Form.Group controlId="Seasons">
@@ -90,6 +89,16 @@ export function SchedulerPage({
         degree.SemesterList = [...newSemester];
         updateDegree;
     }
+    function tallyCredits() {
+        const creditList = degree.SemesterList.map(
+            (semester: SemesterPlanner): number => semester.TotalCredits
+        );
+        const sum = creditList.reduce(
+            (total: number, num: number) => total + num,
+            0
+        );
+        return sum;
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -99,6 +108,22 @@ export function SchedulerPage({
                 <h3>
                     You are planning <strong>{degree.name}</strong> degree
                 </h3>
+            </div>
+            <div>
+                <Row>
+                    <Col>
+                        <label>
+                            Number of Credits Needed:
+                            {" " + degree.CreditsRequired}
+                        </label>
+                    </Col>
+                    <Col>
+                        <label>Number of Credits Planned: {tallyCredits}</label>
+                    </Col>
+                    <Col>
+                        <label>Number of Credits Unplanned: </label>
+                    </Col>
+                </Row>
             </div>
             <div>
                 <Container>
@@ -153,9 +178,6 @@ export function SchedulerPage({
                                 <CoursesLists degree={degree}></CoursesLists>
                             </span>
                         </Col>
-                    </Row>
-                    <Row>
-                        <span> Number of credits needed: </span>
                     </Row>
                 </Container>
             </div>
