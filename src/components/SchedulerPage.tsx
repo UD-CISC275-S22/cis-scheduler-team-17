@@ -36,6 +36,7 @@ export function SchedulerPage({
     const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
+    const [semExistsError, setSemesterExists] = useState<string>("");
 
     function getSeason(): JSX.Element {
         return (
@@ -76,6 +77,17 @@ export function SchedulerPage({
     function addSemester() {
         const currYear = year;
         const currSeason = season;
+
+        const contains = updateSemesterList.find(
+            (c: SemesterPlanner): boolean =>
+                c.SemesterSeason === season && c.year === year
+        );
+        if (contains) {
+            setSemesterExists(
+                "This semester already exists. Please choose a different year or season"
+            );
+            return;
+        }
         const newSemester: SemesterPlanner = {
             ClassesTaking: [],
             year: currYear,
@@ -132,6 +144,9 @@ export function SchedulerPage({
                                             Add Semester
                                         </Button>
                                     </div>
+                                )}
+                                {semExistsError && (
+                                    <p className="error">{semExistsError}</p>
                                 )}
                             </div>
                             <div>
