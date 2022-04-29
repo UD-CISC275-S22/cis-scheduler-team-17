@@ -3,6 +3,7 @@ import { Button, Form, Table } from "react-bootstrap";
 import {
     Course,
     Degree,
+    Season,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
 import {
@@ -17,10 +18,12 @@ type ChangeEvent = React.ChangeEvent<
 
 export function MakeSemester({
     semester,
-    degree
+    degree,
+    removeSemester
 }: {
     semester: SemesterPlanner;
     degree: Degree;
+    removeSemester: (currYear: number, currSeason: Season) => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -52,6 +55,10 @@ export function MakeSemester({
         changeIntersect([]);
         changeList([]);
     };
+    function removeSemesterReset(year: number, season: string) {
+        resetState();
+        removeSemester(year, season);
+    }
     //Set Credits
     function changeCredits(credit: string) {
         if (!isNaN(parseInt(credit))) {
@@ -126,6 +133,16 @@ export function MakeSemester({
                         changeTotal={changeTotal}
                     ></AddExisting>
                     <Button onClick={resetState}>Remove All Courses</Button>
+                    <Button
+                        onClick={() =>
+                            removeSemesterReset(
+                                semester.year,
+                                semester.SemesterSeason
+                            )
+                        }
+                    >
+                        Remove Semester
+                    </Button>
                 </div>
             </div>
         </div>

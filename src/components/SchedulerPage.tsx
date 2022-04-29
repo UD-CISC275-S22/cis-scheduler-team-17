@@ -36,6 +36,7 @@ export function SchedulerPage({
     const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
+    const [semExistsError, setSemesterExists] = useState<string>("");
 
     function getSeason(): JSX.Element {
         return (
@@ -76,6 +77,17 @@ export function SchedulerPage({
     function addSemester() {
         const currYear = year;
         const currSeason = season;
+
+        const contains = updateSemesterList.find(
+            (c: SemesterPlanner): boolean =>
+                c.SemesterSeason === season && c.year === year
+        );
+        if (contains) {
+            setSemesterExists(
+                "This semester already exists. Please choose a different year or season"
+            );
+            return;
+        }
         const newSemester: SemesterPlanner = {
             ClassesTaking: [],
             year: currYear,
@@ -85,6 +97,16 @@ export function SchedulerPage({
         setSemesterList([...updateSemesterList, newSemester]);
         degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
+        console.log(year + " : " + season);
+    }
+    function removeSemester(currYear: number, currSeason: Season) {
+        //console.log(year + " : " + season);
+        setSemesterList(
+            updateSemesterList.filter(
+                (sem: SemesterPlanner): boolean =>
+                    sem.SemesterSeason != currSeason || sem.year != currYear
+            )
+        );
     }
     return (
         <div className="App">
@@ -139,6 +161,9 @@ export function SchedulerPage({
                                         </Button>
                                     </div>
                                 )}
+                                {semExistsError && (
+                                    <p className="error">{semExistsError}</p>
+                                )}
                             </div>
                             <br></br>
                             <div>
@@ -152,6 +177,7 @@ export function SchedulerPage({
                                                 }
                                                 semester={semester}
                                                 degree={degree}
+                                                removeSemester={removeSemester}
                                             ></MakeSemester>
                                             <br></br>
                                         </>
