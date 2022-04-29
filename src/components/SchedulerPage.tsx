@@ -10,6 +10,7 @@ import {
     SeasonsList,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
+import { ExportCSV } from "./ExportCSV";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
@@ -32,7 +33,10 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-
+    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
+        degree.SemesterList
+    );
+    const [semExistsError, setSemesterExists] = useState<string>("");
     function getSeason(): JSX.Element {
         return (
             <Form.Group controlId="Seasons">
@@ -66,27 +70,42 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function updateSemester() {
+    function updateSemesterForm() {
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
         const currYear = year;
         const currSeason = season;
+
+        const contains = updateSemesterList.find(
+            (c: SemesterPlanner): boolean =>
+                c.SemesterSeason === season && c.year === year
+        );
+        if (contains) {
+            setSemesterExists(
+                "This semester already exists. Please choose a different year or season"
+            );
+            return;
+        }
         const newSemester: SemesterPlanner = {
             ClassesTaking: [],
             year: currYear,
             SemesterSeason: currSeason,
             TotalCredits: 0
         };
+        setSemesterList([...updateSemesterList, newSemester]);
         degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
+        console.log(year + " : " + season);
     }
     function removeSemester(currYear: number, currSeason: Season) {
-        const newSemester = degree.SemesterList.filter(
-            (sem: SemesterPlanner): boolean =>
-                sem.SemesterSeason != currSeason && sem.year != currYear
+        //console.log(year + " : " + season);
+        setSemesterList(
+            updateSemesterList.filter(
+                (sem: SemesterPlanner): boolean =>
+                    sem.SemesterSeason != currSeason || sem.year != currYear
+            )
         );
-        degree.SemesterList = [...newSemester];
     }
     return (
         <div className="App">
@@ -98,15 +117,34 @@ export function SchedulerPage({
                     You are planning <strong>{degree.name}</strong> degree
                 </h3>
             </div>
+            {console.log(updateSemesterList)}
+            <div>
+                <Row>
+                    <Col>
+                        <label>
+                            Number of Credits Needed:
+                            {" " + degree.CreditsRequired}
+                        </label>
+                    </Col>
+                    {
+                        //<Col>
+                        //<label>Number of Credits Planned: </label>
+                        //</Col>
+                        //<Col>
+                        //<label>Number of Credits Unplanned: </label>
+                        //</Col>
+                    }
+                </Row>
+            </div>
             <div>
                 <Container>
                     <Row>
                         <Col>
-                            <span>
-                                Plan name [take in Degree plan selection]
-                            </span>
+                            <label>
+                                Plan Name: <strong>{degree.name}</strong>
+                            </label>
                             <div>
-                                <Button onClick={() => updateSemester()}>
+                                <Button onClick={() => updateSemesterForm()}>
                                     {" "}
                                     Show Add Semester Form
                                 </Button>
@@ -114,18 +152,38 @@ export function SchedulerPage({
                                     <div>
                                         {getSeason()}
                                         {getYear()}
-                                        <Button onClick={() => addSemester()}>
+                                        <Button
+                                            onClick={() => {
+                                                addSemester();
+                                                updateSemesterForm();
+                                            }}
+                                        >
                                             Add Semester
                                         </Button>
                                     </div>
                                 )}
+                                {semExistsError && (
+                                    <p className="error">{semExistsError}</p>
+                                )}
                             </div>
+                            <br></br>
                             <div>
-                                <MakeSemester
-                                    currentList={[]}
-                                    semesterList={degree.SemesterList}
-                                    removeSemester={removeSemester}
-                                ></MakeSemester>
+                                {updateSemesterList.map(
+                                    (semester: SemesterPlanner) => (
+                                        <>
+                                            <MakeSemester
+                                                key={
+                                                    semester.SemesterSeason +
+                                                    semester.year
+                                                }
+                                                semester={semester}
+                                                degree={degree}
+                                                removeSemester={removeSemester}
+                                            ></MakeSemester>
+                                            <br></br>
+                                        </>
+                                    )
+                                )}
                             </div>
                         </Col>
                         <Col>
@@ -134,13 +192,12 @@ export function SchedulerPage({
                             </span>
                         </Col>
                     </Row>
-                    <Row>
-                        <span> Number of credits needed: </span>
-                    </Row>
                 </Container>
             </div>
-            {/* <div>{showSemester()}</div> */}
-            <footer className="back">
+            <div>
+                <ExportCSV semesters={updateSemesterList}></ExportCSV>
+            </div>
+            <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
                 </Button>
@@ -155,14 +212,14 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        <div>Courses You Have Taken</div>
+                        <label>Courses Taken or Planned</label>
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
-                        <div>Courses You Have Not Taken</div>
+                        <label>Courses Not Taken or Planned </label>
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}

@@ -4,6 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
 import { Course } from "../interfaces/course-Degree-Semester";
 import { EditInterface } from "./EditInterface";
+import "../App.css";
 
 // simplifing the type definition of the change event
 type ChangeEvent = React.ChangeEvent<
@@ -83,6 +84,7 @@ export function FindCourse(): JSX.Element {
                         <div key={currentCourse.name}>
                             {currentCourse.courseID}
                             <Button
+                                className={"makeInformationButton"}
                                 onClick={() =>
                                     SelectCourse(currentCourse.courseID)
                                 }

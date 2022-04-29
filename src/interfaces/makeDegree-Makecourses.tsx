@@ -26,7 +26,28 @@ export function makeCourse(
         taken_String: "❌"
     };
 }
-
+export function makeCourseTaken(
+    courseID: string,
+    name: string,
+    description: string,
+    SemesterAvailable: Season[],
+    prerecs: Course[],
+    credits: number,
+    taken: boolean
+): Course {
+    return {
+        ogID: courseID,
+        courseID: courseID,
+        name: name,
+        description: description,
+        SemesterAvailable: SemesterAvailable,
+        SemestersAvailableString: SemesterAvailable.join(", "),
+        prerecs: prerecs,
+        credits: credits,
+        taken: taken,
+        taken_String: taken ? "❌" : "✔️"
+    };
+}
 export function makeDegree(
     name: string,
     description: string,

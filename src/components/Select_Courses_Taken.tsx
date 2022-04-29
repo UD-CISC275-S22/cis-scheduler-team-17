@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 //import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
 //import { currentSelectedDegree } from "./DropdownDegrees";
-
+import "../App.css";
 // This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken({
@@ -78,15 +78,7 @@ export function SelectCoursesTaken({
                             label={
                                 "Course Name: " +
                                 currentCourse.name +
-                                " \n Course Credits: " +
-                                currentCourse.credits +
-                                " ...... Pre Requisite: " +
-                                currentCourse.prerecs.map(
-                                    (currentPreRec: Course) =>
-                                        currentPreRec.name +
-                                        currentPreRec.taken_String
-                                ) +
-                                " ...... Taken: " +
+                                "...Taken: " +
                                 currentCourse.taken_String
                             }
                         />
