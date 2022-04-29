@@ -55,6 +55,28 @@ export function MakeSemester({
         changeIntersect([]);
         changeList([]);
     };
+    function removeCourse(courseID: string) {
+        const course = courseList.filter(
+            (course: Course): boolean => course.courseID === courseID
+        );
+        const findCourse = intersection.filter(
+            (course: Course): boolean => course.courseID === courseID
+        );
+        if (findCourse.length >= 1) {
+            resetTaken(findCourse[0]);
+            changeIntersect(
+                intersection.filter(
+                    (course: Course): boolean => course.courseID !== courseID
+                )
+            );
+        }
+        changeList(
+            courseList.filter(
+                (course: Course): boolean => course.courseID !== courseID
+            )
+        );
+        changeTotal(totalCredits - course[0].credits);
+    }
     function removeSemesterReset(year: number, season: string) {
         resetState();
         removeSemester(year, season);
@@ -103,7 +125,13 @@ export function MakeSemester({
                             <th className={"scroll"}>{course.description}</th>
                             <th>{course.credits}</th>
                             <th>
-                                <Button>Remove</Button>
+                                <Button
+                                    onClick={() =>
+                                        removeCourse(course.courseID)
+                                    }
+                                >
+                                    Remove
+                                </Button>
                             </th>
                         </tr>
                     ))}
