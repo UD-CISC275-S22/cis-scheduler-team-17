@@ -85,22 +85,14 @@ export function SchedulerPage({
         setSemesterList([...updateSemesterList, newSemester]);
         //degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
+        console.log(year + " : " + season);
     }
-    // function removeSemester(currYear: number, currSeason: Season) {
-    //     setSemesterList(
-    //         updateSemesterList.filter(
-    //             (sem: SemesterPlanner): boolean =>
-    //                 sem.SemesterSeason != currSeason && sem.year != currYear
-    //         )
-    //     );
-    // }
-    function removeSemester() {
-        const currYear = year;
-        const currSeason = season;
+    function removeSemester(currYear: number, currSeason: Season) {
+        //console.log(year + " : " + season);
         setSemesterList(
             updateSemesterList.filter(
                 (sem: SemesterPlanner): boolean =>
-                    sem.SemesterSeason != currSeason && sem.year != currYear
+                    sem.SemesterSeason != currSeason || sem.year != currYear
             )
         );
     }
@@ -152,16 +144,8 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
-                                                //removeSemester={removeSemester}
+                                                removeSemester={removeSemester}
                                             ></MakeSemester>
-                                            <Button
-                                                onClick={() => {
-                                                    removeSemester();
-                                                    updateSemesterForm();
-                                                }}
-                                            >
-                                                Remove Semester
-                                            </Button>
                                         </>
                                     )
                                 )}
