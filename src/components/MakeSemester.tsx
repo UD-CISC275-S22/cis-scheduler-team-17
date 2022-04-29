@@ -38,7 +38,7 @@ export function MakeSemester({
     const [courseName, setName] = useState<string>("");
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
-    const [totalCredits, changeTotal] = useState<number>(semester.TotalCredits);
+    const [totalCredits, resetTotal] = useState<number>(semester.TotalCredits);
     //reset taken
     function resetTaken(existing: Course) {
         existing.taken = false;
@@ -55,6 +55,10 @@ export function MakeSemester({
         changeIntersect([]);
         changeList([]);
     };
+    function changeTotal(credits: number) {
+        resetTotal(credits);
+        semester.TotalCredits = totalCredits;
+    }
     function removeCourse(courseID: string) {
         const course = courseList.filter(
             (course: Course): boolean => course.courseID === courseID

@@ -37,7 +37,6 @@ export function SchedulerPage({
         degree.SemesterList
     );
     const [semExistsError, setSemesterExists] = useState<string>("");
-
     function getSeason(): JSX.Element {
         return (
             <Form.Group controlId="Seasons">
@@ -127,12 +126,14 @@ export function SchedulerPage({
                             {" " + degree.CreditsRequired}
                         </label>
                     </Col>
-                    <Col>
-                        <label>Number of Credits Planned: {}</label>
-                    </Col>
-                    <Col>
-                        <label>Number of Credits Unplanned: </label>
-                    </Col>
+                    {
+                        //<Col>
+                        //<label>Number of Credits Planned: </label>
+                        //</Col>
+                        //<Col>
+                        //<label>Number of Credits Unplanned: </label>
+                        //</Col>
+                    }
                 </Row>
             </div>
             <div>
