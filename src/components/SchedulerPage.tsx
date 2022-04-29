@@ -87,11 +87,12 @@ export function SchedulerPage({
         updateDegree;
     }
     function removeSemester(currYear: number, currSeason: Season) {
-        const removedSem = [...updateSemesterList].filter(
-            (sem: SemesterPlanner): boolean =>
-                sem.SemesterSeason != currSeason && sem.year != currYear
+        setSemesterList(
+            updateSemesterList.filter(
+                (sem: SemesterPlanner): boolean =>
+                    sem.SemesterSeason != currSeason && sem.year != currYear
+            )
         );
-        setSemesterList(removedSem);
     }
     return (
         <div className="App">

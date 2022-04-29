@@ -54,9 +54,9 @@ export function MakeSemester({
         );
         changeList([...courseList, newCourse]);
     }
-    function deleteSemester(semester: SemesterPlanner) {
-        removeSemester(semester.year, semester.SemesterSeason);
-    }
+    // function deleteSemester(semester: SemesterPlanner) {
+    //     removeSemester(semester.year, semester.SemesterSeason);
+    // }
     return (
         <div>
             <div>
@@ -80,7 +80,14 @@ export function MakeSemester({
                             <th>{"UC"}</th>
                         </tr>
                     ))}
-                    <Button onClick={() => deleteSemester(semester)}>
+                    <Button
+                        onClick={() =>
+                            removeSemester(
+                                semester.year,
+                                semester.SemesterSeason
+                            )
+                        }
+                    >
                         Remove
                     </Button>
                 </Table>
