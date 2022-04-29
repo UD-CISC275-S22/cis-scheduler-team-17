@@ -5,11 +5,11 @@ import { SemesterPlanner } from "../interfaces/course-Degree-Semester";
 import "../App.css";
 
 export function ExportCSV({
-    semesterList
+    semesters
 }: {
-    semesterList: SemesterPlanner[];
+    semesters: SemesterPlanner[];
 }): JSX.Element {
-    const csvData = semesterList;
+    const csvData = semesters;
     const csvHeaders = [
         { label: "Season", key: "SemesterSeason" },
         { label: "Year", key: "year" },

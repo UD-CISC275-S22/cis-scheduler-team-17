@@ -110,16 +110,6 @@ button{
 label{
     font-size: 20px;
 }
-
-
-.dropdownForm{
-    width: 100%;
-    font-size: 98%;
-}
-
-label{
-    font-size: 20px;
-}
 .key{
     background-color: lightgray;
     font-weight: bold;
@@ -143,4 +133,25 @@ label{
 .makeInformationButton:hover{
     background: none;
     color: blue;
+}
+
+.scroll{
+    display: block;
+    width:100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll
+}
+
+.semesterLabel{
+    align-self: left;
+}
+
+table {
+    border-collapse: collapse;
+}
+  
+th, td {
+    border: 1px solid black;
 }

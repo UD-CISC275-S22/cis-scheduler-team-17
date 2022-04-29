@@ -83,25 +83,8 @@ export function SchedulerPage({
             TotalCredits: 0
         };
         setSemesterList([...updateSemesterList, newSemester]);
-        //degree.SemesterList = [...degree.SemesterList, newSemester];
+        degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
-    }
-    function removeSemester(currYear: number, currSeason: Season) {
-        const removedSem = [...updateSemesterList].filter(
-            (sem: SemesterPlanner): boolean =>
-                sem.SemesterSeason != currSeason && sem.year != currYear
-        );
-        setSemesterList(removedSem);
-    }
-    function tallyCredits() {
-        const creditList = degree.SemesterList.map(
-            (semester: SemesterPlanner): number => semester.TotalCredits
-        );
-        const sum = creditList.reduce(
-            (total: number, num: number) => total + num,
-            0
-        );
-        return sum;
     }
     return (
         <div className="App">
@@ -123,7 +106,7 @@ export function SchedulerPage({
                         </label>
                     </Col>
                     <Col>
-                        <label>Number of Credits Planned: {tallyCredits}</label>
+                        <label>Number of Credits Planned: {}</label>
                     </Col>
                     <Col>
                         <label>Number of Credits Unplanned: </label>
@@ -157,6 +140,7 @@ export function SchedulerPage({
                                     </div>
                                 )}
                             </div>
+                            <br></br>
                             <div>
                                 {updateSemesterList.map(
                                     (semester: SemesterPlanner) => (
@@ -167,19 +151,9 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
-                                                removeSemester={removeSemester}
+                                                degree={degree}
                                             ></MakeSemester>
-                                            {/* <Button
-                                                onClick={() => {
-                                                    removeSemester(
-                                                        semester.year,
-                                                        semester.SemesterSeason
-                                                    );
-                                                    updateSemesterForm();
-                                                }}
-                                            >
-                                                Remove Semester
-                                            </Button> */}
+                                            <br></br>
                                         </>
                                     )
                                 )}
@@ -194,7 +168,7 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+                <ExportCSV semesters={updateSemesterList}></ExportCSV>
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
@@ -211,14 +185,14 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        <label>Courses You Have Taken</label>
+                        <label>Courses Taken or Planned</label>
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
-                        <label>Courses You Have Not Taken</label>
+                        <label>Courses Not Taken or Planned </label>
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}

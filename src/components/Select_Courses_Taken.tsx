@@ -78,14 +78,6 @@ export function SelectCoursesTaken({
                             label={
                                 "Course Name: " +
                                 currentCourse.name +
-                                // " \n Course Credits: " +
-                                //currentCourse.credits +
-                                //" ...... Pre Requisite: " +
-                                //currentCourse.prerecs.map(
-                                //    (currentPreRec: Course) =>
-                                //        currentPreRec.name +
-                                //        currentPreRec.taken_String
-                                //)
                                 "...Taken: " +
                                 currentCourse.taken_String
                             }
