@@ -33,6 +33,10 @@ export function SchedulerPage({
     const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
+    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
+        degree.SemesterList
+    );
+
     function getSeason(): JSX.Element {
         return (
             <Form.Group controlId="Seasons">
@@ -66,7 +70,7 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function updateSemester() {
+    function updateSemesterForm() {
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
@@ -78,16 +82,16 @@ export function SchedulerPage({
             SemesterSeason: currSeason,
             TotalCredits: 0
         };
-        degree.SemesterList = [...degree.SemesterList, newSemester];
+        setSemesterList([...updateSemesterList, newSemester]);
+        //degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
     }
     function removeSemester(currYear: number, currSeason: Season) {
-        const newSemester = degree.SemesterList.filter(
+        const removedSem = [...updateSemesterList].filter(
             (sem: SemesterPlanner): boolean =>
                 sem.SemesterSeason != currSeason && sem.year != currYear
         );
-        degree.SemesterList = [...newSemester];
-        updateDegree;
+        setSemesterList(removedSem);
     }
     function tallyCredits() {
         const creditList = degree.SemesterList.map(
@@ -109,6 +113,7 @@ export function SchedulerPage({
                     You are planning <strong>{degree.name}</strong> degree
                 </h3>
             </div>
+            {console.log(updateSemesterList)}
             <div>
                 <Row>
                     <Col>
@@ -133,7 +138,7 @@ export function SchedulerPage({
                                 Plan Name: <strong>{degree.name}</strong>
                             </label>
                             <div>
-                                <Button onClick={() => updateSemester()}>
+                                <Button onClick={() => updateSemesterForm()}>
                                     {" "}
                                     Show Add Semester Form
                                 </Button>
@@ -141,14 +146,19 @@ export function SchedulerPage({
                                     <div>
                                         {getSeason()}
                                         {getYear()}
-                                        <Button onClick={() => addSemester()}>
+                                        <Button
+                                            onClick={() => {
+                                                addSemester();
+                                                updateSemesterForm();
+                                            }}
+                                        >
                                             Add Semester
                                         </Button>
                                     </div>
                                 )}
                             </div>
                             <div>
-                                {degree.SemesterList.map(
+                                {updateSemesterList.map(
                                     (semester: SemesterPlanner) => (
                                         <>
                                             <MakeSemester
@@ -157,17 +167,19 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
+                                                removeSemester={removeSemester}
                                             ></MakeSemester>
-                                            <Button
-                                                onClick={() =>
+                                            {/* <Button
+                                                onClick={() => {
                                                     removeSemester(
                                                         semester.year,
                                                         semester.SemesterSeason
-                                                    )
-                                                }
+                                                    );
+                                                    updateSemesterForm();
+                                                }}
                                             >
                                                 Remove Semester
-                                            </Button>
+                                            </Button> */}
                                         </>
                                     )
                                 )}
@@ -181,7 +193,9 @@ export function SchedulerPage({
                     </Row>
                 </Container>
             </div>
-            <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+            <div>
+                <ExportCSV semesterList={degree.SemesterList}></ExportCSV>
+            </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
