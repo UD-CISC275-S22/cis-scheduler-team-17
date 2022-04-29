@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import {
-    Course,
-    Season,
-    SemesterPlanner
-} from "../interfaces/course-Degree-Semester";
+import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
 import { makeCourse } from "../interfaces/makeDegree-Makecourses";
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
 export function MakeSemester({
-    semester,
-    removeSemester
+    semester
 }: {
     semester: SemesterPlanner;
-    removeSemester: (currYear: number, currSeason: Season) => void;
+    //removeSemester: (currYear: number, currSeason: Season) => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -80,7 +75,7 @@ export function MakeSemester({
                             <th>{"UC"}</th>
                         </tr>
                     ))}
-                    <Button
+                    {/* <Button
                         onClick={() =>
                             removeSemester(
                                 semester.year,
@@ -89,7 +84,7 @@ export function MakeSemester({
                         }
                     >
                         Remove
-                    </Button>
+                    </Button> */}
                 </Table>
                 <div>
                     <CreateCourse

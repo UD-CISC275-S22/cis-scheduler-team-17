@@ -86,7 +86,17 @@ export function SchedulerPage({
         //degree.SemesterList = [...degree.SemesterList, newSemester];
         updateDegree;
     }
-    function removeSemester(currYear: number, currSeason: Season) {
+    // function removeSemester(currYear: number, currSeason: Season) {
+    //     setSemesterList(
+    //         updateSemesterList.filter(
+    //             (sem: SemesterPlanner): boolean =>
+    //                 sem.SemesterSeason != currSeason && sem.year != currYear
+    //         )
+    //     );
+    // }
+    function removeSemester() {
+        const currYear = year;
+        const currSeason = season;
         setSemesterList(
             updateSemesterList.filter(
                 (sem: SemesterPlanner): boolean =>
@@ -142,19 +152,16 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
-                                                removeSemester={removeSemester}
+                                                //removeSemester={removeSemester}
                                             ></MakeSemester>
-                                            {/* <Button
+                                            <Button
                                                 onClick={() => {
-                                                    removeSemester(
-                                                        semester.year,
-                                                        semester.SemesterSeason
-                                                    );
+                                                    removeSemester();
                                                     updateSemesterForm();
                                                 }}
                                             >
                                                 Remove Semester
-                                            </Button> */}
+                                            </Button>
                                         </>
                                     )
                                 )}
