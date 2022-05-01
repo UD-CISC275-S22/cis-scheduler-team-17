@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { CSVLink } from "react-csv";
-import { Degree } from "../interfaces/course-Degree-Semester";
+import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
 import "../App.css";
 
-export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
-    const csvData = degree.SemesterList;
+export function ExportCSV({
+    semesters
+}: {
+    semesters: SemesterPlanner[];
+}): JSX.Element {
+    const [csvData] = useState<SemesterPlanner[]>(semesters);
+    const [data] = useState(
+        csvData.map((semester) => ({
+            SemesterSeason: semester.SemesterSeason,
+            year: semester.year,
+            ClassesTaking: semester.ClassesTaking.map(
+                (course: Course): string => course.courseID
+            ),
+            TotalCredits: semester.TotalCredits
+        }))
+    );
     const csvHeaders = [
         { label: "Season", key: "SemesterSeason" },
         { label: "Year", key: "year" },
@@ -15,7 +29,7 @@ export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
 
     return (
         <div>
-            <CSVLink data={csvData} headers={csvHeaders} filename="DegreePlan">
+            <CSVLink headers={csvHeaders} filename="DegreePlan" data={data}>
                 <Button className={"makeInformationButton"}>
                     Export to CSV
                 </Button>

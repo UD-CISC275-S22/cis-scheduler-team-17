@@ -28,10 +28,15 @@ export function SchedulerPage({
 }): JSX.Element {
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
+    const [updateSemesterList, setSemesters] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
     const [semExistsError, setSemesterExists] = useState<boolean>(false);
+    //update degree semester list
+    function setSemesterList(newList: SemesterPlanner[]) {
+        setSemesters(newList);
+        degree.SemesterList = newList;
+    }
     //seasons dropdown state
     const seasons = [...SeasonsList];
     const [season, setSeason] = useState<Season>(seasons[0]);
@@ -221,7 +226,8 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV degree={degree}></ExportCSV>
+                <ExportCSV semesters={degree.SemesterList}></ExportCSV>
+                {console.log(degree.SemesterList)}
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
