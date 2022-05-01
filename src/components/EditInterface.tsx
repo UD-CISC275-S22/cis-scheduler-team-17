@@ -81,7 +81,7 @@ export function EditInterface({
                 value="Credits"
             />
             {EditCredits ? <EditCreditsUI Course2Edit={Course2Edit} /> : ""}
-            <Button onClick={revert}>Revert To Original IN PROGRESS</Button>
+            <Button onClick={revert}>Reset Course to Default</Button>
         </div>
     );
 }
