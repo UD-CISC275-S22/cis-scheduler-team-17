@@ -26,17 +26,17 @@ export function SchedulerPage({
     degree: Degree;
     updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
-    //seasons dropdown state
-    const seasons = [...SeasonsList];
-    const [season, setSeason] = useState<Season>(seasons[0]);
-    //year state
-    const [year, setYear] = useState<number>(2022);
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
     const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
-    const [semExistsError, setSemesterExists] = useState<string>("");
+    const [semExistsError, setSemesterExists] = useState<boolean>(false);
+    //seasons dropdown state
+    const seasons = [...SeasonsList];
+    const [season, setSeason] = useState<Season>(seasons[0]);
+    //year state
+    const [year, setYear] = useState<number>(2022);
     function getSeason(): JSX.Element {
         updateDegree;
         return (
@@ -48,7 +48,7 @@ export function SchedulerPage({
                         setSeason(event.target.value)
                     }
                 >
-                    {SeasonsList.map((s: Season) => (
+                    {seasons.map((s: Season) => (
                         <option key={s} value={s}>
                             {s}
                         </option>
@@ -86,21 +86,20 @@ export function SchedulerPage({
                 c.SemesterSeason === season && c.year === year
         );
         if (contains) {
-            setSemesterExists(
-                "This semester already exists. Please choose a different year or season"
-            );
-            return;
+            setSemesterExists(true);
+            //return;
+        } else {
+            setSemesterExists(false);
+            const newSemester: SemesterPlanner = {
+                ClassesTaking: [],
+                year: currYear,
+                SemesterSeason: currSeason,
+                TotalCredits: 0
+            };
+            setSemesterList([...updateSemesterList, newSemester]);
+            //degree.SemesterList = [...degree.SemesterList, newSemester];
+            console.log(year + " : " + season);
         }
-        const newSemester: SemesterPlanner = {
-            ClassesTaking: [],
-            year: currYear,
-            SemesterSeason: currSeason,
-            TotalCredits: 0
-        };
-        setSemesterList([...updateSemesterList, newSemester]);
-        degree.SemesterList = [...degree.SemesterList, newSemester];
-        updateDegree;
-        console.log(year + " : " + season);
     }
     function removeSemester(currYear: number, currSeason: Season) {
         updateDegree;
@@ -130,6 +129,7 @@ export function SchedulerPage({
                 </h3>
             </div>
             {console.log(updateSemesterList)}
+            {console.log(degree.name + " " + degree.SemesterList)}
             <div>
                 <Row>
                     <Col>
@@ -174,6 +174,7 @@ export function SchedulerPage({
                                             onClick={() => {
                                                 addSemester();
                                                 updateSemesterForm();
+                                                updateDegree;
                                             }}
                                         >
                                             Add Semester
@@ -181,7 +182,10 @@ export function SchedulerPage({
                                     </div>
                                 )}
                                 {semExistsError && (
-                                    <p className="error">{semExistsError}</p>
+                                    <p className="error">
+                                        This semester already exists. Please
+                                        choose a different year and/or season
+                                    </p>
                                 )}
                             </div>
                             <br></br>
