@@ -153,7 +153,6 @@ export function SchedulerPage({
                                     {" "}
                                     Show Add Semester Form
                                 </Button>
-                                <Button> Remove All Semesters</Button>
                                 {showSemForm && (
                                     <div>
                                         {getSeason()}
