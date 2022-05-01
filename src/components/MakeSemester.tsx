@@ -106,15 +106,23 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                <label className="semesterLabel">
+                {/* <label className="semesterLabel">
                     {semester.SemesterSeason +
                         " " +
                         semester.year +
                         ": " +
                         totalCredits +
                         " Credits"}
-                </label>
+                </label> */}
                 <Table className="semesterTable">
+                    <thead className="semesterLabel">
+                        {semester.SemesterSeason +
+                            " " +
+                            semester.year +
+                            ": " +
+                            semester.TotalCredits +
+                            " Credits"}
+                    </thead>
                     <tr className="key">
                         <th>Course ID</th>
                         <th>Course Name</th>
@@ -164,6 +172,10 @@ export function MakeSemester({
                         totalCredits={totalCredits}
                         changeTotal={changeTotal}
                     ></AddExisting>
+                    {console.log(courseList + " courseList")}
+                    {console.log(
+                        semester.ClassesTaking + " semester.ClassesTaking"
+                    )}
                     <Button onClick={resetState}>Remove All Courses</Button>
                     <Button
                         onClick={() =>
@@ -330,6 +342,8 @@ function AddExisting({
                     <strong>Create Course</strong> button above.
                 </p>
             )}
+            {console.log(cList)}
+            {console.log(degree.SemesterList + " degree.SemesterList")}
         </div>
     );
 }
