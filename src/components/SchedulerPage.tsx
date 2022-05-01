@@ -36,7 +36,7 @@ export function SchedulerPage({
     const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
         degree.SemesterList
     );
-    const [semExistsError, setSemesterExists] = useState<string>("");
+    const [semExistsError, setSemesterExists] = useState<boolean>(false);
     function getSeason(): JSX.Element {
         return (
             <Form.Group controlId="Seasons">
@@ -82,21 +82,21 @@ export function SchedulerPage({
                 c.SemesterSeason === season && c.year === year
         );
         if (contains) {
-            setSemesterExists(
-                "This semester already exists. Please choose a different year or season"
-            );
-            return;
+            setSemesterExists(true);
+            //return;
+        } else {
+            setSemesterExists(false);
+            const newSemester: SemesterPlanner = {
+                ClassesTaking: [],
+                year: currYear,
+                SemesterSeason: currSeason,
+                TotalCredits: 0
+            };
+            setSemesterList([...updateSemesterList, newSemester]);
+            degree.SemesterList = [...degree.SemesterList, newSemester];
+            updateDegree;
+            console.log(year + " : " + season);
         }
-        const newSemester: SemesterPlanner = {
-            ClassesTaking: [],
-            year: currYear,
-            SemesterSeason: currSeason,
-            TotalCredits: 0
-        };
-        setSemesterList([...updateSemesterList, newSemester]);
-        degree.SemesterList = [...degree.SemesterList, newSemester];
-        updateDegree;
-        console.log(year + " : " + season);
     }
     function removeSemester(currYear: number, currSeason: Season) {
         //console.log(year + " : " + season);
@@ -163,7 +163,10 @@ export function SchedulerPage({
                                     </div>
                                 )}
                                 {semExistsError && (
-                                    <p className="error">{semExistsError}</p>
+                                    <p className="error">
+                                        This semester already exists. Please
+                                        choose a different year and/or season
+                                    </p>
                                 )}
                             </div>
                             <br></br>
