@@ -112,6 +112,13 @@ export function SchedulerPage({
             )
         );
     }
+    function removeAllSemesters() {
+        setSemesterList([]);
+        degree.CoursesRequired.map((course: Course) => (course.taken = false));
+        degree.CoursesRequired.map(
+            (course: Course) => (course.taken_String = "❌")
+        );
+    }
     return (
         <div className="App">
             <header className="App-header">
@@ -152,6 +159,9 @@ export function SchedulerPage({
                                 <Button onClick={() => updateSemesterForm()}>
                                     {" "}
                                     Show Add Semester Form
+                                </Button>
+                                <Button onClick={removeAllSemesters}>
+                                    Reset Plan
                                 </Button>
                                 {showSemForm && (
                                     <div>
