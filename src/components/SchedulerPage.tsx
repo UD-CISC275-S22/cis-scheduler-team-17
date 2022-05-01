@@ -38,6 +38,7 @@ export function SchedulerPage({
     );
     const [semExistsError, setSemesterExists] = useState<string>("");
     function getSeason(): JSX.Element {
+        updateDegree;
         return (
             <Form.Group controlId="Seasons">
                 <Form.Label> Season: </Form.Label>
@@ -57,6 +58,7 @@ export function SchedulerPage({
         );
     }
     function getYear(): JSX.Element {
+        updateDegree;
         return (
             <Form.Group controlId="Years">
                 <Form.Label> Year: </Form.Label>
@@ -71,9 +73,11 @@ export function SchedulerPage({
         );
     }
     function updateSemesterForm() {
+        updateDegree;
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
+        updateDegree;
         const currYear = year;
         const currSeason = season;
 
@@ -99,6 +103,7 @@ export function SchedulerPage({
         console.log(year + " : " + season);
     }
     function removeSemester(currYear: number, currSeason: Season) {
+        updateDegree;
         //console.log(year + " : " + season);
         setSemesterList(
             updateSemesterList.filter(
@@ -179,6 +184,7 @@ export function SchedulerPage({
                                                 semester={semester}
                                                 degree={degree}
                                                 removeSemester={removeSemester}
+                                                updateDegree={updateDegree}
                                             ></MakeSemester>
                                             <br></br>
                                         </>
@@ -188,14 +194,17 @@ export function SchedulerPage({
                         </Col>
                         <Col>
                             <span>
-                                <CoursesLists degree={degree}></CoursesLists>
+                                <CoursesLists
+                                    degree={degree}
+                                    updateDegree={updateDegree}
+                                ></CoursesLists>
                             </span>
                         </Col>
                     </Row>
                 </Container>
             </div>
             <div>
-                <ExportCSV semesters={updateSemesterList}></ExportCSV>
+                <ExportCSV degree={degree}></ExportCSV>
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
@@ -206,7 +215,13 @@ export function SchedulerPage({
     );
 }
 
-function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
+function CoursesLists({
+    degree,
+    updateDegree
+}: {
+    degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
+}): JSX.Element {
     return (
         <div>
             <Container>
@@ -216,6 +231,7 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
+                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
@@ -223,6 +239,7 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}
+                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                 </Row>
@@ -232,10 +249,12 @@ function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
 }
 function PrintDegreesLists({
     taken,
-    degree
+    degree,
+    updateDegree
 }: {
     taken: boolean;
     degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     // this is going to be where the courses are printed
     UseYellows();
@@ -264,6 +283,7 @@ function PrintDegreesLists({
     }
 
     function updateList() {
+        updateDegree;
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
