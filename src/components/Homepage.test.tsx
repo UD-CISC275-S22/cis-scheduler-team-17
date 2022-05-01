@@ -57,5 +57,35 @@ describe("Testing everything on the homepage", () => {
                 /Course Name: EGGG101: Introduction to Engineering Course Credits: 2 ...... Pre Requisite: ...... Taken: ❌/i
             );
         });
+        test("checking to see if the taken status for courses with prerecs is intitally not taken", () => {
+            screen.getByText(
+                /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1❌,MATH241: Analytic Geometry and Calculus A❌ ...... Taken: ❌/i
+            );
+        });
+        test("checking to see if the taken status of prerequisites updates when clicked to taken", () => {
+            const checkboxes: HTMLInputElement[] =
+                screen.getAllByRole("checkbox");
+            checkboxes[1].click();
+            checkboxes[2].click();
+            screen.getByText(
+                /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1✔️,MATH241: Analytic Geometry and Calculus A✔️ ...... Taken: ❌/i
+            );
+        });
+        test("checking to see if the taken status of prerequisites updates when clicked twice to not taken", () => {
+            const checkboxes: HTMLInputElement[] =
+                screen.getAllByRole("checkbox");
+            checkboxes[1].click();
+            checkboxes[1].click();
+            checkboxes[2].click();
+            checkboxes[2].click();
+            screen.getByText(
+                /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1✔️,MATH241: Analytic Geometry and Calculus A✔️ ...... Taken: ❌/i
+            );
+            checkboxes[1].click();
+            checkboxes[2].click();
+            screen.getByText(
+                /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1❌,MATH241: Analytic Geometry and Calculus A❌ ...... Taken: ❌/i
+            );
+        });
     });
 });
