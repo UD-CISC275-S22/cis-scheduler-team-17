@@ -58,9 +58,9 @@ describe("Testing aspects of the ", () => {
                 .toBeInTheDocument;
         });
         test("testing to see if we can update taken, go back update taken again and get the correct text", () => {
-            const checkboxi: HTMLInputElement[] =
+            const checkbox: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
-            checkboxi[0].click();
+            checkbox[0].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
@@ -68,13 +68,19 @@ describe("Testing aspects of the ", () => {
             const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
             RefreshX.click();
             RefreshY.click();
-            expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
+            expect(screen.findByText(/Course ID: EGGG101✔️Pre Requisite:/i))
+                .toBeInTheDocument;
+            // we have made sure thet we get the proper output the first time around, going back to update the input again
+            const Back: HTMLInputElement = screen.getByText("Back");
+            Back.click();
+            checkbox[0].click;
+            SchedulerButton.click();
+            RefreshX.click();
+            RefreshY.click();
+            expect(screen.findByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
         test("testing to see if the taken status of prerecs is printed properly intially", () => {
-            const checkboxi: HTMLInputElement[] =
-                screen.getAllByRole("checkbox");
-            checkboxi[0].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
@@ -82,13 +88,17 @@ describe("Testing aspects of the ", () => {
             const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
             RefreshX.click();
             RefreshY.click();
-            expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
-                .toBeInTheDocument;
+            expect(
+                screen.getByText(
+                    /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i
+                )
+            ).toBeInTheDocument;
         });
         test("testing to see that taken for prerecs is updated properly  when the prerecs are taken", () => {
             const checkboxi: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
-            checkboxi[0].click();
+            checkboxi[1].click();
+            checkboxi[2].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
@@ -96,13 +106,17 @@ describe("Testing aspects of the ", () => {
             const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
             RefreshX.click();
             RefreshY.click();
-            expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
-                .toBeInTheDocument;
+            expect(
+                screen.getByText(
+                    /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
+                )
+            ).toBeInTheDocument;
         });
         test("testing to see if prerecs updated properly if you update, go to scheduler, then update and return to scheduler again", () => {
             const checkboxi: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
-            checkboxi[0].click();
+            checkboxi[1].click();
+            checkboxi[2].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
@@ -110,8 +124,25 @@ describe("Testing aspects of the ", () => {
             const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
             RefreshX.click();
             RefreshY.click();
-            expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
-                .toBeInTheDocument;
+            expect(
+                screen.findByText(
+                    /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
+                )
+            ).toBeInTheDocument;
+            // our initial update worked, now to go back and update the input again
+            const Back: HTMLInputElement = screen.getByText("Back");
+            Back.click();
+            checkboxi[1].click();
+            checkboxi[2].click();
+            SchedulerButton.click();
+            RefreshX.click();
+            RefreshY.click();
+            expect(
+                screen.findByText(
+                    /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i
+                )
+            ).toBeInTheDocument;
         });
+        // this is where the testing of the search and edit features would go
     });
 });
