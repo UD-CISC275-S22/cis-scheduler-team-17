@@ -26,12 +26,10 @@ export function SchedulerPage({
     degree: Degree;
     updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
-    //degree state
-    const currDegree = degree;
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
     const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
-        currDegree.SemesterList
+        degree.SemesterList
     );
     const [semExistsError, setSemesterExists] = useState<boolean>(false);
     //seasons dropdown state
@@ -49,7 +47,7 @@ export function SchedulerPage({
                         setSeason(event.target.value)
                     }
                 >
-                    {SeasonsList.map((s: Season) => (
+                    {seasons.map((s: Season) => (
                         <option key={s} value={s}>
                             {s}
                         </option>
@@ -95,7 +93,7 @@ export function SchedulerPage({
                 TotalCredits: 0
             };
             setSemesterList([...updateSemesterList, newSemester]);
-            currDegree.SemesterList = [...currDegree.SemesterList, newSemester];
+            //degree.SemesterList = [...degree.SemesterList, newSemester];
             console.log(year + " : " + season);
         }
     }
@@ -115,10 +113,11 @@ export function SchedulerPage({
             </header>
             <div>
                 <h3>
-                    You are planning <strong>{currDegree.name}</strong> degree
+                    You are planning <strong>{degree.name}</strong> degree
                 </h3>
             </div>
             {console.log(updateSemesterList)}
+            {console.log(degree.name + " " + degree.SemesterList)}
             <div>
                 <Row>
                     <Col>
@@ -142,7 +141,7 @@ export function SchedulerPage({
                     <Row>
                         <Col>
                             <label>
-                                Plan Name: <strong>{currDegree.name}</strong>
+                                Plan Name: <strong>{degree.name}</strong>
                             </label>
                             <div>
                                 <Button onClick={() => updateSemesterForm()}>
@@ -182,7 +181,7 @@ export function SchedulerPage({
                                                     semester.year
                                                 }
                                                 semester={semester}
-                                                degree={currDegree}
+                                                degree={degree}
                                                 removeSemester={removeSemester}
                                             ></MakeSemester>
                                             <br></br>
@@ -193,9 +192,7 @@ export function SchedulerPage({
                         </Col>
                         <Col>
                             <span>
-                                <CoursesLists
-                                    degree={currDegree}
-                                ></CoursesLists>
+                                <CoursesLists degree={degree}></CoursesLists>
                             </span>
                         </Col>
                     </Row>
