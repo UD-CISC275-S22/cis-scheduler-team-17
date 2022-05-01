@@ -32,13 +32,13 @@ export function FindCourse({ degree }: { degree: Degree }): JSX.Element {
         }
     }
 
-    function updateShortAnswer(event: ChangeEvent) {
+    function updatePossibleAnswers(event: ChangeEvent) {
         setUserAnswer(event.target.value);
         // allows us to update our list based on what is getting entered
         setListOfPossibleAnswers(
             degree.CoursesRequired.filter(
                 (currentCourse: Course): boolean =>
-                    currentCourse.courseID.search(userAnswer) !== -1
+                    currentCourse.courseID.search(event.target.value) !== -1
             )
         );
     }
@@ -70,7 +70,7 @@ export function FindCourse({ degree }: { degree: Degree }): JSX.Element {
                     <Form.Group controlId="CheckAnswer">
                         <Form.Control
                             value={userAnswer}
-                            onChange={updateShortAnswer}
+                            onChange={updatePossibleAnswers}
                         ></Form.Control>
                     </Form.Group>
                     <div>
