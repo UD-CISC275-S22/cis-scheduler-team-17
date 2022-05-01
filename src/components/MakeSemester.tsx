@@ -123,7 +123,7 @@ export function MakeSemester({
                         <th>Remove Course</th>
                     </tr>
                     {courseList.map((course: Course) => (
-                        <tr key={course.name}>
+                        <tr key={course.courseID}>
                             <th>{course.courseID}</th>
                             <th>{course.name}</th>
                             <th className={"scroll"}>{course.description}</th>
