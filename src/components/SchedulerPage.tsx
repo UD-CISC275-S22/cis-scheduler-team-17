@@ -160,7 +160,10 @@ export function SchedulerPage({
                                     {" "}
                                     Show Add Semester Form
                                 </Button>
-                                <Button onClick={removeAllSemesters}>
+                                <Button
+                                    className={"remove"}
+                                    onClick={removeAllSemesters}
+                                >
                                     Reset Plan
                                 </Button>
                                 {showSemForm && (
