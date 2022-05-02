@@ -34,6 +34,7 @@ export function SchedulerPage({
     const [semExistsError, setSemesterExists] = useState<boolean>(false);
     //update degree semester list
     function setSemesterList(newList: SemesterPlanner[]) {
+        updateSemesterForm();
         degree.SemesterList = newList;
     }
     //seasons dropdown state
@@ -117,6 +118,7 @@ export function SchedulerPage({
             (sem: SemesterPlanner): boolean =>
                 sem.SemesterSeason != currSeason || sem.year != currYear
         );
+        updateSemesterForm();
     }
     function removeAllSemesters() {
         setSemesterList([]);
@@ -124,6 +126,7 @@ export function SchedulerPage({
         degree.CoursesRequired.map(
             (course: Course) => (course.taken_String = "❌")
         );
+        updateSemesterForm();
     }
     return (
         <div className="App">
@@ -163,7 +166,9 @@ export function SchedulerPage({
                             <div>
                                 <Button onClick={() => updateSemesterForm()}>
                                     {" "}
-                                    Show Add Semester Form
+                                    {showSemForm
+                                        ? "Hide Add Semester Form"
+                                        : "Show Add Semester Form"}
                                 </Button>
                                 <Button
                                     className={"remove"}
