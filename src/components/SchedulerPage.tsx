@@ -245,16 +245,16 @@ function PrintDegreesLists({
 }): JSX.Element {
     // this is going to be where the courses are printed
     const [currentDegree, setDegree] = useState<Degree>(degree);
-    const [currentCourseName, setCurrentCourseName] = useState<string>(
-        degree.CoursesRequired[0].name
-    );
+    // const [currentCourseName, setCurrentCourseName] = useState<string>(
+    //     degree.CoursesRequired[0].name
+    // );
     const [printCourses, setPrintTakenOrNot] = useState<Course[]>(
         currentDegree.CoursesRequired.filter(
             (course: Course): boolean => course.taken === taken
         )
     );
     const [progress, setProgress] = useState(0);
-    const [currentTaken, setCurrentTaken] = useState<boolean>();
+    //const [currentTaken, setCurrentTaken] = useState<boolean>();
 
     function updateList() {
         setDegree(degree);
@@ -272,7 +272,9 @@ function PrintDegreesLists({
         const scrollHeight = event.currentTarget.scrollHeight;
 
         const scrollTop = event.currentTarget.scrollTop;
-        setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
+        setProgress(
+            progress + ((scrollTop + containerHeight) / scrollHeight) * 100
+        );
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
