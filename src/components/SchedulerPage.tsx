@@ -213,9 +213,7 @@ export function SchedulerPage({
                                                 degree={degree}
                                                 removeSemester={removeSemester}
                                                 updateDegree={updateDegree}
-                                                setSemesterForm={
-                                                    setSemesterForm
-                                                }
+                                                updateForm={updateSemesterForm}
                                             ></MakeSemester>
                                             <br></br>
                                         </>
