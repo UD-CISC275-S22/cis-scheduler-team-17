@@ -172,10 +172,6 @@ export function MakeSemester({
                         totalCredits={totalCredits}
                         changeTotal={changeTotal}
                     ></AddExisting>
-                    {console.log(courseList + " courseList")}
-                    {console.log(
-                        semester.ClassesTaking + " semester.ClassesTaking"
-                    )}
                     <Button onClick={resetState}>Remove All Courses</Button>
                     <Button
                         onClick={() =>
@@ -342,8 +338,6 @@ function AddExisting({
                     <strong>Create Course</strong> button above.
                 </p>
             )}
-            {console.log(cList)}
-            {console.log(degree.SemesterList + " degree.SemesterList")}
         </div>
     );
 }

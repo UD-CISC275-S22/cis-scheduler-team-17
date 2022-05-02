@@ -28,9 +28,9 @@ export function SchedulerPage({
 }): JSX.Element {
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
-    const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
-        degree.SemesterList
-    );
+    // const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
+    //     degree.SemesterList
+    // );
     const [semExistsError, setSemesterExists] = useState<boolean>(false);
     //seasons dropdown state
     const seasons = [...SeasonsList];
@@ -77,7 +77,7 @@ export function SchedulerPage({
         const currYear = year;
         const currSeason = season;
 
-        const contains = updateSemesterList.find(
+        const contains = degree.SemesterList.find(
             (c: SemesterPlanner): boolean =>
                 c.SemesterSeason === season && c.year === year
         );
@@ -92,18 +92,21 @@ export function SchedulerPage({
                 SemesterSeason: currSeason,
                 TotalCredits: 0
             };
-            setSemesterList([...updateSemesterList, newSemester]);
-            //degree.SemesterList = [...degree.SemesterList, newSemester];
-            console.log(year + " : " + season);
+            //setSemesterList([...updateSemesterList, newSemester]);
+            degree.SemesterList = [...degree.SemesterList, newSemester];
         }
     }
     function removeSemester(currYear: number, currSeason: Season) {
         //console.log(year + " : " + season);
-        setSemesterList(
-            updateSemesterList.filter(
-                (sem: SemesterPlanner): boolean =>
-                    sem.SemesterSeason != currSeason || sem.year != currYear
-            )
+        // setSemesterList(
+        //     updateSemesterList.filter(
+        //         (sem: SemesterPlanner): boolean =>
+        //             sem.SemesterSeason != currSeason || sem.year != currYear
+        //     )
+        // );
+        degree.SemesterList = degree.SemesterList.filter(
+            (sem: SemesterPlanner): boolean =>
+                sem.SemesterSeason != currSeason || sem.year != currYear
         );
     }
     return (
@@ -116,8 +119,6 @@ export function SchedulerPage({
                     You are planning <strong>{degree.name}</strong> degree
                 </h3>
             </div>
-            {console.log(updateSemesterList)}
-            {console.log(degree.name + " " + degree.SemesterList)}
             <div>
                 <Row>
                     <Col>
@@ -172,7 +173,7 @@ export function SchedulerPage({
                             </div>
                             <br></br>
                             <div>
-                                {updateSemesterList.map(
+                                {degree.SemesterList.map(
                                     (semester: SemesterPlanner) => (
                                         <>
                                             <MakeSemester
@@ -199,13 +200,14 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV semesters={updateSemesterList}></ExportCSV>
+                <ExportCSV semesters={degree.SemesterList}></ExportCSV>
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
                 </Button>
             </footer>
+            {console.log(degree)}
         </div>
     );
 }
