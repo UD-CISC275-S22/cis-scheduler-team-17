@@ -108,6 +108,7 @@ export function SchedulerPage({
             (sem: SemesterPlanner): boolean =>
                 sem.SemesterSeason != currSeason || sem.year != currYear
         );
+        updateSemesterForm();
     }
     return (
         <div className="App">
