@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
 import { Course /*, Season*/ } from "../interfaces/course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
@@ -20,20 +19,15 @@ export function EditInterface({
     const [EditCredits, setEditCredits] = useState<boolean>(false);
 
     function revert() {
-        const matching = AllCourses.filter(
-            (currentCourse: Course): boolean =>
-                Course2Edit.ogID === currentCourse.ogID
-        );
-        const original = matching[0];
-        console.log(original.courseID);
-        Course2Edit.courseID = original.courseID;
-        Course2Edit.name = original.name;
-        Course2Edit.description = original.description;
-        Course2Edit.credits = original.credits;
+        Course2Edit.courseID = Course2Edit.ogID;
+        Course2Edit.name = Course2Edit.ogName;
+        Course2Edit.description = Course2Edit.ogdesc;
+        Course2Edit.credits = Course2Edit.ogCredits;
     }
 
     return (
         <div>
+            <div>You are currently editing {Course2Edit.courseID}</div>
             <Form.Check
                 type="checkbox"
                 name="EditOptions"
@@ -88,7 +82,7 @@ export function EditInterface({
                 value="Credits"
             />
             {EditCredits ? <EditCreditsUI Course2Edit={Course2Edit} /> : ""}
-            <Button onClick={revert}>Revert To Original IN PROGRESS</Button>
+            <Button onClick={revert}>Reset Course to Default</Button>
         </div>
     );
 }
@@ -113,7 +107,7 @@ function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
                 ></Form.Control>
             </Form.Group>
             <div>Current Course ID: {inputID}</div>
-            <Button onClick={saveChange}>Save Changes</Button>
+            <Button onClick={saveChange}>Save</Button>
         </div>
     );
 }

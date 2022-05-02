@@ -33,7 +33,7 @@ export function FindCourse(): JSX.Element {
         setListOfPossibleAnswers(
             AllCoursesCopy.filter(
                 (currentCourse: Course): boolean =>
-                    currentCourse.courseID.search(userAnswer) !== -1
+                    currentCourse.courseID.search(event.target.value) !== -1
             )
         );
     }
@@ -72,20 +72,27 @@ export function FindCourse(): JSX.Element {
                     : "Searching"}
             </div>
             {showSearch ? (
-                <div style={styles.container} onScroll={scrollHandler}>
-                    {list_Of_Possible_Answers.map((currentCourse: Course) => (
-                        <div key={currentCourse.name}>
-                            {currentCourse.courseID}
-                            <Button
-                                className={"makeInformationButton"}
-                                onClick={() =>
-                                    SelectCourse(currentCourse.courseID)
-                                }
-                            >
-                                Select Course
-                            </Button>
-                        </div>
-                    ))}
+                <div>
+                    <div>Please Input the Course ID you want to find</div>
+                    {/**This is the searchbar */}
+                    {/**This is where the scrolly box with the selectors are held*/}
+                    <div style={styles.container} onScroll={scrollHandler}>
+                        {list_Of_Possible_Answers.map(
+                            (currentCourse: Course) => (
+                                <div key={currentCourse.name}>
+                                    {currentCourse.courseID}
+                                    <Button
+                                        className={"makeInformationButton"}
+                                        onClick={() =>
+                                            SelectCourse(currentCourse.courseID)
+                                        }
+                                    >
+                                        Select Course
+                                    </Button>
+                                </div>
+                            )
+                        )}
+                    </div>
                 </div>
             ) : (
                 <div>
