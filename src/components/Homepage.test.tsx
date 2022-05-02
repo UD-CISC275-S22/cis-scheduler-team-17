@@ -21,7 +21,7 @@ describe("Testing everything on the homepage", () => {
         test("Testing to see if taken starts off as false", () => {
             expect(
                 screen.getByText(
-                    /Course Name: EGGG101: Introduction to Engineering Course Credits: 2 ...... Pre Requisite: ...... Taken: ❌/i
+                    /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
                 )
             ).toBeInTheDocument;
         });
@@ -41,7 +41,7 @@ describe("Testing everything on the homepage", () => {
                 screen.getAllByRole("checkbox");
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering Course Credits: 2 ...... Pre Requisite: ...... Taken: ✔️/i
+                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
             );
         });
         test("Testing to see if changing the status of taken twice gets us back to not taken", () => {
@@ -50,14 +50,15 @@ describe("Testing everything on the homepage", () => {
             checkboxes[0].click();
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering Course Credits: 2 ...... Pre Requisite: ...... Taken: ✔️/i
+                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
             );
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering Course Credits: 2 ...... Pre Requisite: ...... Taken: ❌/i
+                /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
             );
         });
-        test("checking to see if the taken status for courses with prerecs is intitally not taken", () => {
+        // these tests are for when/if we decide to print the prerecs inside of the scrolly box
+        /* test("checking to see if the taken status for courses with prerecs is intitally not taken", () => {
             screen.getByText(
                 /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1❌,MATH241: Analytic Geometry and Calculus A❌ ...... Taken: ❌/i
             );
@@ -75,8 +76,6 @@ describe("Testing everything on the homepage", () => {
             const checkboxes: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxes[1].click();
-            checkboxes[1].click();
-            checkboxes[2].click();
             checkboxes[2].click();
             screen.getByText(
                 /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1✔️,MATH241: Analytic Geometry and Calculus A✔️ ...... Taken: ❌/i
@@ -86,6 +85,6 @@ describe("Testing everything on the homepage", () => {
             screen.getByText(
                 /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1❌,MATH241: Analytic Geometry and Calculus A❌ ...... Taken: ❌/i
             );
-        });
+        }); */
     });
 });

@@ -27,6 +27,7 @@ export function EditInterface({
 
     return (
         <div>
+            <div>You are currently editing {Course2Edit.courseID}</div>
             <Form.Check
                 type="checkbox"
                 name="EditOptions"

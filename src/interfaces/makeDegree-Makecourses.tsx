@@ -42,11 +42,14 @@ export function makeCourseTaken(
         ogID: courseID,
         courseID: courseID,
         name: name,
+        ogName: name,
         description: description,
+        ogdesc: description,
         SemesterAvailable: SemesterAvailable,
         SemestersAvailableString: SemesterAvailable.join(", "),
         prerecs: prerecs,
         credits: credits,
+        ogCredits: credits,
         taken: taken,
         taken_String: taken ? "❌" : "✔️"
     };
