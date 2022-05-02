@@ -11,23 +11,12 @@ export function SelectCoursesTaken({
 }: {
     degree: Degree;
 }): JSX.Element {
-    // this is going to be where the courses are printed
-    UseYellows();
     //const [currentDegree, setDegree] = useState<Degree>(degree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         degree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
-
-    function UseYellows() {
-        // this is only here to get ris of the yellows in the code
-        // eslint-disable-next-line no-constant-condition
-        if (!true) {
-            console.log(currentCourseName);
-            console.log(currentTaken);
-        }
-    }
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
@@ -142,7 +131,6 @@ function Information({
     const findCourse = currentDegree.CoursesRequired.filter(
         (myCourse: Course): boolean => myCourse.name === currentCourseName
     );
-    console.log(currentDegree.name);
     const currentCourse = findCourse[0];
     return (
         <div>

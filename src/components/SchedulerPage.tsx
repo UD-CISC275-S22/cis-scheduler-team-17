@@ -244,7 +244,6 @@ function PrintDegreesLists({
     degree: Degree;
 }): JSX.Element {
     // this is going to be where the courses are printed
-    UseYellows();
     const [currentDegree, setDegree] = useState<Degree>(degree);
     const [currentCourseName, setCurrentCourseName] = useState<string>(
         degree.CoursesRequired[0].name
@@ -256,18 +255,6 @@ function PrintDegreesLists({
     );
     const [progress, setProgress] = useState(0);
     const [currentTaken, setCurrentTaken] = useState<boolean>();
-
-    function UseYellows() {
-        // this is only here to get ris of the yellows in the code
-        // eslint-disable-next-line no-constant-condition
-        if (!true) {
-            console.log(currentCourseName);
-            console.log(currentTaken);
-            console.log(progress);
-            setCurrentCourseName("HOW");
-            setCurrentTaken(false);
-        }
-    }
 
     function updateList() {
         setDegree(degree);
