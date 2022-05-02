@@ -12,11 +12,13 @@ export function SelectCoursesTaken({
     degree: Degree;
 }): JSX.Element {
     //const [currentDegree, setDegree] = useState<Degree>(degree);
-    const [currentCourseName, setCurrentCourseName] = useState<string>(
+    //[currentCourseName, setCurrentCourseName]
+    const [, setCurrentCourseName] = useState<string>(
         degree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
-    const [currentTaken, setCurrentTaken] = useState<boolean>();
+    //[currentTaken, setCurrentTaken]
+    const [, setCurrentTaken] = useState<boolean>();
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff

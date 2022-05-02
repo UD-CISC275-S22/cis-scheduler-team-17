@@ -49,7 +49,6 @@ function App(): JSX.Element {
                         degree={degree}
                         updateDegree={updateDegree}
                     ></SchedulerPage>
-                    {console.log(homepage)}
                 </div>
             </div>
             {/* <UnderConstruction></UnderConstruction> */}

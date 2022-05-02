@@ -19,11 +19,13 @@ type ChangeEvent = React.ChangeEvent<
 export function MakeSemester({
     semester,
     degree,
-    removeSemester
+    removeSemester,
+    updateDegree
 }: {
     semester: SemesterPlanner;
     degree: Degree;
     removeSemester: (currYear: number, currSeason: Season) => void;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -31,7 +33,7 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    const [courseList, changeList] = useState<Course[]>(semester.ClassesTaking);
+    const [courseList, updateList] = useState<Course[]>(semester.ClassesTaking);
     const [intersection, changeIntersect] = useState<Course[]>([]);
     //Create course information
     const [courseID, setID] = useState<string>("");
@@ -39,10 +41,19 @@ export function MakeSemester({
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
     const [totalCredits, resetTotal] = useState<number>(semester.TotalCredits);
+    //Change Semester List
+    function changeList(newList: Course[]) {
+        updateList(newList);
+        semester.ClassesTaking = newList;
+        console.log(semester.ClassesTaking);
+        console.log(degree.SemesterList);
+        updateDegree;
+    }
     //reset taken
     function resetTaken(existing: Course) {
         existing.taken = false;
         existing.taken_String = "❌";
+        updateDegree;
     }
     //Reset State - Removes all courses
     const resetState = () => {
@@ -54,10 +65,12 @@ export function MakeSemester({
         intersection.map((course: Course) => resetTaken(course));
         changeIntersect([]);
         changeList([]);
+        updateDegree;
     };
     function changeTotal(credits: number) {
         resetTotal(credits);
         semester.TotalCredits = totalCredits;
+        updateDegree;
     }
     function removeCourse(courseID: string) {
         const course = courseList.filter(
@@ -80,10 +93,12 @@ export function MakeSemester({
             )
         );
         changeTotal(totalCredits - course[0].credits);
+        updateDegree;
     }
     function removeSemesterReset(year: number, season: string) {
         resetState();
         removeSemester(year, season);
+        updateDegree;
     }
     //Set Credits
     function changeCredits(credit: string) {
@@ -100,8 +115,9 @@ export function MakeSemester({
             [],
             credits
         );
-        changeTotal(totalCredits + credits);
         changeList([...courseList, newCourse]);
+        changeTotal(totalCredits + newCourse.credits);
+        updateDegree;
     }
     return (
         <div>
@@ -111,18 +127,18 @@ export function MakeSemester({
                         " " +
                         semester.year +
                         ": " +
-                        totalCredits +
+                        semester.TotalCredits +
                         " Credits"}
                 </label> */}
                 <Table className="semesterTable">
-                    <thead className="semesterLabel">
+                    <caption className="semesterLabel">
                         {semester.SemesterSeason +
                             " " +
                             semester.year +
                             ": " +
                             semester.TotalCredits +
                             " Credits"}
-                    </thead>
+                    </caption>
                     <tr className="key">
                         <th>Course ID</th>
                         <th>Course Name</th>
@@ -131,7 +147,7 @@ export function MakeSemester({
                         <th>Remove Course</th>
                     </tr>
                     {courseList.map((course: Course) => (
-                        <tr key={course.name}>
+                        <tr key={course.courseID}>
                             <th>{course.courseID}</th>
                             <th>{course.name}</th>
                             <th className={"scroll"}>{course.description}</th>
@@ -148,6 +164,10 @@ export function MakeSemester({
                         </tr>
                     ))}
                 </Table>
+                <p className="debug">
+                    {(semester.TotalCredits = totalCredits)}
+                    {updateDegree}
+                </p>
                 <div>
                     <CreateCourse
                         visible={visible}
@@ -171,6 +191,7 @@ export function MakeSemester({
                         changeIntersect={changeIntersect}
                         totalCredits={totalCredits}
                         changeTotal={changeTotal}
+                        updateDegree={updateDegree}
                     ></AddExisting>
                     <Button onClick={resetState}>Remove All Courses</Button>
                     <Button
@@ -268,7 +289,8 @@ function AddExisting({
     intersection,
     changeIntersect,
     totalCredits,
-    changeTotal
+    changeTotal,
+    updateDegree
 }: {
     cList: Course[];
     degree: Degree;
@@ -277,6 +299,7 @@ function AddExisting({
     changeIntersect: (value: Course[]) => void;
     totalCredits: number;
     changeTotal: (value: number) => void;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     //Visiblity of form
     const [evisible, setEVisible] = useState<boolean>(false);
@@ -307,6 +330,7 @@ function AddExisting({
             changeTotal(totalCredits + existing.credits);
             changeIntersect([...intersection, existing]);
             changeList([...cList, newCourse]);
+            updateDegree;
             setError(false);
         } else {
             setError(true);

@@ -1261,7 +1261,7 @@ const Information_Systems_Courses = [
     Free_Elective8
 ];
 // degree declarations
-const NoDegree = makeDegree(
+export const NoDegree = makeDegree(
     "No Degree Has been selected",
     "There has not been a course Selected",
     AllCourses,
@@ -1344,4 +1344,4 @@ export const AllDegrees = [
     CISC_BA,
     Information_Systems
 ];
-console.log(AllDegrees);
+//console.log(AllDegrees);

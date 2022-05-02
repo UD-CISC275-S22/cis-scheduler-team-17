@@ -141,11 +141,25 @@ label{
     overflow-y: scroll;
 }
 
-
+.semesterLabel{
+    font-size: 25px;
+    color: black;
+    display: table-caption;
+    text-align: center;
+    caption-side: top;
+}
 table {
     border-collapse: collapse;
 }
   
 th, td {
     border: 1px solid black;
+}
+
+.debug{
+    display: none;
+}
+.remove{
+    width: 25%;
+    margin-left: 20px;
 }
