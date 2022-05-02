@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/components/SchedulerPage.test.tsx (9.355 s)
+PASS src/components/SchedulerPage.test.tsx (8.944 s)
   ● Console
 
     console.log
@@ -1516,7 +1516,7 @@ PASS src/components/SchedulerPage.test.tsx (9.355 s)
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -3029,7 +3029,7 @@ PASS src/components/SchedulerPage.test.tsx (9.355 s)
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -3402,18 +3402,18 @@ PASS src/components/SchedulerPage.test.tsx (9.355 s)
        -----------------------------|---------|----------|---------|---------|------------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
 -----------------------------|---------|----------|---------|---------|------------------------------
-All files                    |   51.42 |    24.59 |   22.93 |   51.68 |                              
+All files                    |   51.28 |    24.59 |   22.93 |   51.55 |                              
  src                         |   58.33 |    66.66 |      50 |   58.33 |                              
   App.tsx                    |   58.33 |    66.66 |      50 |   58.33 | 27-32                        
- src/components              |   24.16 |    20.75 |   20.58 |   24.36 |                              
+ src/components              |   24.06 |    20.75 |   20.58 |   24.26 |                              
   DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                              
   EditCourse.tsx             |     100 |      100 |     100 |     100 |                              
   EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-349                       
   ExportCSV.tsx              |      40 |      100 |   16.66 |      40 | 14-30                        
   FindCourse.tsx             |      44 |       50 |   22.22 |      44 | 31-47,52-56,87-99            
   Homepage.tsx               |     100 |      100 |     100 |     100 |                              
-  MakeSemester.tsx           |       0 |        0 |       0 |       0 | 31-350                       
-  SchedulerPage.tsx          |   31.74 |    35.71 |   29.62 |   32.25 | 38-39,47-130,168-206,315-326 
+  MakeSemester.tsx           |       0 |        0 |       0 |       0 | 33-353                       
+  SchedulerPage.tsx          |   31.74 |    35.71 |   29.62 |   32.25 | 38-39,47-130,168-206,318-329 
   Select_Courses_Taken.tsx   |      76 |       75 |   66.66 |      76 | 40-44,140-159                
   Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                            
  src/interfaces              |   99.25 |        0 |   66.66 |   99.25 |                              
@@ -4564,7 +4564,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -6077,7 +6077,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -7590,7 +7590,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -9103,7 +9103,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -10616,1520 +10616,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
-
-    console.log
-      {
-        name: 'No Degree Has been selected',
-        description: 'There has not been a course Selected',
-        CoursesRequired: [
-          {
-            ogID: 'EGGG101',
-            courseID: 'EGGG101',
-            name: 'EGGG101: Introduction to Engineering',
-            ogName: 'EGGG101: Introduction to Engineering',
-            description: 'Introduction to profession, including disciplines of chemical, civil, computer, electrical, environmental, and mechanical engineering. Prepares students for success through integration of: technical problem solving and engineering design, ethical decision-making, teamwork, and communicating to diverse audiences.',
-            ogdesc: 'Introduction to profession, including disciplines of chemical, civil, computer, electrical, environmental, and mechanical engineering. Prepares students for success through integration of: technical problem solving and engineering design, ethical decision-making, teamwork, and communicating to diverse audiences.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 2,
-            ogCredits: 2,
-            taken: true,
-            taken_String: '✔️'
-          },
-          {
-            ogID: 'CISC108',
-            courseID: 'CISC108',
-            name: 'CISC108: Introduction To Computer Science 1',
-            ogName: 'CISC108: Introduction To Computer Science 1',
-            description: 'Computing and principles of programming with an emphasis on systematic program design. Topics include functional programming, data abstraction, procedural abstraction, use of control and state, recursion, testing, and object-oriented programming concepts. Requires no prior programming experience, open to any major, but intended primarily for majors and minors in computer science or mathematics. COREQ: MATH115, MATH117, or higher math course or math placement. RESTRICTIONS: Students who received credit in CISC106 are not eligible to take this course without permission.',
-            ogdesc: 'Computing and principles of programming with an emphasis on systematic program design. Topics include functional programming, data abstraction, procedural abstraction, use of control and state, recursion, testing, and object-oriented programming concepts. Requires no prior programming experience, open to any major, but intended primarily for majors and minors in computer science or mathematics. COREQ: MATH115, MATH117, or higher math course or math placement. RESTRICTIONS: Students who received credit in CISC106 are not eligible to take this course without permission.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MATH241',
-            courseID: 'MATH241',
-            name: 'MATH241: Analytic Geometry and Calculus A',
-            ogName: 'MATH241: Analytic Geometry and Calculus A',
-            description: 'Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay.',
-            ogdesc: 'Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'ENGL110',
-            courseID: 'ENGL110',
-            name: 'ENGL110: Seminar in Composition',
-            ogName: 'ENGL110: Seminar in Composition',
-            description: 'Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.',
-            ogdesc: 'Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC181',
-            courseID: 'CISC181',
-            name: 'CISC181: Introduction to Computer Science II',
-            ogName: 'CISC181: Introduction to Computer Science II',
-            description: 'Principles of computer science illustrated and applied through programming in an object oriented language. Programming projects illustrate computational problems, styles and issues that arise in computer systems development and in all application areas of computation.',
-            ogdesc: 'Principles of computer science illustrated and applied through programming in an object oriented language. Programming projects illustrate computational problems, styles and issues that arise in computer systems development and in all application areas of computation.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC210',
-            courseID: 'CISC210',
-            name: 'CISC210: Introduction to Systems Programming',
-            ogName: 'CISC210: Introduction to Systems Programming',
-            description: 'Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects.',
-            ogdesc: 'Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MATH242',
-            courseID: 'MATH242',
-            name: 'MATH242: Analytic Geometry and Calculus B',
-            ogName: 'MATH242: Analytic Geometry and Calculus B',
-            description: 'Brief review of MATH 241; evaluation of limits by L’Hospital’s rule; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.',
-            ogdesc: 'Brief review of MATH 241; evaluation of limits by L’Hospital’s rule; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [Array],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC220',
-            courseID: 'CISC220',
-            name: 'CISC220: Data Structures',
-            ogName: 'CISC220: Data Structures',
-            description: 'Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching.',
-            ogdesc: 'Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC260',
-            courseID: 'CISC260',
-            name: 'CISC260: Machine Organization and Assembly Language',
-            ogName: 'CISC260: Machine Organization and Assembly Language',
-            description: 'ntroduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques.',
-            ogdesc: 'ntroduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MATH210',
-            courseID: 'MATH210',
-            name: 'MATH210: Discrete Mathematics I',
-            ogName: 'MATH210: Discrete Mathematics I',
-            description: 'Elements of sets and logic. Relations, functions. Integers. Induction and recursion. Principles and techniques of counting. Graphs. Paths and circuits',
-            ogdesc: 'Elements of sets and logic. Relations, functions. Integers. Induction and recursion. Principles and techniques of counting. Graphs. Paths and circuits',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Lab Science',
-            courseID: 'Lab Science',
-            name: 'Lab Science 1 of 2',
-            ogName: 'Lab Science 1 of 2',
-            description: 'The first lab science you need to take',
-            ogdesc: 'The first lab science you need to take',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Lab Science',
-            courseID: 'Lab Science',
-            name: 'Lab Science 2 of 2',
-            ogName: 'Lab Science 2 of 2',
-            description: 'The first lab science you need to take',
-            ogdesc: 'The first lab science you need to take',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC355',
-            courseID: 'CISC355',
-            name: 'CISC355: Computers, Ethics and Society',
-            ogName: 'CISC355: Computers, Ethics and Society',
-            description: 'Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.',
-            ogdesc: 'Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Spring',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC275',
-            courseID: 'CISC275',
-            name: 'CISC275: Introduction to Software Engineering',
-            ogName: 'CISC275: Introduction to Software Engineering',
-            description: 'Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing).',
-            ogdesc: 'Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing).',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MATH205/MATH350',
-            courseID: 'MATH205/MATH350',
-            name: 'MATH205: Statistical Methods/MATH350: Probability Theory and Simulation Methods',
-            ogName: 'MATH205: Statistical Methods/MATH350: Probability Theory and Simulation Methods',
-            description: '205 Descriptive statistics (3 credits), graphical displays, sampling, variation, normal distribution, estimation, hypothesis testing, one-way analysis of variance, simple linear regression and goodness of fit. Laboratory covers use of statistical packages on mainframe and microcomputers : 350 (4 credits) Introduces the basic theory of discrete and continuous aspects of probability theory. Topics include bivariate distributions, sums of independent random variables, moment generating functions, laws of large numbers and central limit theorem.',
-            ogdesc: '205 Descriptive statistics (3 credits), graphical displays, sampling, variation, normal distribution, estimation, hypothesis testing, one-way analysis of variance, simple linear regression and goodness of fit. Laboratory covers use of statistical packages on mainframe and microcomputers : 350 (4 credits) Introduces the basic theory of discrete and continuous aspects of probability theory. Topics include bivariate distributions, sums of independent random variables, moment generating functions, laws of large numbers and central limit theorem.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC304',
-            courseID: 'CISC304',
-            name: 'CISC304: Logic for Programming',
-            ogName: 'CISC304: Logic for Programming',
-            description: 'Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.',
-            ogdesc: 'Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC320',
-            courseID: 'CISC320',
-            name: 'CISC320: Introduction to Algorithms',
-            ogName: 'CISC320: Introduction to Algorithms',
-            description: 'Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness.',
-            ogdesc: 'Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC361',
-            courseID: 'CISC361',
-            name: 'CISC361: Operating Systems',
-            ogName: 'CISC361: Operating Systems',
-            description: 'Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices.',
-            ogdesc: 'Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC Elective',
-            courseID: 'CISC Elective',
-            name: 'Cisc Elective',
-            ogName: 'Cisc Elective',
-            description: 'Take a Cisc Elective',
-            ogdesc: 'Take a Cisc Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Restricted CISC Elective',
-            courseID: 'Restricted CISC Elective',
-            name: 'Restricted Cisc Elective',
-            ogName: 'Restricted Cisc Elective',
-            description: 'you need to take a Restricted CISC Elective',
-            ogdesc: 'you need to take a Restricted CISC Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC303',
-            courseID: 'CISC303',
-            name: 'CISC303: Automata Theory',
-            ogName: 'CISC303: Automata Theory',
-            description: 'Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.',
-            ogdesc: 'Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC442',
-            courseID: 'CISC442',
-            name: 'CISC442: Introduction to Computer Vision',
-            ogName: 'CISC442: Introduction to Computer Vision',
-            description: 'Analysis of images and video to recognize, reconstruct, model, and otherwise infer static and dynamic properties of objects in the three-dimensional world. Geometry of image formation; image processing such as smoothing, edge and feature detection, color, and texture; segmentation; shape representation including deformable templates; stereo vision; motion estimation and tracking; techniques for 3-D reconstruction; image registration methods.',
-            ogdesc: 'Analysis of images and video to recognize, reconstruct, model, and otherwise infer static and dynamic properties of objects in the three-dimensional world. Geometry of image formation; image processing such as smoothing, edge and feature detection, color, and texture; segmentation; shape representation including deformable templates; stereo vision; motion estimation and tracking; techniques for 3-D reconstruction; image registration methods.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'ENGL312 or ENGL410',
-            courseID: 'ENGL312 or ENGL410',
-            name: 'ENGL312: Written Communications in Buisness, ENGL410: Technical Writing',
-            ogName: 'ENGL312: Written Communications in Buisness, ENGL410: Technical Writing',
-            description: 'Examines the role of written communication in corporate decision making. Students write memos, letters, proposals and reports that simulate on-the-job communication tasks, and are encouraged to use materials from their fields of specialization. :  Selected problems in technical communications, the preparation of reports and technical editing.',
-            ogdesc: 'Examines the role of written communication in corporate decision making. Students write memos, letters, proposals and reports that simulate on-the-job communication tasks, and are encouraged to use materials from their fields of specialization. :  Selected problems in technical communications, the preparation of reports and technical editing.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC481',
-            courseID: 'CISC481',
-            name: 'CISC481: Artificial Intelligence',
-            ogName: 'CISC481: Artificial Intelligence',
-            description: 'Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.',
-            ogdesc: 'Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC483',
-            courseID: 'CISC483',
-            name: 'CISC483: Introduction to Data Mining',
-            ogName: 'CISC483: Introduction to Data Mining',
-            description: 'Concepts, techniques, and algorithms for mining large data sets to discover structural patterns that can be used to make subsequent predictions. Emphasis on practical approaches and empirical evaluation. Use of a workbench of data mining tools, such as the Weka toolkit.',
-            ogdesc: 'Concepts, techniques, and algorithms for mining large data sets to discover structural patterns that can be used to make subsequent predictions. Emphasis on practical approaches and empirical evaluation. Use of a workbench of data mining tools, such as the Weka toolkit.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC484',
-            courseID: 'CISC484',
-            name: 'CISC484: Introduction to Machine Learning',
-            ogName: 'CISC484: Introduction to Machine Learning',
-            description: 'Development of methods to learn to solve a task using examples. Explore different machine learning algorithms/techniques and discuss their strengths and weaknesses and situations they are or are not suited for.',
-            ogdesc: 'Development of methods to learn to solve a task using examples. Explore different machine learning algorithms/techniques and discuss their strengths and weaknesses and situations they are or are not suited for.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC498',
-            courseID: 'CISC498',
-            name: 'CISC498: Computer Science Senior Design Project I',
-            ogName: 'CISC498: Computer Science Senior Design Project I',
-            description: 'First semester of two-semester senior software design course.  Students work in teams to develop solutions to real-world problems for a client.  Application of a modern software engineering process; requirement solicitation, analysis, and specification; prototyping; design; incremental development; testing and verification; client interaction; and presentation. Offered in Fall only.',
-            ogdesc: 'First semester of two-semester senior software design course.  Students work in teams to develop solutions to real-world problems for a client.  Application of a modern software engineering process; requirement solicitation, analysis, and specification; prototyping; design; incremental development; testing and verification; client interaction; and presentation. Offered in Fall only.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC499',
-            courseID: 'CISC499',
-            name: 'CISC499: Computer Science Senior Design Project II',
-            ogName: 'CISC499: Computer Science Senior Design Project II',
-            description: 'COMP SCI SENIOR DESIGN II Continuation of CISC 498.',
-            ogdesc: 'COMP SCI SENIOR DESIGN II Continuation of CISC 498.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CHEM111',
-            courseID: 'CHEM111',
-            name: 'CHEM111: General Chemistry',
-            ogName: 'CHEM111: General Chemistry',
-            description: 'Fundamental laws of chemical action with emphasis on atomic structure, chemical bonding, and important classes of substances.',
-            ogdesc: 'Fundamental laws of chemical action with emphasis on atomic structure, chemical bonding, and important classes of substances.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BISC207',
-            courseID: 'BISC207',
-            name: 'BISC207: Introductory Biology I',
-            ogName: 'BISC207: Introductory Biology I',
-            description: 'Molecular basis of life. Structure and function of cells, including signal transduction pathways. Energy transformations. Classical Mendelian genetics and the flow of information from DNA to RNA to proteins. Laboratory focuses on the testing of hypotheses, data analysis and scientific writing.',
-            ogdesc: 'Molecular basis of life. Structure and function of cells, including signal transduction pathways. Energy transformations. Classical Mendelian genetics and the flow of information from DNA to RNA to proteins. Laboratory focuses on the testing of hypotheses, data analysis and scientific writing.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [Array],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MATH349',
-            courseID: 'MATH349',
-            name: 'MATH349: Elementary Linear Algebra',
-            ogName: 'MATH349: Elementary Linear Algebra',
-            description: 'Systems of linear equations, linear combinations of vectors, and matrix algebra. Determinants, eigenvalues and eigenvectors, similarity and diagonalization of square matrices. Vector spaces, linear dependence and independence, basis and dimension, linear transformations. Inner product spaces, orthogonality, orthogonal projections, fundamental subspaces. A software package may be used for the analysis and solution of linear algebra problems.',
-            ogdesc: 'Systems of linear equations, linear combinations of vectors, and matrix algebra. Determinants, eigenvalues and eigenvectors, similarity and diagonalization of square matrices. Vector spaces, linear dependence and independence, basis and dimension, linear transformations. Inner product spaces, orthogonality, orthogonal projections, fundamental subspaces. A software package may be used for the analysis and solution of linear algebra problems.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CHEM213+CHEM215 or CHEM321+CHEM325',
-            courseID: 'CHEM213+CHEM215 or CHEM321+CHEM325',
-            name: 'CHEM213+CHEM215 or CHEM321+CHEM325: A survey of the fundamentals of organic chemistry',
-            ogName: 'CHEM213+CHEM215 or CHEM321+CHEM325: A survey of the fundamentals of organic chemistry',
-            description: 'Topics include molecular structure, organic nomenclature, functional groups, isomerism and stereoisomerism, reaction mechanisms, and organic synthesis. Basic principles will be illustrated with examples of biological significance. : A survey of elementary laboratory techniques that are useful to organic chemists. Separation and purification techniques and examples of typical organic reactions will be included. ; CHEM321+215: The practice and application of volumetric and gravimetric analysis, as well as basic chromatographic  and spectrometric measurements. : Laboratory work that introduces the basic laboratory techniques of organic chemistry. ',
-            ogdesc: 'Topics include molecular structure, organic nomenclature, functional groups, isomerism and stereoisomerism, reaction mechanisms, and organic synthesis. Basic principles will be illustrated with examples of biological significance. : A survey of elementary laboratory techniques that are useful to organic chemists. Separation and purification techniques and examples of typical organic reactions will be included. ; CHEM321+215: The practice and application of volumetric and gravimetric analysis, as well as basic chromatographic  and spectrometric measurements. : Laboratory work that introduces the basic laboratory techniques of organic chemistry. ',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BISC208',
-            courseID: 'BISC208',
-            name: 'BISC208: Introductory Biology II',
-            ogName: 'BISC208: Introductory Biology II',
-            description: 'Mechanisms of evolution. Physiology of multicellular plants and animals. Principles of ecology with emphasis on the biology of populations. Laboratory focuses on testing of hypotheses, data analysis and scientific writing. Animal and plant anatomy also studied.',
-            ogdesc: 'Mechanisms of evolution. Physiology of multicellular plants and animals. Principles of ecology with emphasis on the biology of populations. Laboratory focuses on testing of hypotheses, data analysis and scientific writing. Animal and plant anatomy also studied.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [Array],
-            credits: 4,
-            ogCredits: 4,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BISC401',
-            courseID: 'BISC401',
-            name: 'BISC401: Molecular Biology of the Cell',
-            ogName: 'BISC401: Molecular Biology of the Cell',
-            description: 'Introduction to the molecular biology of eucaryotes and procaryotes. Topics include structure and function of proteins and nucleic acids; replication and repair of DNA; biosynthesis of RNA and proteins; membranes, transport, composition and function of the eucaryotic cell, chromosomes, viruses, the immune system and recombinant DNA.',
-            ogdesc: 'Introduction to the molecular biology of eucaryotes and procaryotes. Topics include structure and function of proteins and nucleic acids; replication and repair of DNA; biosynthesis of RNA and proteins; membranes, transport, composition and function of the eucaryotic cell, chromosomes, viruses, the immune system and recombinant DNA.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC436',
-            courseID: 'CISC436',
-            name: 'CISC436: Computational Biology and Bioinformatics',
-            ogName: 'CISC436: Computational Biology and Bioinformatics',
-            description: 'Concepts, methodologies, and tools in bioinformatics. Abstraction of biological problems for computational solutions. Genome sequencing and assembly, bio-sequence analysis and comparison and database search, dynamics programming, hidden Markov models, and phylogenetic trees.',
-            ogdesc: 'Concepts, methodologies, and tools in bioinformatics. Abstraction of biological problems for computational solutions. Genome sequencing and assembly, bio-sequence analysis and comparison and database search, dynamics programming, hidden Markov models, and phylogenetic trees.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC450',
-            courseID: 'CISC450',
-            name: 'CISC450: Computer Networks I',
-            ogName: 'CISC450: Computer Networks I',
-            description: 'Foundation principles, architectures and techniques employed in computer and communication networks. Focuses on mechanisms used in TCP/IP protocol suite. Topics include connection management, end-to-end reliable data transfer, sliding window protocols, quality of service, flow control, congestion control, routing, LANs, framing, error control, analog versus digital transmission, packet versus circuit switching, multiplexing.',
-            ogdesc: 'Foundation principles, architectures and techniques employed in computer and communication networks. Focuses on mechanisms used in TCP/IP protocol suite. Topics include connection management, end-to-end reliable data transfer, sliding window protocols, quality of service, flow control, congestion control, routing, LANs, framing, error control, analog versus digital transmission, packet versus circuit switching, multiplexing.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC372',
-            courseID: 'CISC372',
-            name: 'CISC372: Parallel Computing',
-            ogName: 'CISC372: Parallel Computing',
-            description: 'Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation.',
-            ogdesc: 'Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC464',
-            courseID: 'CISC464',
-            name: 'CISC464: Introduction to Network Security',
-            ogName: 'CISC464: Introduction to Network Security',
-            description: 'Practical introduction to network security field. Covers material on cryptography, intrusions, denial-of-service attacks, worms, honeynets and other hot topics in network security.',
-            ogdesc: 'Practical introduction to network security field. Covers material on cryptography, intrusions, denial-of-service attacks, worms, honeynets and other hot topics in network security.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Restricted Elective',
-            courseID: 'Restricted Elective',
-            name: 'Restricted Elective #1',
-            ogName: 'Restricted Elective #1',
-            description: 'This is a restrictive elective',
-            ogdesc: 'This is a restrictive elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Restricted Elective',
-            courseID: 'Restricted Elective',
-            name: 'Restricted Elective #2',
-            ogName: 'Restricted Elective #2',
-            description: 'This is a restrictive elective',
-            ogdesc: 'This is a restrictive elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Restricted Elective',
-            courseID: 'Restricted Elective',
-            name: 'Restricted Elective #3',
-            ogName: 'Restricted Elective #3',
-            description: 'This is a restrictive elective',
-            ogdesc: 'This is a restrictive elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Restricted Elective',
-            courseID: 'Restricted Elective',
-            name: 'Restricted Elective #4',
-            ogName: 'Restricted Elective #4',
-            description: 'This is a restrictive elective',
-            ogdesc: 'This is a restrictive elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced Cybersecurity Requirement',
-            courseID: 'Advanced Cybersecurity Requirement',
-            name: 'Advanced Cybersecurity Requirement #1',
-            ogName: 'Advanced Cybersecurity Requirement #1',
-            description: 'You need to take an advanced cybersecurity requirement',
-            ogdesc: 'You need to take an advanced cybersecurity requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced Cybersecurity Requirement',
-            courseID: 'Advanced Cybersecurity Requirement',
-            name: 'Advanced Cybersecurity Requirement #2',
-            ogName: 'Advanced Cybersecurity Requirement #2',
-            description: 'You need to take an advanced cybersecurity requirement',
-            ogdesc: 'You need to take an advanced cybersecurity requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC465',
-            courseID: 'CISC465',
-            name: 'CISC465: Introduction to Cybersecurity',
-            ogName: 'CISC465: Introduction to Cybersecurity',
-            description: 'This cybersecurity course is an introduction to computer and network security and covers the foundation security policies and methods to provide confidentiality, integrity, and availability, as well as cryptography, auditing, and user security. Topics are reinforced with hands-on exercises run in a virtual machine environment.',
-            ogdesc: 'This cybersecurity course is an introduction to computer and network security and covers the foundation security policies and methods to provide confidentiality, integrity, and availability, as well as cryptography, auditing, and user security. Topics are reinforced with hands-on exercises run in a virtual machine environment.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CPEG494',
-            courseID: 'CPEG494',
-            name: 'CPEG494: System Hardening and Protection',
-            ogName: 'CPEG494: System Hardening and Protection',
-            description: 'Practical treatment of the defensive techniques used to harden computer systems to make them less vulnerable to cyber-attacks. Defect management, configuration/hardening, account control, logs/auditing, and risk assessment are covered and reinforced with hands-on exercises run in a virtual machine environment.',
-            ogdesc: 'Practical treatment of the defensive techniques used to harden computer systems to make them less vulnerable to cyber-attacks. Defect management, configuration/hardening, account control, logs/auditing, and risk assessment are covered and reinforced with hands-on exercises run in a virtual machine environment.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced Math Requirement',
-            courseID: 'Advanced Math Requirement',
-            name: 'Advanced Math Requirement',
-            ogName: 'Advanced Math Requirement',
-            description: 'This is an advanced Math Requirement',
-            ogdesc: 'This is an advanced Math Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC437',
-            courseID: 'CISC437',
-            name: 'CISC437: Database Systems',
-            ogName: 'CISC437: Database Systems',
-            description: 'Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases.',
-            ogdesc: 'Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced Data Science Requirement',
-            courseID: 'Advanced Data Science Requirement',
-            name: 'Advanced Data Science Requirement',
-            ogName: 'Advanced Data Science Requirement',
-            description: 'Advanced Data Science Requirement',
-            ogdesc: 'Advanced Data Science Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC360',
-            courseID: 'CISC360',
-            name: 'CISC360: Computer Architecture',
-            ogName: 'CISC360: Computer Architecture',
-            description: 'Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches.',
-            ogdesc: 'Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Elective',
-            courseID: 'TRACK Elective',
-            name: 'TRACK Elective #1',
-            ogName: 'TRACK Elective #1',
-            description: 'Track Elective',
-            ogdesc: 'Track Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Elective',
-            courseID: 'TRACK Elective',
-            name: 'TRACK Elective #2',
-            ogName: 'TRACK Elective #2',
-            description: 'Track Elective',
-            ogdesc: 'Track Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Requirment',
-            courseID: 'TRACK Requirment',
-            name: 'TRACK Requirment #1',
-            ogName: 'TRACK Requirment #1',
-            description: 'TRACK Requirement',
-            ogdesc: 'TRACK Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Requirment',
-            courseID: 'TRACK Requirment',
-            name: 'TRACK Requirment #2',
-            ogName: 'TRACK Requirment #2',
-            description: 'TRACK Requirement',
-            ogdesc: 'TRACK Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Requirment',
-            courseID: 'TRACK Requirment',
-            name: 'TRACK Requirment #3',
-            ogName: 'TRACK Requirment #3',
-            description: 'TRACK Requirement',
-            ogdesc: 'TRACK Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'TRACK Requirment',
-            courseID: 'TRACK Requirment',
-            name: 'TRACK Requirment #4',
-            ogName: 'TRACK Requirment #4',
-            description: 'TRACK Requirement',
-            ogdesc: 'TRACK Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC471',
-            courseID: 'CISC471',
-            name: 'CISC471: Compiler Design',
-            ogName: 'CISC471: Compiler Design',
-            description: 'Introduction to the design and implementation of compilers, with a focus on lexical analysis, parsing and syntax directed translation.',
-            ogdesc: 'Introduction to the design and implementation of compilers, with a focus on lexical analysis, parsing and syntax directed translation.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced System Requirement',
-            courseID: 'Advanced System Requirement',
-            name: 'Advanced System Requirement #1',
-            ogName: 'Advanced System Requirement #1',
-            description: 'Advanced System Requirement',
-            ogdesc: 'Advanced System Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Advanced System Requirement',
-            courseID: 'Advanced System Requirement',
-            name: 'Advanced System Requirement #2',
-            ogName: 'Advanced System Requirement #2',
-            description: 'Advanced System Requirement',
-            ogdesc: 'Advanced System Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Security Elective',
-            courseID: 'Security Elective',
-            name: 'Security Elective',
-            ogName: 'Security Elective',
-            description: 'Security Elective',
-            ogdesc: 'Security Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC401',
-            courseID: 'CISC401',
-            name: 'CISC401: Elements of the Theory of Computation',
-            ogName: 'CISC401: Elements of the Theory of Computation',
-            description: 'General models of computation, formal languages and automata theory and algorithmic unsolvability.',
-            ogdesc: 'General models of computation, formal languages and automata theory and algorithmic unsolvability.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Cisc 300 Technical Elective',
-            courseID: 'Cisc 300 Technical Elective',
-            name: 'Cisc 300 Technical Elective #1',
-            ogName: 'Cisc 300 Technical Elective #1',
-            description: 'THis is a CISC 300 level elective',
-            ogdesc: 'THis is a CISC 300 level elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Cisc 300 Technical Elective',
-            courseID: 'Cisc 300 Technical Elective',
-            name: 'Cisc 300 Technical Elective #2',
-            ogName: 'Cisc 300 Technical Elective #2',
-            description: 'THis is a CISC 300 level elective',
-            ogdesc: 'THis is a CISC 300 level elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Cisc 300 Technical Elective',
-            courseID: 'Cisc 300 Technical Elective',
-            name: 'Cisc 300 Technical Elective #3',
-            ogName: 'Cisc 300 Technical Elective #3',
-            description: 'THis is a CISC 300 level elective',
-            ogdesc: 'THis is a CISC 300 level elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Cisc 300 Technical Elective',
-            courseID: 'Cisc 300 Technical Elective',
-            name: 'Cisc 300 Technical Elective #4',
-            ogName: 'Cisc 300 Technical Elective #4',
-            description: 'THis is a CISC 300 level elective',
-            ogdesc: 'THis is a CISC 300 level elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Cisc 300 Technical Elective',
-            courseID: 'Cisc 300 Technical Elective',
-            name: 'Cisc 300 Technical Elective #5',
-            ogName: 'Cisc 300 Technical Elective #5',
-            description: 'THis is a CISC 300 level elective',
-            ogdesc: 'THis is a CISC 300 level elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Second Writing Requirement',
-            courseID: 'Second Writing Requirement',
-            name: 'Second Writing Requirement',
-            ogName: 'Second Writing Requirement',
-            description: 'This is the second writing requirement',
-            ogdesc: 'This is the second writing requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'DLE Capstone',
-            courseID: 'DLE Capstone',
-            name: 'DLE Capstone',
-            ogName: 'DLE Capstone',
-            description: 'This is the DLE Capstone',
-            ogdesc: 'This is the DLE Capstone',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'ACCT207',
-            courseID: 'ACCT207',
-            name: 'ACCT207: Accounting I',
-            ogName: 'ACCT207: Accounting I',
-            description: 'An introduction to financial accounting. Topics: the accounting cycle, merchandise accounting, accounting procedures for cash, receivables, payables, inventories, plant and equipment, stocks and bonds.',
-            ogdesc: 'An introduction to financial accounting. Topics: the accounting cycle, merchandise accounting, accounting procedures for cash, receivables, payables, inventories, plant and equipment, stocks and bonds.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC250',
-            courseID: 'CISC250',
-            name: 'CISC250: Business Telecommunication Networks',
-            ogName: 'CISC250: Business Telecommunication Networks',
-            description: 'Examines technologies of information transmission currently utilized in the business environments and the implications of these technologies upon the development and implementation of information systems. Provides a basic background in the convergence of voice, data and video services into common digital networks. Security issues also considered.',
-            ogdesc: 'Examines technologies of information transmission currently utilized in the business environments and the implications of these technologies upon the development and implementation of information systems. Provides a basic background in the convergence of voice, data and video services into common digital networks. Security issues also considered.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'ACCT208',
-            courseID: 'ACCT208',
-            name: 'ACCT208: Accounting II',
-            ogName: 'ACCT208: Accounting II',
-            description: 'Introduction to managerial accounting. Topics: manufacturing accounting, cost-volume-profit analysis, job-order accounting, budgeting, standard costs and variance analysis, contribution approach to decision analysis, absorption and variable costing.',
-            ogdesc: 'Introduction to managerial accounting. Topics: manufacturing accounting, cost-volume-profit analysis, job-order accounting, budgeting, standard costs and variance analysis, contribution approach to decision analysis, absorption and variable costing.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'STAT200',
-            courseID: 'STAT200',
-            name: 'STAT200: Basic Statistical Practice',
-            ogName: 'STAT200: Basic Statistical Practice',
-            description: 'Uses data from a variety of disciplines to explore topics in statistical data analysis, estimation, and inference. The following topics will be covered: graphical displays; measures of position, central tendency, and variability; basic probability rules; discrete probability distributions; binomial distribution; normal and standard normal probability distributions; sampling distributions; the t distribution; confidence intervals and hypothesis tests for one mean or proportion; confidence intervals and hypothesis tests for two means or proportions; correlation and simple linear regression. ',
-            ogdesc: 'Uses data from a variety of disciplines to explore topics in statistical data analysis, estimation, and inference. The following topics will be covered: graphical displays; measures of position, central tendency, and variability; basic probability rules; discrete probability distributions; binomial distribution; normal and standard normal probability distributions; sampling distributions; the t distribution; confidence intervals and hypothesis tests for one mean or proportion; confidence intervals and hypothesis tests for two means or proportions; correlation and simple linear regression. ',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BUAD306',
-            courseID: 'BUAD306',
-            name: 'BUAD306: Introduction to Service and Operations Management',
-            ogName: 'BUAD306: Introduction to Service and Operations Management',
-            description: 'Analysis of major problems faced by operations managers at different levels of management. Topics include scheduling, forecasting, process design, inventory management and quality management.',
-            ogdesc: 'Analysis of major problems faced by operations managers at different levels of management. Topics include scheduling, forecasting, process design, inventory management and quality management.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'IS Elective',
-            courseID: 'IS Elective',
-            name: 'IS Elective #1',
-            ogName: 'IS Elective #1',
-            description: 'This is an IS Elective',
-            ogdesc: 'This is an IS Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'IS Elective',
-            courseID: 'IS Elective',
-            name: 'IS Elective #2',
-            ogName: 'IS Elective #2',
-            description: 'This is an IS Elective',
-            ogdesc: 'This is an IS Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BUAD301',
-            courseID: 'BUAD301',
-            name: 'BUAD301: Introduction to Marketing',
-            ogName: 'BUAD301: Introduction to Marketing',
-            description: 'Management of the marketing functions, marketing research, product planning, distribution channels, pricing, personal selling, and advertising. Emphasis on consumer and industrial markets.',
-            ogdesc: 'Management of the marketing functions, marketing research, product planning, distribution channels, pricing, personal selling, and advertising. Emphasis on consumer and industrial markets.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'BUAD309',
-            courseID: 'BUAD309',
-            name: 'BUAD309: Organizational Behavior',
-            ogName: 'BUAD309: Organizational Behavior',
-            description: 'Examines individual, group, and organizational determinants of work behavior in organizations. Theory and concepts relevant to individual differences, attitudes, motivation, teams, leadership, power, and organizational culture and change are discussed with an emphasis on applying this knowledge to the challenges of management in a variety of organizations.',
-            ogdesc: 'Examines individual, group, and organizational determinants of work behavior in organizations. Theory and concepts relevant to individual differences, attitudes, motivation, teams, leadership, power, and organizational culture and change are discussed with an emphasis on applying this knowledge to the challenges of management in a variety of organizations.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'COMM212',
-            courseID: 'COMM212',
-            name: 'COMM212: Public Speaking & Professional Presentation',
-            ogName: 'COMM212: Public Speaking & Professional Presentation',
-            description: 'Includes an analysis of the types and principles of the communication inherent in the business and professional setting; a concentration upon the development of presentational skills: analyzing audiences, questioning, interviewing, researching, supporting, organizing and delivering information; an opportunity to develop and present materials within dyads, small groups and public contexts.',
-            ogdesc: 'Includes an analysis of the types and principles of the communication inherent in the business and professional setting; a concentration upon the development of presentational skills: analyzing audiences, questioning, interviewing, researching, supporting, organizing and delivering information; an opportunity to develop and present materials within dyads, small groups and public contexts.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Spring',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MISY430',
-            courseID: 'MISY430',
-            name: 'MISY430: Systems Analysis and Implementation',
-            ogName: 'MISY430: Systems Analysis and Implementation',
-            description: 'Covers the challenges of developing and managing systems analysis and design projects. Students learn to determine systems requirements, analyze systems problems, model potential solutions and design and implement these solutions. Other current topics will be included to reflect the changing information systems environment.',
-            ogdesc: 'Covers the challenges of developing and managing systems analysis and design projects. Students learn to determine systems requirements, analyze systems problems, model potential solutions and design and implement these solutions. Other current topics will be included to reflect the changing information systems environment.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'CISC475',
-            courseID: 'CISC475',
-            name: 'CISC475: Advanced Software Engineering',
-            ogName: 'CISC475: Advanced Software Engineering',
-            description: 'Understand and apply a complete modern software engineering process. Topics include requirements analysis, specification, design, implementation, verification, and project management. Real-life team projects cover all aspects of the software development lifecycle, from the requirements to acceptance testing.',
-            ogdesc: 'Understand and apply a complete modern software engineering process. Topics include requirements analysis, specification, design, implementation, verification, and project management. Real-life team projects cover all aspects of the software development lifecycle, from the requirements to acceptance testing.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Varies By Department',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MISY431',
-            courseID: 'MISY431',
-            name: 'MISY431: MIS Project Management',
-            ogName: 'MISY431: MIS Project Management',
-            description: 'MISY431 and MISY 432 serve as the MIS program capstone. Students learn project management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various enterprises.',
-            ogdesc: 'MISY431 and MISY 432 serve as the MIS program capstone. Students learn project management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various enterprises.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'MISY432',
-            courseID: 'MISY432',
-            name: 'MISY432: MIS Projects',
-            ogName: 'MISY432: MIS Projects',
-            description: 'MISY 431 and MISY 432 serve as the MIS program capstone. Students learn design, implementation and client management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various regional enterprises.',
-            ogdesc: 'MISY 431 and MISY 432 serve as the MIS program capstone. Students learn design, implementation and client management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various regional enterprises.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Spring',
-            prerecs: [Array],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #1',
-            ogName: 'Free Elective #1',
-            description: 'Take a Free Elective',
-            ogdesc: 'Take a Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #2',
-            ogName: 'Free Elective #2',
-            description: 'Take a SecondFree Elective',
-            ogdesc: 'Take a SecondFree Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #3',
-            ogName: 'Free Elective #3',
-            description: 'Take a third Free Elective',
-            ogdesc: 'Take a third Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #4',
-            ogName: 'Free Elective #4',
-            description: 'Take a fourth Free Elective',
-            ogdesc: 'Take a fourth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #5',
-            ogName: 'Free Elective #5',
-            description: 'Take a Fifth Free Elective',
-            ogdesc: 'Take a Fifth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #6',
-            ogName: 'Free Elective #6',
-            description: 'Take a Sixth Free Elective',
-            ogdesc: 'Take a Sixth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #7',
-            ogName: 'Free Elective #7',
-            description: 'Take a seventh Free Elective',
-            ogdesc: 'Take a seventh Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #8',
-            ogName: 'Free Elective #8',
-            description: 'Take an eigth Free Elective',
-            ogdesc: 'Take an eigth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #9',
-            ogName: 'Free Elective #9',
-            description: 'Take a ninth Free Elective',
-            ogdesc: 'Take a ninth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #10',
-            ogName: 'Free Elective #10',
-            description: 'Take a tenth Free Elective',
-            ogdesc: 'Take a tenth Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Free Elective',
-            courseID: 'Free Elective',
-            name: 'Free Elective #11',
-            ogName: 'Free Elective #11',
-            description: 'Take a eleventh Free Elective',
-            ogdesc: 'Take a eleventh Free Elective',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement',
-            courseID: 'Breadth Requirement',
-            name: 'Breadth Requirement Foreign Language',
-            ogName: 'Breadth Requirement Foreign Language',
-            description: 'Breadth Course to fulfill the foreign language requirement',
-            ogdesc: 'Breadth Course to fulfill the foreign language requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement',
-            courseID: 'Breadth Requirement',
-            name: 'Breadth Requirement Multicultural',
-            ogName: 'Breadth Requirement Multicultural',
-            description: 'This is the multicultural Breadth Requirement',
-            ogdesc: 'This is the multicultural Breadth Requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement Science And Technology',
-            courseID: 'Breadth Requirement Science And Technology',
-            name: 'Breadth Requirement Science and Technology',
-            ogName: 'Breadth Requirement Science and Technology',
-            description: 'These courses provide students with an understanding of fundamental and/or applied concepts and phenomena from mathematics, logic, natural or physical sciences, and technology including quantitative reasoning and methods used to approach and solve problems.',
-            ogdesc: 'These courses provide students with an understanding of fundamental and/or applied concepts and phenomena from mathematics, logic, natural or physical sciences, and technology including quantitative reasoning and methods used to approach and solve problems.',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement General',
-            courseID: 'Breadth Requirement General',
-            name: 'Breadth Requirement #1',
-            ogName: 'Breadth Requirement #1',
-            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement General',
-            courseID: 'Breadth Requirement General',
-            name: 'Breadth Requirement #2',
-            ogName: 'Breadth Requirement #2',
-            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement General',
-            courseID: 'Breadth Requirement General',
-            name: 'Breadth Requirement #3',
-            ogName: 'Breadth Requirement #3',
-            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          {
-            ogID: 'Breadth Requirement General',
-            courseID: 'Breadth Requirement General',
-            name: 'Breadth Requirement #4',
-            ogName: 'Breadth Requirement #4',
-            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
-            SemesterAvailable: [Array],
-            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
-            prerecs: [],
-            credits: 3,
-            ogCredits: 3,
-            taken: false,
-            taken_String: '❌'
-          },
-          ... 8 more items
-        ],
-        CreditsRequired: 0,
-        SemesterList: []
-      }
-
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -13642,7 +12129,1520 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
+
+    console.log
+      {
+        name: 'No Degree Has been selected',
+        description: 'There has not been a course Selected',
+        CoursesRequired: [
+          {
+            ogID: 'EGGG101',
+            courseID: 'EGGG101',
+            name: 'EGGG101: Introduction to Engineering',
+            ogName: 'EGGG101: Introduction to Engineering',
+            description: 'Introduction to profession, including disciplines of chemical, civil, computer, electrical, environmental, and mechanical engineering. Prepares students for success through integration of: technical problem solving and engineering design, ethical decision-making, teamwork, and communicating to diverse audiences.',
+            ogdesc: 'Introduction to profession, including disciplines of chemical, civil, computer, electrical, environmental, and mechanical engineering. Prepares students for success through integration of: technical problem solving and engineering design, ethical decision-making, teamwork, and communicating to diverse audiences.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 2,
+            ogCredits: 2,
+            taken: true,
+            taken_String: '✔️'
+          },
+          {
+            ogID: 'CISC108',
+            courseID: 'CISC108',
+            name: 'CISC108: Introduction To Computer Science 1',
+            ogName: 'CISC108: Introduction To Computer Science 1',
+            description: 'Computing and principles of programming with an emphasis on systematic program design. Topics include functional programming, data abstraction, procedural abstraction, use of control and state, recursion, testing, and object-oriented programming concepts. Requires no prior programming experience, open to any major, but intended primarily for majors and minors in computer science or mathematics. COREQ: MATH115, MATH117, or higher math course or math placement. RESTRICTIONS: Students who received credit in CISC106 are not eligible to take this course without permission.',
+            ogdesc: 'Computing and principles of programming with an emphasis on systematic program design. Topics include functional programming, data abstraction, procedural abstraction, use of control and state, recursion, testing, and object-oriented programming concepts. Requires no prior programming experience, open to any major, but intended primarily for majors and minors in computer science or mathematics. COREQ: MATH115, MATH117, or higher math course or math placement. RESTRICTIONS: Students who received credit in CISC106 are not eligible to take this course without permission.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MATH241',
+            courseID: 'MATH241',
+            name: 'MATH241: Analytic Geometry and Calculus A',
+            ogName: 'MATH241: Analytic Geometry and Calculus A',
+            description: 'Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay.',
+            ogdesc: 'Functions, limits, continuity, derivatives. Polynomial, rational, exponential, hyperbolic, logarithmic, trigonometric and inverse trigonometric functions. Definite and indefinite integrals and the Fundamental Theorem of Calculus. Simple differential equations (separable ODE, linear ODE). ODE models leading to exponential growth and decay.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'ENGL110',
+            courseID: 'ENGL110',
+            name: 'ENGL110: Seminar in Composition',
+            ogName: 'ENGL110: Seminar in Composition',
+            description: 'Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.',
+            ogdesc: 'Introduction to the process of academic writing that centers on the composition of analytical, research-based essays.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC181',
+            courseID: 'CISC181',
+            name: 'CISC181: Introduction to Computer Science II',
+            ogName: 'CISC181: Introduction to Computer Science II',
+            description: 'Principles of computer science illustrated and applied through programming in an object oriented language. Programming projects illustrate computational problems, styles and issues that arise in computer systems development and in all application areas of computation.',
+            ogdesc: 'Principles of computer science illustrated and applied through programming in an object oriented language. Programming projects illustrate computational problems, styles and issues that arise in computer systems development and in all application areas of computation.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC210',
+            courseID: 'CISC210',
+            name: 'CISC210: Introduction to Systems Programming',
+            ogName: 'CISC210: Introduction to Systems Programming',
+            description: 'Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects.',
+            ogdesc: 'Principles of computer systems programming for software and hardware platforms to achieve efficient resource usage. Topics include the C programming language, memory management, and awareness of system constraints and interfacing. Projects include programming embedded systems and interactive objects.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MATH242',
+            courseID: 'MATH242',
+            name: 'MATH242: Analytic Geometry and Calculus B',
+            ogName: 'MATH242: Analytic Geometry and Calculus B',
+            description: 'Brief review of MATH 241; evaluation of limits by L’Hospital’s rule; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.',
+            ogdesc: 'Brief review of MATH 241; evaluation of limits by L’Hospital’s rule; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [Array],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC220',
+            courseID: 'CISC220',
+            name: 'CISC220: Data Structures',
+            ogName: 'CISC220: Data Structures',
+            description: 'Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching.',
+            ogdesc: 'Review of data type abstraction, recursion, arrays, stacks, queues, multiple stacks and linked lists. Emphasis on dynamic storage management, garbage collection, trees, graphs, tables, sorting and searching.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC260',
+            courseID: 'CISC260',
+            name: 'CISC260: Machine Organization and Assembly Language',
+            ogName: 'CISC260: Machine Organization and Assembly Language',
+            description: 'ntroduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques.',
+            ogdesc: 'ntroduction to the basics of machine organization. Programming tools and techniques at the machine and assembly levels. Assembly language programming and computer arithmetic techniques.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MATH210',
+            courseID: 'MATH210',
+            name: 'MATH210: Discrete Mathematics I',
+            ogName: 'MATH210: Discrete Mathematics I',
+            description: 'Elements of sets and logic. Relations, functions. Integers. Induction and recursion. Principles and techniques of counting. Graphs. Paths and circuits',
+            ogdesc: 'Elements of sets and logic. Relations, functions. Integers. Induction and recursion. Principles and techniques of counting. Graphs. Paths and circuits',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Lab Science',
+            courseID: 'Lab Science',
+            name: 'Lab Science 1 of 2',
+            ogName: 'Lab Science 1 of 2',
+            description: 'The first lab science you need to take',
+            ogdesc: 'The first lab science you need to take',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Lab Science',
+            courseID: 'Lab Science',
+            name: 'Lab Science 2 of 2',
+            ogName: 'Lab Science 2 of 2',
+            description: 'The first lab science you need to take',
+            ogdesc: 'The first lab science you need to take',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC355',
+            courseID: 'CISC355',
+            name: 'CISC355: Computers, Ethics and Society',
+            ogName: 'CISC355: Computers, Ethics and Society',
+            description: 'Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.',
+            ogdesc: 'Explains relationships among information technology, society and ethics by examining issues raised by increasingly widespread use of computers. Topics include ethics for computer professionals, computer impact on factory work, office work, personal privacy and social power distribution.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Spring',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC275',
+            courseID: 'CISC275',
+            name: 'CISC275: Introduction to Software Engineering',
+            ogName: 'CISC275: Introduction to Software Engineering',
+            description: 'Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing).',
+            ogdesc: 'Object oriented software design and development through use of an object oriented programming language. Topics include team programming, design patterns, graphical user interfaces, software engineering tools (e.g., integrated development environments, version control, build management, bug tracking, automated testing).',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MATH205/MATH350',
+            courseID: 'MATH205/MATH350',
+            name: 'MATH205: Statistical Methods/MATH350: Probability Theory and Simulation Methods',
+            ogName: 'MATH205: Statistical Methods/MATH350: Probability Theory and Simulation Methods',
+            description: '205 Descriptive statistics (3 credits), graphical displays, sampling, variation, normal distribution, estimation, hypothesis testing, one-way analysis of variance, simple linear regression and goodness of fit. Laboratory covers use of statistical packages on mainframe and microcomputers : 350 (4 credits) Introduces the basic theory of discrete and continuous aspects of probability theory. Topics include bivariate distributions, sums of independent random variables, moment generating functions, laws of large numbers and central limit theorem.',
+            ogdesc: '205 Descriptive statistics (3 credits), graphical displays, sampling, variation, normal distribution, estimation, hypothesis testing, one-way analysis of variance, simple linear regression and goodness of fit. Laboratory covers use of statistical packages on mainframe and microcomputers : 350 (4 credits) Introduces the basic theory of discrete and continuous aspects of probability theory. Topics include bivariate distributions, sums of independent random variables, moment generating functions, laws of large numbers and central limit theorem.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC304',
+            courseID: 'CISC304',
+            name: 'CISC304: Logic for Programming',
+            ogName: 'CISC304: Logic for Programming',
+            description: 'Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.',
+            ogdesc: 'Propositional and predicate logic for general reasoning and advanced applications in knowledge representation in artificial intelligence and database, program correctness and programming semantics. Models, resolution, logic programming, and natural deduction.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC320',
+            courseID: 'CISC320',
+            name: 'CISC320: Introduction to Algorithms',
+            ogName: 'CISC320: Introduction to Algorithms',
+            description: 'Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness.',
+            ogdesc: 'Design and analysis of algorithms: worst/average case analysis, proofs for correctness and performance of algorithms. Algorithmic strategies (divide and conquer, greedy methods, dynamic programming, etc.). Algorithms for searching, forming and traversal of strings, trees and graphs. Categorization of computational problems: classes P and NP. NP completeness.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC361',
+            courseID: 'CISC361',
+            name: 'CISC361: Operating Systems',
+            ogName: 'CISC361: Operating Systems',
+            description: 'Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices.',
+            ogdesc: 'Principles and techniques employed in the development of operating systems and their control programs. Includes management of memory, processors, I/O devices.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC Elective',
+            courseID: 'CISC Elective',
+            name: 'Cisc Elective',
+            ogName: 'Cisc Elective',
+            description: 'Take a Cisc Elective',
+            ogdesc: 'Take a Cisc Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Restricted CISC Elective',
+            courseID: 'Restricted CISC Elective',
+            name: 'Restricted Cisc Elective',
+            ogName: 'Restricted Cisc Elective',
+            description: 'you need to take a Restricted CISC Elective',
+            ogdesc: 'you need to take a Restricted CISC Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC303',
+            courseID: 'CISC303',
+            name: 'CISC303: Automata Theory',
+            ogName: 'CISC303: Automata Theory',
+            description: 'Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.',
+            ogdesc: 'Automata and formal language theory. Background for advanced applications in compilers, computer networks, operating systems, and natural language processing. Finite automata and regular languages. Push down automata and context free grammars. Turing machines.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC442',
+            courseID: 'CISC442',
+            name: 'CISC442: Introduction to Computer Vision',
+            ogName: 'CISC442: Introduction to Computer Vision',
+            description: 'Analysis of images and video to recognize, reconstruct, model, and otherwise infer static and dynamic properties of objects in the three-dimensional world. Geometry of image formation; image processing such as smoothing, edge and feature detection, color, and texture; segmentation; shape representation including deformable templates; stereo vision; motion estimation and tracking; techniques for 3-D reconstruction; image registration methods.',
+            ogdesc: 'Analysis of images and video to recognize, reconstruct, model, and otherwise infer static and dynamic properties of objects in the three-dimensional world. Geometry of image formation; image processing such as smoothing, edge and feature detection, color, and texture; segmentation; shape representation including deformable templates; stereo vision; motion estimation and tracking; techniques for 3-D reconstruction; image registration methods.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'ENGL312 or ENGL410',
+            courseID: 'ENGL312 or ENGL410',
+            name: 'ENGL312: Written Communications in Buisness, ENGL410: Technical Writing',
+            ogName: 'ENGL312: Written Communications in Buisness, ENGL410: Technical Writing',
+            description: 'Examines the role of written communication in corporate decision making. Students write memos, letters, proposals and reports that simulate on-the-job communication tasks, and are encouraged to use materials from their fields of specialization. :  Selected problems in technical communications, the preparation of reports and technical editing.',
+            ogdesc: 'Examines the role of written communication in corporate decision making. Students write memos, letters, proposals and reports that simulate on-the-job communication tasks, and are encouraged to use materials from their fields of specialization. :  Selected problems in technical communications, the preparation of reports and technical editing.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC481',
+            courseID: 'CISC481',
+            name: 'CISC481: Artificial Intelligence',
+            ogName: 'CISC481: Artificial Intelligence',
+            description: 'Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.',
+            ogdesc: 'Programming techniques for problems not amenable to algorithmic solutions. Problem formulation, search strategies, state spaces, applications of logic, knowledge representation, planning and application areas.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC483',
+            courseID: 'CISC483',
+            name: 'CISC483: Introduction to Data Mining',
+            ogName: 'CISC483: Introduction to Data Mining',
+            description: 'Concepts, techniques, and algorithms for mining large data sets to discover structural patterns that can be used to make subsequent predictions. Emphasis on practical approaches and empirical evaluation. Use of a workbench of data mining tools, such as the Weka toolkit.',
+            ogdesc: 'Concepts, techniques, and algorithms for mining large data sets to discover structural patterns that can be used to make subsequent predictions. Emphasis on practical approaches and empirical evaluation. Use of a workbench of data mining tools, such as the Weka toolkit.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC484',
+            courseID: 'CISC484',
+            name: 'CISC484: Introduction to Machine Learning',
+            ogName: 'CISC484: Introduction to Machine Learning',
+            description: 'Development of methods to learn to solve a task using examples. Explore different machine learning algorithms/techniques and discuss their strengths and weaknesses and situations they are or are not suited for.',
+            ogdesc: 'Development of methods to learn to solve a task using examples. Explore different machine learning algorithms/techniques and discuss their strengths and weaknesses and situations they are or are not suited for.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC498',
+            courseID: 'CISC498',
+            name: 'CISC498: Computer Science Senior Design Project I',
+            ogName: 'CISC498: Computer Science Senior Design Project I',
+            description: 'First semester of two-semester senior software design course.  Students work in teams to develop solutions to real-world problems for a client.  Application of a modern software engineering process; requirement solicitation, analysis, and specification; prototyping; design; incremental development; testing and verification; client interaction; and presentation. Offered in Fall only.',
+            ogdesc: 'First semester of two-semester senior software design course.  Students work in teams to develop solutions to real-world problems for a client.  Application of a modern software engineering process; requirement solicitation, analysis, and specification; prototyping; design; incremental development; testing and verification; client interaction; and presentation. Offered in Fall only.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC499',
+            courseID: 'CISC499',
+            name: 'CISC499: Computer Science Senior Design Project II',
+            ogName: 'CISC499: Computer Science Senior Design Project II',
+            description: 'COMP SCI SENIOR DESIGN II Continuation of CISC 498.',
+            ogdesc: 'COMP SCI SENIOR DESIGN II Continuation of CISC 498.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CHEM111',
+            courseID: 'CHEM111',
+            name: 'CHEM111: General Chemistry',
+            ogName: 'CHEM111: General Chemistry',
+            description: 'Fundamental laws of chemical action with emphasis on atomic structure, chemical bonding, and important classes of substances.',
+            ogdesc: 'Fundamental laws of chemical action with emphasis on atomic structure, chemical bonding, and important classes of substances.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BISC207',
+            courseID: 'BISC207',
+            name: 'BISC207: Introductory Biology I',
+            ogName: 'BISC207: Introductory Biology I',
+            description: 'Molecular basis of life. Structure and function of cells, including signal transduction pathways. Energy transformations. Classical Mendelian genetics and the flow of information from DNA to RNA to proteins. Laboratory focuses on the testing of hypotheses, data analysis and scientific writing.',
+            ogdesc: 'Molecular basis of life. Structure and function of cells, including signal transduction pathways. Energy transformations. Classical Mendelian genetics and the flow of information from DNA to RNA to proteins. Laboratory focuses on the testing of hypotheses, data analysis and scientific writing.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [Array],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MATH349',
+            courseID: 'MATH349',
+            name: 'MATH349: Elementary Linear Algebra',
+            ogName: 'MATH349: Elementary Linear Algebra',
+            description: 'Systems of linear equations, linear combinations of vectors, and matrix algebra. Determinants, eigenvalues and eigenvectors, similarity and diagonalization of square matrices. Vector spaces, linear dependence and independence, basis and dimension, linear transformations. Inner product spaces, orthogonality, orthogonal projections, fundamental subspaces. A software package may be used for the analysis and solution of linear algebra problems.',
+            ogdesc: 'Systems of linear equations, linear combinations of vectors, and matrix algebra. Determinants, eigenvalues and eigenvectors, similarity and diagonalization of square matrices. Vector spaces, linear dependence and independence, basis and dimension, linear transformations. Inner product spaces, orthogonality, orthogonal projections, fundamental subspaces. A software package may be used for the analysis and solution of linear algebra problems.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CHEM213+CHEM215 or CHEM321+CHEM325',
+            courseID: 'CHEM213+CHEM215 or CHEM321+CHEM325',
+            name: 'CHEM213+CHEM215 or CHEM321+CHEM325: A survey of the fundamentals of organic chemistry',
+            ogName: 'CHEM213+CHEM215 or CHEM321+CHEM325: A survey of the fundamentals of organic chemistry',
+            description: 'Topics include molecular structure, organic nomenclature, functional groups, isomerism and stereoisomerism, reaction mechanisms, and organic synthesis. Basic principles will be illustrated with examples of biological significance. : A survey of elementary laboratory techniques that are useful to organic chemists. Separation and purification techniques and examples of typical organic reactions will be included. ; CHEM321+215: The practice and application of volumetric and gravimetric analysis, as well as basic chromatographic  and spectrometric measurements. : Laboratory work that introduces the basic laboratory techniques of organic chemistry. ',
+            ogdesc: 'Topics include molecular structure, organic nomenclature, functional groups, isomerism and stereoisomerism, reaction mechanisms, and organic synthesis. Basic principles will be illustrated with examples of biological significance. : A survey of elementary laboratory techniques that are useful to organic chemists. Separation and purification techniques and examples of typical organic reactions will be included. ; CHEM321+215: The practice and application of volumetric and gravimetric analysis, as well as basic chromatographic  and spectrometric measurements. : Laboratory work that introduces the basic laboratory techniques of organic chemistry. ',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BISC208',
+            courseID: 'BISC208',
+            name: 'BISC208: Introductory Biology II',
+            ogName: 'BISC208: Introductory Biology II',
+            description: 'Mechanisms of evolution. Physiology of multicellular plants and animals. Principles of ecology with emphasis on the biology of populations. Laboratory focuses on testing of hypotheses, data analysis and scientific writing. Animal and plant anatomy also studied.',
+            ogdesc: 'Mechanisms of evolution. Physiology of multicellular plants and animals. Principles of ecology with emphasis on the biology of populations. Laboratory focuses on testing of hypotheses, data analysis and scientific writing. Animal and plant anatomy also studied.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [Array],
+            credits: 4,
+            ogCredits: 4,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BISC401',
+            courseID: 'BISC401',
+            name: 'BISC401: Molecular Biology of the Cell',
+            ogName: 'BISC401: Molecular Biology of the Cell',
+            description: 'Introduction to the molecular biology of eucaryotes and procaryotes. Topics include structure and function of proteins and nucleic acids; replication and repair of DNA; biosynthesis of RNA and proteins; membranes, transport, composition and function of the eucaryotic cell, chromosomes, viruses, the immune system and recombinant DNA.',
+            ogdesc: 'Introduction to the molecular biology of eucaryotes and procaryotes. Topics include structure and function of proteins and nucleic acids; replication and repair of DNA; biosynthesis of RNA and proteins; membranes, transport, composition and function of the eucaryotic cell, chromosomes, viruses, the immune system and recombinant DNA.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC436',
+            courseID: 'CISC436',
+            name: 'CISC436: Computational Biology and Bioinformatics',
+            ogName: 'CISC436: Computational Biology and Bioinformatics',
+            description: 'Concepts, methodologies, and tools in bioinformatics. Abstraction of biological problems for computational solutions. Genome sequencing and assembly, bio-sequence analysis and comparison and database search, dynamics programming, hidden Markov models, and phylogenetic trees.',
+            ogdesc: 'Concepts, methodologies, and tools in bioinformatics. Abstraction of biological problems for computational solutions. Genome sequencing and assembly, bio-sequence analysis and comparison and database search, dynamics programming, hidden Markov models, and phylogenetic trees.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC450',
+            courseID: 'CISC450',
+            name: 'CISC450: Computer Networks I',
+            ogName: 'CISC450: Computer Networks I',
+            description: 'Foundation principles, architectures and techniques employed in computer and communication networks. Focuses on mechanisms used in TCP/IP protocol suite. Topics include connection management, end-to-end reliable data transfer, sliding window protocols, quality of service, flow control, congestion control, routing, LANs, framing, error control, analog versus digital transmission, packet versus circuit switching, multiplexing.',
+            ogdesc: 'Foundation principles, architectures and techniques employed in computer and communication networks. Focuses on mechanisms used in TCP/IP protocol suite. Topics include connection management, end-to-end reliable data transfer, sliding window protocols, quality of service, flow control, congestion control, routing, LANs, framing, error control, analog versus digital transmission, packet versus circuit switching, multiplexing.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC372',
+            courseID: 'CISC372',
+            name: 'CISC372: Parallel Computing',
+            ogName: 'CISC372: Parallel Computing',
+            description: 'Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation.',
+            ogdesc: 'Introduction to parallel computing concepts, methodologies, and tools. Programming and algorithmic techniques for code that will run simultaneously on parallel computing architectures. Topics include: single and multi-core parallelism, shared and distributed memory architectures, concurrency, program decomposition, data distribution, communication, load balancing, scalability, locality, granularity, debugging, performance evaluation.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC464',
+            courseID: 'CISC464',
+            name: 'CISC464: Introduction to Network Security',
+            ogName: 'CISC464: Introduction to Network Security',
+            description: 'Practical introduction to network security field. Covers material on cryptography, intrusions, denial-of-service attacks, worms, honeynets and other hot topics in network security.',
+            ogdesc: 'Practical introduction to network security field. Covers material on cryptography, intrusions, denial-of-service attacks, worms, honeynets and other hot topics in network security.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Restricted Elective',
+            courseID: 'Restricted Elective',
+            name: 'Restricted Elective #1',
+            ogName: 'Restricted Elective #1',
+            description: 'This is a restrictive elective',
+            ogdesc: 'This is a restrictive elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Restricted Elective',
+            courseID: 'Restricted Elective',
+            name: 'Restricted Elective #2',
+            ogName: 'Restricted Elective #2',
+            description: 'This is a restrictive elective',
+            ogdesc: 'This is a restrictive elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Restricted Elective',
+            courseID: 'Restricted Elective',
+            name: 'Restricted Elective #3',
+            ogName: 'Restricted Elective #3',
+            description: 'This is a restrictive elective',
+            ogdesc: 'This is a restrictive elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Restricted Elective',
+            courseID: 'Restricted Elective',
+            name: 'Restricted Elective #4',
+            ogName: 'Restricted Elective #4',
+            description: 'This is a restrictive elective',
+            ogdesc: 'This is a restrictive elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced Cybersecurity Requirement',
+            courseID: 'Advanced Cybersecurity Requirement',
+            name: 'Advanced Cybersecurity Requirement #1',
+            ogName: 'Advanced Cybersecurity Requirement #1',
+            description: 'You need to take an advanced cybersecurity requirement',
+            ogdesc: 'You need to take an advanced cybersecurity requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced Cybersecurity Requirement',
+            courseID: 'Advanced Cybersecurity Requirement',
+            name: 'Advanced Cybersecurity Requirement #2',
+            ogName: 'Advanced Cybersecurity Requirement #2',
+            description: 'You need to take an advanced cybersecurity requirement',
+            ogdesc: 'You need to take an advanced cybersecurity requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC465',
+            courseID: 'CISC465',
+            name: 'CISC465: Introduction to Cybersecurity',
+            ogName: 'CISC465: Introduction to Cybersecurity',
+            description: 'This cybersecurity course is an introduction to computer and network security and covers the foundation security policies and methods to provide confidentiality, integrity, and availability, as well as cryptography, auditing, and user security. Topics are reinforced with hands-on exercises run in a virtual machine environment.',
+            ogdesc: 'This cybersecurity course is an introduction to computer and network security and covers the foundation security policies and methods to provide confidentiality, integrity, and availability, as well as cryptography, auditing, and user security. Topics are reinforced with hands-on exercises run in a virtual machine environment.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CPEG494',
+            courseID: 'CPEG494',
+            name: 'CPEG494: System Hardening and Protection',
+            ogName: 'CPEG494: System Hardening and Protection',
+            description: 'Practical treatment of the defensive techniques used to harden computer systems to make them less vulnerable to cyber-attacks. Defect management, configuration/hardening, account control, logs/auditing, and risk assessment are covered and reinforced with hands-on exercises run in a virtual machine environment.',
+            ogdesc: 'Practical treatment of the defensive techniques used to harden computer systems to make them less vulnerable to cyber-attacks. Defect management, configuration/hardening, account control, logs/auditing, and risk assessment are covered and reinforced with hands-on exercises run in a virtual machine environment.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced Math Requirement',
+            courseID: 'Advanced Math Requirement',
+            name: 'Advanced Math Requirement',
+            ogName: 'Advanced Math Requirement',
+            description: 'This is an advanced Math Requirement',
+            ogdesc: 'This is an advanced Math Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC437',
+            courseID: 'CISC437',
+            name: 'CISC437: Database Systems',
+            ogName: 'CISC437: Database Systems',
+            description: 'Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases.',
+            ogdesc: 'Physical and logical organization of databases. Data retrieval languages, relational database languages, security and integrity, concurrency, distributed databases.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced Data Science Requirement',
+            courseID: 'Advanced Data Science Requirement',
+            name: 'Advanced Data Science Requirement',
+            ogName: 'Advanced Data Science Requirement',
+            description: 'Advanced Data Science Requirement',
+            ogdesc: 'Advanced Data Science Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC360',
+            courseID: 'CISC360',
+            name: 'CISC360: Computer Architecture',
+            ogName: 'CISC360: Computer Architecture',
+            description: 'Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches.',
+            ogdesc: 'Principles and techniques used in the architecture of digital computers. Machine elements and their interrelation. Instruction sets, risc vs cisc, registers, busses and switches.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Elective',
+            courseID: 'TRACK Elective',
+            name: 'TRACK Elective #1',
+            ogName: 'TRACK Elective #1',
+            description: 'Track Elective',
+            ogdesc: 'Track Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Elective',
+            courseID: 'TRACK Elective',
+            name: 'TRACK Elective #2',
+            ogName: 'TRACK Elective #2',
+            description: 'Track Elective',
+            ogdesc: 'Track Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Requirment',
+            courseID: 'TRACK Requirment',
+            name: 'TRACK Requirment #1',
+            ogName: 'TRACK Requirment #1',
+            description: 'TRACK Requirement',
+            ogdesc: 'TRACK Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Requirment',
+            courseID: 'TRACK Requirment',
+            name: 'TRACK Requirment #2',
+            ogName: 'TRACK Requirment #2',
+            description: 'TRACK Requirement',
+            ogdesc: 'TRACK Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Requirment',
+            courseID: 'TRACK Requirment',
+            name: 'TRACK Requirment #3',
+            ogName: 'TRACK Requirment #3',
+            description: 'TRACK Requirement',
+            ogdesc: 'TRACK Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'TRACK Requirment',
+            courseID: 'TRACK Requirment',
+            name: 'TRACK Requirment #4',
+            ogName: 'TRACK Requirment #4',
+            description: 'TRACK Requirement',
+            ogdesc: 'TRACK Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC471',
+            courseID: 'CISC471',
+            name: 'CISC471: Compiler Design',
+            ogName: 'CISC471: Compiler Design',
+            description: 'Introduction to the design and implementation of compilers, with a focus on lexical analysis, parsing and syntax directed translation.',
+            ogdesc: 'Introduction to the design and implementation of compilers, with a focus on lexical analysis, parsing and syntax directed translation.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced System Requirement',
+            courseID: 'Advanced System Requirement',
+            name: 'Advanced System Requirement #1',
+            ogName: 'Advanced System Requirement #1',
+            description: 'Advanced System Requirement',
+            ogdesc: 'Advanced System Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Advanced System Requirement',
+            courseID: 'Advanced System Requirement',
+            name: 'Advanced System Requirement #2',
+            ogName: 'Advanced System Requirement #2',
+            description: 'Advanced System Requirement',
+            ogdesc: 'Advanced System Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Security Elective',
+            courseID: 'Security Elective',
+            name: 'Security Elective',
+            ogName: 'Security Elective',
+            description: 'Security Elective',
+            ogdesc: 'Security Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC401',
+            courseID: 'CISC401',
+            name: 'CISC401: Elements of the Theory of Computation',
+            ogName: 'CISC401: Elements of the Theory of Computation',
+            description: 'General models of computation, formal languages and automata theory and algorithmic unsolvability.',
+            ogdesc: 'General models of computation, formal languages and automata theory and algorithmic unsolvability.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Cisc 300 Technical Elective',
+            courseID: 'Cisc 300 Technical Elective',
+            name: 'Cisc 300 Technical Elective #1',
+            ogName: 'Cisc 300 Technical Elective #1',
+            description: 'THis is a CISC 300 level elective',
+            ogdesc: 'THis is a CISC 300 level elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Cisc 300 Technical Elective',
+            courseID: 'Cisc 300 Technical Elective',
+            name: 'Cisc 300 Technical Elective #2',
+            ogName: 'Cisc 300 Technical Elective #2',
+            description: 'THis is a CISC 300 level elective',
+            ogdesc: 'THis is a CISC 300 level elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Cisc 300 Technical Elective',
+            courseID: 'Cisc 300 Technical Elective',
+            name: 'Cisc 300 Technical Elective #3',
+            ogName: 'Cisc 300 Technical Elective #3',
+            description: 'THis is a CISC 300 level elective',
+            ogdesc: 'THis is a CISC 300 level elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Cisc 300 Technical Elective',
+            courseID: 'Cisc 300 Technical Elective',
+            name: 'Cisc 300 Technical Elective #4',
+            ogName: 'Cisc 300 Technical Elective #4',
+            description: 'THis is a CISC 300 level elective',
+            ogdesc: 'THis is a CISC 300 level elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Cisc 300 Technical Elective',
+            courseID: 'Cisc 300 Technical Elective',
+            name: 'Cisc 300 Technical Elective #5',
+            ogName: 'Cisc 300 Technical Elective #5',
+            description: 'THis is a CISC 300 level elective',
+            ogdesc: 'THis is a CISC 300 level elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Second Writing Requirement',
+            courseID: 'Second Writing Requirement',
+            name: 'Second Writing Requirement',
+            ogName: 'Second Writing Requirement',
+            description: 'This is the second writing requirement',
+            ogdesc: 'This is the second writing requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'DLE Capstone',
+            courseID: 'DLE Capstone',
+            name: 'DLE Capstone',
+            ogName: 'DLE Capstone',
+            description: 'This is the DLE Capstone',
+            ogdesc: 'This is the DLE Capstone',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'ACCT207',
+            courseID: 'ACCT207',
+            name: 'ACCT207: Accounting I',
+            ogName: 'ACCT207: Accounting I',
+            description: 'An introduction to financial accounting. Topics: the accounting cycle, merchandise accounting, accounting procedures for cash, receivables, payables, inventories, plant and equipment, stocks and bonds.',
+            ogdesc: 'An introduction to financial accounting. Topics: the accounting cycle, merchandise accounting, accounting procedures for cash, receivables, payables, inventories, plant and equipment, stocks and bonds.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC250',
+            courseID: 'CISC250',
+            name: 'CISC250: Business Telecommunication Networks',
+            ogName: 'CISC250: Business Telecommunication Networks',
+            description: 'Examines technologies of information transmission currently utilized in the business environments and the implications of these technologies upon the development and implementation of information systems. Provides a basic background in the convergence of voice, data and video services into common digital networks. Security issues also considered.',
+            ogdesc: 'Examines technologies of information transmission currently utilized in the business environments and the implications of these technologies upon the development and implementation of information systems. Provides a basic background in the convergence of voice, data and video services into common digital networks. Security issues also considered.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'ACCT208',
+            courseID: 'ACCT208',
+            name: 'ACCT208: Accounting II',
+            ogName: 'ACCT208: Accounting II',
+            description: 'Introduction to managerial accounting. Topics: manufacturing accounting, cost-volume-profit analysis, job-order accounting, budgeting, standard costs and variance analysis, contribution approach to decision analysis, absorption and variable costing.',
+            ogdesc: 'Introduction to managerial accounting. Topics: manufacturing accounting, cost-volume-profit analysis, job-order accounting, budgeting, standard costs and variance analysis, contribution approach to decision analysis, absorption and variable costing.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'STAT200',
+            courseID: 'STAT200',
+            name: 'STAT200: Basic Statistical Practice',
+            ogName: 'STAT200: Basic Statistical Practice',
+            description: 'Uses data from a variety of disciplines to explore topics in statistical data analysis, estimation, and inference. The following topics will be covered: graphical displays; measures of position, central tendency, and variability; basic probability rules; discrete probability distributions; binomial distribution; normal and standard normal probability distributions; sampling distributions; the t distribution; confidence intervals and hypothesis tests for one mean or proportion; confidence intervals and hypothesis tests for two means or proportions; correlation and simple linear regression. ',
+            ogdesc: 'Uses data from a variety of disciplines to explore topics in statistical data analysis, estimation, and inference. The following topics will be covered: graphical displays; measures of position, central tendency, and variability; basic probability rules; discrete probability distributions; binomial distribution; normal and standard normal probability distributions; sampling distributions; the t distribution; confidence intervals and hypothesis tests for one mean or proportion; confidence intervals and hypothesis tests for two means or proportions; correlation and simple linear regression. ',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BUAD306',
+            courseID: 'BUAD306',
+            name: 'BUAD306: Introduction to Service and Operations Management',
+            ogName: 'BUAD306: Introduction to Service and Operations Management',
+            description: 'Analysis of major problems faced by operations managers at different levels of management. Topics include scheduling, forecasting, process design, inventory management and quality management.',
+            ogdesc: 'Analysis of major problems faced by operations managers at different levels of management. Topics include scheduling, forecasting, process design, inventory management and quality management.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'IS Elective',
+            courseID: 'IS Elective',
+            name: 'IS Elective #1',
+            ogName: 'IS Elective #1',
+            description: 'This is an IS Elective',
+            ogdesc: 'This is an IS Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'IS Elective',
+            courseID: 'IS Elective',
+            name: 'IS Elective #2',
+            ogName: 'IS Elective #2',
+            description: 'This is an IS Elective',
+            ogdesc: 'This is an IS Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BUAD301',
+            courseID: 'BUAD301',
+            name: 'BUAD301: Introduction to Marketing',
+            ogName: 'BUAD301: Introduction to Marketing',
+            description: 'Management of the marketing functions, marketing research, product planning, distribution channels, pricing, personal selling, and advertising. Emphasis on consumer and industrial markets.',
+            ogdesc: 'Management of the marketing functions, marketing research, product planning, distribution channels, pricing, personal selling, and advertising. Emphasis on consumer and industrial markets.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'BUAD309',
+            courseID: 'BUAD309',
+            name: 'BUAD309: Organizational Behavior',
+            ogName: 'BUAD309: Organizational Behavior',
+            description: 'Examines individual, group, and organizational determinants of work behavior in organizations. Theory and concepts relevant to individual differences, attitudes, motivation, teams, leadership, power, and organizational culture and change are discussed with an emphasis on applying this knowledge to the challenges of management in a variety of organizations.',
+            ogdesc: 'Examines individual, group, and organizational determinants of work behavior in organizations. Theory and concepts relevant to individual differences, attitudes, motivation, teams, leadership, power, and organizational culture and change are discussed with an emphasis on applying this knowledge to the challenges of management in a variety of organizations.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'COMM212',
+            courseID: 'COMM212',
+            name: 'COMM212: Public Speaking & Professional Presentation',
+            ogName: 'COMM212: Public Speaking & Professional Presentation',
+            description: 'Includes an analysis of the types and principles of the communication inherent in the business and professional setting; a concentration upon the development of presentational skills: analyzing audiences, questioning, interviewing, researching, supporting, organizing and delivering information; an opportunity to develop and present materials within dyads, small groups and public contexts.',
+            ogdesc: 'Includes an analysis of the types and principles of the communication inherent in the business and professional setting; a concentration upon the development of presentational skills: analyzing audiences, questioning, interviewing, researching, supporting, organizing and delivering information; an opportunity to develop and present materials within dyads, small groups and public contexts.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Spring',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MISY430',
+            courseID: 'MISY430',
+            name: 'MISY430: Systems Analysis and Implementation',
+            ogName: 'MISY430: Systems Analysis and Implementation',
+            description: 'Covers the challenges of developing and managing systems analysis and design projects. Students learn to determine systems requirements, analyze systems problems, model potential solutions and design and implement these solutions. Other current topics will be included to reflect the changing information systems environment.',
+            ogdesc: 'Covers the challenges of developing and managing systems analysis and design projects. Students learn to determine systems requirements, analyze systems problems, model potential solutions and design and implement these solutions. Other current topics will be included to reflect the changing information systems environment.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'CISC475',
+            courseID: 'CISC475',
+            name: 'CISC475: Advanced Software Engineering',
+            ogName: 'CISC475: Advanced Software Engineering',
+            description: 'Understand and apply a complete modern software engineering process. Topics include requirements analysis, specification, design, implementation, verification, and project management. Real-life team projects cover all aspects of the software development lifecycle, from the requirements to acceptance testing.',
+            ogdesc: 'Understand and apply a complete modern software engineering process. Topics include requirements analysis, specification, design, implementation, verification, and project management. Real-life team projects cover all aspects of the software development lifecycle, from the requirements to acceptance testing.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Varies By Department',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MISY431',
+            courseID: 'MISY431',
+            name: 'MISY431: MIS Project Management',
+            ogName: 'MISY431: MIS Project Management',
+            description: 'MISY431 and MISY 432 serve as the MIS program capstone. Students learn project management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various enterprises.',
+            ogdesc: 'MISY431 and MISY 432 serve as the MIS program capstone. Students learn project management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various enterprises.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'MISY432',
+            courseID: 'MISY432',
+            name: 'MISY432: MIS Projects',
+            ogName: 'MISY432: MIS Projects',
+            description: 'MISY 431 and MISY 432 serve as the MIS program capstone. Students learn design, implementation and client management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various regional enterprises.',
+            ogdesc: 'MISY 431 and MISY 432 serve as the MIS program capstone. Students learn design, implementation and client management techniques, and working in teams, apply this knowledge by developing technology-based business solutions for various regional enterprises.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Spring',
+            prerecs: [Array],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #1',
+            ogName: 'Free Elective #1',
+            description: 'Take a Free Elective',
+            ogdesc: 'Take a Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #2',
+            ogName: 'Free Elective #2',
+            description: 'Take a SecondFree Elective',
+            ogdesc: 'Take a SecondFree Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #3',
+            ogName: 'Free Elective #3',
+            description: 'Take a third Free Elective',
+            ogdesc: 'Take a third Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #4',
+            ogName: 'Free Elective #4',
+            description: 'Take a fourth Free Elective',
+            ogdesc: 'Take a fourth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #5',
+            ogName: 'Free Elective #5',
+            description: 'Take a Fifth Free Elective',
+            ogdesc: 'Take a Fifth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #6',
+            ogName: 'Free Elective #6',
+            description: 'Take a Sixth Free Elective',
+            ogdesc: 'Take a Sixth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #7',
+            ogName: 'Free Elective #7',
+            description: 'Take a seventh Free Elective',
+            ogdesc: 'Take a seventh Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #8',
+            ogName: 'Free Elective #8',
+            description: 'Take an eigth Free Elective',
+            ogdesc: 'Take an eigth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #9',
+            ogName: 'Free Elective #9',
+            description: 'Take a ninth Free Elective',
+            ogdesc: 'Take a ninth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #10',
+            ogName: 'Free Elective #10',
+            description: 'Take a tenth Free Elective',
+            ogdesc: 'Take a tenth Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Free Elective',
+            courseID: 'Free Elective',
+            name: 'Free Elective #11',
+            ogName: 'Free Elective #11',
+            description: 'Take a eleventh Free Elective',
+            ogdesc: 'Take a eleventh Free Elective',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement',
+            courseID: 'Breadth Requirement',
+            name: 'Breadth Requirement Foreign Language',
+            ogName: 'Breadth Requirement Foreign Language',
+            description: 'Breadth Course to fulfill the foreign language requirement',
+            ogdesc: 'Breadth Course to fulfill the foreign language requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement',
+            courseID: 'Breadth Requirement',
+            name: 'Breadth Requirement Multicultural',
+            ogName: 'Breadth Requirement Multicultural',
+            description: 'This is the multicultural Breadth Requirement',
+            ogdesc: 'This is the multicultural Breadth Requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement Science And Technology',
+            courseID: 'Breadth Requirement Science And Technology',
+            name: 'Breadth Requirement Science and Technology',
+            ogName: 'Breadth Requirement Science and Technology',
+            description: 'These courses provide students with an understanding of fundamental and/or applied concepts and phenomena from mathematics, logic, natural or physical sciences, and technology including quantitative reasoning and methods used to approach and solve problems.',
+            ogdesc: 'These courses provide students with an understanding of fundamental and/or applied concepts and phenomena from mathematics, logic, natural or physical sciences, and technology including quantitative reasoning and methods used to approach and solve problems.',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement General',
+            courseID: 'Breadth Requirement General',
+            name: 'Breadth Requirement #1',
+            ogName: 'Breadth Requirement #1',
+            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement General',
+            courseID: 'Breadth Requirement General',
+            name: 'Breadth Requirement #2',
+            ogName: 'Breadth Requirement #2',
+            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement General',
+            courseID: 'Breadth Requirement General',
+            name: 'Breadth Requirement #3',
+            ogName: 'Breadth Requirement #3',
+            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          {
+            ogID: 'Breadth Requirement General',
+            courseID: 'Breadth Requirement General',
+            name: 'Breadth Requirement #4',
+            ogName: 'Breadth Requirement #4',
+            description: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            ogdesc: 'A college education requires some breadth of knowledge across diverse fields and perspectives. With this in mind, all students are required to complete a minimum of 12 credits from the list of University breadth courses. This includes 3 credits from each of the following categories. Students must earn a minimum grade of C- in each course to meet this requirement',
+            SemesterAvailable: [Array],
+            SemestersAvailableString: 'Fall, Winter, Spring, Summer',
+            prerecs: [],
+            credits: 3,
+            ogCredits: 3,
+            taken: false,
+            taken_String: '❌'
+          },
+          ... 8 more items
+        ],
+        CreditsRequired: 0,
+        SemesterList: []
+      }
+
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -15155,7 +15155,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -16668,7 +16668,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -18181,7 +18181,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -19694,7 +19694,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -21207,7 +21207,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -22720,7 +22720,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -24233,7 +24233,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -25746,7 +25746,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -27259,7 +27259,7 @@ All files                    |   51.42 |    24.59 |   22.93 |   51.68 |
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
 PASS src/components/Homepage.test.tsx
   ● Console
@@ -28775,7 +28775,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -30288,7 +30288,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -31801,7 +31801,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -33314,7 +33314,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -34827,7 +34827,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
     console.log
       {
@@ -36340,7 +36340,7 @@ PASS src/components/Homepage.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
 PASS src/App.test.tsx
   ● Console
@@ -37856,11 +37856,11 @@ PASS src/App.test.tsx
         SemesterList: []
       }
 
-      at SchedulerPage (src/components/SchedulerPage.tsx:242:22)
+      at SchedulerPage (src/components/SchedulerPage.tsx:245:22)
 
 
 Test Suites: 3 passed, 3 total
 Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        15.588 s
+Time:        14.733 s
 Ran all test suites.
