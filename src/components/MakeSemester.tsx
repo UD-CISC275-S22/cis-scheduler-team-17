@@ -33,7 +33,7 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    const [courseList, changeList] = useState<Course[]>(semester.ClassesTaking);
+    const [courseList, updateList] = useState<Course[]>(semester.ClassesTaking);
     const [intersection, changeIntersect] = useState<Course[]>([]);
     //Create course information
     const [courseID, setID] = useState<string>("");
@@ -41,6 +41,14 @@ export function MakeSemester({
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
     const [totalCredits, resetTotal] = useState<number>(semester.TotalCredits);
+    //Change Semester List
+    function changeList(newList: Course[]) {
+        updateList(newList);
+        semester.ClassesTaking = newList;
+        console.log(semester.ClassesTaking);
+        console.log(degree.SemesterList);
+        updateDegree;
+    }
     //reset taken
     function resetTaken(existing: Course) {
         existing.taken = false;
@@ -114,15 +122,23 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                <label className="semesterLabel">
+                {/* <label className="semesterLabel">
                     {semester.SemesterSeason +
                         " " +
                         semester.year +
                         ": " +
                         semester.TotalCredits +
                         " Credits"}
-                </label>
+                </label> */}
                 <Table className="semesterTable">
+                    <caption className="semesterLabel">
+                        {semester.SemesterSeason +
+                            " " +
+                            semester.year +
+                            ": " +
+                            semester.TotalCredits +
+                            " Credits"}
+                    </caption>
                     <tr className="key">
                         <th>Course ID</th>
                         <th>Course Name</th>

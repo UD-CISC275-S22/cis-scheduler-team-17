@@ -13,26 +13,19 @@ type ChangeEvent = React.ChangeEvent<
 
 export function FindCourse(): JSX.Element {
     // state used to handle the users inputted answer
-    fixYellow();
     const AllCoursesCopy = [...AllCourses];
     const [userAnswer, setUserAnswer] = useState<string>("");
     const [list_Of_Possible_Answers, setListOfPossibleAnswers] = useState<
         Course[]
     >([...AllCourses]);
-    const [progress, setProgress] = useState(0);
-    const [selectedCourseName, setSelectedCourseName] = useState<string>();
+    //[progress, setProgress]
+    const [, setProgress] = useState(0);
+    //[selectedCourseName, setSelectedCourseName]
+    const [, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
     const [SelectedCourse, updateSelectedCourse] = useState<Course>(
         AllCourses[0]
     );
-
-    function fixYellow() {
-        // eslint-disable-next-line no-constant-condition
-        if (!true) {
-            progress;
-            selectedCourseName;
-        }
-    }
 
     function updateShortAnswer(event: ChangeEvent) {
         setUserAnswer(event.target.value);
