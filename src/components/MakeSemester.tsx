@@ -122,15 +122,23 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                <label className="semesterLabel">
+                {/* <label className="semesterLabel">
                     {semester.SemesterSeason +
                         " " +
                         semester.year +
                         ": " +
                         semester.TotalCredits +
                         " Credits"}
-                </label>
+                </label> */}
                 <Table className="semesterTable">
+                    <caption className="semesterLabel">
+                        {semester.SemesterSeason +
+                            " " +
+                            semester.year +
+                            ": " +
+                            semester.TotalCredits +
+                            " Credits"}
+                    </caption>
                     <tr className="key">
                         <th>Course ID</th>
                         <th>Course Name</th>
