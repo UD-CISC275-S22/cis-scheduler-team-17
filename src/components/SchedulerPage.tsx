@@ -82,7 +82,6 @@ export function SchedulerPage({
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
-        updateDegree;
         const currYear = year;
         const currSeason = season;
 
@@ -103,6 +102,7 @@ export function SchedulerPage({
             };
             //setSemesterList([...updateSemesterList, newSemester]);
             degree.SemesterList = [...degree.SemesterList, newSemester];
+            updateDegree;
         }
     }
     function removeSemester(currYear: number, currSeason: Season) {
@@ -231,7 +231,7 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV semesters={degree.SemesterList}></ExportCSV>
+                <ExportCSV degree={degree}></ExportCSV>
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
