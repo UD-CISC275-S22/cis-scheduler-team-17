@@ -11,6 +11,7 @@ import {
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
 import { ExportCSV } from "./ExportCSV";
+import { EditCourse } from "./EditCourse";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
 type ChangeEvent = React.ChangeEvent<
@@ -82,7 +83,6 @@ export function SchedulerPage({
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
-        updateDegree;
         const currYear = year;
         const currSeason = season;
 
@@ -103,6 +103,7 @@ export function SchedulerPage({
             };
             //setSemesterList([...updateSemesterList, newSemester]);
             degree.SemesterList = [...degree.SemesterList, newSemester];
+            updateDegree;
         }
     }
     function removeSemester(currYear: number, currSeason: Season) {
@@ -231,7 +232,7 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV semesters={degree.SemesterList}></ExportCSV>
+                <ExportCSV degree={degree}></ExportCSV>
             </div>
             <footer>
                 <Button className="backButton" onClick={changeHomepage}>
@@ -271,6 +272,7 @@ function CoursesLists({
                         ></PrintDegreesLists>
                     </Col>
                 </Row>
+                <EditCourse></EditCourse>
             </Container>
         </div>
     );
@@ -328,7 +330,7 @@ function PrintDegreesLists({
 
     return (
         <div>
-            <Button onClick={updateList}>Refresh</Button>
+            <Button onClick={updateList}>Refresh {taken ? "✔️" : "❌"}</Button>
             <div style={styles.container} onScroll={scrollHandler}>
                 {printCourses.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>

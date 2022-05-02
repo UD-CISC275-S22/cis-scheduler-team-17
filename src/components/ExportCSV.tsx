@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { CSVLink } from "react-csv";
-import { Course, SemesterPlanner } from "../interfaces/course-Degree-Semester";
+import {
+    Course,
+    Degree,
+    SemesterPlanner
+} from "../interfaces/course-Degree-Semester";
 import "../App.css";
 
-export function ExportCSV({
-    semesters
-}: {
-    semesters: SemesterPlanner[];
-}): JSX.Element {
-    const [csvData] = useState<SemesterPlanner[]>(semesters);
-    const [data] = useState(
-        csvData.map((semester) => ({
+export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
+    const [csvData, updateDegree] = useState<Degree>(degree);
+    const [data, updateData] = useState(
+        csvData.SemesterList.map((semester: SemesterPlanner) => ({
             SemesterSeason: semester.SemesterSeason,
             year: semester.year,
             ClassesTaking: semester.ClassesTaking.map(
@@ -20,6 +20,19 @@ export function ExportCSV({
             TotalCredits: semester.TotalCredits
         }))
     );
+    function getData() {
+        updateDegree(degree);
+        updateData(
+            csvData.SemesterList.map((semester: SemesterPlanner) => ({
+                SemesterSeason: semester.SemesterSeason,
+                year: semester.year,
+                ClassesTaking: semester.ClassesTaking.map(
+                    (course: Course): string => course.courseID
+                ),
+                TotalCredits: semester.TotalCredits
+            }))
+        );
+    }
     const csvHeaders = [
         { label: "Season", key: "SemesterSeason" },
         { label: "Year", key: "year" },
@@ -30,7 +43,7 @@ export function ExportCSV({
     return (
         <div>
             <CSVLink headers={csvHeaders} filename="DegreePlan" data={data}>
-                <Button className={"makeInformationButton"}>
+                <Button className={"makeInformationButton"} onClick={getData}>
                     Export to CSV
                 </Button>
             </CSVLink>
