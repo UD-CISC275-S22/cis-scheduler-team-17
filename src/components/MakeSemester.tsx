@@ -21,13 +21,13 @@ export function MakeSemester({
     degree,
     removeSemester,
     updateDegree,
-    setSemesterForm
+    updateForm
 }: {
     semester: SemesterPlanner;
     degree: Degree;
     removeSemester: (currYear: number, currSeason: Season) => void;
     updateDegree: (event: ChangeEvent) => void;
-    setSemesterForm: (bool: boolean) => void;
+    updateForm: () => void;
 }): JSX.Element {
     //Visiblity of form
     const [visible, setVisible] = useState<boolean>(false);
@@ -73,7 +73,7 @@ export function MakeSemester({
         resetTotal(credits);
         semester.TotalCredits = totalCredits;
         updateDegree;
-        setSemesterForm(false);
+        updateForm;
     }
     function removeCourse(courseID: string) {
         const course = courseList.filter(
@@ -139,7 +139,7 @@ export function MakeSemester({
                             " " +
                             semester.year +
                             ": " +
-                            semester.TotalCredits +
+                            totalCredits +
                             " Credits"}
                     </caption>
                     <tr className="key">
