@@ -10,6 +10,7 @@ import {
     SeasonsList,
     SemesterPlanner
 } from "../interfaces/course-Degree-Semester";
+import { ExportCSV } from "./ExportCSV";
 import { EditCourse } from "./EditCourse";
 //import { currentSelectedDegree } from "./DropdownDegrees";
 
@@ -19,20 +20,31 @@ type ChangeEvent = React.ChangeEvent<
 
 export function SchedulerPage({
     changeHomepage,
-    degree
+    degree,
+    updateDegree
 }: {
     changeHomepage: () => void;
     degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
+    //semester state
+    const [showSemForm, setSemesterForm] = useState<boolean>(false);
+    // const [updateSemesterList, setSemesterList] = useState<SemesterPlanner[]>(
+    //     degree.SemesterList
+    // );
+    const [semExistsError, setSemesterExists] = useState<boolean>(false);
+    //update degree semester list
+    function setSemesterList(newList: SemesterPlanner[]) {
+        updateSemesterForm();
+        degree.SemesterList = newList;
+    }
     //seasons dropdown state
     const seasons = [...SeasonsList];
     const [season, setSeason] = useState<Season>(seasons[0]);
     //year state
     const [year, setYear] = useState<number>(2022);
-    //semester state
-    const [showSemForm, setSemesterForm] = useState<boolean>(false);
-
     function getSeason(): JSX.Element {
+        updateDegree;
         return (
             <Form.Group controlId="Seasons">
                 <Form.Label> Season: </Form.Label>
@@ -42,7 +54,7 @@ export function SchedulerPage({
                         setSeason(event.target.value)
                     }
                 >
-                    {SeasonsList.map((s: Season) => (
+                    {seasons.map((s: Season) => (
                         <option key={s} value={s}>
                             {s}
                         </option>
@@ -52,6 +64,7 @@ export function SchedulerPage({
         );
     }
     function getYear(): JSX.Element {
+        updateDegree;
         return (
             <Form.Group controlId="Years">
                 <Form.Label> Year: </Form.Label>
@@ -65,19 +78,56 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
-    function updateSemester() {
+    function updateSemesterForm() {
+        updateDegree;
         setSemesterForm(!showSemForm);
     }
     function addSemester() {
+        updateDegree;
         const currYear = year;
         const currSeason = season;
-        const newSemester: SemesterPlanner = {
-            ClassesTaking: [],
-            year: currYear,
-            SemesterSeason: currSeason,
-            TotalCredits: 0
-        };
-        degree.SemesterList = [...degree.SemesterList, newSemester];
+
+        const contains = degree.SemesterList.find(
+            (c: SemesterPlanner): boolean =>
+                c.SemesterSeason === season && c.year === year
+        );
+        if (contains) {
+            setSemesterExists(true);
+            //return;
+        } else {
+            setSemesterExists(false);
+            const newSemester: SemesterPlanner = {
+                ClassesTaking: [],
+                year: currYear,
+                SemesterSeason: currSeason,
+                TotalCredits: 0
+            };
+            //setSemesterList([...updateSemesterList, newSemester]);
+            degree.SemesterList = [...degree.SemesterList, newSemester];
+        }
+    }
+    function removeSemester(currYear: number, currSeason: Season) {
+        updateDegree;
+        //console.log(year + " : " + season);
+        // setSemesterList(
+        //     updateSemesterList.filter(
+        //         (sem: SemesterPlanner): boolean =>
+        //             sem.SemesterSeason != currSeason || sem.year != currYear
+        //     )
+        // );
+        degree.SemesterList = degree.SemesterList.filter(
+            (sem: SemesterPlanner): boolean =>
+                sem.SemesterSeason != currSeason || sem.year != currYear
+        );
+        updateSemesterForm();
+    }
+    function removeAllSemesters() {
+        setSemesterList([]);
+        degree.CoursesRequired.map((course: Course) => (course.taken = false));
+        degree.CoursesRequired.map(
+            (course: Course) => (course.taken_String = "❌")
+        );
+        updateSemesterForm();
     }
     return (
         <div className="App">
@@ -90,117 +140,167 @@ export function SchedulerPage({
                 </h3>
             </div>
             <div>
+                <Row>
+                    <Col>
+                        <label>
+                            Number of Credits Needed:
+                            {" " + degree.CreditsRequired}
+                        </label>
+                    </Col>
+                    {
+                        //<Col>
+                        //<label>Number of Credits Planned: </label>
+                        //</Col>
+                        //<Col>
+                        //<label>Number of Credits Unplanned: </label>
+                        //</Col>
+                    }
+                </Row>
+            </div>
+            <div>
                 <Container>
                     <Row>
                         <Col>
-                            <span>
-                                Plan name [take in Degree plan selection]
-                            </span>
+                            <label>
+                                Plan Name: <strong>{degree.name}</strong>
+                            </label>
                             <div>
-                                <Button onClick={() => updateSemester()}>
+                                <Button onClick={() => updateSemesterForm()}>
                                     {" "}
-                                    Show Add Semester Form
+                                    {showSemForm
+                                        ? "Hide Add Semester Form"
+                                        : "Show Add Semester Form"}
+                                </Button>
+                                <Button
+                                    className={"remove"}
+                                    onClick={removeAllSemesters}
+                                >
+                                    Reset Plan
                                 </Button>
                                 {showSemForm && (
                                     <div>
                                         {getSeason()}
                                         {getYear()}
-                                        <Button onClick={() => addSemester()}>
+                                        <Button
+                                            onClick={() => {
+                                                addSemester();
+                                                updateSemesterForm();
+                                                updateDegree;
+                                            }}
+                                        >
                                             Add Semester
                                         </Button>
                                     </div>
                                 )}
+                                {semExistsError && (
+                                    <p className="error">
+                                        This semester already exists. Please
+                                        choose a different year and/or season
+                                    </p>
+                                )}
                             </div>
+                            <br></br>
                             <div>
-                                <MakeSemester
-                                    currentList={[]}
-                                    semesterList={degree.SemesterList}
-                                ></MakeSemester>
+                                {degree.SemesterList.map(
+                                    (semester: SemesterPlanner) => (
+                                        <>
+                                            <MakeSemester
+                                                key={
+                                                    semester.SemesterSeason +
+                                                    semester.year
+                                                }
+                                                semester={semester}
+                                                degree={degree}
+                                                removeSemester={removeSemester}
+                                                updateDegree={updateDegree}
+                                            ></MakeSemester>
+                                            <br></br>
+                                        </>
+                                    )
+                                )}
                             </div>
                         </Col>
                         <Col>
                             <span>
-                                <CoursesLists degree={degree}></CoursesLists>
-                                <div style={{ fontSize: 25 }}>
-                                    Search For and Edit Courses Below
-                                </div>
-                                <EditCourse degree={degree}></EditCourse>
+                                <CoursesLists
+                                    degree={degree}
+                                    updateDegree={updateDegree}
+                                ></CoursesLists>
                             </span>
                         </Col>
                     </Row>
-                    <Row>
-                        <span> Number of credits needed: </span>
-                    </Row>
                 </Container>
             </div>
-            {/* <div>{showSemester()}</div> */}
-            <footer className="back">
+            <div>
+                <ExportCSV semesters={degree.SemesterList}></ExportCSV>
+            </div>
+            <footer>
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
                 </Button>
             </footer>
+            {console.log(degree)}
         </div>
     );
 }
 
-function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
+function CoursesLists({
+    degree,
+    updateDegree
+}: {
+    degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
+}): JSX.Element {
     return (
         <div>
             <Container>
                 <Row>
                     <Col>
-                        <div>Courses You Have Taken</div>
+                        <label>Courses Taken or Planned</label>
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
+                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
-                        <div>Courses You Have Not Taken</div>
+                        <label>Courses Not Taken or Planned </label>
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}
+                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                 </Row>
+                <EditCourse></EditCourse>
             </Container>
         </div>
     );
 }
 function PrintDegreesLists({
     taken,
-    degree
+    degree,
+    updateDegree
 }: {
     taken: boolean;
     degree: Degree;
+    updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
     // this is going to be where the courses are printed
-    UseYellows();
     const [currentDegree, setDegree] = useState<Degree>(degree);
-    const [currentCourseName, setCurrentCourseName] = useState<string>(
-        degree.CoursesRequired[0].name
-    );
+    // const [currentCourseName, setCurrentCourseName] = useState<string>(
+    //     degree.CoursesRequired[0].name
+    // );
     const [printCourses, setPrintTakenOrNot] = useState<Course[]>(
         currentDegree.CoursesRequired.filter(
             (course: Course): boolean => course.taken === taken
         )
     );
     const [progress, setProgress] = useState(0);
-    const [currentTaken, setCurrentTaken] = useState<boolean>();
-
-    function UseYellows() {
-        // this is only here to get ris of the yellows in the code
-        // eslint-disable-next-line no-constant-condition
-        if (!true) {
-            console.log(currentCourseName);
-            console.log(currentTaken);
-            console.log(progress);
-            setCurrentCourseName("HOW");
-            setCurrentTaken(false);
-        }
-    }
+    //const [currentTaken, setCurrentTaken] = useState<boolean>();
 
     function updateList() {
+        updateDegree;
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
@@ -216,7 +316,9 @@ function PrintDegreesLists({
         const scrollHeight = event.currentTarget.scrollHeight;
 
         const scrollTop = event.currentTarget.scrollTop;
-        setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
+        setProgress(
+            progress + ((scrollTop + containerHeight) / scrollHeight) * 100
+        );
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(

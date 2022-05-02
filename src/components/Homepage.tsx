@@ -27,7 +27,7 @@ function Homepage({
     return (
         <div className="App">
             <header className="App-header">
-                Computer & Information Sciences Schedule Planner
+                Computer & Information Sciences Degree Planner
             </header>
             <div className="body">
                 <Container>

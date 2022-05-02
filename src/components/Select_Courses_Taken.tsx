@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 //import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
 import { Course, Degree } from "../interfaces/course-Degree-Semester";
 //import { currentSelectedDegree } from "./DropdownDegrees";
-
+import "../App.css";
 // This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken({
@@ -11,28 +11,19 @@ export function SelectCoursesTaken({
 }: {
     degree: Degree;
 }): JSX.Element {
-    // this is going to be where the courses are printed
-    UseYellows();
-    const [currentDegree, setDegree] = useState<Degree>(degree);
-    const [currentCourseName, setCurrentCourseName] = useState<string>(
+    //const [currentDegree, setDegree] = useState<Degree>(degree);
+    //[currentCourseName, setCurrentCourseName]
+    const [, setCurrentCourseName] = useState<string>(
         degree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
-    const [currentTaken, setCurrentTaken] = useState<boolean>();
-
-    function UseYellows() {
-        // this is only here to get ris of the yellows in the code
-        // eslint-disable-next-line no-constant-condition
-        if (!true) {
-            console.log(currentCourseName);
-            console.log(currentTaken);
-        }
-    }
+    //[currentTaken, setCurrentTaken]
+    const [, setCurrentTaken] = useState<boolean>();
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
         setCurrentCourseName(event.target.value);
-        const currentCourse = currentDegree.CoursesRequired.filter(
+        const currentCourse = degree.CoursesRequired.filter(
             (currentCourse: Course): boolean =>
                 event.target.value === currentCourse.name
         );
@@ -41,7 +32,8 @@ export function SelectCoursesTaken({
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
         // this line will update the courses that are shown to the user, there is another in scroll
-        setDegree(degree);
+        //setDegree(degree);
+        //console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -50,7 +42,8 @@ export function SelectCoursesTaken({
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
-        setDegree(degree);
+        //setDegree(degree);
+        //console.log(currentDegree.name);
     };
 
     return (
@@ -63,7 +56,7 @@ export function SelectCoursesTaken({
                 </Form.Label>
             </div>
             <div style={styles.container} onScroll={scrollHandler}>
-                {currentDegree.CoursesRequired.map((currentCourse: Course) => (
+                {degree.CoursesRequired.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
                         <Form.Check
                             type="checkbox"
@@ -76,20 +69,12 @@ export function SelectCoursesTaken({
                             label={
                                 "Course Name: " +
                                 currentCourse.name +
-                                " \n Course Credits: " +
-                                currentCourse.credits +
-                                " ...... Pre Requisite: " +
-                                currentCourse.prerecs.map(
-                                    (currentPreRec: Course) =>
-                                        currentPreRec.name +
-                                        currentPreRec.taken_String
-                                ) +
-                                " ...... Taken: " +
+                                "...Taken: " +
                                 currentCourse.taken_String
                             }
                         />
                         <Information
-                            currentDegree={currentDegree}
+                            currentDegree={degree}
                             currentCourseName={currentCourse.name}
                         ></Information>
                     </div>

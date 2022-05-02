@@ -11,6 +11,8 @@ type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
 
+document.title = "CISC Degree Planner";
+
 function App(): JSX.Element {
     //page states
     const [homepage, setHomepage] = useState<boolean>(true);
@@ -45,6 +47,7 @@ function App(): JSX.Element {
                     <SchedulerPage
                         changeHomepage={changeHomepage}
                         degree={degree}
+                        updateDegree={updateDegree}
                     ></SchedulerPage>
                 </div>
             </div>
