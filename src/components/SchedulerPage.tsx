@@ -165,7 +165,10 @@ export function SchedulerPage({
                                 Plan Name: <strong>{degree.name}</strong>
                             </label>
                             <div>
-                                <Button onClick={() => updateSemesterForm()}>
+                                <Button
+                                    data-testid="show/hide"
+                                    onClick={() => updateSemesterForm()}
+                                >
                                     {" "}
                                     {showSemForm
                                         ? "Hide Add Semester Form"
@@ -239,7 +242,6 @@ export function SchedulerPage({
                     Back
                 </Button>
             </footer>
-            {console.log(degree)}
         </div>
     );
 }
