@@ -145,4 +145,21 @@ describe("Testing aspects of the ", () => {
         });
         // this is where the testing of the search and edit features would go
     });
+    describe("Testing the Semster UI", () => {
+        // testing of the semester show/hide add form
+        beforeEach(() => {
+            render(<App />);
+        });
+        // test show/hide semester add form is initially closed
+        test("Testing to see if the Show/Hide Add Semester Form is initially closed", () => {
+            const showHideSemesterButton = screen.getByRole("button");
+            showHideSemesterButton.click();
+            expect(
+                screen.getByText(/Show Add Semester Form/i)
+            ).toBeInTheDocument();
+        });
+        // test show/hide semester add form opens when clicked
+        // test list of seasons
+        // test years is a number box
+    });
 });
