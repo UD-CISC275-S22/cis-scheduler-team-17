@@ -121,6 +121,7 @@ export function MakeSemester({
         changeList([...courseList, newCourse]);
         changeTotal(totalCredits + newCourse.credits);
         updateDegree;
+        changeVisibility();
     }
     return (
         <div>
@@ -335,6 +336,7 @@ function AddExisting({
             changeList([...cList, newCourse]);
             updateDegree;
             setError(false);
+            changeEVisibility();
         } else {
             setError(true);
         }

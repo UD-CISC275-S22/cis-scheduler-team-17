@@ -35,6 +35,7 @@ export function DropdownDegrees({
                     <strong>Degrees</strong>
                 </Form.Label>
                 <Form.Select
+                    data-testid="dropdown"
                     className="dropdownForm"
                     value={degree.name}
                     onChange={updateDegree}
