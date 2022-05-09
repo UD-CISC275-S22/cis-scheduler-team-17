@@ -108,7 +108,7 @@ export function FindCourse(): JSX.Element {
 
 const styles = {
     container: {
-        width: 275,
+        width: 375,
         height: 300,
         margin: "30px auto",
         overflowY: "auto",
@@ -118,17 +118,12 @@ const styles = {
     list: {
         width: "100%"
     },
-    progressBar: {
-        width: 600,
-        height: 20,
-        margin: "auto",
-        backgroundColor: "#bbb"
-    },
+
     progressValue: {
         height: "100%",
         backgroundColor: "steelblue"
     },
     text: {
-        textAlign: "center"
+        textAlign: "left"
     }
 } as const;

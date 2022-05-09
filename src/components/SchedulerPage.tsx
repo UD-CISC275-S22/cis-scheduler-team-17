@@ -159,8 +159,8 @@ export function SchedulerPage({
             </div>
             <div>
                 <Container>
-                    <Row>
-                        <Col>
+                    <Col>
+                        <Row>
                             <label>
                                 Plan Name: <strong>{degree.name}</strong>
                             </label>
@@ -220,16 +220,16 @@ export function SchedulerPage({
                                     )
                                 )}
                             </div>
-                        </Col>
-                        <Col>
+                        </Row>
+                        <Row>
                             <span>
                                 <CoursesLists
                                     degree={degree}
                                     updateDegree={updateDegree}
                                 ></CoursesLists>
                             </span>
-                        </Col>
-                    </Row>
+                        </Row>
+                    </Col>
                 </Container>
             </div>
             <div>
@@ -256,9 +256,9 @@ function CoursesLists({
         <div>
             <Container>
                 <Row>
-                    <EditCourse></EditCourse>
-                </Row>
-                <Row>
+                    <Col>
+                        <EditCourse></EditCourse>
+                    </Col>
                     <Col>
                         <label>Courses Taken or Planned</label>
                         <PrintDegreesLists
