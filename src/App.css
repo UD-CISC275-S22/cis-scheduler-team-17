@@ -73,6 +73,7 @@ button{
     color: white;
     font-size: 25px;
     height: 60px;
+    min-height: auto;
     width: 180px;
     margin: 10px;
 }

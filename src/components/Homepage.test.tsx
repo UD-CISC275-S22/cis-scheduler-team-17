@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import App from "../App";
 
 describe("Testing everything on the homepage", () => {
@@ -86,5 +86,27 @@ describe("Testing everything on the homepage", () => {
                 /Course Name: CISC181: Introduction to Computer Science II Course Credits: 3 ...... Pre Requisite: CISC108: Introduction To Computer Science 1❌,MATH241: Analytic Geometry and Calculus A❌ ...... Taken: ❌/i
             );
         }); */
+        //Testing Degree Selection Renders
+        test("Testing to see if dropdown menu renders", () => {
+            expect(screen.getByText("Degrees")).toBeInTheDocument;
+        });
+        //Veryfiying degree selection starts at No Degree Selected
+        test("Testing to see if dropdown menu renders description", () => {
+            expect(screen.getByText("No Degree has been selected"))
+                .toBeInTheDocument;
+        });
+        //Testing Degree Selection changes description rendered
+        test("Testing dropdown selection renders description on selected degree", () => {
+            fireEvent.change(screen.getByTestId("dropdown"), {
+                target: {
+                    value: "Cybersecurity Concentration"
+                }
+            });
+            expect(
+                screen.getByText(
+                    "Backdoor vulnerabilities. Denial of service attacks. Viruses, worms, and cyberintrusions. Massive security breaches at major corporations, government facilities, and other institutions are announced on a regular basis. Is it any surprise that cybersecurity experts are among the most in-demand computer science professionals? Students in this concentration study the whole spectrum of vulnerabilities as well as countermeasures to defend against them. Learn how to design secure software/hardware systems and networks; explore intrusion detection, cryptographic protocols, firewalls, and access control, among other topics."
+                )
+            ).toBeInTheDocument;
+        });
     });
 });
