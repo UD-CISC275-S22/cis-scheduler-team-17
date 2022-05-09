@@ -255,6 +255,9 @@ function CoursesLists({
         <div>
             <Container>
                 <Row>
+                    <EditCourse></EditCourse>
+                </Row>
+                <Row>
                     <Col>
                         <label>Courses Taken or Planned</label>
                         <PrintDegreesLists
@@ -272,7 +275,6 @@ function CoursesLists({
                         ></PrintDegreesLists>
                     </Col>
                 </Row>
-                <EditCourse></EditCourse>
             </Container>
         </div>
     );

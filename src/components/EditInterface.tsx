@@ -11,13 +11,6 @@ export function EditInterface({
 }: {
     Course2Edit: Course;
 }): JSX.Element {
-    const [EditID, SetEditID] = useState<boolean>(false);
-    const [EditName, SetEditName] = useState<boolean>(false);
-    const [EditDesc, SetEditDesc] = useState<boolean>(false);
-    //const [EditSemesters, setEditSemesters] = useState<boolean>(false);
-    //const [EditPreRecs, setEditPreRecs] = useState<boolean>(false);
-    const [EditCredits, setEditCredits] = useState<boolean>(false);
-
     function revert() {
         Course2Edit.courseID = Course2Edit.ogID;
         Course2Edit.name = Course2Edit.ogName;
@@ -28,33 +21,9 @@ export function EditInterface({
     return (
         <div>
             <div>You are currently editing {Course2Edit.courseID}</div>
-            <Form.Check
-                type="checkbox"
-                name="EditOptions"
-                onChange={() => SetEditID(!EditID)}
-                id="editing-ID"
-                label="ID"
-                value="ID"
-            />
-            {EditID ? <EditID_UI Course2Edit={Course2Edit} /> : ""}
-            <Form.Check
-                type="checkbox"
-                name="EditOptions"
-                onChange={() => SetEditName(!EditName)}
-                id="editing-Name"
-                label="Name"
-                value="Name"
-            />
-            {EditName ? <EditNameUI Course2Edit={Course2Edit} /> : ""}
-            <Form.Check
-                type="checkbox"
-                name="EditOptions"
-                onChange={() => SetEditDesc(!EditDesc)}
-                id="editing-desc"
-                label="Description"
-                value="Description"
-            />
-            {EditDesc ? <EditDescUI Course2Edit={Course2Edit} /> : ""}
+            <EditID_UI Course2Edit={Course2Edit} />
+            <EditNameUI Course2Edit={Course2Edit} />
+            <EditDescUI Course2Edit={Course2Edit} />
             {/* <Form.Check
                 type="checkbox"
                 name="EditOptions"
@@ -73,15 +42,7 @@ export function EditInterface({
                 value="PreRecs"
             />
     {EditPreRecs ? <EditPreRecsUI Course2Edit={Course2Edit} /> : ""}*/}
-            <Form.Check
-                type="checkbox"
-                name="EditOptions"
-                onChange={() => setEditCredits(!EditCredits)}
-                id="editing-Credits"
-                label="Credits"
-                value="Credits"
-            />
-            {EditCredits ? <EditCreditsUI Course2Edit={Course2Edit} /> : ""}
+            <EditCreditsUI Course2Edit={Course2Edit} />
             <Button onClick={revert}>Reset Course to Default</Button>
         </div>
     );
