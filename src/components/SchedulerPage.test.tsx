@@ -143,7 +143,14 @@ describe("Testing aspects of the ", () => {
                 )
             ).toBeInTheDocument;
         });
-        // this is where the testing of the search and edit features would go
+        // this is where the testing of the search and edit features would goes
+        test("Testing Create Course Button Renders", () => {
+            expect(screen.getAllByText("Create Course"));
+        });
+        //Testing Add Existing Course
+        test("Testing Create Course Button Renders", () => {
+            expect(screen.getAllByText("Add Existing"));
+        });
     });
     describe("Testing the Semster UI", () => {
         // testing of the semester show/hide add form

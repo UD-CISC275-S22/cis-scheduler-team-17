@@ -1262,8 +1262,8 @@ const Information_Systems_Courses = [
 ];
 // degree declarations
 export const NoDegree = makeDegree(
-    "No Degree Has been selected",
-    "There has not been a course Selected",
+    "No Degree Selected",
+    "No Degree has been selected",
     AllCourses,
     0,
     []
