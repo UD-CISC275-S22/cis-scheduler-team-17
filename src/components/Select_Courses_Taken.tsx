@@ -13,7 +13,6 @@ export function SelectCoursesTaken({
         degree.CoursesRequired[0].name
     );
     const [progress, setProgress] = useState(0);
-    //[currentTaken, setCurrentTaken]
     const [, setCurrentTaken] = useState<boolean>();
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
@@ -82,37 +81,6 @@ export function SelectCoursesTaken({
     );
 }
 
-// Styling
-const styles = {
-    container: {
-        width: 500,
-        height: 600,
-        margin: "30px auto",
-        overflowY: "auto",
-        overflowX: "hidden",
-        background: "mintcream"
-    },
-    list: {
-        width: "100%"
-    },
-    progressBar: {
-        width: 600,
-        height: 20,
-        margin: "auto",
-        backgroundColor: "#bbb"
-    },
-    progressValue: {
-        height: "100%",
-        backgroundColor: "steelblue"
-    },
-    text: {
-        textAlign: "center"
-    }
-} as const;
-{
-    /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
-}
-
 function Information({
     currentDegree,
     currentCourseName
@@ -157,3 +125,35 @@ function Information({
         </div>
     );
 }
+
+// Styling
+const styles = {
+    container: {
+        width: 500,
+        height: 600,
+        margin: "30px auto",
+        overflowY: "auto",
+        overflowX: "hidden",
+        background: "mintcream"
+    },
+    list: {
+        width: "100%"
+    },
+    progressBar: {
+        width: 600,
+        height: 20,
+        margin: "auto",
+        backgroundColor: "#bbb"
+    },
+    progressValue: {
+        height: "100%",
+        backgroundColor: "steelblue"
+    },
+    text: {
+        textAlign: "center"
+    }
+} as const;
+{
+    /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
+}
+
