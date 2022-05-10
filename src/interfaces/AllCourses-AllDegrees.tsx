@@ -1017,6 +1017,7 @@ const two_year_plan_BS = [
     ScienceRequirement2,
     BreadthRequirement4
 ];
+
 const AI_Concentration_Courses = [...two_year_plan_BS].concat([
     CISC304,
     CISC320,
