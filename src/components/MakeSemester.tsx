@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import {
     Course,
     Degree,
@@ -166,44 +166,59 @@ export function MakeSemester({
                     {updateDegree}
                 </p>
                 <div>
-                    <CreateCourse
-                        visible={visible}
-                        changeVisibility={changeVisibility}
-                        courseID={courseID}
-                        setID={setID}
-                        courseName={courseName}
-                        setName={setName}
-                        courseDescription={courseDescription}
-                        setDescription={setDescription}
-                        credits={credits}
-                        changeCredits={changeCredits}
-                        addCourse={addCourse}
-                        resetState={resetState}
-                    ></CreateCourse>
-                    <AddExisting
-                        courseList={courseList}
-                        degree={degree}
-                        changeList={changeList}
-                        intersection={intersection}
-                        changeIntersect={changeIntersect}
-                        totalCredits={totalCredits}
-                        changeTotal={changeTotal}
-                        updateDegree={updateDegree}
-                    ></AddExisting>
-                    <Button className={"remove"} onClick={resetState}>
-                        Remove All Courses
-                    </Button>
-                    <Button
-                        className={"remove"}
-                        onClick={() =>
-                            removeSemesterReset(
-                                semester.year,
-                                semester.semester_season
-                            )
-                        }
-                    >
-                        Remove Semester
-                    </Button>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <CreateCourse
+                                    visible={visible}
+                                    changeVisibility={changeVisibility}
+                                    courseID={courseID}
+                                    setID={setID}
+                                    courseName={courseName}
+                                    setName={setName}
+                                    courseDescription={courseDescription}
+                                    setDescription={setDescription}
+                                    credits={credits}
+                                    changeCredits={changeCredits}
+                                    addCourse={addCourse}
+                                    resetState={resetState}
+                                ></CreateCourse>
+                            </Col>
+                            <Col>
+                                <AddExisting
+                                    courseList={courseList}
+                                    degree={degree}
+                                    changeList={changeList}
+                                    intersection={intersection}
+                                    changeIntersect={changeIntersect}
+                                    totalCredits={totalCredits}
+                                    changeTotal={changeTotal}
+                                    updateDegree={updateDegree}
+                                ></AddExisting>
+                            </Col>
+                            <Col>
+                                <Button
+                                    className={"remove"}
+                                    onClick={resetState}
+                                >
+                                    Remove All Courses
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button
+                                    className={"remove"}
+                                    onClick={() =>
+                                        removeSemesterReset(
+                                            semester.year,
+                                            semester.semester_season
+                                        )
+                                    }
+                                >
+                                    Remove Semester
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </div>
         </div>
