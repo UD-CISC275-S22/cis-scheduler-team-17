@@ -69,6 +69,11 @@ button{
     border: none;
 }
 
+.btn:hover{
+    background-image: none;
+    background-color: #1d785d;
+}
+
 .makeButton{
     border: none;
     background-image: url("CSS-Images/footer.jpg");
@@ -162,15 +167,27 @@ th, td {
 .debug{
     display: none;
 }
+
 .remove{
-    color: black;
-    background-color: #b63939;
+    color: white;
     width: auto;
     height: auto;
+    background-size: contain;
     border: none;
-    background-image: none;
+    background-image: url("CSS-Images/trashcan.jpg");
 }
+
 .remove:hover{
     color: white;
+    background-image: none;
     background-color: #8a2a2a;
+}
+
+.center{
+    position: center;
+    justify-content: center;
+}
+
+.addSemester{
+    margin-right: 30px;
 }

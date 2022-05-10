@@ -145,7 +145,10 @@ export function SchedulerPage({
                                 Plan Name: <strong>{degree.name}</strong>
                             </label>
                             <div>
-                                <Button onClick={() => updateSemesterForm()}>
+                                <Button
+                                    className="addSemester"
+                                    onClick={() => updateSemesterForm()}
+                                >
                                     {" "}
                                     {showSemForm ? "Hide Form" : "Add Semester"}
                                 </Button>
