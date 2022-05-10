@@ -46,8 +46,6 @@ export function MakeSemester({
     function changeList(newList: Course[]) {
         updateList(newList);
         semester.ClassesTaking = newList;
-        console.log(semester.ClassesTaking);
-        console.log(degree.SemesterList);
         updateDegree;
     }
     //reset taken

@@ -28,14 +28,14 @@ function Homepage({
             <div className="body">
                 <Container>
                     <Row>
-                        <Col>
+                        <Col className="center">
                             <DropdownDegrees
                                 degrees={degrees}
                                 degree={degree}
                                 updateDegree={updateDegree}
                             ></DropdownDegrees>
                         </Col>
-                        <Col>
+                        <Col className="center">
                             <SelectCoursesTaken
                                 degree={degree}
                             ></SelectCoursesTaken>
