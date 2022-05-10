@@ -10,23 +10,22 @@ export function SelectCoursesTaken({
     degree: Degree;
 }): JSX.Element {
     const [, setCurrentCourseName] = useState<string>(
-        degree.CoursesRequired[0].name
+        degree.courses_required[0].name
     );
     const [progress, setProgress] = useState(0);
-    //[currentTaken, setCurrentTaken]
     const [, setCurrentTaken] = useState<boolean>();
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
         setCurrentCourseName(event.target.value);
-        const currentCourse = degree.CoursesRequired.filter(
+        const currentCourse = degree.courses_required.filter(
             (currentCourse: Course): boolean =>
                 event.target.value === currentCourse.name
         );
         const ourCourse = currentCourse[0];
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
-        ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
+        ourCourse.taken_string = ourCourse.taken ? "✔️" : "❌";
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -45,7 +44,7 @@ export function SelectCoursesTaken({
                 </strong>
             </Form.Label>
             <div style={styles.container} onScroll={scrollHandler}>
-                {degree.CoursesRequired.map((currentCourse: Course) => (
+                {degree.courses_required.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
                         <Form.Check
                             type="checkbox"
@@ -56,7 +55,7 @@ export function SelectCoursesTaken({
                             value={currentCourse.name}
                             key={currentCourse.name}
                             label={
-                                currentCourse.name + currentCourse.taken_String
+                                currentCourse.name + currentCourse.taken_string
                             }
                         />
                         <Information

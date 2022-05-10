@@ -36,19 +36,19 @@ export function AddExisting({
     //Create course information
     const [ecourseID, setEID] = useState<string>("");
     function addExisting() {
-        const findCourse = degree.CoursesRequired.filter(
+        const findCourse = degree.courses_required.filter(
             (course: Course): boolean =>
-                course.courseID === ecourseID && course.taken === false
+                course.course_id === ecourseID && course.taken === false
         );
         if (findCourse.length === 1) {
             const existing = findCourse[0];
             existing.taken = true;
-            existing.taken_String = "✔️";
+            existing.taken_string = "✔️";
             const newCourse = makeCourseTaken(
-                existing.courseID,
+                existing.course_id,
                 existing.name,
                 existing.description,
-                existing.SemesterAvailable,
+                existing.semester_available,
                 existing.prerecs,
                 existing.credits,
                 true

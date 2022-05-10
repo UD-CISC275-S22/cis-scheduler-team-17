@@ -11,7 +11,7 @@ export function Information({
     currentCourseName: string;
 }): JSX.Element {
     const [showInfo, setShowInfo] = useState<boolean>(false);
-    const findCourse = currentDegree.CoursesRequired.filter(
+    const findCourse = currentDegree.courses_required.filter(
         (myCourse: Course): boolean => myCourse.name === currentCourseName
     );
     const currentCourse = findCourse[0];
@@ -32,11 +32,11 @@ export function Information({
                         <br></br>
                         Course Credits: {currentCourse.credits} <br></br>
                         Semesters Available:{" "}
-                        {currentCourse.SemestersAvailableString} <br></br>
+                        {currentCourse.semester_available_string} <br></br>
                         Pre-Requisite:
                         {currentCourse.prerecs.map(
                             (currentPreRec: Course) =>
-                                currentPreRec.name + currentPreRec.taken_String
+                                currentPreRec.name + currentPreRec.taken_string
                         )}
                     </>
                 )}

@@ -152,4 +152,35 @@ describe("Testing aspects of the ", () => {
             expect(screen.getAllByText("Add Existing"));
         });
     });
+    describe("Testing the Semster UI", () => {
+        // testing of the semester show/hide add form
+        beforeEach(() => {
+            render(<App />);
+        });
+        // test show/hide semester add form is initially closed
+        test("Testing to see if the Show/Hide Add Semester Form is initially closed", () => {
+            //const showHideSemesterButton = screen.getByRole("button");
+            //showHideSemesterButton.click();
+            expect(
+                screen.getByText(/Show Add Semester Form/i)
+            ).toBeInTheDocument();
+        });
+        // test show/hide semester add form opens when clicked
+        test("Testing to see if the Show/Hide Add Semester Form is open", () => {
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            expect(
+                screen.getByText(/Hide Add Semester Form/i)
+            ).toBeInTheDocument();
+        });
+        // test list of seasons
+        // test("Testing to see if the Show/Hide Add Semester Form is open", () => {
+        //     const showHideSemesterButton = screen.getByTestId("show/hide");
+        //     showHideSemesterButton.click();
+        //     expect(
+        //         screen.getByText(/Hide Add Semester Form/i)
+        //     ).toBeInTheDocument();
+        // });
+        // test years is a number box
+    });
 });

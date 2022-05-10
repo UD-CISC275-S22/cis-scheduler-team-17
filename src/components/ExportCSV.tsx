@@ -11,25 +11,25 @@ import "../App.css";
 export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
     const [csvData, updateDegree] = useState<Degree>(degree);
     const [data, updateData] = useState(
-        csvData.SemesterList.map((semester: SemesterPlanner) => ({
-            SemesterSeason: semester.SemesterSeason,
+        csvData.semester_list.map((semester: SemesterPlanner) => ({
+            SemesterSeason: semester.semester_season,
             year: semester.year,
-            ClassesTaking: semester.ClassesTaking.map(
-                (course: Course): string => course.courseID
+            ClassesTaking: semester.classes_taking.map(
+                (course: Course): string => course.course_id
             ),
-            TotalCredits: semester.TotalCredits
+            TotalCredits: semester.total_credits
         }))
     );
     function getData() {
         updateDegree(degree);
         updateData(
-            csvData.SemesterList.map((semester: SemesterPlanner) => ({
-                SemesterSeason: semester.SemesterSeason,
+            csvData.semester_list.map((semester: SemesterPlanner) => ({
+                SemesterSeason: semester.semester_season,
                 year: semester.year,
-                ClassesTaking: semester.ClassesTaking.map(
-                    (course: Course): string => course.courseID
+                ClassesTaking: semester.classes_taking.map(
+                    (course: Course): string => course.course_id
                 ),
-                TotalCredits: semester.TotalCredits
+                TotalCredits: semester.total_credits
             }))
         );
     }

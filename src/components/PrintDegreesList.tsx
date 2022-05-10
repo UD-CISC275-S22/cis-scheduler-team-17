@@ -19,7 +19,7 @@ export function PrintDegreesLists({
     // this is going to be where the courses are printed
     const [currentDegree, setDegree] = useState<Degree>(degree);
     const [printCourses, setPrintTakenOrNot] = useState<Course[]>(
-        currentDegree.CoursesRequired.filter(
+        currentDegree.courses_required.filter(
             (course: Course): boolean => course.taken === taken
         )
     );
@@ -29,7 +29,7 @@ export function PrintDegreesLists({
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
-            currentDegree.CoursesRequired.filter(
+            currentDegree.courses_required.filter(
                 (course: Course): boolean => course.taken === taken
             )
         );
@@ -47,7 +47,7 @@ export function PrintDegreesLists({
         setDegree(degree);
         // updating our list
         setPrintTakenOrNot(
-            currentDegree.CoursesRequired.filter(
+            currentDegree.courses_required.filter(
                 (course: Course): boolean => course.taken === taken
             )
         );
@@ -59,15 +59,15 @@ export function PrintDegreesLists({
             <div style={styles.container} onScroll={scrollHandler}>
                 {printCourses.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
-                        Course ID: {currentCourse.courseID}
-                        {currentCourse.taken_String}
+                        Course ID: {currentCourse.course_id}
+                        {currentCourse.taken_string}
                         <br></br>
                         Pre Requisite:
                         {currentCourse.prerecs.map(
                             (currentPreRec: Course) =>
-                                currentPreRec.courseID +
+                                currentPreRec.course_id +
                                 " " +
-                                currentPreRec.taken_String +
+                                currentPreRec.taken_string +
                                 "\n"
                         )}
                         <br></br>
