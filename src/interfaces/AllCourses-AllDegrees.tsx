@@ -1,7 +1,4 @@
-import { makeCourse, makeDegree } from "./makeDegree-Makecourses";
-
-//Zoe addition for season
-//export const SeasonsList = ["Fall", "Winter", "Spring", "Summer"];
+import { makeCourse, makeDegree } from "./MakeDegree-MakeCourses";
 
 // Seasons List
 export const seasonsList = ["Fall", "Winter", "Spring", "Summer"];

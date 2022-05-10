@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { Button, Form, Table } from "react-bootstrap";
+import "../App.css";
+import { Button, Table } from "react-bootstrap";
 import {
     Course,
     Degree,
     Season,
     SemesterPlanner
-} from "../interfaces/course-Degree-Semester";
-import {
-    makeCourse,
-    makeCourseTaken
-} from "../interfaces/makeDegree-Makecourses";
-import "../App.css";
+} from "../interfaces/Course-Degree-Semester";
+import { makeCourse } from "../interfaces/MakeDegree-MakeCourses";
+import { CreateCourse } from "./CreateCourse";
+import { AddExisting } from "./AddExisting";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -126,14 +125,6 @@ export function MakeSemester({
     return (
         <div>
             <div>
-                {/* <label className="semesterLabel">
-                    {semester.SemesterSeason +
-                        " " +
-                        semester.year +
-                        ": " +
-                        semester.TotalCredits +
-                        " Credits"}
-                </label> */}
                 <Table className="semesterTable">
                     <caption className="semesterLabel">
                         {semester.SemesterSeason +
@@ -154,7 +145,7 @@ export function MakeSemester({
                         <tr key={course.courseID}>
                             <th>{course.courseID}</th>
                             <th>{course.name}</th>
-                            <th className={"scroll"}>{course.description}</th>
+                            <th>{course.description}</th>
                             <th>{course.credits}</th>
                             <th>
                                 <Button
@@ -188,7 +179,7 @@ export function MakeSemester({
                         resetState={resetState}
                     ></CreateCourse>
                     <AddExisting
-                        cList={courseList}
+                        courseList={courseList}
                         degree={degree}
                         changeList={changeList}
                         intersection={intersection}
@@ -197,8 +188,11 @@ export function MakeSemester({
                         changeTotal={changeTotal}
                         updateDegree={updateDegree}
                     ></AddExisting>
-                    <Button onClick={resetState}>Remove All Courses</Button>
+                    <Button className={"remove"} onClick={resetState}>
+                        Remove All Courses
+                    </Button>
                     <Button
+                        className={"remove"}
                         onClick={() =>
                             removeSemesterReset(
                                 semester.year,
@@ -210,163 +204,6 @@ export function MakeSemester({
                     </Button>
                 </div>
             </div>
-        </div>
-    );
-}
-
-function CreateCourse({
-    visible,
-    changeVisibility,
-    courseID,
-    setID,
-    courseName,
-    setName,
-    courseDescription,
-    setDescription,
-    credits,
-    changeCredits,
-    addCourse
-}: {
-    visible: boolean;
-    changeVisibility: () => void;
-    courseID: string;
-    setID: (value: string) => void;
-    courseName: string;
-    setName: (value: string) => void;
-    courseDescription: string;
-    setDescription: (value: string) => void;
-    credits: number;
-    changeCredits: (value: string) => void;
-    addCourse: () => void;
-    resetState: () => void;
-}): JSX.Element {
-    return (
-        <div>
-            <Button onClick={changeVisibility}>
-                {visible ? "Hide Form" : "Create Course"}
-            </Button>
-            {visible && (
-                <div>
-                    <Form.Control
-                        type="string"
-                        value={courseID}
-                        onChange={(event: ChangeEvent) =>
-                            setID(event.target.value)
-                        }
-                        placeholder={"Enter Course ID"}
-                    />
-                    <Form.Control
-                        type="string"
-                        value={courseName}
-                        onChange={(event: ChangeEvent) =>
-                            setName(event.target.value)
-                        }
-                        placeholder={"Enter Course Name"}
-                    />
-                    <Form.Control
-                        type="string"
-                        value={courseDescription}
-                        onChange={(event: ChangeEvent) =>
-                            setDescription(event.target.value)
-                        }
-                        placeholder={"Enter Course Description"}
-                    />
-                    <label>Enter Number of Credits</label>
-                    <Form.Control
-                        type="number"
-                        value={credits}
-                        onChange={(event: ChangeEvent) =>
-                            changeCredits(event.target.value)
-                        }
-                    />
-                    <Button onClick={addCourse}>Submit Form</Button>
-                </div>
-            )}
-        </div>
-    );
-}
-
-function AddExisting({
-    cList,
-    degree,
-    changeList,
-    intersection,
-    changeIntersect,
-    totalCredits,
-    changeTotal,
-    updateDegree
-}: {
-    cList: Course[];
-    degree: Degree;
-    changeList: (value: Course[]) => void;
-    intersection: Course[];
-    changeIntersect: (value: Course[]) => void;
-    totalCredits: number;
-    changeTotal: (value: number) => void;
-    updateDegree: (event: ChangeEvent) => void;
-}): JSX.Element {
-    //Visiblity of form
-    const [evisible, setEVisible] = useState<boolean>(false);
-    const [error, setError] = useState<boolean>(false);
-    function changeEVisibility() {
-        setEVisible(!evisible);
-    }
-    //Create course information
-    const [ecourseID, setEID] = useState<string>("");
-    function addExisting() {
-        const courseList = degree.CoursesRequired.filter(
-            (course: Course): boolean =>
-                course.courseID === ecourseID && course.taken === false
-        );
-        if (courseList.length === 1) {
-            const existing = courseList[0];
-            existing.taken = true;
-            existing.taken_String = "✔️";
-            const newCourse = makeCourseTaken(
-                existing.courseID,
-                existing.name,
-                existing.description,
-                existing.SemesterAvailable,
-                existing.prerecs,
-                existing.credits,
-                true
-            );
-            changeTotal(totalCredits + existing.credits);
-            changeIntersect([...intersection, existing]);
-            changeList([...cList, newCourse]);
-            updateDegree;
-            setError(false);
-            changeEVisibility();
-        } else {
-            setError(true);
-        }
-    }
-    return (
-        <div>
-            <Button onClick={changeEVisibility}>
-                {evisible ? "Hide Form" : "Add Existing Course"}
-            </Button>
-            {evisible && (
-                <div>
-                    <Form.Control
-                        type="string"
-                        value={ecourseID}
-                        onChange={(event: ChangeEvent) =>
-                            setEID(event.target.value)
-                        }
-                        placeholder={"Enter Course ID"}
-                    />
-                    <Button onClick={addExisting}>Submit Form</Button>
-                </div>
-            )}
-            {evisible && error && (
-                <p>
-                    Please make sure the Course ID you entered matches a Course
-                    ID in the list of courses not yet taken or planned. If you
-                    would like to create a new course, please click the{" "}
-                    <strong>Create Course</strong> button above.
-                </p>
-            )}
         </div>
     );
 }

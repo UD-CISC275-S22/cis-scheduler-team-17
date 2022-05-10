@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-//import { AllCourses, AllDegrees } from "../interfaces/AllCourses-AllDegrees";
-import { Course, Degree } from "../interfaces/course-Degree-Semester";
-//import { currentSelectedDegree } from "./DropdownDegrees";
+import { Course, Degree } from "../interfaces/Course-Degree-Semester";
 import "../App.css";
-// This holds the course we are on and the degree we have
 
 export function SelectCoursesTaken({
     degree
 }: {
     degree: Degree;
 }): JSX.Element {
-    //const [currentDegree, setDegree] = useState<Degree>(degree);
-    //[currentCourseName, setCurrentCourseName]
     const [, setCurrentCourseName] = useState<string>(
         degree.CoursesRequired[0].name
     );
@@ -31,9 +26,6 @@ export function SelectCoursesTaken({
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
         ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
-        // this line will update the courses that are shown to the user, there is another in scroll
-        //setDegree(degree);
-        //console.log(currentDegree.name);
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -42,8 +34,6 @@ export function SelectCoursesTaken({
 
         const scrollTop = event.currentTarget.scrollTop;
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
-        //setDegree(degree);
-        //console.log(currentDegree.name);
     };
 
     return (
@@ -80,7 +70,6 @@ export function SelectCoursesTaken({
                     </div>
                 ))}
             </div>
-            {/**progress Bar */}
             <div style={styles.progressBar}>
                 <div
                     style={{ ...styles.progressValue, width: `${progress}%` }}
