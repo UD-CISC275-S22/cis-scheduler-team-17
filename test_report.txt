@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Tests/SchedulerPage.test.tsx (10.663 s)
+FAIL src/Tests/SchedulerPage.test.tsx (12.386 s)
   ● Testing aspects of the  › Testing the Select Taken UI › Testing Create Course Button Renders
 
     TestingLibraryElementError: Unable to find an element with the text: Create Course. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -377,7 +377,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (10.663 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:173:24)
 
-FAIL src/Tests/Homepage.test.tsx (5.478 s)
+FAIL src/Tests/Homepage.test.tsx (6.434 s)
   ● Testing everything on the homepage › Testing the Select Taken UI › Testing to see if taken starts off as false
 
     TestingLibraryElementError: Unable to find an element with the text: /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -664,20 +664,20 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|----------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
 -----------------------------|---------|----------|---------|---------|----------------------------
-All files                    |   55.38 |    34.54 |    29.8 |   55.67 |                            
+All files                    |   55.09 |    34.54 |   29.24 |   55.38 |                            
  src                         |     100 |    83.33 |     100 |     100 |                            
   App.tsx                    |     100 |    83.33 |     100 |     100 | 30                         
- src/components              |   27.77 |    29.78 |   25.77 |   28.01 |                            
+ src/components              |   27.54 |    29.78 |   25.25 |   27.77 |                            
   AddExisting.tsx            |       0 |        0 |       0 |       0 | 31-77                      
   CourseLists.tsx            |     100 |      100 |     100 |     100 |                            
-  CreateCourse.tsx           |       0 |        0 |       0 |       0 | 35-71                      
+  CreateCourse.tsx           |       0 |        0 |       0 |       0 | 35-73                      
   DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                            
   EditInterface.tsx          |       0 |        0 |       0 |       0 | 15-126                     
   ExportCSV.tsx              |      40 |      100 |   16.66 |      40 | 14-30                      
   FindCourse.tsx             |      44 |       50 |   22.22 |      44 | 31-47,52-56,88-102         
   Homepage.tsx               |     100 |      100 |     100 |     100 |                            
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                      
-  MakeSemester.tsx           |       0 |        0 |       0 |       0 | 32-211                     
+  MakeSemester.tsx           |       0 |        0 |       0 |       0 | 32-217                     
   PrintDegreesList.tsx       |      65 |      100 |      75 |      65 | 40-51                      
   SchedulerPage.tsx          |   33.33 |    41.66 |   33.33 |   34.14 | 34-35,50,71,82-118,168-188 
   SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                      
@@ -691,5 +691,5 @@ All files                    |   55.38 |    34.54 |    29.8 |   55.67 |
 Test Suites: 2 failed, 1 passed, 3 total
 Tests:       7 failed, 15 passed, 22 total
 Snapshots:   0 total
-Time:        17.601 s
+Time:        20.706 s
 Ran all test suites.
