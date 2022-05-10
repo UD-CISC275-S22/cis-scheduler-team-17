@@ -32,7 +32,7 @@ export function SchedulerPage({
     //update degree semester list
     function setSemesterList(newList: SemesterPlanner[]) {
         updateSemesterForm();
-        degree.SemesterList = newList;
+        degree.semester_list = newList;
     }
     //seasons dropdown state
     const seasons = [...SeasonsList];
@@ -82,9 +82,9 @@ export function SchedulerPage({
         const currYear = year;
         const currSeason = season;
 
-        const contains = degree.SemesterList.find(
+        const contains = degree.semester_list.find(
             (c: SemesterPlanner): boolean =>
-                c.SemesterSeason === season && c.year === year
+                c.semester_season === season && c.year === year
         );
         if (contains) {
             setSemesterExists(true);
@@ -92,28 +92,28 @@ export function SchedulerPage({
         } else {
             setSemesterExists(false);
             const newSemester: SemesterPlanner = {
-                ClassesTaking: [],
+                classes_taking: [],
                 year: currYear,
-                SemesterSeason: currSeason,
-                TotalCredits: 0
+                semester_season: currSeason,
+                total_credits: 0
             };
-            degree.SemesterList = [...degree.SemesterList, newSemester];
+            degree.semester_list = [...degree.semester_list, newSemester];
             updateDegree;
         }
     }
     function removeSemester(currYear: number, currSeason: Season) {
         updateDegree;
-        degree.SemesterList = degree.SemesterList.filter(
+        degree.semester_list = degree.semester_list.filter(
             (sem: SemesterPlanner): boolean =>
-                sem.SemesterSeason != currSeason || sem.year != currYear
+                sem.semester_season != currSeason || sem.year != currYear
         );
         updateSemesterForm();
     }
     function removeAllSemesters() {
         setSemesterList([]);
-        degree.CoursesRequired.map((course: Course) => (course.taken = false));
-        degree.CoursesRequired.map(
-            (course: Course) => (course.taken_String = "❌")
+        degree.courses_required.map((course: Course) => (course.taken = false));
+        degree.courses_required.map(
+            (course: Course) => (course.taken_string = "❌")
         );
         updateSemesterForm();
     }
@@ -132,7 +132,7 @@ export function SchedulerPage({
                     <Col>
                         <label>
                             Number of Credits Needed:
-                            {" " + degree.CreditsRequired}
+                            {" " + degree.credits_required}
                         </label>
                     </Col>
                 </Row>
@@ -182,12 +182,12 @@ export function SchedulerPage({
                             </div>
                             <br></br>
                             <div>
-                                {degree.SemesterList.map(
+                                {degree.semester_list.map(
                                     (semester: SemesterPlanner) => (
                                         <>
                                             <MakeSemester
                                                 key={
-                                                    semester.SemesterSeason +
+                                                    semester.semester_season +
                                                     semester.year
                                                 }
                                                 semester={semester}

@@ -12,15 +12,15 @@ export function EditInterface({
     Course2Edit: Course;
 }): JSX.Element {
     function revert() {
-        Course2Edit.courseID = Course2Edit.ogID;
-        Course2Edit.name = Course2Edit.ogName;
-        Course2Edit.description = Course2Edit.ogdesc;
-        Course2Edit.credits = Course2Edit.ogCredits;
+        Course2Edit.course_id = Course2Edit.og_id;
+        Course2Edit.name = Course2Edit.og_name;
+        Course2Edit.description = Course2Edit.og_description;
+        Course2Edit.credits = Course2Edit.og_credits;
     }
 
     return (
         <div>
-            <div>You are currently editing {Course2Edit.courseID}</div>
+            <div>You are currently editing {Course2Edit.course_id}</div>
             <EditID_UI Course2Edit={Course2Edit} />
             <EditNameUI Course2Edit={Course2Edit} />
             <EditDescUI Course2Edit={Course2Edit} />
@@ -31,13 +31,13 @@ export function EditInterface({
 }
 
 function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputID, setInputID] = useState<string>(Course2Edit.courseID);
+    const [inputID, setInputID] = useState<string>(Course2Edit.course_id);
 
     function updateID(event: ChangeEvent) {
         setInputID(event.target.value);
     }
     function saveChange() {
-        Course2Edit.courseID = inputID;
+        Course2Edit.course_id = inputID;
     }
 
     return (

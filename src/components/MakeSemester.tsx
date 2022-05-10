@@ -34,26 +34,28 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    const [courseList, updateList] = useState<Course[]>(semester.ClassesTaking);
+    const [courseList, updateList] = useState<Course[]>(
+        semester.classes_taking
+    );
     const [intersection, changeIntersect] = useState<Course[]>([]);
     //Create course information
     const [courseID, setID] = useState<string>("");
     const [courseName, setName] = useState<string>("");
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
-    const [totalCredits, resetTotal] = useState<number>(semester.TotalCredits);
+    const [totalCredits, resetTotal] = useState<number>(semester.total_credits);
     //Change Semester List
     function changeList(newList: Course[]) {
         updateList(newList);
-        semester.ClassesTaking = newList;
-        console.log(semester.ClassesTaking);
-        console.log(degree.SemesterList);
+        semester.classes_taking = newList;
+        console.log(semester.classes_taking);
+        console.log(degree.semester_list);
         updateDegree;
     }
     //reset taken
     function resetTaken(existing: Course) {
         existing.taken = false;
-        existing.taken_String = "❌";
+        existing.taken_string = "❌";
         updateDegree;
     }
     //Reset State - Removes all courses
@@ -70,28 +72,28 @@ export function MakeSemester({
     };
     function changeTotal(credits: number) {
         resetTotal(credits);
-        semester.TotalCredits = totalCredits;
+        semester.total_credits = totalCredits;
         updateDegree;
         updateForm;
     }
     function removeCourse(courseID: string) {
         const course = courseList.filter(
-            (course: Course): boolean => course.courseID === courseID
+            (course: Course): boolean => course.course_id === courseID
         );
         const findCourse = intersection.filter(
-            (course: Course): boolean => course.courseID === courseID
+            (course: Course): boolean => course.course_id === courseID
         );
         if (findCourse.length >= 1) {
             resetTaken(findCourse[0]);
             changeIntersect(
                 intersection.filter(
-                    (course: Course): boolean => course.courseID !== courseID
+                    (course: Course): boolean => course.course_id !== courseID
                 )
             );
         }
         changeList(
             courseList.filter(
-                (course: Course): boolean => course.courseID !== courseID
+                (course: Course): boolean => course.course_id !== courseID
             )
         );
         changeTotal(totalCredits - course[0].credits);
@@ -127,7 +129,7 @@ export function MakeSemester({
             <div>
                 <Table className="semesterTable">
                     <caption className="semesterLabel">
-                        {semester.SemesterSeason +
+                        {semester.semester_season +
                             " " +
                             semester.year +
                             ": " +
@@ -142,15 +144,15 @@ export function MakeSemester({
                         <th>Remove Course</th>
                     </tr>
                     {courseList.map((course: Course) => (
-                        <tr key={course.courseID}>
-                            <th>{course.courseID}</th>
+                        <tr key={course.course_id}>
+                            <th>{course.course_id}</th>
                             <th>{course.name}</th>
                             <th>{course.description}</th>
                             <th>{course.credits}</th>
                             <th>
                                 <Button
                                     onClick={() =>
-                                        removeCourse(course.courseID)
+                                        removeCourse(course.course_id)
                                     }
                                 >
                                     Remove
@@ -160,7 +162,7 @@ export function MakeSemester({
                     ))}
                 </Table>
                 <p className="debug">
-                    {(semester.TotalCredits = totalCredits)}
+                    {(semester.total_credits = totalCredits)}
                     {updateDegree}
                 </p>
                 <div>
@@ -196,7 +198,7 @@ export function MakeSemester({
                         onClick={() =>
                             removeSemesterReset(
                                 semester.year,
-                                semester.SemesterSeason
+                                semester.semester_season
                             )
                         }
                     >

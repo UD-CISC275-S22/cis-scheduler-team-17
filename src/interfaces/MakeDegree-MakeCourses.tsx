@@ -6,66 +6,66 @@ import {
 } from "./Course-Degree-Semester";
 
 export function makeCourse(
-    courseID: string,
+    course_id: string,
     name: string,
     description: string,
-    SemesterAvailable: Season[],
+    semester_available: Season[],
     prerecs: Course[],
     credits: number
 ): Course {
     return {
-        ogID: courseID,
-        courseID: courseID,
+        og_id: course_id,
+        course_id: course_id,
         name: name,
-        ogName: name,
+        og_name: name,
         description: description,
-        ogdesc: description,
-        SemesterAvailable: SemesterAvailable,
-        SemestersAvailableString: SemesterAvailable.join(", "),
+        og_description: description,
+        semester_available: semester_available,
+        semester_available_string: semester_available.join(", "),
         prerecs: prerecs,
         credits: credits,
-        ogCredits: credits,
+        og_credits: credits,
         taken: false,
-        taken_String: "❌"
+        taken_string: "❌"
     };
 }
 export function makeCourseTaken(
-    courseID: string,
+    course_id: string,
     name: string,
     description: string,
-    SemesterAvailable: Season[],
+    semester_available: Season[],
     prerecs: Course[],
     credits: number,
     taken: boolean
 ): Course {
     return {
-        ogID: courseID,
-        courseID: courseID,
+        og_id: course_id,
+        course_id: course_id,
         name: name,
-        ogName: name,
+        og_name: name,
         description: description,
-        ogdesc: description,
-        SemesterAvailable: SemesterAvailable,
-        SemestersAvailableString: SemesterAvailable.join(", "),
+        og_description: description,
+        semester_available: semester_available,
+        semester_available_string: semester_available.join(", "),
         prerecs: prerecs,
         credits: credits,
-        ogCredits: credits,
+        og_credits: credits,
         taken: taken,
-        taken_String: taken ? "❌" : "✔️"
+        taken_string: taken ? "❌" : "✔️"
     };
 }
 export function makeDegree(
     name: string,
     description: string,
-    CoursesRequired: Course[],
-    CreditsRequired: number,
-    SemesterList: SemesterPlanner[]
+    courses_required: Course[],
+    credits_required: number,
+    semester_list: SemesterPlanner[]
 ): Degree {
     return {
         name: name,
         description: description,
-        CoursesRequired: CoursesRequired,
-        CreditsRequired: CreditsRequired,
-        SemesterList: SemesterList
+        courses_required: courses_required,
+        credits_required: credits_required,
+        semester_list: semester_list
     };
 }

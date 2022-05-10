@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    font-family: "Garamond";
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .App-logo {
@@ -60,7 +60,7 @@
     background-color: #1d785d;
     background-image: url("CSS-Images/footer.jpg");
     color: white;
-    font-family: monospace;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 button{
