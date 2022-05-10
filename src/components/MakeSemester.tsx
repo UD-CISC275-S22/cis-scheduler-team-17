@@ -48,8 +48,6 @@ export function MakeSemester({
     function changeList(newList: Course[]) {
         updateList(newList);
         semester.classes_taking = newList;
-        console.log(semester.classes_taking);
-        console.log(degree.semester_list);
         updateDegree;
     }
     //reset taken
@@ -96,7 +94,15 @@ export function MakeSemester({
                 (course: Course): boolean => course.course_id !== courseID
             )
         );
-        changeTotal(totalCredits - course[0].credits);
+        const courseCredits = course.map(
+            (course: Course): number => course.credits
+        );
+        const removedCredits = courseCredits.reduce(
+            (currCredits: number, nextCredits: number) =>
+                currCredits + nextCredits,
+            0
+        );
+        changeTotal(totalCredits - removedCredits);
         updateDegree;
     }
     function removeSemesterReset(year: number, season: string) {

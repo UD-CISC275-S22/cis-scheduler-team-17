@@ -63,6 +63,7 @@ export function FindCourse(): JSX.Element {
             </label>
             <Form.Group controlId="CheckAnswer">
                 <Form.Control
+                    placeholder="Enter the Course ID you want to find."
                     value={userAnswer}
                     onChange={updateShortAnswer}
                 ></Form.Control>
@@ -76,7 +77,6 @@ export function FindCourse(): JSX.Element {
             </div>
             {showSearch ? (
                 <div>
-                    <div>Please Input the Course ID you want to find</div>
                     <div style={styles.container} onScroll={scrollHandler}>
                         {list_Of_Possible_Answers.map(
                             (currentCourse: Course) => (
