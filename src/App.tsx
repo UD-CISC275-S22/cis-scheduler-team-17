@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-//import { UnderConstruction } from "./components/Underconstruction";
 import SchedulerPage from "./components/SchedulerPage";
 import Homepage from "./components/Homepage";
 //interfaces
 import { AllDegrees } from "./interfaces/AllCourses-AllDegrees";
-import { Degree } from "./interfaces/course-Degree-Semester";
+import { Degree } from "./interfaces/Course-Degree-Semester";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -51,7 +50,6 @@ function App(): JSX.Element {
                     ></SchedulerPage>
                 </div>
             </div>
-            {/* <UnderConstruction></UnderConstruction> */}
         </div>
     );
 }

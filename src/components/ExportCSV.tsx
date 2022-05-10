@@ -5,7 +5,7 @@ import {
     Course,
     Degree,
     SemesterPlanner
-} from "../interfaces/course-Degree-Semester";
+} from "../interfaces/Course-Degree-Semester";
 import "../App.css";
 
 export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
