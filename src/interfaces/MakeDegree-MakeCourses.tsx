@@ -3,7 +3,7 @@ import {
     Course,
     Degree,
     SemesterPlanner
-} from "./course-Degree-Semester";
+} from "./Course-Degree-Semester";
 
 export function makeCourse(
     courseID: string,

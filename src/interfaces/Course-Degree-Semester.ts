@@ -1,5 +1,3 @@
-/** QuestionType influences how a question is asked and what kinds of answers are possible */
-
 //Zoe addition for season
 export const SeasonsList = [
     "Spring",

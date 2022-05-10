@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
-import { Course } from "../interfaces/course-Degree-Semester";
+import { Course } from "../interfaces/Course-Degree-Semester";
 import { EditInterface } from "./EditInterface";
 import "../App.css";
 
@@ -58,6 +58,9 @@ export function FindCourse(): JSX.Element {
 
     return (
         <div>
+            <label>
+                <strong>Search by Course ID</strong>
+            </label>
             <Form.Group controlId="CheckAnswer">
                 <Form.Control
                     value={userAnswer}
@@ -74,8 +77,6 @@ export function FindCourse(): JSX.Element {
             {showSearch ? (
                 <div>
                     <div>Please Input the Course ID you want to find</div>
-                    {/**This is the searchbar */}
-                    {/**This is where the scrolly box with the selectors are held*/}
                     <div style={styles.container} onScroll={scrollHandler}>
                         {list_Of_Possible_Answers.map(
                             (currentCourse: Course) => (
