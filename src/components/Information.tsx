@@ -21,22 +21,24 @@ export function Information({
                 onClick={() => setShowInfo(!showInfo)}
                 className="makeInformationButton"
             >
-                More Information
+                {showInfo ? "Less Information" : "More Information"}
             </Button>
             <div className="extraInfoLook" style={{ textAlign: "left" }}>
                 {!showInfo ? (
                     <></>
                 ) : (
                     <>
-                        Course Description: {currentCourse.description}{" "}
-                        <br></br>
-                        Course Credits: {currentCourse.credits} <br></br>
-                        Semesters Available:{" "}
+                        <strong>Course Description: </strong>
+                        {currentCourse.description} <br></br>
+                        <strong> Course Credits: </strong>
+                        {currentCourse.credits} <br></br>
+                        <strong>Semesters Available: </strong>
                         {currentCourse.semester_available_string} <br></br>
-                        Pre-Requisite:
+                        <strong>Pre-Requisite: </strong>
                         {currentCourse.prerecs.map(
                             (currentPreRec: Course) =>
-                                currentPreRec.name + currentPreRec.taken_string
+                                currentPreRec.course_id +
+                                currentPreRec.taken_string
                         )}
                     </>
                 )}
