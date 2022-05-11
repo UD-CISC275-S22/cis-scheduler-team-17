@@ -43,7 +43,7 @@ describe("Testing aspects of the ", () => {
             expect(screen.getByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
-        test("testing to see if we can update the value of taken if we use taken UI on initial page then press refresh", () => {
+        test("testing to see if we can update the value of taken if we use taken UI on initial page", () => {
             const checkboxi: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxi[0].click();
