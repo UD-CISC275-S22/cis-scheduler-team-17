@@ -194,3 +194,10 @@ th, td {
 .addSemester{
     margin-right: 30px;
 }
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid #1d785d;
+}

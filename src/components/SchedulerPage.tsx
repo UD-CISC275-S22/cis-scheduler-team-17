@@ -197,6 +197,7 @@ export function SchedulerPage({
                                 )}
                             </div>
                         </Row>
+                        <hr />
                         <Row>
                             <span>
                                 <CoursesLists
