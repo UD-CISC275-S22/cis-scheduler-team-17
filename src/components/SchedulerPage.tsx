@@ -12,6 +12,7 @@ import {
 } from "../interfaces/Course-Degree-Semester";
 import { ExportCSV } from "./ExportCSV";
 import { CoursesLists } from "./CourseLists";
+import { ImportCSV } from "./ImportCSV";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -26,6 +27,11 @@ export function SchedulerPage({
     degree: Degree;
     updateDegree: (event: ChangeEvent) => void;
 }): JSX.Element {
+    //import states
+    const [importView, setImport] = useState<boolean>(false);
+    const changeImportView = () => {
+        setImport(!importView);
+    };
     //semester state
     const [showSemForm, setSemesterForm] = useState<boolean>(false);
     const [semExistsError, setSemesterExists] = useState<boolean>(false);
@@ -210,9 +216,29 @@ export function SchedulerPage({
                 </Container>
             </div>
             <div>
-                <ExportCSV degree={degree}></ExportCSV>
+                <Container>
+                    <hr />
+                    <Row>
+                        <Col>
+                            <ExportCSV degree={degree}></ExportCSV>
+                        </Col>
+                        <Col>
+                            <Button
+                                className={"makeInformationButton"}
+                                onClick={changeImportView}
+                            >
+                                {importView ? "Close Import" : "Import CSV"}
+                            </Button>
+                        </Col>
+                    </Row>
+                    {importView && (
+                        <div>
+                            <ImportCSV></ImportCSV>
+                        </div>
+                    )}
+                </Container>
             </div>
-            <footer>
+            <footer className="footer">
                 <Button className="backButton" onClick={changeHomepage}>
                     Back
                 </Button>
