@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Tests/SchedulerPage.test.tsx (12.386 s)
+FAIL src/Tests/SchedulerPage.test.tsx (10.921 s)
   ● Testing aspects of the  › Testing the Select Taken UI › Testing Create Course Button Renders
 
     TestingLibraryElementError: Unable to find an element with the text: Create Course. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -377,7 +377,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (12.386 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:173:24)
 
-FAIL src/Tests/Homepage.test.tsx (6.434 s)
+FAIL src/Tests/Homepage.test.tsx (5.5 s)
   ● Testing everything on the homepage › Testing the Select Taken UI › Testing to see if taken starts off as false
 
     TestingLibraryElementError: Unable to find an element with the text: /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -679,7 +679,7 @@ All files                    |   55.09 |    34.54 |   29.24 |   55.38 |
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                      
   MakeSemester.tsx           |       0 |        0 |       0 |       0 | 32-217                     
   PrintDegreesList.tsx       |      65 |      100 |      75 |      65 | 40-51                      
-  SchedulerPage.tsx          |   33.33 |    41.66 |   33.33 |   34.14 | 34-35,50,71,82-118,168-188 
+  SchedulerPage.tsx          |   33.33 |    41.66 |   33.33 |   34.14 | 34-35,50,71,82-118,161-182 
   SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                      
   Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                          
  src/interfaces              |   99.25 |        0 |   66.66 |   99.25 |                            
@@ -691,5 +691,5 @@ All files                    |   55.09 |    34.54 |   29.24 |   55.38 |
 Test Suites: 2 failed, 1 passed, 3 total
 Tests:       7 failed, 15 passed, 22 total
 Snapshots:   0 total
-Time:        20.706 s
+Time:        17.945 s
 Ran all test suites.
