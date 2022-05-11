@@ -128,22 +128,15 @@ export function SchedulerPage({
                 </h3>
             </div>
             <div>
-                <Row>
-                    <Col>
-                        <label>
-                            Number of Credits Needed:
-                            {" " + degree.credits_required}
-                        </label>
-                    </Col>
-                </Row>
+                <label>
+                    Number of Credits Needed:
+                    {" " + degree.credits_required}
+                </label>
             </div>
             <div>
                 <Container>
                     <Col>
                         <Row>
-                            <label>
-                                Plan Name: <strong>{degree.name}</strong>
-                            </label>
                             <div>
                                 <Button
                                     className="addSemester"
@@ -181,7 +174,8 @@ export function SchedulerPage({
                                     </p>
                                 )}
                             </div>
-                            <br></br>
+                        </Row>
+                        <Row>
                             <div>
                                 {degree.semester_list.map(
                                     (semester: SemesterPlanner) => (
