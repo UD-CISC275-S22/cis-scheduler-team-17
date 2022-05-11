@@ -238,11 +238,13 @@ export function SchedulerPage({
                     )}
                 </Container>
             </div>
-            <footer className="footer">
-                <Button className="backButton" onClick={changeHomepage}>
-                    Back
-                </Button>
-            </footer>
+            <div>
+                <footer>
+                    <Button className="backButton" onClick={changeHomepage}>
+                        Back
+                    </Button>
+                </footer>
+            </div>
         </div>
     );
 }

@@ -31,7 +31,6 @@ export function ImportCSV(): JSX.Element {
                 csvDelimiter=","
                 tableClassName="table table-striped table-hover"
             />
-            {/* <pre style={{ overflow: "scroll", height: "100px" }}>{content}</pre> */}
             <Form.Group controlId="exampleForm">
                 <Form.Label>Upload a file</Form.Label>
                 <Form.Control type="file" onChange={uploadFile} />
