@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
-import { MakeSemester } from "../components/MakeSemester";
 
 describe("Testing aspects of the ", () => {
     describe("Testing the Select Taken UI", () => {
@@ -154,7 +153,7 @@ describe("Testing aspects of the ", () => {
             addSemButton.click();
             expect(screen.getByText(/Spring 2022: 0 Credits/i));
         });
-        //test removing a semester
+        //test removing a semester -- broken
         test("Testing removing a semester from the semester list/degree view", () => {
             //click semester form button
             const showHideSemesterButton = screen.getByTestId("show/hide");

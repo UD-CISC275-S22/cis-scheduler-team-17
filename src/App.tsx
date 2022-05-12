@@ -5,7 +5,6 @@ import Homepage from "./components/Homepage";
 //interfaces
 import { AllDegrees } from "./interfaces/AllCourses-AllDegrees";
 import { Degree } from "./interfaces/Course-Degree-Semester";
-import { ImportCSV } from "./components/ImportCSV";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
