@@ -17,9 +17,7 @@ export function FindCourse(): JSX.Element {
     const [list_Of_Possible_Answers, setListOfPossibleAnswers] = useState<
         Course[]
     >([...AllCourses]);
-    //[progress, setProgress]
     const [, setProgress] = useState(0);
-    //[selectedCourseName, setSelectedCourseName]
     const [, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
     const [SelectedCourse, updateSelectedCourse] = useState<Course>(
@@ -56,6 +54,7 @@ export function FindCourse(): JSX.Element {
     };
 
     function sResult(courseID: string): string {
+        // this function fixes my red issue
         if (courseID === userAnswer) {
             return "✔️";
         } else {
