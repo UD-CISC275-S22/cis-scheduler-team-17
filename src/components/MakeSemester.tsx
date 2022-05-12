@@ -10,6 +10,8 @@ import {
 import { makeCourse } from "../interfaces/MakeDegree-MakeCourses";
 import { CreateCourse } from "./CreateCourse";
 import { AddExisting } from "./AddExisting";
+import dropdown from "../CSS-Images/dropdown.jpg";
+import dropup from "../CSS-Images/dropup.jpg";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -140,11 +142,23 @@ export function MakeSemester({
                             ": " +
                             totalCredits +
                             " Credits"}
-                        <br></br>
-                        <Button onClick={changeCollapse}>
-                            {!collapse
-                                ? "Hide Course List"
-                                : "Show Course List"}
+                        <Button
+                            onClick={changeCollapse}
+                            className={"dropdownBtn"}
+                        >
+                            {collapse ? (
+                                <img
+                                    src={dropdown}
+                                    className={"icon"}
+                                    alt={"Show Courses"}
+                                />
+                            ) : (
+                                <img
+                                    src={dropup}
+                                    className={"icon"}
+                                    alt={"Hide Courses"}
+                                />
+                            )}
                         </Button>
                     </caption>
                     <tr className="key">
