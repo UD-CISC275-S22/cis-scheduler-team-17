@@ -200,10 +200,7 @@ export function SchedulerPage({
                         <hr />
                         <Row>
                             <span>
-                                <CoursesLists
-                                    degree={degree}
-                                    updateDegree={updateDegree}
-                                ></CoursesLists>
+                                <CoursesLists degree={degree}></CoursesLists>
                             </span>
                         </Row>
                     </Col>

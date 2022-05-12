@@ -5,17 +5,7 @@ import { Degree } from "../interfaces/Course-Degree-Semester";
 import { PrintDegreesLists } from "./PrintDegreesList";
 import { FindCourse } from "./FindCourse";
 
-type ChangeEvent = React.ChangeEvent<
-    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
->;
-
-export function CoursesLists({
-    degree,
-    updateDegree
-}: {
-    degree: Degree;
-    updateDegree: (event: ChangeEvent) => void;
-}): JSX.Element {
+export function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
     return (
         <div>
             <Container>
@@ -30,7 +20,6 @@ export function CoursesLists({
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
-                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
@@ -40,7 +29,6 @@ export function CoursesLists({
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}
-                            updateDegree={updateDegree}
                         ></PrintDegreesLists>
                     </Col>
                 </Row>
