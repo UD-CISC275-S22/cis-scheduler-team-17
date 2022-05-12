@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Tests/SchedulerPage.test.tsx (15.289 s)
+FAIL src/Tests/SchedulerPage.test.tsx (10.505 s)
   ● Testing aspects of the  › Testing the Select Taken UI › Testing Create Course Button Renders
 
     TestingLibraryElementError: Unable to find an element with the text: Create Course. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -83,18 +83,18 @@ FAIL src/Tests/SchedulerPage.test.tsx (15.289 s)
                               [33mtitle[39m=[32m"High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena."[39m
                               [33mvalue[39...
 
-      146 |         // this is where the testing of the search and edit features would goes
-      147 |         test("Testing Create Course Button Renders", () => {
-    > 148 |             expect(screen.getAllByText("Create Course"));
+      122 |         // this is where the testing of the search and edit features would goes
+      123 |         test("Testing Create Course Button Renders", () => {
+    > 124 |             expect(screen.getAllByText("Create Course"));
           |                           ^
-      149 |         });
-      150 |         //Testing Add Existing Course
-      151 |         test("Testing Create Course Button Renders", () => {
+      125 |         });
+      126 |         //Testing Add Existing Course
+      127 |         test("Testing Create Course Button Renders", () => {
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
-      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:148:27)
+      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:124:27)
 
   ● Testing aspects of the  › Testing the Select Taken UI › Testing Create Course Button Renders
 
@@ -176,18 +176,18 @@ FAIL src/Tests/SchedulerPage.test.tsx (15.289 s)
                               [33mtitle[39m=[32m"High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena."[39m
                               [33mvalue[39...
 
-      150 |         //Testing Add Existing Course
-      151 |         test("Testing Create Course Button Renders", () => {
-    > 152 |             expect(screen.getAllByText("Add Existing"));
+      126 |         //Testing Add Existing Course
+      127 |         test("Testing Create Course Button Renders", () => {
+    > 128 |             expect(screen.getAllByText("Add Existing"));
           |                           ^
-      153 |         });
-      154 |     });
-      155 |     describe("Testing the Semster UI", () => {
+      129 |         });
+      130 |     });
+      131 |     describe("Testing the Semster UI", () => {
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
-      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:152:27)
+      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:128:27)
 
   ● Testing aspects of the  › Testing the Semster UI › Testing to see if the Show/Hide Add Semester Form is initially closed
 
@@ -269,19 +269,19 @@ FAIL src/Tests/SchedulerPage.test.tsx (15.289 s)
                               [33mtitle[39m=[32m"High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena."[39m
                               [33mvalue[39...
 
-      163 |             //showHideSemesterButton.click();
-      164 |             expect(
-    > 165 |                 screen.getByText(/Show Add Semester Form/i)
+      139 |             //showHideSemesterButton.click();
+      140 |             expect(
+    > 141 |                 screen.getByText(/Show Add Semester Form/i)
           |                        ^
-      166 |             ).toBeInTheDocument();
-      167 |         });
-      168 |         // test show/hide semester add form opens when clicked
+      142 |             ).toBeInTheDocument();
+      143 |         });
+      144 |         // test show/hide semester add form opens when clicked
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:165:24)
+      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:141:24)
 
   ● Testing aspects of the  › Testing the Semster UI › Testing to see if the Show/Hide Add Semester Form is open
 
@@ -363,21 +363,21 @@ FAIL src/Tests/SchedulerPage.test.tsx (15.289 s)
                               [33mtitle[39m=[32m"High Performance Computing researchers and engineers are applying the world’s most powerful computers to a wide array of scientific and engineering challenges, including climate modeling, weather prediction, the design of aircraft, skyscrapers, and automobiles, the development of new pharmaceuticals and medical treatments, modeling of the human brain, galactic interaction, and the nature of matter. The HPC concentration delves into all aspects of these advanced computing systems, from the hardware level to the programming languages, parallel algorithms, mathematical underpinnings, and applications. The concentration also offers a choice between a data track which focuses on data analysis and statistics, and an applied mathematics track which focuses on the mathematical tools used to model real-world phenomena."[39m
                               [33mvalue[39...
 
-      171 |             showHideSemesterButton.click();
-      172 |             expect(
-    > 173 |                 screen.getByText(/Hide Add Semester Form/i)
+      147 |             showHideSemesterButton.click();
+      148 |             expect(
+    > 149 |                 screen.getByText(/Hide Add Semester Form/i)
           |                        ^
-      174 |             ).toBeInTheDocument();
-      175 |         });
-      176 |         // test list of seasons
+      150 |             ).toBeInTheDocument();
+      151 |         });
+      152 |         // test list of seasons
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:173:24)
+      at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:149:24)
 
-FAIL src/Tests/Homepage.test.tsx (8.23 s)
+FAIL src/Tests/Homepage.test.tsx (5.657 s)
   ● Testing everything on the homepage › Testing the Select Taken UI › Testing to see if taken starts off as false
 
     TestingLibraryElementError: Unable to find an element with the text: /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -664,23 +664,24 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|----------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
 -----------------------------|---------|----------|---------|---------|----------------------------
-All files                    |   55.09 |    34.54 |   29.24 |   55.38 |                            
+All files                    |   52.01 |     32.2 |   27.61 |   52.27 |                            
  src                         |     100 |    83.33 |     100 |     100 |                            
   App.tsx                    |     100 |    83.33 |     100 |     100 | 30                         
- src/components              |   27.54 |    29.78 |   25.25 |   27.77 |                            
+ src/components              |    24.3 |    27.45 |   23.46 |   24.49 |                            
   AddExisting.tsx            |       0 |        0 |       0 |       0 | 31-77                      
   CourseLists.tsx            |     100 |      100 |     100 |     100 |                            
   CreateCourse.tsx           |       0 |        0 |       0 |       0 | 35-73                      
   DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                            
-  EditInterface.tsx          |       0 |        0 |       0 |       0 | 15-126                     
+  EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-61                      
   ExportCSV.tsx              |      40 |      100 |   16.66 |      40 | 14-30                      
-  FindCourse.tsx             |      44 |       50 |   22.22 |      44 | 31-47,52-56,88-102         
+  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,92-107      
   Homepage.tsx               |     100 |      100 |     100 |     100 |                            
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                      
   MakeSemester.tsx           |       0 |        0 |       0 |       0 | 32-217                     
-  PrintDegreesList.tsx       |      65 |      100 |      75 |      65 | 40-51                      
+  PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25                      
   SchedulerPage.tsx          |   33.33 |    41.66 |   33.33 |   34.14 | 34-35,50,71,82-118,161-182 
   SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                      
+  Select_Courses_Taken.tsx   |       0 |        0 |       0 |       0 | 12-130                     
   Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                          
  src/interfaces              |   99.25 |        0 |   66.66 |   99.25 |                            
   AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                            
@@ -691,5 +692,5 @@ All files                    |   55.09 |    34.54 |   29.24 |   55.38 |
 Test Suites: 2 failed, 1 passed, 3 total
 Tests:       7 failed, 15 passed, 22 total
 Snapshots:   0 total
-Time:        25.454 s
+Time:        17.523 s
 Ran all test suites.
