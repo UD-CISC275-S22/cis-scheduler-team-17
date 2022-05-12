@@ -140,6 +140,7 @@ export function MakeSemester({
                             ": " +
                             totalCredits +
                             " Credits"}
+                        <br></br>
                         <Button onClick={changeCollapse}>
                             {!collapse
                                 ? "Hide Course List"
