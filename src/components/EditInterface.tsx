@@ -11,6 +11,46 @@ export function EditInterface({
 }: {
     Course2Edit: Course;
 }): JSX.Element {
+    const [inputID, setInputID] = useState<string>(Course2Edit.course_id);
+    const [inputName, setInputName] = useState<string>(Course2Edit.name);
+    const [inputDesc, setInputDesc] = useState<string>(Course2Edit.description);
+    const [inputCredits, setInputCredits] = useState<number>(
+        Course2Edit.credits
+    );
+
+    // ID
+    function updateID(event: ChangeEvent) {
+        setInputID(event.target.value);
+    }
+
+    // Name
+    function updateName(event: ChangeEvent) {
+        setInputName(event.target.value);
+    }
+
+    // Description
+    function updateDesc(event: ChangeEvent) {
+        setInputDesc(event.target.value);
+    }
+
+    // Credits
+    function changeCredits(event: ChangeEvent) {
+        if (!isNaN(parseInt(event.target.value))) {
+            setInputCredits(parseInt(event.target.value));
+            console.log(inputCredits);
+        }
+    }
+
+    // Save
+    function saveChange() {
+        Course2Edit.course_id = inputID;
+        Course2Edit.name = inputName;
+        Course2Edit.description = inputDesc;
+        Course2Edit.credits = inputCredits;
+    }
+
+    // Revert
+
     function revert() {
         Course2Edit.course_id = Course2Edit.og_id;
         Course2Edit.name = Course2Edit.og_name;
@@ -21,120 +61,57 @@ export function EditInterface({
     return (
         <div>
             <div>You are currently editing {Course2Edit.course_id}</div>
-            <EditID_UI Course2Edit={Course2Edit} />
-            <EditNameUI Course2Edit={Course2Edit} />
-            <EditDescUI Course2Edit={Course2Edit} />
-            <EditCreditsUI Course2Edit={Course2Edit} />
-            <Button onClick={revert}>Reset Course to Default</Button>
-        </div>
-    );
-}
-
-function EditID_UI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputID, setInputID] = useState<string>(Course2Edit.course_id);
-
-    function updateID(event: ChangeEvent) {
-        setInputID(event.target.value);
-    }
-    function saveChange() {
-        Course2Edit.course_id = inputID;
-    }
-
-    return (
-        <div>
-            <Form.Group controlId="InputNewID">
-                <Form.Label>Insert The New Course ID Here:</Form.Label>
-                <Form.Control
-                    value={inputID}
-                    onChange={updateID}
-                ></Form.Control>
-            </Form.Group>
-            <div>Current Course ID: {inputID}</div>
+            <div>
+                {/** This controls editing the courseID */}
+                <Form.Group controlId="InputNewID">
+                    <Form.Label>Insert The New Course ID Here:</Form.Label>
+                    <Form.Control
+                        value={inputID}
+                        onChange={updateID}
+                    ></Form.Control>
+                </Form.Group>
+                <div>Current Course ID: {inputID}</div>
+            </div>
+            <div>
+                {/** This controls editing the Name */}
+                <Form.Group controlId="InputNewName">
+                    <Form.Label>Insert The New Course Name Here:</Form.Label>
+                    <Form.Control
+                        value={inputName}
+                        onChange={updateName}
+                    ></Form.Control>
+                    <div>Current Course Name: {inputName}</div>
+                </Form.Group>
+            </div>
+            <div>
+                {/** This controls editing the description */}
+                <Form.Group controlId="InputNewDesc">
+                    <Form.Label>
+                        Insert The New Course Description Here:
+                    </Form.Label>
+                    <Form.Control
+                        value={inputDesc}
+                        onChange={updateDesc}
+                    ></Form.Control>
+                </Form.Group>
+                <div>Current Course Description: {inputDesc}</div>
+            </div>
+            <div>
+                {/** This controls editing the credits */}
+                <Form.Group controlId="InputNewCredits">
+                    <Form.Label>Insert The New Course Credits Here:</Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={inputCredits}
+                        onChange={changeCredits}
+                    />
+                </Form.Group>
+                <div>Current Credits Worth: {inputCredits}</div>
+            </div>
             <Button onClick={saveChange}>Save</Button>
-        </div>
-    );
-}
-
-function EditNameUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputName, setInputName] = useState<string>(Course2Edit.name);
-
-    function updateName(event: ChangeEvent) {
-        setInputName(event.target.value);
-    }
-
-    function saveChange() {
-        Course2Edit.name = inputName;
-    }
-
-    return (
-        <div>
-            <Form.Group controlId="InputNewName">
-                <Form.Label>Insert The New Course Name Here:</Form.Label>
-                <Form.Control
-                    value={inputName}
-                    onChange={updateName}
-                ></Form.Control>
-                <div>Current Course Name: {inputName}</div>
-                <Button onClick={saveChange}>Save</Button>
-            </Form.Group>
-        </div>
-    );
-}
-
-function EditDescUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputDesc, setInputDesc] = useState<string>(Course2Edit.description);
-
-    function updateDesc(event: ChangeEvent) {
-        setInputDesc(event.target.value);
-    }
-    function saveChange() {
-        Course2Edit.description = inputDesc;
-    }
-
-    return (
-        <div>
-            <Form.Group controlId="InputNewDesc">
-                <Form.Label>Insert The New Course Description Here:</Form.Label>
-                <Form.Control
-                    value={inputDesc}
-                    onChange={updateDesc}
-                ></Form.Control>
-            </Form.Group>
-            <div>Current Course Description: {inputDesc}</div>
-            <Button onClick={saveChange}>Save</Button>
-        </div>
-    );
-}
-
-function EditCreditsUI({ Course2Edit }: { Course2Edit: Course }): JSX.Element {
-    const [inputCredits, setInputCredits] = useState<number>(
-        Course2Edit.credits
-    );
-
-    function changeCredits(event: ChangeEvent) {
-        if (!isNaN(parseInt(event.target.value))) {
-            setInputCredits(parseInt(event.target.value));
-            console.log(inputCredits);
-        }
-    }
-
-    function saveChange() {
-        console.log(inputCredits);
-        Course2Edit.credits = inputCredits;
-    }
-
-    return (
-        <div>
-            <Form.Group controlId="InputNewCredits">
-                <Form.Label>Insert The New Course Credits Here:</Form.Label>
-                <Form.Control
-                    type="number"
-                    value={inputCredits}
-                    onChange={changeCredits}
-                />
-            </Form.Group>
-            <div>Current Credits Worth: {inputCredits}</div>
-            <Button onClick={saveChange}>Save</Button>
+            <Button onClick={revert} className={"remove"}>
+                Reset Course to Default
+            </Button>
         </div>
     );
 }
