@@ -74,6 +74,10 @@ button{
     background-color: #1d785d;
 }
 
+.btn:focus{
+    background-color: #1d785d;
+    border: none;
+}
 .makeButton{
     border: none;
     background-image: url("CSS-Images/footer.jpg");
@@ -83,6 +87,7 @@ button{
     min-height: auto;
     width: 180px;
     margin: 10px;
+    margin-left: 40px;
 }
 
 .makeInformationButton{
@@ -185,6 +190,10 @@ th, td {
     background-image: none;
     background-color: #8a2a2a;
 }
+.remove:focus{
+    background-color: #8a2a2a;
+    border: none;
+}
 
 .center{
     position: center;
@@ -193,6 +202,25 @@ th, td {
 
 .addSemester{
     margin-right: 30px;
+}
+
+.dropdownBtn{
+    background-image: none;
+    background-color: white;
+    border: none;
+}
+
+.dropdownBtn:hover{
+    background-color: white;
+}
+
+.dropdownBtn:focus{
+    background-color: white;
+    border: none;
+}
+
+.icon{
+    height: 45px;
 }
 
 hr{
