@@ -133,19 +133,22 @@ label{
     border: none;
     height: auto;
     width: auto;
-    color: blue;
+    color: rgb(58, 58, 255);
     text-decoration: underline;
 }
 
 .makeInformationButton:focus{
     border: none;
     background: none;
-    color: blue;
+    color: rgb(58, 58, 255);
 }
 
 .makeInformationButton:hover{
-    background: none;
-    color: blue;
+    width: auto;
+    height: auto;
+    background-size: contain;
+    border: none;
+    background-image: url("CSS-Images/moreinfo.png");
 }
 
 .scroll{
@@ -218,4 +221,11 @@ th, td {
 
 .icon{
     height: 45px;
+}
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid #1d785d;
 }

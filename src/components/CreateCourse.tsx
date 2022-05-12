@@ -66,6 +66,8 @@ export function CreateCourse({
                     <label>Enter Number of Credits</label>
                     <Form.Control
                         type="number"
+                        min={1}
+                        step={1}
                         value={credits}
                         onChange={(event: ChangeEvent) =>
                             changeCredits(event.target.value)

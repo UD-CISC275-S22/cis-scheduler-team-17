@@ -43,17 +43,13 @@ describe("Testing aspects of the ", () => {
             expect(screen.getByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
-        test("testing to see if we can update the value of taken if we use taken UI on initial page then press refresh", () => {
+        test("testing to see if we can update the value of taken if we use taken UI on initial page", () => {
             const checkboxi: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxi[0].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
                 .toBeInTheDocument;
         });
@@ -64,10 +60,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.findByText(/Course ID: EGGG101✔️Pre Requisite:/i))
                 .toBeInTheDocument;
             // we have made sure thet we get the proper output the first time around, going back to update the input again
@@ -75,8 +67,6 @@ describe("Testing aspects of the ", () => {
             Back.click();
             checkbox[0].click;
             SchedulerButton.click();
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.findByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
@@ -84,10 +74,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.getByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i
@@ -102,10 +88,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.getByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
@@ -120,10 +102,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.findByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
@@ -135,8 +113,6 @@ describe("Testing aspects of the ", () => {
             checkboxi[1].click();
             checkboxi[2].click();
             SchedulerButton.click();
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.findByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i
@@ -159,28 +135,36 @@ describe("Testing aspects of the ", () => {
         });
         // test show/hide semester add form is initially closed
         test("Testing to see if the Show/Hide Add Semester Form is initially closed", () => {
-            //const showHideSemesterButton = screen.getByRole("button");
-            //showHideSemesterButton.click();
-            expect(
-                screen.getByText(/Show Add Semester Form/i)
-            ).toBeInTheDocument();
+            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
         });
         // test show/hide semester add form opens when clicked
         test("Testing to see if the Show/Hide Add Semester Form is open", () => {
             const showHideSemesterButton = screen.getByTestId("show/hide");
             showHideSemesterButton.click();
-            expect(
-                screen.getByText(/Hide Add Semester Form/i)
-            ).toBeInTheDocument();
+            expect(screen.getByText(/Hide Form/i)).toBeInTheDocument();
         });
-        // test list of seasons
-        // test("Testing to see if the Show/Hide Add Semester Form is open", () => {
-        //     const showHideSemesterButton = screen.getByTestId("show/hide");
-        //     showHideSemesterButton.click();
-        //     expect(
-        //         screen.getByText(/Hide Add Semester Form/i)
-        //     ).toBeInTheDocument();
-        // });
-        // test years is a number box
+        //test adding semester
+        test("Testing adding a semester to the semester list/degree view", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            expect(screen.getByText(/Spring 2022: 0 Credits/i));
+        });
+        //test removing a semester -- broken
+        test("Testing removing a semester from the semester list/degree view", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //remove the semester
+            const removeSemButton = screen.getByTestId("remove-sem");
+            removeSemButton.click();
+            expect(screen.getByText(/Hide Form/i));
+        });
     });
 });
