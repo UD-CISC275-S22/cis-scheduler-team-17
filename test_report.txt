@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Tests/SchedulerPage.test.tsx (12.136 s)
+FAIL src/Tests/SchedulerPage.test.tsx (12.086 s)
   ● Console
 
     console.error
@@ -39,7 +39,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (12.136 s)
           at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Table.js:21:3
           at div
           at div
-          at MakeSemester (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/MakeSemester.tsx:19:5)
+          at MakeSemester (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/MakeSemester.tsx:21:5)
           at div
           at div
           at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Row.js:22:3
@@ -69,7 +69,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (12.136 s)
           at p
           at div
           at div
-          at MakeSemester (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/MakeSemester.tsx:19:5)
+          at MakeSemester (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/components/MakeSemester.tsx:21:5)
           at div
           at div
           at /home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/react-bootstrap/cjs/Row.js:22:3
@@ -374,7 +374,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (12.136 s)
       at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:165:44)
 
-FAIL src/Tests/Homepage.test.tsx (5.922 s)
+FAIL src/Tests/Homepage.test.tsx (5.69 s)
   ● Testing everything on the homepage › Testing the Select Taken UI › Testing to see if taken starts off as false
 
     TestingLibraryElementError: Unable to find an element with the text: /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -658,37 +658,37 @@ FAIL src/Tests/Homepage.test.tsx (5.922 s)
       at Object.<anonymous> (src/Tests/Homepage.test.tsx:52:20)
 
 PASS src/App.test.tsx
------------------------------|---------|----------|---------|---------|-------------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
------------------------------|---------|----------|---------|---------|-------------------------
-All files                    |   58.29 |    44.92 |   33.94 |   58.57 |                         
- src                         |     100 |    83.33 |     100 |     100 |                         
-  App.tsx                    |     100 |    83.33 |     100 |     100 | 30                      
- src/components              |   35.36 |    42.62 |   30.39 |   35.63 |                         
-  AddExisting.tsx            |      20 |    27.27 |      20 |      20 | 34,39-63,77             
-  CourseLists.tsx            |     100 |      100 |     100 |     100 |                         
-  CreateCourse.tsx           |      20 |       50 |      20 |      20 | 46-73                   
-  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                         
-  EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-61                   
-  ExportCSV.tsx              |      50 |      100 |   33.33 |      50 | 18-30                   
-  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,92-107   
-  Homepage.tsx               |     100 |      100 |     100 |     100 |                         
-  ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                    
-  Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                   
-  MakeSemester.tsx           |   16.66 |        0 |       5 |   16.94 | 34,49-57,61-131,153-218 
-  PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25                   
-  SchedulerPage.tsx          |   66.66 |       75 |   52.63 |   68.18 | 33,40-41,56,77,111-124  
-  SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                   
-  Select_Courses_Taken.tsx   |       0 |        0 |       0 |       0 | 12-130                  
-  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                       
- src/interfaces              |   99.25 |        0 |   66.66 |   99.25 |                         
-  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                         
-  Course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                         
-  MakeDegree-MakeCourses.tsx |   66.66 |        0 |   66.66 |   66.66 | 41                      
------------------------------|---------|----------|---------|---------|-------------------------
+-----------------------------|---------|----------|---------|---------|----------------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
+-----------------------------|---------|----------|---------|---------|----------------------------
+All files                    |   58.25 |    46.57 |   33.63 |   58.53 |                            
+ src                         |     100 |    83.33 |     100 |     100 |                            
+  App.tsx                    |     100 |    83.33 |     100 |     100 | 30                         
+ src/components              |   35.47 |    44.61 |   30.09 |   35.74 |                            
+  AddExisting.tsx            |      20 |    27.27 |      20 |      20 | 34,39-63,77                
+  CourseLists.tsx            |     100 |      100 |     100 |     100 |                            
+  CreateCourse.tsx           |      20 |       50 |      20 |      20 | 46-73                      
+  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                            
+  EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-61                      
+  ExportCSV.tsx              |      50 |      100 |   33.33 |      50 | 18-30                      
+  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,92-107      
+  Homepage.tsx               |     100 |      100 |     100 |     100 |                            
+  ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                       
+  Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                      
+  MakeSemester.tsx           |   17.74 |     37.5 |    4.76 |   18.03 | 36,41,56-64,68-138,179-244 
+  PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25                      
+  SchedulerPage.tsx          |   66.66 |       75 |   52.63 |   68.18 | 33,40-41,56,77,111-124     
+  SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                      
+  Select_Courses_Taken.tsx   |       0 |        0 |       0 |       0 | 12-130                     
+  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                          
+ src/interfaces              |   99.25 |        0 |   66.66 |   99.25 |                            
+  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                            
+  Course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                            
+  MakeDegree-MakeCourses.tsx |   66.66 |        0 |   66.66 |   66.66 | 41                         
+-----------------------------|---------|----------|---------|---------|----------------------------
 
 Test Suites: 2 failed, 1 passed, 3 total
 Tests:       6 failed, 18 passed, 24 total
 Snapshots:   0 total
-Time:        19.501 s
+Time:        19.185 s
 Ran all test suites.
