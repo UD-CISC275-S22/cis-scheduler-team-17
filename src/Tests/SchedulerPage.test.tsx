@@ -44,17 +44,13 @@ describe("Testing aspects of the ", () => {
             expect(screen.getByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
-        test("testing to see if we can update the value of taken if we use taken UI on initial page then press refresh", () => {
+        test("testing to see if we can update the value of taken if we use taken UI on initial page", () => {
             const checkboxi: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxi[0].click();
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.getByText(/Course ID: EGGG101✔️Pre Requisite:/i))
                 .toBeInTheDocument;
         });
@@ -65,10 +61,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.findByText(/Course ID: EGGG101✔️Pre Requisite:/i))
                 .toBeInTheDocument;
             // we have made sure thet we get the proper output the first time around, going back to update the input again
@@ -76,8 +68,6 @@ describe("Testing aspects of the ", () => {
             Back.click();
             checkbox[0].click;
             SchedulerButton.click();
-            RefreshX.click();
-            RefreshY.click();
             expect(screen.findByText(/Course ID: EGGG101❌Pre Requisite:/i))
                 .toBeInTheDocument;
         });
@@ -85,10 +75,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.getByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i
@@ -103,10 +89,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.getByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
@@ -121,10 +103,6 @@ describe("Testing aspects of the ", () => {
             const SchedulerButton: HTMLInputElement =
                 screen.getByText("Make Schedule");
             SchedulerButton.click();
-            const RefreshX: HTMLInputElement = screen.getByText("Refresh ❌");
-            const RefreshY: HTMLInputElement = screen.getByText("Refresh ✔️");
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.findByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ✔️ MATH241 ✔️/i
@@ -136,8 +114,6 @@ describe("Testing aspects of the ", () => {
             checkboxi[1].click();
             checkboxi[2].click();
             SchedulerButton.click();
-            RefreshX.click();
-            RefreshY.click();
             expect(
                 screen.findByText(
                     /Course ID: CISC181❌Pre Requisite:CISC108 ❌ MATH241 ❌/i

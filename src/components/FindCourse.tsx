@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AllCourses } from "../interfaces/AllCourses-AllDegrees";
@@ -18,9 +17,7 @@ export function FindCourse(): JSX.Element {
     const [list_Of_Possible_Answers, setListOfPossibleAnswers] = useState<
         Course[]
     >([...AllCourses]);
-    //[progress, setProgress]
     const [, setProgress] = useState(0);
-    //[selectedCourseName, setSelectedCourseName]
     const [, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
     const [SelectedCourse, updateSelectedCourse] = useState<Course>(
@@ -56,27 +53,34 @@ export function FindCourse(): JSX.Element {
         setProgress(((scrollTop + containerHeight) / scrollHeight) * 100);
     };
 
+    function sResult(courseID: string): string {
+        // this function fixes my red issue
+        if (courseID === userAnswer) {
+            return "✔️";
+        } else {
+            return "Searching";
+        }
+    }
+
     return (
         <div>
-            <label>
-                <strong>Search by Course ID</strong>
-            </label>
-            <Form.Group controlId="CheckAnswer">
-                <Form.Control
-                    placeholder="Enter the Course ID you want to find."
-                    value={userAnswer}
-                    onChange={updateShortAnswer}
-                ></Form.Control>
-            </Form.Group>
-            <div>
-                {list_Of_Possible_Answers.length === 0
-                    ? " ❌ There are no courses matching your input"
-                    : list_Of_Possible_Answers[0].course_id === userAnswer
-                    ? "✔️"
-                    : "Searching"}
-            </div>
             {showSearch ? (
                 <div>
+                    <label>
+                        <strong>Search for Course to Edit</strong>
+                    </label>
+                    <Form.Group controlId="CheckAnswer">
+                        <Form.Control
+                            value={userAnswer}
+                            onChange={updateShortAnswer}
+                            placeholder={"Enter Course ID"}
+                        ></Form.Control>
+                    </Form.Group>
+                    <div>
+                        {list_Of_Possible_Answers.length === 0
+                            ? " ❌ There are no courses matching your input"
+                            : sResult(list_Of_Possible_Answers[0].course_id)}
+                    </div>
                     <div style={styles.container} onScroll={scrollHandler}>
                         {list_Of_Possible_Answers.map(
                             (currentCourse: Course) => (
@@ -99,8 +103,11 @@ export function FindCourse(): JSX.Element {
                 </div>
             ) : (
                 <div>
-                    <Button onClick={() => SelectCourse("")}>
-                        Search For Course
+                    <Button
+                        onClick={() => SelectCourse("")}
+                        className="makeInformationButton"
+                    >
+                        Return to Search
                     </Button>
                     <EditInterface Course2Edit={SelectedCourse}></EditInterface>
                 </div>
