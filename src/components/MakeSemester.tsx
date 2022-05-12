@@ -33,6 +33,11 @@ export function MakeSemester({
     function changeVisibility() {
         setVisible(!visible);
     }
+    //Semester Collapse
+    const [collapse, setCollapse] = useState<boolean>(false);
+    function changeCollapse() {
+        setCollapse(!collapse);
+    }
     //Semester Availability
     const [courseList, updateList] = useState<Course[]>(
         semester.classes_taking
@@ -135,6 +140,11 @@ export function MakeSemester({
                             ": " +
                             totalCredits +
                             " Credits"}
+                        <Button onClick={changeCollapse}>
+                            {!collapse
+                                ? "Hide Course List"
+                                : "Show Course List"}
+                        </Button>
                     </caption>
                     <tr className="key">
                         <th>Course ID</th>
@@ -143,23 +153,24 @@ export function MakeSemester({
                         <th>Number of Credits</th>
                         <th>Remove Course</th>
                     </tr>
-                    {courseList.map((course: Course) => (
-                        <tr key={course.course_id}>
-                            <th>{course.course_id}</th>
-                            <th>{course.name}</th>
-                            <th>{course.description}</th>
-                            <th>{course.credits}</th>
-                            <th>
-                                <Button
-                                    onClick={() =>
-                                        removeCourse(course.course_id)
-                                    }
-                                >
-                                    Remove
-                                </Button>
-                            </th>
-                        </tr>
-                    ))}
+                    {!collapse &&
+                        courseList.map((course: Course) => (
+                            <tr key={course.course_id}>
+                                <th>{course.course_id}</th>
+                                <th>{course.name}</th>
+                                <th>{course.description}</th>
+                                <th>{course.credits}</th>
+                                <th>
+                                    <Button
+                                        onClick={() =>
+                                            removeCourse(course.course_id)
+                                        }
+                                    >
+                                        Remove
+                                    </Button>
+                                </th>
+                            </tr>
+                        ))}
                 </Table>
                 <p className="debug">
                     {(semester.total_credits = totalCredits)}
