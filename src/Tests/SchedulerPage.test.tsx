@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
+import { MakeSemester } from "../components/MakeSemester";
 
 describe("Testing aspects of the ", () => {
     describe("Testing the Select Taken UI", () => {
@@ -159,28 +160,36 @@ describe("Testing aspects of the ", () => {
         });
         // test show/hide semester add form is initially closed
         test("Testing to see if the Show/Hide Add Semester Form is initially closed", () => {
-            //const showHideSemesterButton = screen.getByRole("button");
-            //showHideSemesterButton.click();
-            expect(
-                screen.getByText(/Show Add Semester Form/i)
-            ).toBeInTheDocument();
+            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
         });
         // test show/hide semester add form opens when clicked
         test("Testing to see if the Show/Hide Add Semester Form is open", () => {
             const showHideSemesterButton = screen.getByTestId("show/hide");
             showHideSemesterButton.click();
-            expect(
-                screen.getByText(/Hide Add Semester Form/i)
-            ).toBeInTheDocument();
+            expect(screen.getByText(/Hide Form/i)).toBeInTheDocument();
         });
-        // test list of seasons
-        // test("Testing to see if the Show/Hide Add Semester Form is open", () => {
-        //     const showHideSemesterButton = screen.getByTestId("show/hide");
-        //     showHideSemesterButton.click();
-        //     expect(
-        //         screen.getByText(/Hide Add Semester Form/i)
-        //     ).toBeInTheDocument();
-        // });
-        // test years is a number box
+        //test adding semester
+        test("Testing adding a semester to the semester list/degree view", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            expect(screen.getByText(/Spring 2022: 0 Credits/i));
+        });
+        //test removing a semester
+        test("Testing removing a semester from the semester list/degree view", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //remove the semester
+            const removeSemButton = screen.getByTestId("remove-sem");
+            removeSemButton.click();
+            expect(screen.getByText(/Hide Form/i));
+        });
     });
 });

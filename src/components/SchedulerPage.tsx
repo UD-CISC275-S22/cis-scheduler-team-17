@@ -163,6 +163,7 @@ export function SchedulerPage({
                                         {getSeason()}
                                         {getYear()}
                                         <Button
+                                            data-testid="add-sem"
                                             onClick={() => {
                                                 addSemester();
                                                 updateSemesterForm();
