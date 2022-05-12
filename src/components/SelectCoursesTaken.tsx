@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { Course, Degree } from "../interfaces/Course-Degree-Semester";
 import "../App.css";
+import { Information } from "./Information";
 
 export function SelectCoursesTaken({
     degree
@@ -9,23 +10,22 @@ export function SelectCoursesTaken({
     degree: Degree;
 }): JSX.Element {
     const [, setCurrentCourseName] = useState<string>(
-        degree.CoursesRequired[0].name
+        degree.courses_required[0].name
     );
     const [progress, setProgress] = useState(0);
-    //[currentTaken, setCurrentTaken]
     const [, setCurrentTaken] = useState<boolean>();
 
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
         setCurrentCourseName(event.target.value);
-        const currentCourse = degree.CoursesRequired.filter(
+        const currentCourse = degree.courses_required.filter(
             (currentCourse: Course): boolean =>
                 event.target.value === currentCourse.name
         );
         const ourCourse = currentCourse[0];
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
-        ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
+        ourCourse.taken_string = ourCourse.taken ? "✔️" : "❌";
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -38,15 +38,13 @@ export function SelectCoursesTaken({
 
     return (
         <div>
-            <div>
-                <Form.Label>
-                    <strong>
-                        Please Select The Courses You Have Already Taken
-                    </strong>
-                </Form.Label>
-            </div>
+            <Form.Label>
+                <strong>
+                    Please Select The Courses You Have Already Taken
+                </strong>
+            </Form.Label>
             <div style={styles.container} onScroll={scrollHandler}>
-                {degree.CoursesRequired.map((currentCourse: Course) => (
+                {degree.courses_required.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
                         <Form.Check
                             type="checkbox"
@@ -57,10 +55,7 @@ export function SelectCoursesTaken({
                             value={currentCourse.name}
                             key={currentCourse.name}
                             label={
-                                "Course Name: " +
-                                currentCourse.name +
-                                "...Taken: " +
-                                currentCourse.taken_String
+                                currentCourse.name + currentCourse.taken_string
                             }
                         />
                         <Information
@@ -83,9 +78,8 @@ export function SelectCoursesTaken({
 // Styling
 const styles = {
     container: {
-        width: 500,
+        width: "110%",
         height: 600,
-        margin: "30px auto",
         overflowY: "auto",
         overflowX: "hidden",
         background: "mintcream"
@@ -109,49 +103,4 @@ const styles = {
 } as const;
 {
     /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
-}
-
-function Information({
-    currentDegree,
-    currentCourseName
-}: {
-    currentDegree: Degree;
-    currentCourseName: string;
-}): JSX.Element {
-    const [showInfo, setShowInfo] = useState<boolean>(false);
-    const findCourse = currentDegree.CoursesRequired.filter(
-        (myCourse: Course): boolean => myCourse.name === currentCourseName
-    );
-    const currentCourse = findCourse[0];
-    return (
-        <div>
-            <Button
-                onClick={() => setShowInfo(!showInfo)}
-                className="makeInformationButton"
-            >
-                More Information
-            </Button>
-            <div className="extraInfoLook" style={{ textAlign: "left" }}>
-                {!showInfo ? (
-                    <></>
-                ) : (
-                    <>
-                        Course Name: {currentCourse.name} <br></br>
-                        Course Description: {currentCourse.description}{" "}
-                        <br></br>
-                        Course Credits: {currentCourse.credits} <br></br>
-                        Semesters Available:{" "}
-                        {currentCourse.SemestersAvailableString} <br></br>
-                        Pre-Requisite:
-                        {currentCourse.prerecs.map(
-                            (currentPreRec: Course) =>
-                                currentPreRec.name + currentPreRec.taken_String
-                        )}{" "}
-                        <br></br>
-                        Taken: {currentCourse.taken_String}
-                    </>
-                )}
-            </div>
-        </div>
-    );
 }

@@ -16,28 +16,28 @@ export type Season =
 /** A representation of a Question in a quizzing application */
 export interface Course {
     /** The name of the course */
-    ogID: string;
+    og_id: string;
     /**This course name can be edited, the OG will always remain the same */
-    courseID: string;
+    course_id: string;
     /** The name that can be edited and the original name when reverting is needed*/
     name: string;
-    ogName: string;
+    og_name: string;
     /** The instructions and content of the Question and the og description for reverting */
     description: string;
-    ogdesc: string;
+    og_description: string;
     /** The semesters when the class is offered */
-    SemesterAvailable: Season[];
+    semester_available: Season[];
     // the string that prints the seeasons available
-    SemestersAvailableString: string;
+    semester_available_string: string;
     /** The courses that need to be taken before you can take this course */
     prerecs: Course[];
     /** The number of credits the course is worth, and the og for reverting */
     credits: number;
-    ogCredits: number;
+    og_credits: number;
     /** Whether or not the user has taken the course */
     taken: boolean;
     /**taken String */
-    taken_String: string;
+    taken_string: string;
 }
 
 export interface Degree {
@@ -46,20 +46,20 @@ export interface Degree {
     /** the description of the degree */
     description: string;
     /** Courses needed to complete the degree */
-    CoursesRequired: Course[];
+    courses_required: Course[];
     /** Credits Needed */
-    CreditsRequired: number;
+    credits_required: number;
     /**Semesters */
-    SemesterList: SemesterPlanner[];
+    semester_list: SemesterPlanner[];
 }
 
 export interface SemesterPlanner {
     /** Classes the user is taking this semester */
-    ClassesTaking: Course[];
+    classes_taking: Course[];
     /** the year the semester occurs*/
     year: number;
     /** season the class is taking place during */
-    SemesterSeason: Season;
+    semester_season: Season;
     /** Credits the user is taking */
-    TotalCredits: number;
+    total_credits: number;
 }

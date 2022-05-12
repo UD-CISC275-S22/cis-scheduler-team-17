@@ -28,19 +28,19 @@ export function PrintDegreesLists({
     return (
         <div>
             <div style={styles.container} onScroll={scrollHandler}>
-                {degree.CoursesRequired.map((currentCourse: Course) => (
+                {degree.courses_required.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
                         {currentCourse.taken === taken ? (
                             <div>
-                                Course ID: {currentCourse.courseID}
-                                {currentCourse.taken_String}
+                                Course ID: {currentCourse.course_id}
+                                {currentCourse.taken_string}
                                 <br></br>
                                 Pre Requisite:
                                 {currentCourse.prerecs.map(
                                     (currentPreRec: Course) =>
-                                        currentPreRec.courseID +
+                                        currentPreRec.course_id +
                                         " " +
-                                        currentPreRec.taken_String +
+                                        currentPreRec.taken_string +
                                         "\n"
                                 )}
                                 <br></br>

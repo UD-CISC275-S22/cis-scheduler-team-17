@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import {
     Course,
     Degree,
@@ -34,26 +34,26 @@ export function MakeSemester({
         setVisible(!visible);
     }
     //Semester Availability
-    const [courseList, updateList] = useState<Course[]>(semester.ClassesTaking);
+    const [courseList, updateList] = useState<Course[]>(
+        semester.classes_taking
+    );
     const [intersection, changeIntersect] = useState<Course[]>([]);
     //Create course information
     const [courseID, setID] = useState<string>("");
     const [courseName, setName] = useState<string>("");
     const [courseDescription, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<number>(0);
-    const [totalCredits, resetTotal] = useState<number>(semester.TotalCredits);
+    const [totalCredits, resetTotal] = useState<number>(semester.total_credits);
     //Change Semester List
     function changeList(newList: Course[]) {
         updateList(newList);
-        semester.ClassesTaking = newList;
-        console.log(semester.ClassesTaking);
-        console.log(degree.SemesterList);
+        semester.classes_taking = newList;
         updateDegree;
     }
     //reset taken
     function resetTaken(existing: Course) {
         existing.taken = false;
-        existing.taken_String = "❌";
+        existing.taken_string = "❌";
         updateDegree;
     }
     //Reset State - Removes all courses
@@ -70,31 +70,39 @@ export function MakeSemester({
     };
     function changeTotal(credits: number) {
         resetTotal(credits);
-        semester.TotalCredits = totalCredits;
+        semester.total_credits = totalCredits;
         updateDegree;
         updateForm;
     }
     function removeCourse(courseID: string) {
         const course = courseList.filter(
-            (course: Course): boolean => course.courseID === courseID
+            (course: Course): boolean => course.course_id === courseID
         );
         const findCourse = intersection.filter(
-            (course: Course): boolean => course.courseID === courseID
+            (course: Course): boolean => course.course_id === courseID
         );
         if (findCourse.length >= 1) {
             resetTaken(findCourse[0]);
             changeIntersect(
                 intersection.filter(
-                    (course: Course): boolean => course.courseID !== courseID
+                    (course: Course): boolean => course.course_id !== courseID
                 )
             );
         }
         changeList(
             courseList.filter(
-                (course: Course): boolean => course.courseID !== courseID
+                (course: Course): boolean => course.course_id !== courseID
             )
         );
-        changeTotal(totalCredits - course[0].credits);
+        const courseCredits = course.map(
+            (course: Course): number => course.credits
+        );
+        const removedCredits = courseCredits.reduce(
+            (currCredits: number, nextCredits: number) =>
+                currCredits + nextCredits,
+            0
+        );
+        changeTotal(totalCredits - removedCredits);
         updateDegree;
     }
     function removeSemesterReset(year: number, season: string) {
@@ -127,7 +135,7 @@ export function MakeSemester({
             <div>
                 <Table className="semesterTable">
                     <caption className="semesterLabel">
-                        {semester.SemesterSeason +
+                        {semester.semester_season +
                             " " +
                             semester.year +
                             ": " +
@@ -142,15 +150,15 @@ export function MakeSemester({
                         <th>Remove Course</th>
                     </tr>
                     {courseList.map((course: Course) => (
-                        <tr key={course.courseID}>
-                            <th>{course.courseID}</th>
+                        <tr key={course.course_id}>
+                            <th>{course.course_id}</th>
                             <th>{course.name}</th>
                             <th>{course.description}</th>
                             <th>{course.credits}</th>
                             <th>
                                 <Button
                                     onClick={() =>
-                                        removeCourse(course.courseID)
+                                        removeCourse(course.course_id)
                                     }
                                 >
                                     Remove
@@ -160,48 +168,63 @@ export function MakeSemester({
                     ))}
                 </Table>
                 <p className="debug">
-                    {(semester.TotalCredits = totalCredits)}
+                    {(semester.total_credits = totalCredits)}
                     {updateDegree}
                 </p>
                 <div>
-                    <CreateCourse
-                        visible={visible}
-                        changeVisibility={changeVisibility}
-                        courseID={courseID}
-                        setID={setID}
-                        courseName={courseName}
-                        setName={setName}
-                        courseDescription={courseDescription}
-                        setDescription={setDescription}
-                        credits={credits}
-                        changeCredits={changeCredits}
-                        addCourse={addCourse}
-                        resetState={resetState}
-                    ></CreateCourse>
-                    <AddExisting
-                        courseList={courseList}
-                        degree={degree}
-                        changeList={changeList}
-                        intersection={intersection}
-                        changeIntersect={changeIntersect}
-                        totalCredits={totalCredits}
-                        changeTotal={changeTotal}
-                        updateDegree={updateDegree}
-                    ></AddExisting>
-                    <Button className={"remove"} onClick={resetState}>
-                        Remove All Courses
-                    </Button>
-                    <Button
-                        className={"remove"}
-                        onClick={() =>
-                            removeSemesterReset(
-                                semester.year,
-                                semester.SemesterSeason
-                            )
-                        }
-                    >
-                        Remove Semester
-                    </Button>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <CreateCourse
+                                    visible={visible}
+                                    changeVisibility={changeVisibility}
+                                    courseID={courseID}
+                                    setID={setID}
+                                    courseName={courseName}
+                                    setName={setName}
+                                    courseDescription={courseDescription}
+                                    setDescription={setDescription}
+                                    credits={credits}
+                                    changeCredits={changeCredits}
+                                    addCourse={addCourse}
+                                    resetState={resetState}
+                                ></CreateCourse>
+                            </Col>
+                            <Col>
+                                <AddExisting
+                                    courseList={courseList}
+                                    degree={degree}
+                                    changeList={changeList}
+                                    intersection={intersection}
+                                    changeIntersect={changeIntersect}
+                                    totalCredits={totalCredits}
+                                    changeTotal={changeTotal}
+                                    updateDegree={updateDegree}
+                                ></AddExisting>
+                            </Col>
+                            <Col>
+                                <Button
+                                    className={"remove"}
+                                    onClick={resetState}
+                                >
+                                    Remove All Courses
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button
+                                    className={"remove"}
+                                    onClick={() =>
+                                        removeSemesterReset(
+                                            semester.year,
+                                            semester.semester_season
+                                        )
+                                    }
+                                >
+                                    Remove Semester
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </div>
         </div>

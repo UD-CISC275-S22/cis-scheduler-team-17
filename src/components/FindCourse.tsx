@@ -30,7 +30,7 @@ export function FindCourse(): JSX.Element {
         setListOfPossibleAnswers(
             AllCoursesCopy.filter(
                 (currentCourse: Course): boolean =>
-                    currentCourse.courseID.search(event.target.value) !== -1
+                    currentCourse.course_id.search(event.target.value) !== -1
             )
         );
     }
@@ -38,7 +38,7 @@ export function FindCourse(): JSX.Element {
     function SelectCourse(SelectedCourseID: string) {
         setSelectedCourseName(SelectedCourseID);
         const ID = AllCoursesCopy.filter(
-            (course: Course): boolean => course.courseID === SelectedCourseID
+            (course: Course): boolean => course.course_id === SelectedCourseID
         );
         updateSelectedCourse(ID[0]);
         updateShowSearch(!showSearch);
@@ -79,17 +79,19 @@ export function FindCourse(): JSX.Element {
                     <div>
                         {list_Of_Possible_Answers.length === 0
                             ? " ❌ There are no courses matching your input"
-                            : sResult(list_Of_Possible_Answers[0].courseID)}
+                            : sResult(list_Of_Possible_Answers[0].course_id)}
                     </div>
                     <div style={styles.container} onScroll={scrollHandler}>
                         {list_Of_Possible_Answers.map(
                             (currentCourse: Course) => (
                                 <div key={currentCourse.name}>
-                                    {currentCourse.courseID}
+                                    {currentCourse.course_id}
                                     <Button
                                         className={"makeInformationButton"}
                                         onClick={() =>
-                                            SelectCourse(currentCourse.courseID)
+                                            SelectCourse(
+                                                currentCourse.course_id
+                                            )
                                         }
                                     >
                                         Select Course

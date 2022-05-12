@@ -14,14 +14,18 @@ export function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
                         <FindCourse />
                     </Col>
                     <Col>
-                        <label>Courses Taken or Planned</label>
+                        <label>
+                            <b>Courses Taken or Planned</b>
+                        </label>
                         <PrintDegreesLists
                             taken={true}
                             degree={degree}
                         ></PrintDegreesLists>
                     </Col>
                     <Col>
-                        <label>Courses Not Taken or Planned </label>
+                        <label>
+                            <b>Courses Not Taken or Planned</b>
+                        </label>
                         <PrintDegreesLists
                             taken={false}
                             degree={degree}
