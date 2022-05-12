@@ -10,7 +10,7 @@ export function SelectCoursesTaken({
     degree: Degree;
 }): JSX.Element {
     const [, setCurrentCourseName] = useState<string>(
-        degree.CoursesRequired[0].name
+        degree.courses_required[0].name
     );
     const [progress, setProgress] = useState(0);
     const [, setCurrentTaken] = useState<boolean>();
@@ -18,14 +18,14 @@ export function SelectCoursesTaken({
     function updateCourseTaken(event: React.ChangeEvent<HTMLInputElement>) {
         // this will update the currently selected course and will update my stuff
         setCurrentCourseName(event.target.value);
-        const currentCourse = degree.CoursesRequired.filter(
+        const currentCourse = degree.courses_required.filter(
             (currentCourse: Course): boolean =>
                 event.target.value === currentCourse.name
         );
         const ourCourse = currentCourse[0];
         ourCourse.taken = !ourCourse.taken;
         setCurrentTaken(ourCourse.taken);
-        ourCourse.taken_String = ourCourse.taken ? "✔️" : "❌";
+        ourCourse.taken_string = ourCourse.taken ? "✔️" : "❌";
     }
     const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
         // this handles the scrolling of the box
@@ -46,7 +46,7 @@ export function SelectCoursesTaken({
                 </Form.Label>
             </div>
             <div style={styles.container} onScroll={scrollHandler}>
-                {degree.CoursesRequired.map((currentCourse: Course) => (
+                {degree.courses_required.map((currentCourse: Course) => (
                     <div key={currentCourse.name}>
                         <Form.Check
                             type="checkbox"
@@ -60,7 +60,7 @@ export function SelectCoursesTaken({
                                 "Course Name: " +
                                 currentCourse.name +
                                 "...Taken: " +
-                                currentCourse.taken_String
+                                currentCourse.taken_string
                             }
                         />
                         <Information
@@ -89,7 +89,7 @@ function Information({
     currentCourseName: string;
 }): JSX.Element {
     const [showInfo, setShowInfo] = useState<boolean>(false);
-    const findCourse = currentDegree.CoursesRequired.filter(
+    const findCourse = currentDegree.courses_required.filter(
         (myCourse: Course): boolean => myCourse.name === currentCourseName
     );
     const currentCourse = findCourse[0];
@@ -111,14 +111,14 @@ function Information({
                         <br></br>
                         Course Credits: {currentCourse.credits} <br></br>
                         Semesters Available:{" "}
-                        {currentCourse.SemestersAvailableString} <br></br>
+                        {currentCourse.semester_available_string} <br></br>
                         Pre-Requisite:
                         {currentCourse.prerecs.map(
                             (currentPreRec: Course) =>
-                                currentPreRec.name + currentPreRec.taken_String
+                                currentPreRec.name + currentPreRec.taken_string
                         )}{" "}
                         <br></br>
-                        Taken: {currentCourse.taken_String}
+                        Taken: {currentCourse.taken_string}
                     </>
                 )}
             </div>
@@ -156,4 +156,3 @@ const styles = {
 {
     /** Code for the scrolly box and the progress bar used from https://www.kindacode.com/article/react-typescript-handling-onscroll-event/*/
 }
-
