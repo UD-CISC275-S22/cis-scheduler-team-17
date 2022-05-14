@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Tests/SchedulerPage.test.tsx (12.086 s)
+FAIL src/Tests/SchedulerPage.test.tsx (11.859 s)
   ● Console
 
     console.error
@@ -374,7 +374,7 @@ FAIL src/Tests/SchedulerPage.test.tsx (12.086 s)
       at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Tests/SchedulerPage.test.tsx:165:44)
 
-FAIL src/Tests/Homepage.test.tsx (5.69 s)
+FAIL src/Tests/Homepage.test.tsx (5.806 s)
   ● Testing everything on the homepage › Testing the Select Taken UI › Testing to see if taken starts off as false
 
     TestingLibraryElementError: Unable to find an element with the text: /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -675,7 +675,7 @@ All files                    |   58.25 |    46.57 |   33.63 |   58.53 |
   Homepage.tsx               |     100 |      100 |     100 |     100 |                            
   ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                       
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                      
-  MakeSemester.tsx           |   17.74 |     37.5 |    4.76 |   18.03 | 36,41,56-64,68-138,179-244 
+  MakeSemester.tsx           |   17.74 |     37.5 |    4.76 |   18.03 | 36,41,56-64,68-138,179-245 
   PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25                      
   SchedulerPage.tsx          |   66.66 |       75 |   52.63 |   68.18 | 33,40-41,56,77,111-124     
   SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                      
@@ -690,5 +690,5 @@ All files                    |   58.25 |    46.57 |   33.63 |   58.53 |
 Test Suites: 2 failed, 1 passed, 3 total
 Tests:       6 failed, 18 passed, 24 total
 Snapshots:   0 total
-Time:        19.185 s
+Time:        19.109 s
 Ran all test suites.
