@@ -141,7 +141,10 @@ export function MakeSemester({
         <div>
             <div>
                 <Table className="semesterTable">
-                    <caption className="semesterLabel">
+                    <caption
+                        className="semesterLabel"
+                        data-testid="semesterLabel"
+                    >
                         {semester.semester_season +
                             " " +
                             semester.year +
@@ -149,6 +152,7 @@ export function MakeSemester({
                             totalCredits +
                             " Credits"}
                         <Button
+                            data-testid="showHideCourses"
                             onClick={changeCollapse}
                             className={"dropdownBtn"}
                         >

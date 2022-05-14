@@ -88,7 +88,7 @@ export function AddExisting({
                 </div>
             )}
             {visible && error && (
-                <p>
+                <p data-testid="addExistingError">
                     Please make sure the Course ID you entered matches a Course
                     ID in the list of courses not yet taken or planned. If you
                     would like to create a new course, please click the{" "}

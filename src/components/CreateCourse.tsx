@@ -34,7 +34,7 @@ export function CreateCourse({
 }): JSX.Element {
     return (
         <div>
-            <Button onClick={changeVisibility}>
+            <Button data-testid="createCourse" onClick={changeVisibility}>
                 {visible ? "Hide Form" : "Create Course"}
             </Button>
             {visible && (
@@ -77,7 +77,12 @@ export function CreateCourse({
                             changeCredits(event.target.value)
                         }
                     />
-                    <Button onClick={addCourse}>Submit Form</Button>
+                    <Button
+                        data-testid="createCourseSubmit"
+                        onClick={addCourse}
+                    >
+                        Submit Form
+                    </Button>
                 </div>
             )}
         </div>
