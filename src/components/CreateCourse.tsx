@@ -40,6 +40,7 @@ export function CreateCourse({
             {visible && (
                 <div>
                     <Form.Control
+                        data-testid="createCourseID"
                         type="string"
                         value={courseID}
                         onChange={(event: ChangeEvent) =>
@@ -48,6 +49,7 @@ export function CreateCourse({
                         placeholder={"Enter Course ID"}
                     />
                     <Form.Control
+                        data-testid="createCourseName"
                         type="string"
                         value={courseName}
                         onChange={(event: ChangeEvent) =>
@@ -56,6 +58,7 @@ export function CreateCourse({
                         placeholder={"Enter Course Name"}
                     />
                     <Form.Control
+                        data-testid="createCourseDescription"
                         type="string"
                         value={courseDescription}
                         onChange={(event: ChangeEvent) =>
@@ -65,6 +68,7 @@ export function CreateCourse({
                     />
                     <label>Enter Number of Credits</label>
                     <Form.Control
+                        data-testid="createCourseCredits"
                         type="number"
                         min={1}
                         step={1}

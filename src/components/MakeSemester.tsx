@@ -184,7 +184,7 @@ export function MakeSemester({
                                 <th>
                                     <Button
                                         className="remove"
-                                        data-testid="remove-sem"
+                                        data-testid="removeCourse"
                                         onClick={() =>
                                             removeCourse(course.course_id)
                                         }
@@ -240,6 +240,7 @@ export function MakeSemester({
                             </Col>
                             <Col>
                                 <Button
+                                    data-testid="remove-sem"
                                     className={"remove"}
                                     onClick={() =>
                                         removeSemesterReset(
