@@ -4,7 +4,7 @@ import App from "../App";
 import userEvent from "@testing-library/user-event";
 
 describe("Testing aspects of the ", () => {
-    /*     describe("Testing the Select Taken UI", () => {
+    describe("Testing the Select Taken UI", () => {
         beforeEach(() => {
             // this renders our web page
             render(<App />);
@@ -120,14 +120,6 @@ describe("Testing aspects of the ", () => {
                 )
             ).toBeInTheDocument;
         });
-        // this is where the testing of the search and edit features would goes
-        test("Testing Create Course Button Renders", () => {
-            expect(screen.getAllByText("Create Course"));
-        });
-        //Testing Add Existing Course
-        test("Testing Create Course Button Renders", () => {
-            expect(screen.getAllByText("Add Existing"));
-        });
     });
     describe("Testing the Semster UI", () => {
         // testing of the semester show/hide add form
@@ -154,20 +146,7 @@ describe("Testing aspects of the ", () => {
             addSemButton.click();
             expect(screen.getByText(/Spring 2022: 0 Credits/i));
         });
-        //test removing a semester -- broken
-        test("Testing removing a semester from the semester list/degree view", () => {
-            //click semester form button
-            const showHideSemesterButton = screen.getByTestId("show/hide");
-            showHideSemesterButton.click();
-            //add the semester
-            const addSemButton = screen.getByTestId("add-sem");
-            addSemButton.click();
-            //remove the semester
-            const removeSemButton = screen.getByTestId("remove-sem");
-            removeSemButton.click();
-            expect(screen.getByText(/Hide Form/i));
-        });
-    }); */
+    });
     describe("Testing the Edit Course UI", () => {
         // testing of the semester show/hide add form
         beforeEach(() => {

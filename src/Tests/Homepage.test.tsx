@@ -7,16 +7,12 @@ describe("Testing everything on the homepage", () => {
         beforeEach(() => {
             render(<App />);
         });
-        test("Testing to see if we have the printed bux", () => {
+        test("Testing to see if the first course name has been printed", () => {
             expect(
                 screen.getByText(
-                    "Please Select The Courses You Have Already Taken"
+                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
                 )
             ).toBeInTheDocument;
-        });
-        test("Testing to see if the first degree name has been printed", () => {
-            expect(screen.getByText(/EGGG101: Introduction to Engineering/i))
-                .toBeInTheDocument;
         });
         test("Testing to see if taken starts off as false", () => {
             expect(
