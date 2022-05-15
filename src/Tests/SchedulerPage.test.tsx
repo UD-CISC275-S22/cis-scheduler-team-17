@@ -1,9 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
+import userEvent from "@testing-library/user-event";
 
 describe("Testing aspects of the ", () => {
-    describe("Testing the Select Taken UI", () => {
+    /*     describe("Testing the Select Taken UI", () => {
         beforeEach(() => {
             // this renders our web page
             render(<App />);
@@ -165,6 +166,128 @@ describe("Testing aspects of the ", () => {
             const removeSemButton = screen.getByTestId("remove-sem");
             removeSemButton.click();
             expect(screen.getByText(/Hide Form/i));
+        });
+    }); */
+    describe("Testing the Edit Course UI", () => {
+        // testing of the semester show/hide add form
+        beforeEach(() => {
+            render(<App />);
+        });
+        test("Testing to see if the Edit course UI shows UP", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            expect(
+                screen.getByText(/Search for Course to Edit/i)
+            ).toBeInTheDocument();
+        });
+        test("Testing to see if the search bar is present on the screen", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            searchBar.click();
+        });
+        // testing to see ig the [roper messages show when the user is searching
+        test("Testing to see if I can enter CISC and have the searching text show", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "CISC");
+            expect(screen.getByText("Searching")).toBeInTheDocument();
+        });
+        test("Testing to see if I can search EGGG101 and have the course found be active", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const search_bar = screen.getByRole("textbox");
+            userEvent.type(search_bar, "EGGG101");
+            expect(screen.getByText("✔️")).toBeInTheDocument();
+        });
+        test("Testing to see if the we put in something wrong, no courses can be found and correct message shows", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const search_bar = screen.getByRole("textbox");
+            userEvent.type(search_bar, "EGGGGGG");
+            expect(
+                screen.getByText("❌ There are no courses matching your input")
+            ).toBeInTheDocument();
+        });
+        // beginning to test the features of the edit
+        test("Testing to see if I can get to the edit course UI", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "EGGG101");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+            expect(
+                screen.getByText("You are currently editing EGGG101")
+            ).toBeInTheDocument();
+        });
+        test("Testing to see if I can edit the courses ID", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "EGGG101");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+            // editing course ID
+            const edit_boxes: HTMLElement[] = screen.getAllByRole("textbox");
+            userEvent.type(edit_boxes[0], "EGGIE SMELLIE");
+            // saving and returning to search bar to see if the CourseID changed
+            const save_button: HTMLInputElement = screen.getByText("Save");
+            const return_button: HTMLInputElement =
+                screen.getByText("Return to Search");
+            save_button.click();
+            return_button.click();
+            expect(screen.getByText(/EGGIE SMELLIE/i)).toBeInTheDocument();
+        });
+        test("Testing to see if I can edit the courses name", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "EGGG101");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+            // editing course name
+            const edit_boxes: HTMLElement[] = screen.getAllByRole("textbox");
+            userEvent.type(
+                edit_boxes[1],
+                "EGGIE SMELLIE: Otherwise known as EGGG101"
+            );
+            // saving and returning to search bar to see if the CourseID changed
+            const save_button: HTMLInputElement = screen.getByText("Save");
+            const return_button: HTMLInputElement =
+                screen.getByText("Return to Search");
+            save_button.click();
+            return_button.click();
+            // going back to homepage to check already taken becasue all of the info s there
+            const back_button: HTMLElement = screen.getByText("Back");
+            back_button.click();
+            const all_more_info: HTMLInputElement[] =
+                screen.getAllByRole("button");
+            all_more_info[0].click();
+            expect(
+                screen.getByText(/EGGIE SMELLIE: Otherwise known as EGGG101/i)
+            ).toBeInTheDocument();
+        });
+        test("Testing to see if I can edit the courses number of credits", () => {
+            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
+        });
+        test("Testing to see if I can edit the courses description", () => {
+            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
+        });
+        test("Testing to see if I can revert all the edits made to a course", () => {
+            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
         });
     });
 });
