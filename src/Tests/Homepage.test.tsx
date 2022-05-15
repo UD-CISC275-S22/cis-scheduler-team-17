@@ -21,7 +21,7 @@ describe("Testing everything on the homepage", () => {
         test("Testing to see if taken starts off as false", () => {
             expect(
                 screen.getByText(
-                    /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
+                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
                 )
             ).toBeInTheDocument;
         });
@@ -41,7 +41,7 @@ describe("Testing everything on the homepage", () => {
                 screen.getAllByRole("checkbox");
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
+                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
             );
         });
         test("Testing to see if changing the status of taken twice gets us back to not taken", () => {
@@ -50,11 +50,11 @@ describe("Testing everything on the homepage", () => {
             checkboxes[0].click();
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
+                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
             );
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
+                /EGGG101: Introduction to Engineering ... Taken: ❌/i
             );
         });
         //Testing Degree Selection Renders

@@ -280,14 +280,84 @@ describe("Testing aspects of the ", () => {
                 screen.getByText(/EGGIE SMELLIE: Otherwise known as EGGG101/i)
             ).toBeInTheDocument();
         });
-        test("Testing to see if I can edit the courses number of credits", () => {
-            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
-        });
         test("Testing to see if I can edit the courses description", () => {
-            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "EGGG101");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+            // editing course description
+            const edit_boxes: HTMLElement[] = screen.getAllByRole("textbox");
+            userEvent.type(
+                edit_boxes[2],
+                "EGGIE SMELLIE: The smelly EGGG101 class that comsci majors must take sadge"
+            );
+            // saving and returning to search bar to see if the CourseID changed
+            const save_button: HTMLInputElement = screen.getByText("Save");
+            const return_button: HTMLInputElement =
+                screen.getByText("Return to Search");
+            save_button.click();
+            return_button.click();
+            // going back to homepage to check already taken becasue all of the info s there
+            const back_button: HTMLElement = screen.getByText("Back");
+            back_button.click();
+            const all_more_info: HTMLInputElement[] =
+                screen.getAllByRole("button");
+            all_more_info[0].click();
+            expect(
+                screen.getByText(
+                    /EGGIE SMELLIE: The smelly EGGG101 class that comsci majors must take sadge/i
+                )
+            ).toBeInTheDocument();
         });
-        test("Testing to see if I can revert all the edits made to a course", () => {
-            expect(screen.getByText(/Add Semester/i)).toBeInTheDocument();
+        test("Testing to see if I can edit the courses number of credits", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "EGGG101");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+        });
+        test("Testing to see the revert feature is working", () => {
+            const SchedulerButton: HTMLInputElement =
+                screen.getByText("Make Schedule");
+            SchedulerButton.click();
+            const searchBar = screen.getByRole("textbox");
+            userEvent.type(searchBar, "CISC108");
+            const select_course: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course.click();
+            expect(
+                screen.getByText("You are currently editing CISC108")
+            ).toBeInTheDocument();
+            // editing course ID
+            const edit_boxes: HTMLElement[] = screen.getAllByRole("textbox");
+            userEvent.type(edit_boxes[0], "108 my beloved");
+            // saving and returning to search bar to see if the CourseID changed
+            const save_button: HTMLInputElement = screen.getByText("Save");
+            const return_button: HTMLInputElement =
+                screen.getByText("Return to Search");
+            save_button.click();
+            return_button.click();
+            expect(screen.getByText(/108 my beloved/i)).toBeInTheDocument();
+            userEvent.type(searchBar, "108 my beloved");
+            const select_course_2: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course_2.click();
+            // getting back and clicking the revert button
+            const revert_button: HTMLInputElement = screen.getByText(
+                "Reset Course to Default"
+            );
+            const return_button_2: HTMLInputElement =
+                screen.getByText("Return to Search");
+            revert_button.click();
+            return_button_2.click();
+            expect(screen.getByText("CISC108")).toBeInTheDocument();
         });
     });
 });
