@@ -297,6 +297,42 @@ describe("Testing aspects of the ", () => {
                 )
             ).toBeFalsy;
         });
+        //Testing Remove All Courses
+        test("Testing Remove All Courses", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Open existing form
+            addExisting.click();
+            //Respond to form
+            userEvent.type(nameForm, "CISC108");
+            //Submit Form
+            submitButton.click();
+            //Remove Course
+            const removeAllCoursesButton =
+                screen.getAllByTestId("removeAllCourses");
+            removeAllCoursesButton[0].click();
+            expect(
+                screen.queryByText(
+                    "CISC181: Introduction to Computer Science II"
+                ) &&
+                    screen.queryByText(
+                        "CISC108: Introduction To Computer Science 1"
+                    )
+            ).toBeFalsy;
+        });
         //Testing Remove Courses With Same ID
         test("Testing Remove Course And Update Credits - Same ID", () => {
             //click semester form button

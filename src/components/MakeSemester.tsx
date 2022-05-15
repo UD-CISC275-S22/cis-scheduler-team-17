@@ -236,6 +236,7 @@ export function MakeSemester({
                             </Col>
                             <Col>
                                 <Button
+                                    data-testid="removeAllCourses"
                                     className={"remove"}
                                     onClick={resetState}
                                 >
