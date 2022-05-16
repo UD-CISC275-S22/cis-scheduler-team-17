@@ -70,7 +70,6 @@ export function SelectCoursesTaken({
                     style={{ ...styles.progressValue, width: `${progress}%` }}
                 ></div>
             </div>
-            <p style={styles.text}>{progress.toFixed(2)}%</p>
         </div>
     );
 }

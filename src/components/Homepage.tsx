@@ -52,8 +52,46 @@ function Homepage({
                 </Container>
             </div>
             <footer className="footer">
-                Constributers: Team 17
-                <br></br>Rosemarie Filano, Sydney Hester, Zoe Valladares
+                Team 17:
+                <Button
+                    className="team"
+                    onClick={() =>
+                        window.open("https://github.com/rfilano", "_blank")
+                    }
+                >
+                    <img
+                        className="teamImg"
+                        src="https://avatars.githubusercontent.com/u/90461398?v=4"
+                    ></img>{" "}
+                    Rosemarie Filano
+                </Button>
+                <Button
+                    className="team"
+                    onClick={() =>
+                        window.open("https://github.com/sydneyph", "_blank")
+                    }
+                >
+                    <img
+                        className="teamImg"
+                        src="https://avatars.githubusercontent.com/u/93601194?v=4"
+                    ></img>{" "}
+                    Sydney Hester
+                </Button>
+                <Button
+                    className="team"
+                    onClick={() =>
+                        window.open(
+                            "https://github.com/Pink-Hat-Hacker",
+                            "_blank"
+                        )
+                    }
+                >
+                    <img
+                        className="teamImg"
+                        src="https://avatars.githubusercontent.com/u/21318992?v=4"
+                    ></img>{" "}
+                    Zoe Valladares
+                </Button>
             </footer>
         </div>
     );
