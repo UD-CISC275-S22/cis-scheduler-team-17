@@ -301,6 +301,24 @@ describe("Testing aspects of the ", () => {
             const select_course: HTMLInputElement =
                 screen.getByText("Select Course");
             select_course.click();
+            // inputting new credits
+            const edit_boxes: HTMLElement[] = screen.getAllByRole("textbox");
+            userEvent.type(edit_boxes[3], "14");
+            // saving and returning to search bar to see if the CourseID changed
+            const save_button: HTMLInputElement = screen.getByText("Save");
+            const return_button: HTMLInputElement =
+                screen.getByText("Return to Search");
+            save_button.click();
+            return_button.click();
+            // going back to homepage to check already taken becasue all of the info s there
+            const searchBar2 = screen.getByRole("textbox");
+            userEvent.type(searchBar2, "EGG");
+            const select_course_2: HTMLInputElement =
+                screen.getByText("Select Course");
+            select_course_2.click();
+            expect(
+                screen.getByText(/Current Credits Worth: 2/i)
+            ).toBeInTheDocument();
         });
         test("Testing to see the revert feature is working", () => {
             const SchedulerButton: HTMLInputElement =
