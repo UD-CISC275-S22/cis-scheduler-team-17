@@ -45,6 +45,11 @@ describe("Testing everything on the homepage", () => {
             checkboxes[0].click();
             screen.getByText(/EGGG101: Introduction to Engineering❌/i);
         });
+    });
+    describe("Degree Selection", () => {
+        beforeEach(() => {
+            render(<App />);
+        });
         //Testing Degree Selection Renders
         test("Testing to see if dropdown menu renders", () => {
             expect(screen.getByText("Degrees")).toBeInTheDocument;
