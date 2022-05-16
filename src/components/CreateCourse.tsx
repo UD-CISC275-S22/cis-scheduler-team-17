@@ -34,12 +34,13 @@ export function CreateCourse({
 }): JSX.Element {
     return (
         <div>
-            <Button onClick={changeVisibility}>
+            <Button data-testid="createCourse" onClick={changeVisibility}>
                 {visible ? "Hide Form" : "Create Course"}
             </Button>
             {visible && (
                 <div>
                     <Form.Control
+                        data-testid="createCourseID"
                         type="string"
                         value={courseID}
                         onChange={(event: ChangeEvent) =>
@@ -48,6 +49,7 @@ export function CreateCourse({
                         placeholder={"Enter Course ID"}
                     />
                     <Form.Control
+                        data-testid="createCourseName"
                         type="string"
                         value={courseName}
                         onChange={(event: ChangeEvent) =>
@@ -56,6 +58,7 @@ export function CreateCourse({
                         placeholder={"Enter Course Name"}
                     />
                     <Form.Control
+                        data-testid="createCourseDescription"
                         type="string"
                         value={courseDescription}
                         onChange={(event: ChangeEvent) =>
@@ -65,6 +68,7 @@ export function CreateCourse({
                     />
                     <label>Enter Number of Credits</label>
                     <Form.Control
+                        data-testid="createCourseCredits"
                         type="number"
                         min={1}
                         step={1}
@@ -73,7 +77,12 @@ export function CreateCourse({
                             changeCredits(event.target.value)
                         }
                     />
-                    <Button onClick={addCourse}>Submit Form</Button>
+                    <Button
+                        data-testid="createCourseSubmit"
+                        onClick={addCourse}
+                    >
+                        Submit Form
+                    </Button>
                 </div>
             )}
         </div>
