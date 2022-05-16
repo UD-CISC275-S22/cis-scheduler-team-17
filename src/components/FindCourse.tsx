@@ -12,15 +12,15 @@ type ChangeEvent = React.ChangeEvent<
 
 export function FindCourse(): JSX.Element {
     // state used to handle the users inputted answer
-    const AllCoursesCopy = [...AllCourses];
+    const allCourses = [...AllCourses];
     const [userAnswer, setUserAnswer] = useState<string>("");
-    const [list_Of_Possible_Answers, setListOfPossibleAnswers] = useState<
+    const [listOfPossibleAnswers, setListOfPossibleAnswers] = useState<
         Course[]
     >([...AllCourses]);
     const [, setProgress] = useState(0);
     const [, setSelectedCourseName] = useState<string>();
     const [showSearch, updateShowSearch] = useState<boolean>(true);
-    const [SelectedCourse, updateSelectedCourse] = useState<Course>(
+    const [selectedCourse, updateSelectedCourse] = useState<Course>(
         AllCourses[0]
     );
 
@@ -28,19 +28,19 @@ export function FindCourse(): JSX.Element {
         setUserAnswer(event.target.value);
         // allows us to update our list based on what is getting entered
         setListOfPossibleAnswers(
-            AllCoursesCopy.filter(
+            allCourses.filter(
                 (currentCourse: Course): boolean =>
                     currentCourse.course_id.search(event.target.value) !== -1
             )
         );
     }
 
-    function SelectCourse(SelectedCourseID: string) {
-        setSelectedCourseName(SelectedCourseID);
-        const ID = AllCoursesCopy.filter(
-            (course: Course): boolean => course.course_id === SelectedCourseID
+    function SelectCourse(selectedCourseID: string) {
+        setSelectedCourseName(selectedCourseID);
+        const id = allCourses.filter(
+            (course: Course): boolean => course.course_id === selectedCourseID
         );
-        updateSelectedCourse(ID[0]);
+        updateSelectedCourse(id[0]);
         updateShowSearch(!showSearch);
     }
 
@@ -77,28 +77,24 @@ export function FindCourse(): JSX.Element {
                         ></Form.Control>
                     </Form.Group>
                     <div>
-                        {list_Of_Possible_Answers.length === 0
+                        {listOfPossibleAnswers.length === 0
                             ? " ❌ There are no courses matching your input"
-                            : sResult(list_Of_Possible_Answers[0].course_id)}
+                            : sResult(listOfPossibleAnswers[0].course_id)}
                     </div>
                     <div style={styles.container} onScroll={scrollHandler}>
-                        {list_Of_Possible_Answers.map(
-                            (currentCourse: Course) => (
-                                <div key={currentCourse.name}>
-                                    {currentCourse.course_id}
-                                    <Button
-                                        className={"makeInformationButton"}
-                                        onClick={() =>
-                                            SelectCourse(
-                                                currentCourse.course_id
-                                            )
-                                        }
-                                    >
-                                        Select Course
-                                    </Button>
-                                </div>
-                            )
-                        )}
+                        {listOfPossibleAnswers.map((currentCourse: Course) => (
+                            <div key={currentCourse.name}>
+                                {currentCourse.course_id}
+                                <Button
+                                    className={"makeInformationButton"}
+                                    onClick={() =>
+                                        SelectCourse(currentCourse.course_id)
+                                    }
+                                >
+                                    Select Course
+                                </Button>
+                            </div>
+                        ))}
                     </div>
                 </div>
             ) : (
@@ -109,7 +105,7 @@ export function FindCourse(): JSX.Element {
                     >
                         Return to Search
                     </Button>
-                    <EditInterface Course2Edit={SelectedCourse}></EditInterface>
+                    <EditInterface Course2Edit={selectedCourse}></EditInterface>
                 </div>
             )}
         </div>
