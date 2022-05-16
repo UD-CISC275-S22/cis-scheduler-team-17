@@ -1342,4 +1342,3 @@ export const AllDegrees = [
     CISC_BA,
     Information_Systems
 ];
-//console.log(AllDegrees);

@@ -10,6 +10,8 @@ import {
 import { makeCourse } from "../interfaces/MakeDegree-MakeCourses";
 import { CreateCourse } from "./CreateCourse";
 import { AddExisting } from "./AddExisting";
+import dropdown from "../CSS-Images/dropdown.jpg";
+import dropup from "../CSS-Images/dropup.jpg";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -32,6 +34,11 @@ export function MakeSemester({
     const [visible, setVisible] = useState<boolean>(false);
     function changeVisibility() {
         setVisible(!visible);
+    }
+    //Semester Collapse
+    const [collapse, setCollapse] = useState<boolean>(false);
+    function changeCollapse() {
+        setCollapse(!collapse);
     }
     //Semester Availability
     const [courseList, updateList] = useState<Course[]>(
@@ -134,13 +141,35 @@ export function MakeSemester({
         <div>
             <div>
                 <Table className="semesterTable">
-                    <caption className="semesterLabel">
+                    <caption
+                        className="semesterLabel"
+                        data-testid="semesterLabel"
+                    >
                         {semester.semester_season +
                             " " +
                             semester.year +
                             ": " +
                             totalCredits +
                             " Credits"}
+                        <Button
+                            data-testid="showHideCourses"
+                            onClick={changeCollapse}
+                            className={"dropdownBtn"}
+                        >
+                            {collapse ? (
+                                <img
+                                    src={dropdown}
+                                    className={"icon"}
+                                    alt={"Show Courses"}
+                                />
+                            ) : (
+                                <img
+                                    src={dropup}
+                                    className={"icon"}
+                                    alt={"Hide Courses"}
+                                />
+                            )}
+                        </Button>
                     </caption>
                     <tr className="key">
                         <th>Course ID</th>
@@ -149,24 +178,26 @@ export function MakeSemester({
                         <th>Number of Credits</th>
                         <th>Remove Course</th>
                     </tr>
-                    {courseList.map((course: Course) => (
-                        <tr key={course.course_id}>
-                            <th>{course.course_id}</th>
-                            <th>{course.name}</th>
-                            <th>{course.description}</th>
-                            <th>{course.credits}</th>
-                            <th>
-                                <Button
-                                    data-testid="remove-sem"
-                                    onClick={() =>
-                                        removeCourse(course.course_id)
-                                    }
-                                >
-                                    Remove
-                                </Button>
-                            </th>
-                        </tr>
-                    ))}
+                    {!collapse &&
+                        courseList.map((course: Course) => (
+                            <tr key={course.course_id}>
+                                <th>{course.course_id}</th>
+                                <th>{course.name}</th>
+                                <th>{course.description}</th>
+                                <th>{course.credits}</th>
+                                <th>
+                                    <Button
+                                        className="remove"
+                                        data-testid="removeCourse"
+                                        onClick={() =>
+                                            removeCourse(course.course_id)
+                                        }
+                                    >
+                                        Remove
+                                    </Button>
+                                </th>
+                            </tr>
+                        ))}
                 </Table>
                 <p className="debug">
                     {(semester.total_credits = totalCredits)}
@@ -205,6 +236,7 @@ export function MakeSemester({
                             </Col>
                             <Col>
                                 <Button
+                                    data-testid="removeAllCourses"
                                     className={"remove"}
                                     onClick={resetState}
                                 >
@@ -213,6 +245,7 @@ export function MakeSemester({
                             </Col>
                             <Col>
                                 <Button
+                                    data-testid="remove-sem"
                                     className={"remove"}
                                     onClick={() =>
                                         removeSemesterReset(

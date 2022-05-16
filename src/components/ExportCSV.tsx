@@ -37,13 +37,22 @@ export function ExportCSV({ degree }: { degree: Degree }): JSX.Element {
         { label: "Season", key: "SemesterSeason" },
         { label: "Year", key: "year" },
         { label: "Courses", key: "ClassesTaking" },
-        { label: "Number of Credits", key: "TotalCredits" }
+        { label: "Credits", key: "TotalCredits" }
     ];
 
     return (
         <div>
-            <CSVLink headers={csvHeaders} filename="DegreePlan" data={data}>
-                <Button className={"makeInformationButton"} onClick={getData}>
+            <CSVLink
+                data-testid="csvLink"
+                headers={csvHeaders}
+                filename="DegreePlan"
+                data={data}
+            >
+                <Button
+                    data-testid="export"
+                    className={"makeInformationButton"}
+                    onClick={getData}
+                >
                     Export to CSV
                 </Button>
             </CSVLink>

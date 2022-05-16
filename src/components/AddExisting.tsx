@@ -65,12 +65,13 @@ export function AddExisting({
     }
     return (
         <div>
-            <Button onClick={changeVisibility}>
+            <Button data-testid="addExisting" onClick={changeVisibility}>
                 {visible ? "Hide Form" : "Add Existing Course"}
             </Button>
             {visible && (
                 <div>
                     <Form.Control
+                        data-testid="addExistingForm"
                         type="string"
                         value={ecourseID}
                         onChange={(event: ChangeEvent) =>
@@ -78,11 +79,16 @@ export function AddExisting({
                         }
                         placeholder={"Enter Course ID"}
                     />
-                    <Button onClick={addExisting}>Submit Form</Button>
+                    <Button
+                        data-testid="addExistingSubmit"
+                        onClick={addExisting}
+                    >
+                        Submit Form
+                    </Button>
                 </div>
             )}
             {visible && error && (
-                <p>
+                <p data-testid="addExistingError">
                     Please make sure the Course ID you entered matches a Course
                     ID in the list of courses not yet taken or planned. If you
                     would like to create a new course, please click the{" "}
