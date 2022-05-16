@@ -45,6 +45,8 @@ export function SchedulerPage({
     const [season, setSeason] = useState<Season>(seasons[0]);
     //year state
     const [year, setYear] = useState<number>(2022);
+
+    // season form
     function getSeason(): JSX.Element {
         updateDegree;
         return (
@@ -65,6 +67,8 @@ export function SchedulerPage({
             </Form.Group>
         );
     }
+
+    // year form
     function getYear(): JSX.Element {
         updateDegree;
         return (
@@ -84,6 +88,8 @@ export function SchedulerPage({
         updateDegree;
         setSemesterForm(!showSemForm);
     }
+
+    // add semester button to semester list
     function addSemester() {
         const currYear = year;
         const currSeason = season;
@@ -107,6 +113,8 @@ export function SchedulerPage({
             updateDegree;
         }
     }
+
+    //remove semester from semester list
     function removeSemester(currYear: number, currSeason: Season) {
         updateDegree;
         degree.semester_list = degree.semester_list.filter(
@@ -115,6 +123,8 @@ export function SchedulerPage({
         );
         updateSemesterForm();
     }
+
+    //reset plan
     function removeAllSemesters() {
         setSemesterList([]);
         degree.courses_required.map((course: Course) => (course.taken = false));
@@ -178,7 +188,7 @@ export function SchedulerPage({
                                 {semExistsError && (
                                     <p
                                         className="error"
-                                        data-test-id="sem-error"
+                                        data-testid="sem-error"
                                     >
                                         This semester already exists. Please
                                         choose a different year and/or season
@@ -187,26 +197,24 @@ export function SchedulerPage({
                             </div>
                         </Row>
                         <Row>
-                            <div>
-                                {degree.semester_list.map(
-                                    (semester: SemesterPlanner) => (
-                                        <>
-                                            <MakeSemester
-                                                key={
-                                                    semester.semester_season +
-                                                    semester.year
-                                                }
-                                                semester={semester}
-                                                degree={degree}
-                                                removeSemester={removeSemester}
-                                                updateDegree={updateDegree}
-                                                updateForm={updateSemesterForm}
-                                            ></MakeSemester>
-                                            <br></br>
-                                        </>
-                                    )
-                                )}
-                            </div>
+                            {degree.semester_list.map(
+                                (semester: SemesterPlanner) => (
+                                    <>
+                                        <MakeSemester
+                                            key={
+                                                semester.semester_season +
+                                                semester.year
+                                            }
+                                            semester={semester}
+                                            degree={degree}
+                                            removeSemester={removeSemester}
+                                            updateDegree={updateDegree}
+                                            updateForm={updateSemesterForm}
+                                        ></MakeSemester>
+                                        <br></br>
+                                    </>
+                                )
+                            )}
                         </Row>
                         <hr />
                         <Row>
@@ -242,7 +250,11 @@ export function SchedulerPage({
             </div>
             <div>
                 <footer>
-                    <Button className="backButton" onClick={changeHomepage}>
+                    <Button
+                        data-testid="back-to-homepage"
+                        className="backButton"
+                        onClick={changeHomepage}
+                    >
                         Back
                     </Button>
                 </footer>

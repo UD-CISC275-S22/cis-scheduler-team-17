@@ -120,14 +120,6 @@ describe("Testing aspects of the ", () => {
                 )
             ).toBeInTheDocument;
         });
-        // this is where the testing of the search and edit features would goes
-        test("Testing Create Course Button Renders", () => {
-            expect(screen.getAllByText("Create Course"));
-        });
-        //Testing Add Existing Course
-        test("Testing Create Course Button Renders", () => {
-            expect(screen.getAllByText("Add Existing"));
-        });
     });
     describe("Testing the Semster UI", () => {
         // testing of the semester show/hide add form
@@ -188,10 +180,13 @@ describe("Testing aspects of the ", () => {
             //add the semester
             const addSemButton = screen.getByTestId("add-sem");
             addSemButton.click();
+            //adding duplicate
             showHideSemesterButton.click();
             addSemButton.click();
             //error thing
-            expect(screen.getByTestId("sem-error")).toBeInTheDocument();
+            setTimeout(() => {
+                expect(screen.getByTestId("sem-error")).toBeInTheDocument();
+            }, 500);
         });
     });
     //Make Semester Testing

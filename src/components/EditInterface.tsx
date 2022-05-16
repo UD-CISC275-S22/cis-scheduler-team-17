@@ -37,7 +37,6 @@ export function EditInterface({
     function changeCredits(event: ChangeEvent) {
         if (!isNaN(parseInt(event.target.value))) {
             setInputCredits(parseInt(event.target.value));
-            console.log(inputCredits);
         }
     }
 
@@ -50,7 +49,6 @@ export function EditInterface({
     }
 
     // Revert
-
     function revert() {
         Course2Edit.course_id = Course2Edit.og_id;
         Course2Edit.name = Course2Edit.og_name;
