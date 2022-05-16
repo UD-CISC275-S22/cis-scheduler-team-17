@@ -140,11 +140,13 @@ label{
 .makeInformationButton:focus{
     border: none;
     background: none;
+    color: white;
     color: rgb(58, 58, 255);
 }
 
 .makeInformationButton:hover{
     width: auto;
+    color: white;
     height: auto;
     background-size: contain;
     border: none;

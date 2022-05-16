@@ -141,7 +141,10 @@ export function MakeSemester({
         <div>
             <div>
                 <Table className="semesterTable">
-                    <caption className="semesterLabel">
+                    <caption
+                        className="semesterLabel"
+                        data-testid="semesterLabel"
+                    >
                         {semester.semester_season +
                             " " +
                             semester.year +
@@ -149,6 +152,7 @@ export function MakeSemester({
                             totalCredits +
                             " Credits"}
                         <Button
+                            data-testid="showHideCourses"
                             onClick={changeCollapse}
                             className={"dropdownBtn"}
                         >
@@ -184,7 +188,7 @@ export function MakeSemester({
                                 <th>
                                     <Button
                                         className="remove"
-                                        data-testid="remove-sem"
+                                        data-testid="removeCourse"
                                         onClick={() =>
                                             removeCourse(course.course_id)
                                         }
@@ -232,6 +236,7 @@ export function MakeSemester({
                             </Col>
                             <Col>
                                 <Button
+                                    data-testid="removeAllCourses"
                                     className={"remove"}
                                     onClick={resetState}
                                 >

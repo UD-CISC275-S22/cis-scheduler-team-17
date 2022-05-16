@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../App";
+import userEvent from "@testing-library/user-event";
 
 describe("Testing aspects of the ", () => {
     describe("Testing the Select Taken UI", () => {
@@ -165,6 +166,292 @@ describe("Testing aspects of the ", () => {
             const removeSemButton = screen.getByTestId("remove-sem");
             removeSemButton.click();
             expect(screen.getByText(/Hide Form/i));
+        });
+    });
+    //Make Semester Testing
+    describe("MakeSemester", () => {
+        //Rendering App
+        beforeEach(() => {
+            render(<App />);
+        });
+        test("Testing Add Existing Course", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            expect(
+                screen.getByText("CISC181: Introduction to Computer Science II")
+            ).toBeInTheDocument();
+        });
+        test("Testing Add Existing Course That Does Not Exist", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "FakeCourse");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            expect(screen.getByTestId("addExistingError")).toBeInTheDocument();
+        });
+        //Testing Create Course
+        test("Testing Create Course", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open create course form
+            const createCourse = screen.getByTestId("createCourse");
+            createCourse.click();
+            //Respond to course id form
+            const idForm = screen.getByTestId("createCourseID");
+            userEvent.type(idForm, "courseID");
+            //Respond to course name form
+            const nameForm = screen.getByTestId("createCourseName");
+            userEvent.type(nameForm, "courseName");
+            //Respond to course description form
+            const descriptionForm = screen.getByTestId(
+                "createCourseDescription"
+            );
+            userEvent.type(descriptionForm, "courseDescription");
+            //Respond to course credits form
+            const creditForm = screen.getByTestId("createCourseCredits");
+            userEvent.type(creditForm, "3");
+            //Submit Form
+            const submitButton = screen.getByTestId("createCourseSubmit");
+            submitButton.click();
+            expect(screen.getByText("courseID")).toBeInTheDocument();
+        });
+        //Testing Credit Updates - Adding Courses
+        test("Testing Credit Update - Adding Courses", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Create First Course
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Create Second Course
+            addExisting.click();
+            //Respond to form
+            userEvent.type(nameForm, "CISC108");
+            //Submit Form
+            submitButton.click();
+            expect(
+                screen.getByTestId("semesterLabel").textContent ==
+                    "/Spring 2022: 6 Credits/i"
+            );
+        });
+        //Testing Remove Courses
+        test("Testing Remove Course", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Remove Course
+            const removeCourseButton = screen.getAllByTestId("removeCourse");
+            removeCourseButton[0].click();
+            expect(
+                screen.queryByText(
+                    "CISC181: Introduction to Computer Science II"
+                )
+            ).toBeFalsy;
+        });
+        //Testing Remove All Courses
+        test("Testing Remove All Courses", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Open existing form
+            addExisting.click();
+            //Respond to form
+            userEvent.type(nameForm, "CISC108");
+            //Submit Form
+            submitButton.click();
+            //Remove Course
+            const removeAllCoursesButton =
+                screen.getAllByTestId("removeAllCourses");
+            removeAllCoursesButton[0].click();
+            expect(
+                screen.queryByText(
+                    "CISC181: Introduction to Computer Science II"
+                ) &&
+                    screen.queryByText(
+                        "CISC108: Introduction To Computer Science 1"
+                    )
+            ).toBeFalsy;
+        });
+        //Testing Remove Courses With Same ID
+        test("Testing Remove Course And Update Credits - Same ID", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open create course form
+            const createCourse = screen.getByTestId("createCourse");
+            createCourse.click();
+            //Respond to course id form
+            const idForm = screen.getByTestId("createCourseID");
+            userEvent.type(idForm, "courseID");
+            //Respond to course name form
+            const nameForm = screen.getByTestId("createCourseName");
+            userEvent.type(nameForm, "courseName");
+            //Respond to course description form
+            const descriptionForm = screen.getByTestId(
+                "createCourseDescription"
+            );
+            userEvent.type(descriptionForm, "courseDescription");
+            //Respond to course credits form
+            const creditForm = screen.getByTestId("createCourseCredits");
+            userEvent.type(creditForm, "3");
+            //Submit Form
+            const submitButton = screen.getByTestId("createCourseSubmit");
+            submitButton.click();
+            //Open create course form
+            createCourse.click();
+            //Responses are saved from last input
+            //Submit Form - Create same course
+            submitButton.click();
+            //Remove First Course
+            const removeCouresButton = screen.queryAllByTestId("removeCourse");
+            removeCouresButton[0].click();
+            //Test all classes removed and credits updated
+            expect(
+                !(
+                    screen.getByTestId("semesterLabel").textContent ==
+                    "/Spring 2022: 0 Credits/i"
+                ) && screen.queryByText("courseName")
+            ).toBeFalsy;
+        });
+        //Testing Credit Updates - Removing Courses
+        test("Testing Credit Update - Removing Courses", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC108");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Remove Course
+            const removeCourseButton = screen.getAllByTestId("removeCourse");
+            removeCourseButton[0].click();
+            expect(
+                screen.getByTestId("semesterLabel").textContent ==
+                    "/Spring 2022: 0 Credits/i"
+            );
+        });
+        test("Testing Course Dropdown - Hide", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Hide Courses
+            const hideCourses = screen.getByTestId("showHideCourses");
+            hideCourses.click();
+            expect(
+                screen.queryByText(
+                    "CISC181: Introduction to Computer Science II"
+                )
+            ).toBeFalsy;
+        });
+        test("Testing Course Dropdown - Show", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            //Open existing course form
+            const addExisting = screen.getByTestId("addExisting");
+            addExisting.click();
+            //Respond to form
+            const nameForm = screen.getByTestId("addExistingForm");
+            userEvent.type(nameForm, "CISC181");
+            //Submit Form
+            const submitButton = screen.getByTestId("addExistingSubmit");
+            submitButton.click();
+            //Hide Courses
+            const hideCourses = screen.getByTestId("showHideCourses");
+            hideCourses.click();
+            hideCourses.click();
+            expect(
+                screen.queryByText(
+                    "CISC181: Introduction to Computer Science II"
+                )
+            );
         });
     });
 });
