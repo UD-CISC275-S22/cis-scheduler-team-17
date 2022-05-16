@@ -8,18 +8,12 @@ describe("Testing everything on the homepage", () => {
             render(<App />);
         });
         test("Testing to see if the first course name has been printed", () => {
-            expect(
-                screen.getByText(
-                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
-                )
-            ).toBeInTheDocument;
+            expect(screen.getByText(/EGGG101: Introduction to Engineering❌/i))
+                .toBeInTheDocument;
         });
         test("Testing to see if taken starts off as false", () => {
-            expect(
-                screen.getByText(
-                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
-                )
-            ).toBeInTheDocument;
+            expect(screen.getByText(/EGGG101: Introduction to Engineering❌/i))
+                .toBeInTheDocument;
         });
         test("testing to see if there is a list of checkboxes present on the page", () => {
             const checkboxi: HTMLInputElement[] =
@@ -36,22 +30,16 @@ describe("Testing everything on the homepage", () => {
             const checkboxes: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxes[0].click();
-            screen.getByText(
-                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
-            );
+            screen.getByText(/EGGG101: Introduction to Engineering✔️/i);
         });
         test("Testing to see if changing the status of taken twice gets us back to not taken", () => {
             const checkboxes: HTMLInputElement[] =
                 screen.getAllByRole("checkbox");
             checkboxes[0].click();
             checkboxes[0].click();
-            screen.getByText(
-                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
-            );
+            screen.getByText(/EGGG101: Introduction to Engineering✔️/i);
             checkboxes[0].click();
-            screen.getByText(
-                /EGGG101: Introduction to Engineering ... Taken: ❌/i
-            );
+            screen.getByText(/EGGG101: Introduction to Engineering❌/i);
         });
         //Testing Degree Selection Renders
         test("Testing to see if dropdown menu renders", () => {
