@@ -7,21 +7,17 @@ describe("Testing everything on the homepage", () => {
         beforeEach(() => {
             render(<App />);
         });
-        test("Testing to see if we have the printed bux", () => {
+        test("Testing to see if the first course name has been printed", () => {
             expect(
                 screen.getByText(
-                    "Please Select The Courses You Have Already Taken"
+                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
                 )
             ).toBeInTheDocument;
-        });
-        test("Testing to see if the first degree name has been printed", () => {
-            expect(screen.getByText(/EGGG101: Introduction to Engineering/i))
-                .toBeInTheDocument;
         });
         test("Testing to see if taken starts off as false", () => {
             expect(
                 screen.getByText(
-                    /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
+                    /EGGG101: Introduction to Engineering ... Taken: ❌/i
                 )
             ).toBeInTheDocument;
         });
@@ -41,7 +37,7 @@ describe("Testing everything on the homepage", () => {
                 screen.getAllByRole("checkbox");
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
+                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
             );
         });
         test("Testing to see if changing the status of taken twice gets us back to not taken", () => {
@@ -50,11 +46,11 @@ describe("Testing everything on the homepage", () => {
             checkboxes[0].click();
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ✔️/i
+                /EGGG101: Introduction to Engineering ... Taken: ✔️/i
             );
             checkboxes[0].click();
             screen.getByText(
-                /Course Name: EGGG101: Introduction to Engineering...Taken: ❌/i
+                /EGGG101: Introduction to Engineering ... Taken: ❌/i
             );
         });
     });
