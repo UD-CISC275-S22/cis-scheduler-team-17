@@ -153,6 +153,7 @@ export function SchedulerPage({
                                     {showSemForm ? "Hide Form" : "Add Semester"}
                                 </Button>
                                 <Button
+                                    data-testid="reset-plan"
                                     className={"remove"}
                                     onClick={removeAllSemesters}
                                 >
@@ -175,7 +176,10 @@ export function SchedulerPage({
                                     </div>
                                 )}
                                 {semExistsError && (
-                                    <p className="error">
+                                    <p
+                                        className="error"
+                                        data-test-id="sem-error"
+                                    >
                                         This semester already exists. Please
                                         choose a different year and/or season
                                     </p>

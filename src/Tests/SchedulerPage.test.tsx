@@ -144,7 +144,7 @@ describe("Testing aspects of the ", () => {
             showHideSemesterButton.click();
             expect(screen.getByText(/Hide Form/i)).toBeInTheDocument();
         });
-        //test adding semester
+        // test adding semester
         test("Testing adding a semester to the semester list/degree view", () => {
             //click semester form button
             const showHideSemesterButton = screen.getByTestId("show/hide");
@@ -154,7 +154,7 @@ describe("Testing aspects of the ", () => {
             addSemButton.click();
             expect(screen.getByText(/Spring 2022: 0 Credits/i));
         });
-        //test removing a semester -- broken
+        // test removing a semester -- broken
         test("Testing removing a semester from the semester list/degree view", () => {
             //click semester form button
             const showHideSemesterButton = screen.getByTestId("show/hide");
@@ -166,6 +166,32 @@ describe("Testing aspects of the ", () => {
             const removeSemButton = screen.getByTestId("remove-sem");
             removeSemButton.click();
             expect(screen.getByText(/Hide Form/i));
+        });
+        // test removing all semesters
+        test("Testing removing all semesters from the semester list/degree view", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            // remove all the semesters
+            const resetPlan = screen.getByTestId("reset-plan");
+            resetPlan.click();
+            expect(screen.getByText(/Hide Form/i));
+        });
+        // test not able to add multiple of the same semester
+        test("Testing duplicate semester error", () => {
+            //click semester form button
+            const showHideSemesterButton = screen.getByTestId("show/hide");
+            showHideSemesterButton.click();
+            //add the semester
+            const addSemButton = screen.getByTestId("add-sem");
+            addSemButton.click();
+            showHideSemesterButton.click();
+            addSemButton.click();
+            //error thing
+            expect(screen.getByTestId("sem-error")).toBeInTheDocument();
         });
     });
     //Make Semester Testing
