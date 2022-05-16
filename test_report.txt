@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Tests/SchedulerPage.test.tsx (24.815 s)
+PASS src/Tests/SchedulerPage.test.tsx (17.478 s)
   ● Console
 
     console.error
@@ -92,7 +92,7 @@ PASS src/Tests/SchedulerPage.test.tsx (24.815 s)
       at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
       at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
 
-PASS src/Tests/Homepage.test.tsx (7.7 s)
+PASS src/Tests/Homepage.test.tsx (5.271 s)
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-----------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
@@ -107,7 +107,7 @@ All files                    |   83.93 |    73.91 |   71.28 |   84.11 |
   DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                       
   EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-59                 
   ExportCSV.tsx              |      60 |      100 |      50 |      60 | 24-30                 
-  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,92-107 
+  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,91-103 
   Homepage.tsx               |     100 |      100 |     100 |     100 |                       
   ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                  
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                 
@@ -125,5 +125,5 @@ All files                    |   83.93 |    73.91 |   71.28 |   84.11 |
 Test Suites: 3 passed, 3 total
 Tests:       34 passed, 34 total
 Snapshots:   0 total
-Time:        34.265 s
+Time:        24.026 s
 Ran all test suites.
