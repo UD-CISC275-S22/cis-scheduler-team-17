@@ -11,7 +11,7 @@ export function CoursesLists({ degree }: { degree: Degree }): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        <FindCourse />
+                        <FindCourse degree={degree} />
                     </Col>
                     <Col>
                         <label>
