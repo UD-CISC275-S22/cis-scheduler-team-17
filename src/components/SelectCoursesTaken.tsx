@@ -55,9 +55,7 @@ export function SelectCoursesTaken({
                             value={currentCourse.name}
                             key={currentCourse.name}
                             label={
-                                currentCourse.name +
-                                " ... Taken: " +
-                                currentCourse.taken_string
+                                currentCourse.name + currentCourse.taken_string
                             }
                         />
                         <Information
