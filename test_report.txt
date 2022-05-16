@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Tests/SchedulerPage.test.tsx (18.372 s)
+PASS src/Tests/SchedulerPage.test.tsx (24.815 s)
   ● Console
 
     console.error
@@ -92,7 +92,7 @@ PASS src/Tests/SchedulerPage.test.tsx (18.372 s)
       at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
       at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
 
-PASS src/Tests/Homepage.test.tsx (5.605 s)
+PASS src/Tests/Homepage.test.tsx (7.7 s)
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-----------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
@@ -125,5 +125,5 @@ All files                    |   83.93 |    73.91 |   71.28 |   84.11 |
 Test Suites: 3 passed, 3 total
 Tests:       34 passed, 34 total
 Snapshots:   0 total
-Time:        25.61 s
+Time:        34.265 s
 Ran all test suites.
