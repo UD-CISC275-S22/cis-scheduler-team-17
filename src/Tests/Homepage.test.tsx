@@ -53,6 +53,11 @@ describe("Testing everything on the homepage", () => {
         beforeEach(() => {
             render(<App />);
         });
+    });
+    describe("Degree Selection", () => {
+        beforeEach(() => {
+            render(<App />);
+        });
         //Testing Degree Selection Renders
         test("Testing to see if dropdown menu renders", () => {
             expect(screen.getByText("Degrees")).toBeInTheDocument;
