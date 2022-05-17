@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Tests/SchedulerPage.test.tsx (25.927 s)
+PASS src/Tests/SchedulerPage.test.tsx (32.299 s)
   ● Console
 
     console.error
@@ -92,38 +92,59 @@ PASS src/Tests/SchedulerPage.test.tsx (25.927 s)
       at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
       at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
 
-PASS src/Tests/Homepage.test.tsx (7.999 s)
+    console.error
+      TypeError: Cannot read properties of undefined (reading 'disabled')
+          at typeImplementation (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/@testing-library/user-event/dist/type/typeImplementation.js:23:15)
+          at Object.type (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/@testing-library/user-event/dist/type/index.js:27:60)
+          at Object.<anonymous> (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/src/Tests/SchedulerPage.test.tsx:635:23)
+          at Promise.then.completed (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/utils.js:391:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/utils.js:316:10)
+          at _callCircusTest (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:218:40)
+          at _runTest (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:155:3)
+          at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:66:9)
+          at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:60:9)
+          at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:60:9)
+          at run (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/run.js:25:3)
+          at runAndTransformResultsToJestFormat (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+          at jestAdapter (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+          at runTestInternal (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-runner/build/runTest.js:389:16)
+          at runTest (/home/runner/work/cis-scheduler-team-17/cis-scheduler-team-17/node_modules/jest-runner/build/runTest.js:475:34)
+
+      at error (node_modules/@testing-library/react/dist/act-compat.js:55:34)
+
+PASS src/Tests/Homepage.test.tsx (6.967 s)
 PASS src/App.test.tsx
------------------------------|---------|----------|---------|---------|-----------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
------------------------------|---------|----------|---------|---------|-----------------------
-All files                    |   83.29 |    73.91 |   69.23 |   83.46 |                       
- src                         |     100 |    83.33 |     100 |     100 |                       
-  App.tsx                    |     100 |    83.33 |     100 |     100 | 30                    
- src/components              |   73.14 |    73.77 |   67.01 |   73.33 |                       
-  AddExisting.tsx            |     100 |      100 |     100 |     100 |                       
-  CourseLists.tsx            |     100 |      100 |     100 |     100 |                       
-  CreateCourse.tsx           |     100 |      100 |     100 |     100 |                       
-  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                       
-  EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-59                 
-  ExportCSV.tsx              |      60 |      100 |      50 |      60 | 24-30                 
-  FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,91-103 
-  Homepage.tsx               |      25 |      100 |      25 |      25 | 59-83                 
-  ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                  
-  Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                 
-  MakeSemester.tsx           |   98.38 |     87.5 |   95.23 |     100 | 122                   
-  PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25                 
-  SchedulerPage.tsx          |   93.33 |     87.5 |   84.21 |   93.18 | 33,58,81              
-  SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36                 
-  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                     
- src/interfaces              |     100 |       50 |     100 |     100 |                       
-  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                       
-  Course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                       
-  MakeDegree-MakeCourses.tsx |     100 |       50 |     100 |     100 | 54                    
------------------------------|---------|----------|---------|---------|-----------------------
+-----------------------------|---------|----------|---------|---------|-------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------|---------|----------|---------|---------|-------------------
+All files                    |   90.48 |    81.15 |   81.73 |   90.69 |                   
+ src                         |     100 |    83.33 |     100 |     100 |                   
+  App.tsx                    |     100 |    83.33 |     100 |     100 | 30                
+ src/components              |   84.71 |    81.96 |   80.41 |      85 |                   
+  AddExisting.tsx            |     100 |      100 |     100 |     100 |                   
+  CourseLists.tsx            |     100 |      100 |     100 |     100 |                   
+  CreateCourse.tsx           |     100 |      100 |     100 |     100 |                   
+  DropdownDegrees.tsx        |     100 |      100 |     100 |     100 |                   
+  EditInterface.tsx          |   88.88 |        0 |   85.71 |   88.88 | 38-39             
+  ExportCSV.tsx              |      60 |      100 |      50 |      60 | 24-30             
+  FindCourse.tsx             |   85.71 |      100 |      90 |   85.71 | 49-53             
+  Homepage.tsx               |      25 |      100 |      25 |      25 | 59-83             
+  ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27              
+  Information.tsx            |   85.71 |      100 |      75 |   85.71 | 40                
+  MakeSemester.tsx           |   98.38 |     87.5 |   95.23 |     100 | 122               
+  PrintDegreesList.tsx       |   58.33 |      100 |      75 |   58.33 | 18-25             
+  SchedulerPage.tsx          |   93.33 |     87.5 |   84.21 |   93.18 | 33,58,81          
+  SelectCoursesTaken.tsx     |   77.77 |      100 |      80 |   77.77 | 32-36             
+  Underconstruction.tsx      |       0 |      100 |       0 |       0 | 4                 
+ src/interfaces              |     100 |       50 |     100 |     100 |                   
+  AllCourses-AllDegrees.tsx  |     100 |      100 |     100 |     100 |                   
+  Course-Degree-Semester.ts  |     100 |      100 |     100 |     100 |                   
+  MakeDegree-MakeCourses.tsx |     100 |       50 |     100 |     100 | 54                
+-----------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 3 passed, 3 total
-Tests:       36 passed, 36 total
+Tests:       47 passed, 47 total
 Snapshots:   0 total
-Time:        35.71 s
+Time:        40.942 s
 Ran all test suites.
