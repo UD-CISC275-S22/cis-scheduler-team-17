@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Tests/SchedulerPage.test.tsx (17.478 s)
+PASS src/Tests/SchedulerPage.test.tsx (25.927 s)
   ● Console
 
     console.error
@@ -92,15 +92,15 @@ PASS src/Tests/SchedulerPage.test.tsx (17.478 s)
       at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
       at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
 
-PASS src/Tests/Homepage.test.tsx (5.271 s)
+PASS src/Tests/Homepage.test.tsx (7.999 s)
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-----------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
 -----------------------------|---------|----------|---------|---------|-----------------------
-All files                    |   83.93 |    73.91 |   71.28 |   84.11 |                       
+All files                    |   83.29 |    73.91 |   69.23 |   83.46 |                       
  src                         |     100 |    83.33 |     100 |     100 |                       
   App.tsx                    |     100 |    83.33 |     100 |     100 | 30                    
- src/components              |   74.05 |    73.77 |   69.14 |   74.26 |                       
+ src/components              |   73.14 |    73.77 |   67.01 |   73.33 |                       
   AddExisting.tsx            |     100 |      100 |     100 |     100 |                       
   CourseLists.tsx            |     100 |      100 |     100 |     100 |                       
   CreateCourse.tsx           |     100 |      100 |     100 |     100 |                       
@@ -108,7 +108,7 @@ All files                    |   83.93 |    73.91 |   71.28 |   84.11 |
   EditInterface.tsx          |       0 |        0 |       0 |       0 | 14-59                 
   ExportCSV.tsx              |      60 |      100 |      50 |      60 | 24-30                 
   FindCourse.tsx             |   46.42 |       50 |      30 |   46.42 | 28-44,49-53,59,91-103 
-  Homepage.tsx               |     100 |      100 |     100 |     100 |                       
+  Homepage.tsx               |      25 |      100 |      25 |      25 | 59-83                 
   ImportCSV.tsx              |       0 |        0 |       0 |       0 | 6-27                  
   Information.tsx            |   71.42 |       50 |      50 |   71.42 | 21-40                 
   MakeSemester.tsx           |   98.38 |     87.5 |   95.23 |     100 | 122                   
@@ -123,7 +123,7 @@ All files                    |   83.93 |    73.91 |   71.28 |   84.11 |
 -----------------------------|---------|----------|---------|---------|-----------------------
 
 Test Suites: 3 passed, 3 total
-Tests:       34 passed, 34 total
+Tests:       36 passed, 36 total
 Snapshots:   0 total
-Time:        24.026 s
+Time:        35.71 s
 Ran all test suites.
