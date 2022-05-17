@@ -234,6 +234,7 @@ export function SchedulerPage({
                         </Col>
                         <Col>
                             <Button
+                                data-testid="import-bttn"
                                 className={"makeInformationButton"}
                                 onClick={changeImportView}
                             >

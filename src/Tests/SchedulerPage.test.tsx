@@ -475,4 +475,13 @@ describe("Testing aspects of the ", () => {
             );
         });
     });
+    //import export testing
+    describe("Import/Export", () => {
+        test("testing to see if IMPORT button renders", () => {
+            expect(screen.findByText(/Import CSV/i)).toBeInTheDocument;
+        });
+        test("testing to see if EXPORT button renders", () => {
+            expect(screen.findByText(/Export to CSV/i)).toBeInTheDocument;
+        });
+    });
 });
