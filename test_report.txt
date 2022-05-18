@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Tests/SchedulerPage.test.tsx (32.299 s)
+PASS src/Tests/SchedulerPage.test.tsx (29.672 s)
   ● Console
 
     console.error
@@ -113,7 +113,7 @@ PASS src/Tests/SchedulerPage.test.tsx (32.299 s)
 
       at error (node_modules/@testing-library/react/dist/act-compat.js:55:34)
 
-PASS src/Tests/Homepage.test.tsx (6.967 s)
+PASS src/Tests/Homepage.test.tsx (6.28 s)
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -146,5 +146,5 @@ All files                    |   90.48 |    81.15 |   81.73 |   90.69 |
 Test Suites: 3 passed, 3 total
 Tests:       47 passed, 47 total
 Snapshots:   0 total
-Time:        40.942 s
+Time:        37.494 s
 Ran all test suites.
